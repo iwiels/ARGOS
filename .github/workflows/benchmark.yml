@@ -1,0 +1,47 @@
+name: benchmark
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: argos-bin/go.mod
+          cache-dependency-path: argos-bin/go.sum
+      - name: Benchmark (light mode)
+        env:
+          ARGOS_E2E: "1"
+          ARGOS_E2E_LIGHT: "1"
+        run: |
+          rm -f argos-bin/e2e/benchmark-report.json argos-bin/e2e/benchmark-report.md
+          cd argos-bin
+          go test -count=1 -v -run '^TestWebBenchmark$' ./e2e -timeout 20m
+      - name: Require measured coverage and an enforced baseline
+        run: |
+          node --input-type=module <<'SCRIPT'
+          import assert from "node:assert/strict"
+          import { readFileSync } from "node:fs"
+          const report = JSON.parse(readFileSync("argos-bin/e2e/benchmark-report.json", "utf8"))
+          assert.equal(report.mode, "light")
+          assert.equal(report.runners.find((runner) => runner.runner === "argos_full")?.measured, true)
+          assert.equal(report.gate.checked, true)
+          assert.equal(report.gate.passed, true)
+          SCRIPT
+      - name: Upload the benchmark report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: benchmark-report
+          path: argos-bin/e2e/benchmark-report.*
+          if-no-files-found: error
+          retention-days: 30

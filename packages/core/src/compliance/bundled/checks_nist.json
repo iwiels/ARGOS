@@ -1,0 +1,235 @@
+{
+  "$schema": "https://saasfort.com/schemas/nis2-control-library-v1.json",
+  "title": "SaaSFort NIST Cybersecurity Framework v2.0 Mapping",
+  "source": "NIST Cybersecurity Framework v2.0 (released February 2024) — externally-observable subcategories only",
+  "generated_at": "2026-05-02T00:00:00Z",
+  "license": "MIT",
+  "repository": "https://github.com/saasfort/nis2-controls",
+  "scope_note": "NIST CSF v2 organises 106 subcategories into 6 functions: GV (Govern), ID (Identify), PR (Protect), DE (Detect), RS (Respond), RC (Recover). This file maps only the subcategories with at least one externally-observable signal. Pure governance (GV.*), risk-management policy (ID.RA), supply-chain (GV.SC) and recovery (RC.*) subcategories are intentionally absent — no external scanner can verify them. The mapping uses the official v2.0 Core, NOT the deprecated v1.1 Categories.",
+  "controls": [
+    {
+      "control": "NIST.ID.AM",
+      "title": "Identify — Asset Management",
+      "function": "Identify",
+      "checks": [
+        "Active subdomains",
+        "CT log query",
+        "CT log subdomain enumeration",
+        "Common subdomain enumeration",
+        "DNS zone transfer",
+        "MX records",
+        "Nameservers",
+        "Stale subdomain detection",
+        "Subdomain security posture",
+        "JavaScript libraries detected",
+        "Server header",
+        "Technology fingerprint"
+      ],
+      "evidence_types": [
+        "Asset inventory with externally-discovered findings reconciled against authoritative inventory",
+        "Software bill of materials (SBOM)",
+        "DNS zone register",
+        "External attack-surface report"
+      ]
+    },
+    {
+      "control": "NIST.PR.AA",
+      "title": "Protect — Identity Management, Authentication, and Access Control",
+      "function": "Protect",
+      "checks": [
+        "Admin panel exposure",
+        "Clear-Site-Data on logout",
+        "Cookie prefix security",
+        "Cookie security",
+        "CORS credential reflection",
+        "CORS policy",
+        "Rate limiting",
+        "Well-known change password URL"
+      ],
+      "evidence_types": [
+        "Identity governance & administration (IGA) reports",
+        "Privileged access management (PAM) logs",
+        "MFA enforcement evidence",
+        "Quarterly access review minutes"
+      ]
+    },
+    {
+      "control": "NIST.PR.DS",
+      "title": "Protect — Data Security",
+      "function": "Protect",
+      "checks": [
+        "CA diversity",
+        "CAA record",
+        "Cache-Control",
+        "Certificate chain (self-signed)",
+        "Certificate chain completeness",
+        "Certificate expiry",
+        "Certificate issuer",
+        "Certificate key size",
+        "Certificate validity",
+        "Cipher suite",
+        "HSTS",
+        "HSTS preload list",
+        "HSTS strength",
+        "HTTP to HTTPS redirect",
+        "Mixed content",
+        "OCSP stapling",
+        "Recent certificate issuance",
+        "Signature algorithm",
+        "Strong cipher suites",
+        "TLS 1.0 Supported",
+        "TLS 1.1 Supported",
+        "TLS 1.3 support",
+        "TLS SAN extraction",
+        "TLS session resumption",
+        "TLS version",
+        "Weak TLS versions",
+        "Weak cipher suites"
+      ],
+      "evidence_types": [
+        "Data classification policy",
+        "Encryption-in-transit standard",
+        "Cipher allow-list",
+        "Certificate lifecycle records"
+      ]
+    },
+    {
+      "control": "NIST.PR.PS",
+      "title": "Protect — Platform Security",
+      "function": "Protect",
+      "checks": [
+        "API Content-Type security",
+        "API endpoint exposure",
+        "Clickjacking protection",
+        "COOP enforcement level",
+        "Cross-Origin-Embedder-Policy",
+        "Cross-Origin-Opener-Policy",
+        "Cross-Origin-Resource-Policy",
+        "Cross-origin isolation",
+        "CSP",
+        "CSP base-uri",
+        "CSP depth",
+        "CSP object-src",
+        "CSP quality",
+        "CSP reporting",
+        "Dangerous HTTP methods",
+        "Deprecated Expect-CT header",
+        "Deprecated HPKP header",
+        "Deprecated HPKP-RO header",
+        "Deprecated security headers",
+        "Directory listing",
+        "Error page information leakage",
+        "HTTP methods",
+        "Host header injection",
+        "Insecure form action",
+        "Legacy X-XSS-Protection header",
+        "MIME sniffing protection",
+        "Open redirect",
+        "Permissions policy",
+        "Permissions-Policy depth",
+        "Reflected XSS",
+        "Referrer policy",
+        "Referrer policy strength",
+        "Robots.txt sensitive paths",
+        "Server header",
+        "Source map exposure",
+        "SQL injection error disclosure",
+        "SQL injection patterns",
+        "Subresource Integrity (SRI)",
+        "X-Download-Options",
+        "X-Frame-Options quality",
+        "X-Powered-By header",
+        "XSS reflection"
+      ],
+      "evidence_types": [
+        "Hardening baseline (e.g. CIS Benchmark)",
+        "Configuration management database (CMDB) snapshot",
+        "Drift-detection report",
+        "Pre-production security gates (SAST/DAST/SCA reports)"
+      ]
+    },
+    {
+      "control": "NIST.PR.IR",
+      "title": "Protect — Technology Infrastructure Resilience",
+      "function": "Protect",
+      "checks": [
+        "DNSSEC",
+        "DNS zone transfer",
+        "HTTP/2 support",
+        "HTTPS response",
+        "Nameservers",
+        "WAF/CDN detection"
+      ],
+      "evidence_types": [
+        "Network architecture diagram",
+        "DNS provider security review",
+        "Multi-region resilience plan",
+        "Capacity planning records"
+      ]
+    },
+    {
+      "control": "NIST.DE.CM",
+      "title": "Detect — Continuous Monitoring",
+      "function": "Detect",
+      "checks": [
+        "Rate limiting",
+        "Stale subdomain detection",
+        "WAF/CDN detection"
+      ],
+      "evidence_types": [
+        "SIEM coverage matrix",
+        "WAF rule set + tuning log",
+        "Anomaly-detection runbook",
+        "DDoS protection contract / configuration"
+      ]
+    },
+    {
+      "control": "NIST.DE.AE",
+      "title": "Detect — Adverse Event Analysis",
+      "function": "Detect",
+      "checks": [
+        "Exposed .git directory",
+        "JS library vulnerability summary",
+        "JavaScript library scan",
+        "Sensitive file exposure",
+        "Source map exposure"
+      ],
+      "evidence_types": [
+        "Threat-intel ingestion record",
+        "Vulnerability scan + triage logs",
+        "IR playbook for typical adverse-event categories"
+      ]
+    },
+    {
+      "control": "NIST.RS.MA",
+      "title": "Respond — Incident Management",
+      "function": "Respond",
+      "checks": [
+        "security.txt (RFC 9116)"
+      ],
+      "evidence_types": [
+        "Incident response plan",
+        "Disclosure / vulnerability handling policy",
+        "On-call rota and escalation matrix",
+        "Tabletop exercise reports"
+      ]
+    },
+    {
+      "control": "NIST.PR.AT",
+      "title": "Protect — Awareness and Training (signals only — training itself is internal)",
+      "function": "Protect",
+      "checks": [
+        "DKIM records",
+        "DMARC record",
+        "MX records",
+        "SPF record"
+      ],
+      "evidence_types": [
+        "Phishing-test results",
+        "Email security gateway configuration",
+        "DMARC reporting (rua/ruf) review",
+        "Security awareness curriculum"
+      ]
+    }
+  ]
+}

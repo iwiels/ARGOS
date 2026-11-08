@@ -1,0 +1,52 @@
+id: argos-nextjs-development-manifest
+
+info:
+  name: Next.js development manifest served in production
+  author: argos
+  severity: medium
+  description: |
+    El sitio sirve /_next/static/development/_buildManifest.js, un artefacto que
+    Next.js genera sólo cuando corre en modo desarrollo. Un despliegue con
+    `next dev` expuesto publica el código fuente sin minificar, el endpoint de
+    recarga en caliente y los mensajes de error completos, y no tiene las
+    optimizaciones ni las protecciones del build de producción.
+
+    El matcher exige el contenido real del manifiesto: un 200 en esa ruta puede
+    ser una página de error del CDN que responde a todo.
+  remediation: |
+    Desplegar con `next build` y `next start` (o el runtime de producción), no
+    con `next dev`. Verificar que el artefacto publicado no incluya el segmento
+    /development/.
+  reference:
+    - https://nextjs.org/docs/app/building-your-application/deploying
+    - https://cwe.mitre.org/data/definitions/489.html
+  classification:
+    cwe-id: CWE-489
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+  metadata:
+    max-request: 2
+    argos-pack: framework
+    argos-requires-auth: "false"
+    argos-severity-floor: medium
+    argos-evidence: "manifiesto de desarrollo de Next.js con el build de desarrollo"
+    argos-owasp: "A05:2021 Security Misconfiguration"
+  tags: nextjs,misconfig,exposure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/_next/static/development/_buildManifest.js"
+      - "{{BaseURL}}/_next/static/development/_ssgManifest.js"
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "self.__BUILD_MANIFEST"
+          - "self.__SSG_MANIFEST"
+        condition: or

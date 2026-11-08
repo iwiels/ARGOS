@@ -1,0 +1,24 @@
+[data-dock-surface="shell"] {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-weaker-base);
+  box-shadow: var(--shadow-popover);
+  position: relative;
+  z-index: 10;
+  border-radius: var(--radius-xl);
+  overflow: clip;
+}
+
+[data-dock-surface="tray"] {
+  background-color: var(--bg-base);
+  border: 1px solid var(--border-weaker-base);
+  position: relative;
+  z-index: 0;
+  border-radius: var(--radius-xl);
+  overflow: clip;
+}
+
+[data-dock-surface="tray"][data-dock-attach="top"] {
+  margin-top: -0.875rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

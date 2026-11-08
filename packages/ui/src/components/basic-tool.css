@@ -1,0 +1,298 @@
+[data-component="basic-tool"],
+[data-component="basic-tool"] * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+}
+
+[data-component="basic-tool"] {
+  --bt-title: var(--text-primary);
+  --bt-sep: var(--text-secondary);
+  --bt-subtitle: var(--text-secondary);
+  --bt-args: var(--text-secondary);
+  --bt-chevron: var(--text-primary);
+  --bt-content: var(--text-secondary);
+  --bt-icon: var(--icon-muted);
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  gap: 0;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+  font-variant-numeric: tabular-nums;
+  border: 1px solid var(--border-weaker-base);
+  background: var(--bg-surface);
+  transition: border-color 150ms ease, background-color 150ms ease;
+  overflow: hidden;
+
+  &[data-variant="question"] {
+    background: var(--bg-elevated);
+    border-color: var(--border-strong);
+    --bt-content: var(--text-primary);
+  }
+
+  &[data-variant="command"] {
+    --bt-subtitle: var(--text-tertiary);
+  }
+
+  &[data-variant="command"] [data-slot="basic-tool-subtitle"],
+  &[data-variant="command"] [data-slot="basic-tool-tool-subtitle"],
+  &[data-variant="command"] [data-slot="basic-tool-arg"],
+  &[data-variant="command"] [data-slot="basic-tool-tool-arg"] {
+    font-family: var(--font-family-mono);
+    font-size: 12px;
+  }
+
+  &[data-variant="web"] {
+    --bt-subtitle: var(--text-link);
+  }
+
+  &[data-variant="memory"] {
+    background: var(--bg-base);
+    border-style: dashed;
+  }
+
+  &[data-variant="agent"] {
+    border-left: 2px solid var(--border-strong);
+  }
+
+  &[data-variant="security"] {
+    background: var(--bg-surface);
+    border-color: var(--border-strong);
+    --bt-title: var(--text-primary);
+    --bt-subtitle: var(--text-secondary);
+  }
+
+  &[data-variant="system"] {
+    --bt-title: var(--text-secondary);
+  }
+
+  [data-slot="basic-tool-trigger"] {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    min-height: 36px;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    color: inherit;
+    outline: none;
+    overflow: hidden;
+  }
+
+  [data-slot="basic-tool-trigger"] > [data-slot="icon-svg"] {
+    color: var(--bt-icon);
+    transition: color 150ms ease;
+  }
+
+  [data-slot="basic-tool-trigger"]:hover > [data-slot="icon-svg"] {
+    color: var(--icon-weak-base);
+  }
+
+  [data-slot="basic-tool-trigger"]:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  [data-slot="collapsible-trigger"] {
+    border-bottom: 1px solid transparent;
+    transition: border-color 150ms ease;
+    height: 36px;
+    min-height: 36px;
+    max-height: 36px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  &[data-expanded] [data-slot="collapsible-trigger"] {
+    border-bottom-color: var(--border-weaker-base);
+  }
+
+  [data-slot="basic-tool-labels"],
+  [data-slot="basic-tool-info"],
+  [data-slot="basic-tool-info-structured"],
+  [data-slot="basic-tool-info-main"] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  [data-slot="basic-tool-title"] {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: var(--font-weight-medium);
+    line-height: 1;
+    letter-spacing: -0.04px;
+    color: var(--bt-title);
+    font-variation-settings: "slnt" 0;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  [data-slot="basic-tool-sep"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 530;
+    line-height: 12px;
+    letter-spacing: 0.05px;
+    color: var(--bt-sep);
+    font-variation-settings: "slnt" 0;
+    user-select: none;
+  }
+
+  [data-slot="basic-tool-subtitle"] {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    flex: 0 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: 440;
+    line-height: 1;
+    letter-spacing: -0.04px;
+    color: var(--bt-subtitle);
+    font-variation-settings: "slnt" 0;
+    user-select: none;
+  }
+
+  [data-slot="basic-tool-arg"] {
+    display: inline-block;
+    max-width: 100%;
+    min-width: 0;
+    flex: 0 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 440;
+    line-height: 1.2;
+    letter-spacing: -0.04px;
+    color: var(--bt-args);
+    font-variation-settings: "slnt" 0;
+    font-family: var(--font-mono, monospace);
+  }
+
+  [data-slot="basic-tool-action"] {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: var(--bt-chevron);
+    opacity: 0;
+    transition: opacity 150ms ease, color 150ms ease;
+  }
+
+  &.group:hover [data-slot="basic-tool-action"],
+  &:hover [data-slot="basic-tool-action"] {
+    opacity: 1;
+    color: var(--icon-weak-base);
+  }
+
+  /* JSX triggers (edit, write, apply_patch…) with layout needs the structured
+     title/subtitle/args model doesn't cover — same type hierarchy as structured triggers */
+  [data-slot="basic-tool-tool-title"] {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: var(--font-weight-medium);
+    line-height: 1;
+    letter-spacing: -0.04px;
+    color: var(--bt-title);
+    font-variation-settings: "slnt" 0;
+    user-select: none;
+  }
+
+  [data-slot="basic-tool-tool-subtitle"] {
+    min-width: 0;
+    flex: 0 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: 440;
+    line-height: 1;
+    letter-spacing: -0.04px;
+    color: var(--bt-subtitle);
+    font-variation-settings: "slnt" 0;
+    user-select: none;
+  }
+
+  [data-slot="basic-tool-tool-arg"] {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 440;
+    line-height: 1;
+    letter-spacing: -0.04px;
+    color: var(--bt-args);
+    font-variation-settings: "slnt" 0;
+    user-select: none;
+  }
+
+  [data-slot="basic-tool-diff"] {
+    flex-shrink: 0;
+  }
+
+  [data-slot="basic-tool-diff"] [data-component="diff-changes"] {
+    gap: 4px;
+  }
+
+  [data-slot="basic-tool-action"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: var(--text-primary);
+    opacity: 0.85;
+    transition: opacity 150ms ease, color 150ms ease;
+  }
+
+  &.group:hover [data-slot="basic-tool-action"],
+  &:hover [data-slot="basic-tool-action"] {
+    opacity: 1;
+    color: var(--text-primary);
+  }
+
+  [data-slot="basic-tool-content"] {
+    box-sizing: border-box;
+    min-width: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  [data-slot="basic-tool-content-inner"] {
+    font-size: 15px;
+    font-weight: 440;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: var(--bt-content);
+    font-variation-settings: "slnt" 0;
+  }
+}

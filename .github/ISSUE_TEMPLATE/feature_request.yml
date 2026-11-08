@@ -1,0 +1,58 @@
+name: Feature Request
+description: Suggest an idea or enhancement for Argos
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting an improvement or new feature for Argos!
+        Please review existing feature requests and discussions before submitting.
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Area / Component
+      description: Which part of Argos does this feature target?
+      options:
+        - "Agent Intelligence & Workflows"
+        - "CVSS Scoring & Vulnerability Management"
+        - "Compliance & Frameworks (PCI, ISO, SOC 2, NIST)"
+        - "Desktop UI / UX"
+        - "Reporting & Artifacts (SARIF, SBOM, PDF)"
+        - "Native CLI & Go Binaries (argos-bin)"
+        - "Integrations & LLM Providers"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Motivation
+      description: Is your feature request related to a specific problem or workflow friction?
+      placeholder: A clear and concise description of the challenge or workflow you want to solve.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution or Behavior
+      description: Describe what you would like to see happen.
+      placeholder: A clear and concise description of the proposed feature or design.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any alternative solutions or workarounds you've considered.
+      placeholder: Describe alternatives or why existing features do not suffice.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Add any other context, mockups, or references here.

@@ -1,0 +1,5378 @@
+{
+  "meta": {
+    "framework": "pci_dss_v4",
+    "title": "PCI DSS v4.0.1",
+    "version": "v4.0.1",
+    "generatedFrom": "compliance/pci-dss.ts (PCI DSS v4.0.1)",
+    "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)",
+    "sourceUrl": "https://www.pcisecuritystandards.org/document_library/",
+    "disclaimer": "Argos provides reference identifiers and heuristic finding mappings only. This catalog does not reproduce PCI DSS requirement text and does not constitute a PCI DSS compliance assessment. Consult the official standard for authoritative requirements.",
+    "requirements": 12,
+    "controls": 204,
+    "evaluableControls": 27,
+    "notEvaluableControls": 177,
+    "excludedNestedControls": [
+      "3.3.1.1",
+      "3.3.1.2",
+      "3.3.1.3",
+      "3.5.1.1",
+      "3.5.1.2",
+      "3.5.1.3",
+      "3.6.1.1",
+      "3.6.1.2",
+      "3.6.1.3",
+      "4.2.1.1",
+      "4.2.1.2",
+      "5.2.3.1",
+      "5.3.2.1",
+      "6.2.3.1",
+      "7.2.5.1",
+      "8.3.10.1",
+      "9.2.1.1",
+      "9.3.1.1",
+      "9.4.1.1",
+      "9.4.1.2",
+      "9.4.5.1",
+      "9.5.1.1",
+      "9.5.1.2",
+      "9.5.1.2.1",
+      "9.5.1.3",
+      "10.2.1.1",
+      "10.2.1.2",
+      "10.2.1.3",
+      "10.2.1.4",
+      "10.2.1.5",
+      "10.2.1.6",
+      "10.4.1.1",
+      "10.4.2.1",
+      "11.3.1.1",
+      "11.3.1.2",
+      "11.3.1.3",
+      "11.3.2.1",
+      "11.5.1.1",
+      "12.4.2.1",
+      "12.5.2.1",
+      "12.6.3.1",
+      "12.6.3.2",
+      "12.10.4.1"
+    ]
+  },
+  "controls": [
+    {
+      "id": "1",
+      "title": "PCI DSS reference 1",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00001",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "2",
+      "title": "PCI DSS reference 2",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00002",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "2",
+        "requirementTitle": "PCI DSS reference 2",
+        "description": "Consult the official PCI DSS documentation for reference 2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3",
+      "title": "PCI DSS reference 3",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00003",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "4",
+      "title": "PCI DSS reference 4",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00004",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "4",
+        "requirementTitle": "PCI DSS reference 4",
+        "description": "Consult the official PCI DSS documentation for reference 4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "5",
+      "title": "PCI DSS reference 5",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00005",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "5",
+        "requirementTitle": "PCI DSS reference 5",
+        "description": "Consult the official PCI DSS documentation for reference 5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6",
+      "title": "PCI DSS reference 6",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00006",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "7",
+      "title": "PCI DSS reference 7",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00007",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "7",
+        "requirementTitle": "PCI DSS reference 7",
+        "description": "Consult the official PCI DSS documentation for reference 7.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8",
+      "title": "PCI DSS reference 8",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00008",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9",
+      "title": "PCI DSS reference 9",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00009",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10",
+      "title": "PCI DSS reference 10",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00010",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11",
+      "title": "PCI DSS reference 11",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00011",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12",
+      "title": "PCI DSS reference 12",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00012",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.1",
+      "title": "PCI DSS reference 1.1",
+      "parentId": "1",
+      "level": "category",
+      "sortId": "00013",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.1.1",
+      "title": "PCI DSS reference 1.1.1",
+      "parentId": "1.1",
+      "level": "control",
+      "sortId": "00014",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.1.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.1.2",
+      "title": "PCI DSS reference 1.1.2",
+      "parentId": "1.1",
+      "level": "control",
+      "sortId": "00015",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.1.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.2",
+      "title": "PCI DSS reference 1.2",
+      "parentId": "1",
+      "level": "category",
+      "sortId": "00016",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.2.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "open-ports",
+            "port-scan",
+            "service-discovery",
+            "exposed-service",
+            "open-share",
+            "smb-share",
+            "rdp",
+            "vpn"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.2.1",
+      "title": "PCI DSS reference 1.2.1",
+      "parentId": "1.2",
+      "level": "control",
+      "sortId": "00017",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.2.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.2.2",
+      "title": "PCI DSS reference 1.2.2",
+      "parentId": "1.2",
+      "level": "control",
+      "sortId": "00018",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.2.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.2.3",
+      "title": "PCI DSS reference 1.2.3",
+      "parentId": "1.2",
+      "level": "control",
+      "sortId": "00019",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.2.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.2.4",
+      "title": "PCI DSS reference 1.2.4",
+      "parentId": "1.2",
+      "level": "control",
+      "sortId": "00020",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.2.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.2.5",
+      "title": "PCI DSS reference 1.2.5",
+      "parentId": "1.2",
+      "level": "control",
+      "sortId": "00021",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.2.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.2.6",
+      "title": "PCI DSS reference 1.2.6",
+      "parentId": "1.2",
+      "level": "control",
+      "sortId": "00022",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.2.6.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.2.7",
+      "title": "PCI DSS reference 1.2.7",
+      "parentId": "1.2",
+      "level": "control",
+      "sortId": "00023",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.2.7.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "open-ports",
+            "port-scan",
+            "service-discovery",
+            "exposed-service",
+            "open-share",
+            "smb-share",
+            "rdp",
+            "vpn"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.2.8",
+      "title": "PCI DSS reference 1.2.8",
+      "parentId": "1.2",
+      "level": "control",
+      "sortId": "00024",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.2.8.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.3",
+      "title": "PCI DSS reference 1.3",
+      "parentId": "1",
+      "level": "category",
+      "sortId": "00025",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.3.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "open-ports",
+            "port-scan",
+            "service-discovery",
+            "exposed-service",
+            "open-share",
+            "smb-share",
+            "rdp",
+            "vpn"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.3.1",
+      "title": "PCI DSS reference 1.3.1",
+      "parentId": "1.3",
+      "level": "control",
+      "sortId": "00026",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.3.1.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "open-ports",
+            "port-scan",
+            "service-discovery",
+            "exposed-service",
+            "open-share",
+            "smb-share",
+            "rdp",
+            "vpn"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.3.2",
+      "title": "PCI DSS reference 1.3.2",
+      "parentId": "1.3",
+      "level": "control",
+      "sortId": "00027",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.3.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.3.3",
+      "title": "PCI DSS reference 1.3.3",
+      "parentId": "1.3",
+      "level": "control",
+      "sortId": "00028",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.3.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.4",
+      "title": "PCI DSS reference 1.4",
+      "parentId": "1",
+      "level": "category",
+      "sortId": "00029",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.4.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "open-ports",
+            "port-scan",
+            "service-discovery",
+            "exposed-service",
+            "open-share",
+            "smb-share",
+            "rdp",
+            "vpn"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.4.1",
+      "title": "PCI DSS reference 1.4.1",
+      "parentId": "1.4",
+      "level": "control",
+      "sortId": "00030",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.4.1.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "open-ports",
+            "port-scan",
+            "service-discovery",
+            "exposed-service",
+            "open-share",
+            "smb-share",
+            "rdp",
+            "vpn"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.4.2",
+      "title": "PCI DSS reference 1.4.2",
+      "parentId": "1.4",
+      "level": "control",
+      "sortId": "00031",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.4.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.4.3",
+      "title": "PCI DSS reference 1.4.3",
+      "parentId": "1.4",
+      "level": "control",
+      "sortId": "00032",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.4.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.4.4",
+      "title": "PCI DSS reference 1.4.4",
+      "parentId": "1.4",
+      "level": "control",
+      "sortId": "00033",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.4.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.4.5",
+      "title": "PCI DSS reference 1.4.5",
+      "parentId": "1.4",
+      "level": "control",
+      "sortId": "00034",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.4.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "1.5",
+      "title": "PCI DSS reference 1.5",
+      "parentId": "1",
+      "level": "category",
+      "sortId": "00035",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "1",
+        "requirementTitle": "PCI DSS reference 1",
+        "description": "Consult the official PCI DSS documentation for reference 1.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "2.1",
+      "title": "PCI DSS reference 2.1",
+      "parentId": "2",
+      "level": "category",
+      "sortId": "00036",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "2",
+        "requirementTitle": "PCI DSS reference 2",
+        "description": "Consult the official PCI DSS documentation for reference 2.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "2.1.1",
+      "title": "PCI DSS reference 2.1.1",
+      "parentId": "2.1",
+      "level": "control",
+      "sortId": "00037",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "2",
+        "requirementTitle": "PCI DSS reference 2",
+        "description": "Consult the official PCI DSS documentation for reference 2.1.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "2.1.2",
+      "title": "PCI DSS reference 2.1.2",
+      "parentId": "2.1",
+      "level": "control",
+      "sortId": "00038",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "2",
+        "requirementTitle": "PCI DSS reference 2",
+        "description": "Consult the official PCI DSS documentation for reference 2.1.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "2.2",
+      "title": "PCI DSS reference 2.2",
+      "parentId": "2",
+      "level": "category",
+      "sortId": "00039",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "2",
+        "requirementTitle": "PCI DSS reference 2",
+        "description": "Consult the official PCI DSS documentation for reference 2.2.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "open-bucket",
+            "cloud-misconfig",
+            "s3-exposure",
+            "cloud-storage",
+            "aws",
+            "azure",
+            "gcp"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "2.2.1",
+      "title": "PCI DSS reference 2.2.1",
+      "parentId": "2.2",
+      "level": "control",
+      "sortId": "00040",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "2",
+        "requirementTitle": "PCI DSS reference 2",
+        "description": "Consult the official PCI DSS documentation for reference 2.2.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "2.2.2",
+      "title": "PCI DSS reference 2.2.2",
+      "parentId": "2.2",
+      "level": "control",
+      "sortId": "00041",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "2",
+        "requirementTitle": "PCI DSS reference 2",
+        "description": "Consult the official PCI DSS documentation for reference 2.2.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "2.2.3",
+      "title": "PCI DSS reference 2.2.3",
+      "parentId": "2.2",
+      "level": "control",
+      "sortId": "00042",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "2",
+        "requirementTitle": "PCI DSS reference 2",
+        "description": "Consult the official PCI DSS documentation for reference 2.2.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "2.2.4",
+      "title": "PCI DSS reference 2.2.4",
+      "parentId": "2.2",
+      "level": "control",
+      "sortId": "00043",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "2",
+        "requirementTitle": "PCI DSS reference 2",
+        "description": "Consult the official PCI DSS documentation for reference 2.2.4.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "open-bucket",
+            "cloud-misconfig",
+            "s3-exposure",
+            "cloud-storage",
+            "aws",
+            "azure",
+            "gcp"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "2.2.5",
+      "title": "PCI DSS reference 2.2.5",
+      "parentId": "2.2",
+      "level": "control",
+      "sortId": "00044",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "2",
+        "requirementTitle": "PCI DSS reference 2",
+        "description": "Consult the official PCI DSS documentation for reference 2.2.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "2.2.6",
+      "title": "PCI DSS reference 2.2.6",
+      "parentId": "2.2",
+      "level": "control",
+      "sortId": "00045",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "2",
+        "requirementTitle": "PCI DSS reference 2",
+        "description": "Consult the official PCI DSS documentation for reference 2.2.6.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "2.2.7",
+      "title": "PCI DSS reference 2.2.7",
+      "parentId": "2.2",
+      "level": "control",
+      "sortId": "00046",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "2",
+        "requirementTitle": "PCI DSS reference 2",
+        "description": "Consult the official PCI DSS documentation for reference 2.2.7.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "2.3",
+      "title": "PCI DSS reference 2.3",
+      "parentId": "2",
+      "level": "category",
+      "sortId": "00047",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "2",
+        "requirementTitle": "PCI DSS reference 2",
+        "description": "Consult the official PCI DSS documentation for reference 2.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "2.3.1",
+      "title": "PCI DSS reference 2.3.1",
+      "parentId": "2.3",
+      "level": "control",
+      "sortId": "00048",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "2",
+        "requirementTitle": "PCI DSS reference 2",
+        "description": "Consult the official PCI DSS documentation for reference 2.3.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "2.3.2",
+      "title": "PCI DSS reference 2.3.2",
+      "parentId": "2.3",
+      "level": "control",
+      "sortId": "00049",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "2",
+        "requirementTitle": "PCI DSS reference 2",
+        "description": "Consult the official PCI DSS documentation for reference 2.3.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.1",
+      "title": "PCI DSS reference 3.1",
+      "parentId": "3",
+      "level": "category",
+      "sortId": "00050",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.1.1",
+      "title": "PCI DSS reference 3.1.1",
+      "parentId": "3.1",
+      "level": "control",
+      "sortId": "00051",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.1.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.1.2",
+      "title": "PCI DSS reference 3.1.2",
+      "parentId": "3.1",
+      "level": "control",
+      "sortId": "00052",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.1.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.2",
+      "title": "PCI DSS reference 3.2",
+      "parentId": "3",
+      "level": "category",
+      "sortId": "00053",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.2.1",
+      "title": "PCI DSS reference 3.2.1",
+      "parentId": "3.2",
+      "level": "control",
+      "sortId": "00054",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.2.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.3",
+      "title": "PCI DSS reference 3.3",
+      "parentId": "3",
+      "level": "category",
+      "sortId": "00055",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.3.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "information-disclosure",
+            "pii",
+            "data-exposure",
+            "git-exposure",
+            "data-exfiltration"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.3.1",
+      "title": "PCI DSS reference 3.3.1",
+      "parentId": "3.3",
+      "level": "control",
+      "sortId": "00056",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.3.1.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "information-disclosure",
+            "pii",
+            "data-exposure",
+            "git-exposure",
+            "data-exfiltration"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.3.2",
+      "title": "PCI DSS reference 3.3.2",
+      "parentId": "3.3",
+      "level": "control",
+      "sortId": "00057",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.3.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.3.3",
+      "title": "PCI DSS reference 3.3.3",
+      "parentId": "3.3",
+      "level": "control",
+      "sortId": "00058",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.3.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.4",
+      "title": "PCI DSS reference 3.4",
+      "parentId": "3",
+      "level": "category",
+      "sortId": "00059",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.4.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "tls",
+            "weak-crypto",
+            "self-signed",
+            "invalid-cert",
+            "missing-hsts",
+            "hsts",
+            "cleartext",
+            "plaintext",
+            "missing-tls",
+            "weak-cipher"
+          ],
+          "cwes": [
+            "319",
+            "311",
+            "326",
+            "327",
+            "295"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.4.1",
+      "title": "PCI DSS reference 3.4.1",
+      "parentId": "3.4",
+      "level": "control",
+      "sortId": "00060",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.4.1.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "tls",
+            "weak-crypto",
+            "self-signed",
+            "invalid-cert",
+            "missing-hsts",
+            "hsts",
+            "cleartext",
+            "plaintext",
+            "missing-tls",
+            "weak-cipher"
+          ],
+          "cwes": [
+            "319",
+            "311",
+            "326",
+            "327",
+            "295"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.4.2",
+      "title": "PCI DSS reference 3.4.2",
+      "parentId": "3.4",
+      "level": "control",
+      "sortId": "00061",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.4.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.5",
+      "title": "PCI DSS reference 3.5",
+      "parentId": "3",
+      "level": "category",
+      "sortId": "00062",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.5.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "secret-exposure",
+            "hardcoded-secret",
+            "api-key",
+            "token",
+            ".env",
+            "credentials",
+            "password-store",
+            "open-bucket",
+            "cloud-misconfig",
+            "s3-exposure",
+            "cloud-storage",
+            "aws",
+            "azure",
+            "gcp"
+          ],
+          "cwes": [
+            "200",
+            "522",
+            "256"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.5.1",
+      "title": "PCI DSS reference 3.5.1",
+      "parentId": "3.5",
+      "level": "control",
+      "sortId": "00063",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.5.1.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "secret-exposure",
+            "hardcoded-secret",
+            "api-key",
+            "token",
+            ".env",
+            "credentials",
+            "password-store",
+            "open-bucket",
+            "cloud-misconfig",
+            "s3-exposure",
+            "cloud-storage",
+            "aws",
+            "azure",
+            "gcp"
+          ],
+          "cwes": [
+            "200",
+            "522",
+            "256"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.6",
+      "title": "PCI DSS reference 3.6",
+      "parentId": "3",
+      "level": "category",
+      "sortId": "00064",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.6.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.6.1",
+      "title": "PCI DSS reference 3.6.1",
+      "parentId": "3.6",
+      "level": "control",
+      "sortId": "00065",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.6.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.7",
+      "title": "PCI DSS reference 3.7",
+      "parentId": "3",
+      "level": "category",
+      "sortId": "00066",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.7.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.7.1",
+      "title": "PCI DSS reference 3.7.1",
+      "parentId": "3.7",
+      "level": "control",
+      "sortId": "00067",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.7.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.7.2",
+      "title": "PCI DSS reference 3.7.2",
+      "parentId": "3.7",
+      "level": "control",
+      "sortId": "00068",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.7.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.7.3",
+      "title": "PCI DSS reference 3.7.3",
+      "parentId": "3.7",
+      "level": "control",
+      "sortId": "00069",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.7.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.7.4",
+      "title": "PCI DSS reference 3.7.4",
+      "parentId": "3.7",
+      "level": "control",
+      "sortId": "00070",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.7.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.7.5",
+      "title": "PCI DSS reference 3.7.5",
+      "parentId": "3.7",
+      "level": "control",
+      "sortId": "00071",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.7.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.7.6",
+      "title": "PCI DSS reference 3.7.6",
+      "parentId": "3.7",
+      "level": "control",
+      "sortId": "00072",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.7.6.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.7.7",
+      "title": "PCI DSS reference 3.7.7",
+      "parentId": "3.7",
+      "level": "control",
+      "sortId": "00073",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.7.7.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.7.8",
+      "title": "PCI DSS reference 3.7.8",
+      "parentId": "3.7",
+      "level": "control",
+      "sortId": "00074",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.7.8.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "3.7.9",
+      "title": "PCI DSS reference 3.7.9",
+      "parentId": "3.7",
+      "level": "control",
+      "sortId": "00075",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "3",
+        "requirementTitle": "PCI DSS reference 3",
+        "description": "Consult the official PCI DSS documentation for reference 3.7.9.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "4.1",
+      "title": "PCI DSS reference 4.1",
+      "parentId": "4",
+      "level": "category",
+      "sortId": "00076",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "4",
+        "requirementTitle": "PCI DSS reference 4",
+        "description": "Consult the official PCI DSS documentation for reference 4.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "4.1.1",
+      "title": "PCI DSS reference 4.1.1",
+      "parentId": "4.1",
+      "level": "control",
+      "sortId": "00077",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "4",
+        "requirementTitle": "PCI DSS reference 4",
+        "description": "Consult the official PCI DSS documentation for reference 4.1.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "4.1.2",
+      "title": "PCI DSS reference 4.1.2",
+      "parentId": "4.1",
+      "level": "control",
+      "sortId": "00078",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "4",
+        "requirementTitle": "PCI DSS reference 4",
+        "description": "Consult the official PCI DSS documentation for reference 4.1.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "4.2",
+      "title": "PCI DSS reference 4.2",
+      "parentId": "4",
+      "level": "category",
+      "sortId": "00079",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "4",
+        "requirementTitle": "PCI DSS reference 4",
+        "description": "Consult the official PCI DSS documentation for reference 4.2.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "tls",
+            "weak-crypto",
+            "self-signed",
+            "invalid-cert",
+            "missing-hsts",
+            "hsts",
+            "cleartext",
+            "plaintext",
+            "missing-tls",
+            "weak-cipher"
+          ],
+          "cwes": [
+            "319",
+            "311",
+            "326",
+            "327",
+            "295"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "4.2.1",
+      "title": "PCI DSS reference 4.2.1",
+      "parentId": "4.2",
+      "level": "control",
+      "sortId": "00080",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "4",
+        "requirementTitle": "PCI DSS reference 4",
+        "description": "Consult the official PCI DSS documentation for reference 4.2.1.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "tls",
+            "weak-crypto",
+            "self-signed",
+            "invalid-cert",
+            "missing-hsts",
+            "hsts",
+            "cleartext",
+            "plaintext",
+            "missing-tls",
+            "weak-cipher"
+          ],
+          "cwes": [
+            "319",
+            "311",
+            "326",
+            "327",
+            "295"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "4.2.2",
+      "title": "PCI DSS reference 4.2.2",
+      "parentId": "4.2",
+      "level": "control",
+      "sortId": "00081",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "4",
+        "requirementTitle": "PCI DSS reference 4",
+        "description": "Consult the official PCI DSS documentation for reference 4.2.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "5.1",
+      "title": "PCI DSS reference 5.1",
+      "parentId": "5",
+      "level": "category",
+      "sortId": "00082",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "5",
+        "requirementTitle": "PCI DSS reference 5",
+        "description": "Consult the official PCI DSS documentation for reference 5.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "5.1.1",
+      "title": "PCI DSS reference 5.1.1",
+      "parentId": "5.1",
+      "level": "control",
+      "sortId": "00083",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "5",
+        "requirementTitle": "PCI DSS reference 5",
+        "description": "Consult the official PCI DSS documentation for reference 5.1.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "5.1.2",
+      "title": "PCI DSS reference 5.1.2",
+      "parentId": "5.1",
+      "level": "control",
+      "sortId": "00084",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "5",
+        "requirementTitle": "PCI DSS reference 5",
+        "description": "Consult the official PCI DSS documentation for reference 5.1.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "5.2",
+      "title": "PCI DSS reference 5.2",
+      "parentId": "5",
+      "level": "category",
+      "sortId": "00085",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "5",
+        "requirementTitle": "PCI DSS reference 5",
+        "description": "Consult the official PCI DSS documentation for reference 5.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "5.2.1",
+      "title": "PCI DSS reference 5.2.1",
+      "parentId": "5.2",
+      "level": "control",
+      "sortId": "00086",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "5",
+        "requirementTitle": "PCI DSS reference 5",
+        "description": "Consult the official PCI DSS documentation for reference 5.2.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "5.2.2",
+      "title": "PCI DSS reference 5.2.2",
+      "parentId": "5.2",
+      "level": "control",
+      "sortId": "00087",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "5",
+        "requirementTitle": "PCI DSS reference 5",
+        "description": "Consult the official PCI DSS documentation for reference 5.2.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "5.2.3",
+      "title": "PCI DSS reference 5.2.3",
+      "parentId": "5.2",
+      "level": "control",
+      "sortId": "00088",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "5",
+        "requirementTitle": "PCI DSS reference 5",
+        "description": "Consult the official PCI DSS documentation for reference 5.2.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "5.3",
+      "title": "PCI DSS reference 5.3",
+      "parentId": "5",
+      "level": "category",
+      "sortId": "00089",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "5",
+        "requirementTitle": "PCI DSS reference 5",
+        "description": "Consult the official PCI DSS documentation for reference 5.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "5.3.1",
+      "title": "PCI DSS reference 5.3.1",
+      "parentId": "5.3",
+      "level": "control",
+      "sortId": "00090",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "5",
+        "requirementTitle": "PCI DSS reference 5",
+        "description": "Consult the official PCI DSS documentation for reference 5.3.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "5.3.2",
+      "title": "PCI DSS reference 5.3.2",
+      "parentId": "5.3",
+      "level": "control",
+      "sortId": "00091",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "5",
+        "requirementTitle": "PCI DSS reference 5",
+        "description": "Consult the official PCI DSS documentation for reference 5.3.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "5.3.3",
+      "title": "PCI DSS reference 5.3.3",
+      "parentId": "5.3",
+      "level": "control",
+      "sortId": "00092",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "5",
+        "requirementTitle": "PCI DSS reference 5",
+        "description": "Consult the official PCI DSS documentation for reference 5.3.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "5.3.4",
+      "title": "PCI DSS reference 5.3.4",
+      "parentId": "5.3",
+      "level": "control",
+      "sortId": "00093",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "5",
+        "requirementTitle": "PCI DSS reference 5",
+        "description": "Consult the official PCI DSS documentation for reference 5.3.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "5.3.5",
+      "title": "PCI DSS reference 5.3.5",
+      "parentId": "5.3",
+      "level": "control",
+      "sortId": "00094",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "5",
+        "requirementTitle": "PCI DSS reference 5",
+        "description": "Consult the official PCI DSS documentation for reference 5.3.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "5.4",
+      "title": "PCI DSS reference 5.4",
+      "parentId": "5",
+      "level": "category",
+      "sortId": "00095",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "5",
+        "requirementTitle": "PCI DSS reference 5",
+        "description": "Consult the official PCI DSS documentation for reference 5.4.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "phishing",
+            "spoof",
+            "dmarc"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "5.4.1",
+      "title": "PCI DSS reference 5.4.1",
+      "parentId": "5.4",
+      "level": "control",
+      "sortId": "00096",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "5",
+        "requirementTitle": "PCI DSS reference 5",
+        "description": "Consult the official PCI DSS documentation for reference 5.4.1.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "phishing",
+            "spoof",
+            "dmarc"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.1",
+      "title": "PCI DSS reference 6.1",
+      "parentId": "6",
+      "level": "category",
+      "sortId": "00097",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.1.1",
+      "title": "PCI DSS reference 6.1.1",
+      "parentId": "6.1",
+      "level": "control",
+      "sortId": "00098",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.1.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.1.2",
+      "title": "PCI DSS reference 6.1.2",
+      "parentId": "6.1",
+      "level": "control",
+      "sortId": "00099",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.1.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.2",
+      "title": "PCI DSS reference 6.2",
+      "parentId": "6",
+      "level": "category",
+      "sortId": "00100",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.2.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "xss",
+            "sqli",
+            "command-injection",
+            "rce",
+            "code-injection",
+            "path-traversal",
+            "ssrf",
+            "xxe",
+            "deserialization",
+            "idor",
+            "broken-access-control",
+            "upload",
+            "open-redirect"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.2.1",
+      "title": "PCI DSS reference 6.2.1",
+      "parentId": "6.2",
+      "level": "control",
+      "sortId": "00101",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.2.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.2.2",
+      "title": "PCI DSS reference 6.2.2",
+      "parentId": "6.2",
+      "level": "control",
+      "sortId": "00102",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.2.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.2.3",
+      "title": "PCI DSS reference 6.2.3",
+      "parentId": "6.2",
+      "level": "control",
+      "sortId": "00103",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.2.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.2.4",
+      "title": "PCI DSS reference 6.2.4",
+      "parentId": "6.2",
+      "level": "control",
+      "sortId": "00104",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.2.4.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "xss",
+            "sqli",
+            "command-injection",
+            "rce",
+            "code-injection",
+            "path-traversal",
+            "ssrf",
+            "xxe",
+            "deserialization",
+            "idor",
+            "broken-access-control",
+            "upload",
+            "open-redirect",
+            "dos",
+            "resource-exhaustion",
+            "rate-limit",
+            "information-disclosure",
+            "pii",
+            "data-exposure",
+            "git-exposure",
+            "data-exfiltration"
+          ],
+          "cwes": [
+            "89",
+            "78",
+            "79",
+            "22",
+            "94",
+            "918",
+            "502",
+            "434",
+            "611",
+            "77",
+            "95",
+            "400",
+            "770",
+            "799"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.3",
+      "title": "PCI DSS reference 6.3",
+      "parentId": "6",
+      "level": "category",
+      "sortId": "00105",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.3.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "xss",
+            "sqli",
+            "command-injection",
+            "rce",
+            "code-injection",
+            "path-traversal",
+            "ssrf",
+            "xxe",
+            "deserialization",
+            "idor",
+            "broken-access-control",
+            "upload",
+            "open-redirect",
+            "supply-chain",
+            "dependency",
+            "malicious-package",
+            "typosquatting",
+            "dependency-confusion"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.3.1",
+      "title": "PCI DSS reference 6.3.1",
+      "parentId": "6.3",
+      "level": "control",
+      "sortId": "00106",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.3.1.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "xss",
+            "sqli",
+            "command-injection",
+            "rce",
+            "code-injection",
+            "path-traversal",
+            "ssrf",
+            "xxe",
+            "deserialization",
+            "idor",
+            "broken-access-control",
+            "upload",
+            "open-redirect"
+          ],
+          "cwes": [
+            "89",
+            "78",
+            "79",
+            "22",
+            "94",
+            "918",
+            "502",
+            "434",
+            "611",
+            "77",
+            "95"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.3.2",
+      "title": "PCI DSS reference 6.3.2",
+      "parentId": "6.3",
+      "level": "control",
+      "sortId": "00107",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.3.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.3.3",
+      "title": "PCI DSS reference 6.3.3",
+      "parentId": "6.3",
+      "level": "control",
+      "sortId": "00108",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.3.3.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "supply-chain",
+            "dependency",
+            "malicious-package",
+            "typosquatting",
+            "dependency-confusion"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.4",
+      "title": "PCI DSS reference 6.4",
+      "parentId": "6",
+      "level": "category",
+      "sortId": "00109",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.4.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "xss",
+            "sqli",
+            "command-injection",
+            "rce",
+            "code-injection",
+            "path-traversal",
+            "ssrf",
+            "xxe",
+            "deserialization",
+            "idor",
+            "broken-access-control",
+            "upload",
+            "open-redirect",
+            "dos",
+            "resource-exhaustion",
+            "rate-limit",
+            "supply-chain",
+            "dependency",
+            "malicious-package",
+            "typosquatting",
+            "dependency-confusion"
+          ],
+          "cwes": [
+            "639",
+            "862",
+            "863",
+            "284",
+            "400",
+            "770",
+            "799"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.4.1",
+      "title": "PCI DSS reference 6.4.1",
+      "parentId": "6.4",
+      "level": "control",
+      "sortId": "00110",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.4.1.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "idor",
+            "broken-access-control",
+            "dos",
+            "resource-exhaustion",
+            "rate-limit"
+          ],
+          "cwes": [
+            "639",
+            "862",
+            "863",
+            "284",
+            "400",
+            "770",
+            "799"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.4.2",
+      "title": "PCI DSS reference 6.4.2",
+      "parentId": "6.4",
+      "level": "control",
+      "sortId": "00111",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.4.2.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "supply-chain",
+            "dependency",
+            "malicious-package",
+            "typosquatting",
+            "dependency-confusion"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.4.3",
+      "title": "PCI DSS reference 6.4.3",
+      "parentId": "6.4",
+      "level": "control",
+      "sortId": "00112",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.4.3.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "xss",
+            "sqli",
+            "command-injection",
+            "rce",
+            "code-injection",
+            "path-traversal",
+            "ssrf",
+            "xxe",
+            "deserialization",
+            "idor",
+            "broken-access-control",
+            "upload",
+            "open-redirect"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.5",
+      "title": "PCI DSS reference 6.5",
+      "parentId": "6",
+      "level": "category",
+      "sortId": "00113",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.5.1",
+      "title": "PCI DSS reference 6.5.1",
+      "parentId": "6.5",
+      "level": "control",
+      "sortId": "00114",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.5.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.5.2",
+      "title": "PCI DSS reference 6.5.2",
+      "parentId": "6.5",
+      "level": "control",
+      "sortId": "00115",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.5.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.5.3",
+      "title": "PCI DSS reference 6.5.3",
+      "parentId": "6.5",
+      "level": "control",
+      "sortId": "00116",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.5.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.5.4",
+      "title": "PCI DSS reference 6.5.4",
+      "parentId": "6.5",
+      "level": "control",
+      "sortId": "00117",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.5.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.5.5",
+      "title": "PCI DSS reference 6.5.5",
+      "parentId": "6.5",
+      "level": "control",
+      "sortId": "00118",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.5.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "6.5.6",
+      "title": "PCI DSS reference 6.5.6",
+      "parentId": "6.5",
+      "level": "control",
+      "sortId": "00119",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "6",
+        "requirementTitle": "PCI DSS reference 6",
+        "description": "Consult the official PCI DSS documentation for reference 6.5.6.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "7.1",
+      "title": "PCI DSS reference 7.1",
+      "parentId": "7",
+      "level": "category",
+      "sortId": "00120",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "7",
+        "requirementTitle": "PCI DSS reference 7",
+        "description": "Consult the official PCI DSS documentation for reference 7.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "7.1.1",
+      "title": "PCI DSS reference 7.1.1",
+      "parentId": "7.1",
+      "level": "control",
+      "sortId": "00121",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "7",
+        "requirementTitle": "PCI DSS reference 7",
+        "description": "Consult the official PCI DSS documentation for reference 7.1.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "7.1.2",
+      "title": "PCI DSS reference 7.1.2",
+      "parentId": "7.1",
+      "level": "control",
+      "sortId": "00122",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "7",
+        "requirementTitle": "PCI DSS reference 7",
+        "description": "Consult the official PCI DSS documentation for reference 7.1.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "7.2",
+      "title": "PCI DSS reference 7.2",
+      "parentId": "7",
+      "level": "category",
+      "sortId": "00123",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "7",
+        "requirementTitle": "PCI DSS reference 7",
+        "description": "Consult the official PCI DSS documentation for reference 7.2.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "idor",
+            "broken-access-control"
+          ],
+          "cwes": [
+            "639",
+            "862",
+            "863",
+            "284"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "7.2.1",
+      "title": "PCI DSS reference 7.2.1",
+      "parentId": "7.2",
+      "level": "control",
+      "sortId": "00124",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "7",
+        "requirementTitle": "PCI DSS reference 7",
+        "description": "Consult the official PCI DSS documentation for reference 7.2.1.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "idor",
+            "broken-access-control"
+          ],
+          "cwes": [
+            "639",
+            "862",
+            "863",
+            "284"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "7.2.2",
+      "title": "PCI DSS reference 7.2.2",
+      "parentId": "7.2",
+      "level": "control",
+      "sortId": "00125",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "7",
+        "requirementTitle": "PCI DSS reference 7",
+        "description": "Consult the official PCI DSS documentation for reference 7.2.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "7.2.3",
+      "title": "PCI DSS reference 7.2.3",
+      "parentId": "7.2",
+      "level": "control",
+      "sortId": "00126",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "7",
+        "requirementTitle": "PCI DSS reference 7",
+        "description": "Consult the official PCI DSS documentation for reference 7.2.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "7.2.4",
+      "title": "PCI DSS reference 7.2.4",
+      "parentId": "7.2",
+      "level": "control",
+      "sortId": "00127",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "7",
+        "requirementTitle": "PCI DSS reference 7",
+        "description": "Consult the official PCI DSS documentation for reference 7.2.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "7.2.5",
+      "title": "PCI DSS reference 7.2.5",
+      "parentId": "7.2",
+      "level": "control",
+      "sortId": "00128",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "7",
+        "requirementTitle": "PCI DSS reference 7",
+        "description": "Consult the official PCI DSS documentation for reference 7.2.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "7.2.6",
+      "title": "PCI DSS reference 7.2.6",
+      "parentId": "7.2",
+      "level": "control",
+      "sortId": "00129",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "7",
+        "requirementTitle": "PCI DSS reference 7",
+        "description": "Consult the official PCI DSS documentation for reference 7.2.6.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "7.3",
+      "title": "PCI DSS reference 7.3",
+      "parentId": "7",
+      "level": "category",
+      "sortId": "00130",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "7",
+        "requirementTitle": "PCI DSS reference 7",
+        "description": "Consult the official PCI DSS documentation for reference 7.3.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "idor",
+            "broken-access-control"
+          ],
+          "cwes": [
+            "639",
+            "862",
+            "863",
+            "284"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "7.3.1",
+      "title": "PCI DSS reference 7.3.1",
+      "parentId": "7.3",
+      "level": "control",
+      "sortId": "00131",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "7",
+        "requirementTitle": "PCI DSS reference 7",
+        "description": "Consult the official PCI DSS documentation for reference 7.3.1.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "idor",
+            "broken-access-control"
+          ],
+          "cwes": [
+            "639",
+            "862",
+            "863",
+            "284"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "7.3.2",
+      "title": "PCI DSS reference 7.3.2",
+      "parentId": "7.3",
+      "level": "control",
+      "sortId": "00132",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "7",
+        "requirementTitle": "PCI DSS reference 7",
+        "description": "Consult the official PCI DSS documentation for reference 7.3.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "7.3.3",
+      "title": "PCI DSS reference 7.3.3",
+      "parentId": "7.3",
+      "level": "control",
+      "sortId": "00133",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "7",
+        "requirementTitle": "PCI DSS reference 7",
+        "description": "Consult the official PCI DSS documentation for reference 7.3.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.1",
+      "title": "PCI DSS reference 8.1",
+      "parentId": "8",
+      "level": "category",
+      "sortId": "00134",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.1.1",
+      "title": "PCI DSS reference 8.1.1",
+      "parentId": "8.1",
+      "level": "control",
+      "sortId": "00135",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.1.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.1.2",
+      "title": "PCI DSS reference 8.1.2",
+      "parentId": "8.1",
+      "level": "control",
+      "sortId": "00136",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.1.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.2",
+      "title": "PCI DSS reference 8.2",
+      "parentId": "8",
+      "level": "category",
+      "sortId": "00137",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.2.1",
+      "title": "PCI DSS reference 8.2.1",
+      "parentId": "8.2",
+      "level": "control",
+      "sortId": "00138",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.2.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.2.2",
+      "title": "PCI DSS reference 8.2.2",
+      "parentId": "8.2",
+      "level": "control",
+      "sortId": "00139",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.2.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.2.3",
+      "title": "PCI DSS reference 8.2.3",
+      "parentId": "8.2",
+      "level": "control",
+      "sortId": "00140",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.2.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.2.4",
+      "title": "PCI DSS reference 8.2.4",
+      "parentId": "8.2",
+      "level": "control",
+      "sortId": "00141",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.2.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.2.5",
+      "title": "PCI DSS reference 8.2.5",
+      "parentId": "8.2",
+      "level": "control",
+      "sortId": "00142",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.2.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.2.6",
+      "title": "PCI DSS reference 8.2.6",
+      "parentId": "8.2",
+      "level": "control",
+      "sortId": "00143",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.2.6.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.2.7",
+      "title": "PCI DSS reference 8.2.7",
+      "parentId": "8.2",
+      "level": "control",
+      "sortId": "00144",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.2.7.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.2.8",
+      "title": "PCI DSS reference 8.2.8",
+      "parentId": "8.2",
+      "level": "control",
+      "sortId": "00145",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.2.8.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.3",
+      "title": "PCI DSS reference 8.3",
+      "parentId": "8",
+      "level": "category",
+      "sortId": "00146",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.3.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "auth",
+            "weak-auth",
+            "default-credentials",
+            "hardcoded-credentials",
+            "brute-force",
+            "mfa-bypass",
+            "password-spray",
+            "default-account",
+            "secret-exposure",
+            "hardcoded-secret",
+            "api-key",
+            "token",
+            ".env",
+            "credentials",
+            "password-store"
+          ],
+          "cwes": [
+            "287",
+            "306",
+            "307",
+            "521",
+            "640",
+            "798",
+            "862",
+            "863",
+            "200",
+            "522",
+            "256"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.3.1",
+      "title": "PCI DSS reference 8.3.1",
+      "parentId": "8.3",
+      "level": "control",
+      "sortId": "00147",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.3.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.3.2",
+      "title": "PCI DSS reference 8.3.2",
+      "parentId": "8.3",
+      "level": "control",
+      "sortId": "00148",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.3.2.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "auth",
+            "weak-auth",
+            "default-credentials",
+            "hardcoded-credentials",
+            "brute-force",
+            "mfa-bypass",
+            "password-spray",
+            "default-account",
+            "secret-exposure",
+            "hardcoded-secret",
+            "api-key",
+            "token",
+            ".env",
+            "credentials",
+            "password-store"
+          ],
+          "cwes": [
+            "287",
+            "306",
+            "307",
+            "521",
+            "640",
+            "798",
+            "862",
+            "863",
+            "200",
+            "522",
+            "256"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.3.3",
+      "title": "PCI DSS reference 8.3.3",
+      "parentId": "8.3",
+      "level": "control",
+      "sortId": "00149",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.3.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.3.4",
+      "title": "PCI DSS reference 8.3.4",
+      "parentId": "8.3",
+      "level": "control",
+      "sortId": "00150",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.3.4.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "auth",
+            "weak-auth",
+            "default-credentials",
+            "hardcoded-credentials",
+            "brute-force",
+            "mfa-bypass",
+            "password-spray",
+            "default-account"
+          ],
+          "cwes": [
+            "287",
+            "306",
+            "307",
+            "521",
+            "640",
+            "798",
+            "862",
+            "863"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.3.5",
+      "title": "PCI DSS reference 8.3.5",
+      "parentId": "8.3",
+      "level": "control",
+      "sortId": "00151",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.3.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.3.6",
+      "title": "PCI DSS reference 8.3.6",
+      "parentId": "8.3",
+      "level": "control",
+      "sortId": "00152",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.3.6.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "auth",
+            "weak-auth",
+            "default-credentials",
+            "hardcoded-credentials",
+            "brute-force",
+            "mfa-bypass",
+            "password-spray",
+            "default-account"
+          ],
+          "cwes": [
+            "287",
+            "306",
+            "307",
+            "521",
+            "640",
+            "798",
+            "862",
+            "863"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.3.7",
+      "title": "PCI DSS reference 8.3.7",
+      "parentId": "8.3",
+      "level": "control",
+      "sortId": "00153",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.3.7.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.3.8",
+      "title": "PCI DSS reference 8.3.8",
+      "parentId": "8.3",
+      "level": "control",
+      "sortId": "00154",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.3.8.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.3.9",
+      "title": "PCI DSS reference 8.3.9",
+      "parentId": "8.3",
+      "level": "control",
+      "sortId": "00155",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.3.9.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.3.10",
+      "title": "PCI DSS reference 8.3.10",
+      "parentId": "8.3",
+      "level": "control",
+      "sortId": "00156",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.3.10.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.3.11",
+      "title": "PCI DSS reference 8.3.11",
+      "parentId": "8.3",
+      "level": "control",
+      "sortId": "00157",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.3.11.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.4",
+      "title": "PCI DSS reference 8.4",
+      "parentId": "8",
+      "level": "category",
+      "sortId": "00158",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.4.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "auth",
+            "weak-auth",
+            "default-credentials",
+            "hardcoded-credentials",
+            "brute-force",
+            "mfa-bypass",
+            "password-spray",
+            "default-account"
+          ],
+          "cwes": [
+            "287",
+            "306",
+            "307",
+            "521",
+            "640",
+            "798",
+            "862",
+            "863"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.4.1",
+      "title": "PCI DSS reference 8.4.1",
+      "parentId": "8.4",
+      "level": "control",
+      "sortId": "00159",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.4.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.4.2",
+      "title": "PCI DSS reference 8.4.2",
+      "parentId": "8.4",
+      "level": "control",
+      "sortId": "00160",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.4.2.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "auth",
+            "weak-auth",
+            "default-credentials",
+            "hardcoded-credentials",
+            "brute-force",
+            "mfa-bypass",
+            "password-spray",
+            "default-account"
+          ],
+          "cwes": [
+            "287",
+            "306",
+            "307",
+            "521",
+            "640",
+            "798",
+            "862",
+            "863"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.4.3",
+      "title": "PCI DSS reference 8.4.3",
+      "parentId": "8.4",
+      "level": "control",
+      "sortId": "00161",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.4.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.5",
+      "title": "PCI DSS reference 8.5",
+      "parentId": "8",
+      "level": "category",
+      "sortId": "00162",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.5.1",
+      "title": "PCI DSS reference 8.5.1",
+      "parentId": "8.5",
+      "level": "control",
+      "sortId": "00163",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.5.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.6",
+      "title": "PCI DSS reference 8.6",
+      "parentId": "8",
+      "level": "category",
+      "sortId": "00164",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.6.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "auth",
+            "weak-auth",
+            "default-credentials",
+            "hardcoded-credentials",
+            "brute-force",
+            "mfa-bypass",
+            "password-spray",
+            "default-account"
+          ],
+          "cwes": [
+            "287",
+            "306",
+            "307",
+            "521",
+            "640",
+            "798",
+            "862",
+            "863"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.6.1",
+      "title": "PCI DSS reference 8.6.1",
+      "parentId": "8.6",
+      "level": "control",
+      "sortId": "00165",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.6.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.6.2",
+      "title": "PCI DSS reference 8.6.2",
+      "parentId": "8.6",
+      "level": "control",
+      "sortId": "00166",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.6.2.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "auth",
+            "weak-auth",
+            "default-credentials",
+            "hardcoded-credentials",
+            "brute-force",
+            "mfa-bypass",
+            "password-spray",
+            "default-account"
+          ],
+          "cwes": [
+            "287",
+            "306",
+            "307",
+            "521",
+            "640",
+            "798",
+            "862",
+            "863"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "8.6.3",
+      "title": "PCI DSS reference 8.6.3",
+      "parentId": "8.6",
+      "level": "control",
+      "sortId": "00167",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "8",
+        "requirementTitle": "PCI DSS reference 8",
+        "description": "Consult the official PCI DSS documentation for reference 8.6.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.1",
+      "title": "PCI DSS reference 9.1",
+      "parentId": "9",
+      "level": "category",
+      "sortId": "00168",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.1.1",
+      "title": "PCI DSS reference 9.1.1",
+      "parentId": "9.1",
+      "level": "control",
+      "sortId": "00169",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.1.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.1.2",
+      "title": "PCI DSS reference 9.1.2",
+      "parentId": "9.1",
+      "level": "control",
+      "sortId": "00170",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.1.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.2",
+      "title": "PCI DSS reference 9.2",
+      "parentId": "9",
+      "level": "category",
+      "sortId": "00171",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.2.1",
+      "title": "PCI DSS reference 9.2.1",
+      "parentId": "9.2",
+      "level": "control",
+      "sortId": "00172",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.2.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.2.2",
+      "title": "PCI DSS reference 9.2.2",
+      "parentId": "9.2",
+      "level": "control",
+      "sortId": "00173",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.2.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.2.3",
+      "title": "PCI DSS reference 9.2.3",
+      "parentId": "9.2",
+      "level": "control",
+      "sortId": "00174",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.2.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.2.4",
+      "title": "PCI DSS reference 9.2.4",
+      "parentId": "9.2",
+      "level": "control",
+      "sortId": "00175",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.2.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.3",
+      "title": "PCI DSS reference 9.3",
+      "parentId": "9",
+      "level": "category",
+      "sortId": "00176",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.3.1",
+      "title": "PCI DSS reference 9.3.1",
+      "parentId": "9.3",
+      "level": "control",
+      "sortId": "00177",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.3.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.3.2",
+      "title": "PCI DSS reference 9.3.2",
+      "parentId": "9.3",
+      "level": "control",
+      "sortId": "00178",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.3.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.3.3",
+      "title": "PCI DSS reference 9.3.3",
+      "parentId": "9.3",
+      "level": "control",
+      "sortId": "00179",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.3.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.3.4",
+      "title": "PCI DSS reference 9.3.4",
+      "parentId": "9.3",
+      "level": "control",
+      "sortId": "00180",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.3.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.4",
+      "title": "PCI DSS reference 9.4",
+      "parentId": "9",
+      "level": "category",
+      "sortId": "00181",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.4.1",
+      "title": "PCI DSS reference 9.4.1",
+      "parentId": "9.4",
+      "level": "control",
+      "sortId": "00182",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.4.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.4.2",
+      "title": "PCI DSS reference 9.4.2",
+      "parentId": "9.4",
+      "level": "control",
+      "sortId": "00183",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.4.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.4.3",
+      "title": "PCI DSS reference 9.4.3",
+      "parentId": "9.4",
+      "level": "control",
+      "sortId": "00184",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.4.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.4.4",
+      "title": "PCI DSS reference 9.4.4",
+      "parentId": "9.4",
+      "level": "control",
+      "sortId": "00185",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.4.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.4.5",
+      "title": "PCI DSS reference 9.4.5",
+      "parentId": "9.4",
+      "level": "control",
+      "sortId": "00186",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.4.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.4.6",
+      "title": "PCI DSS reference 9.4.6",
+      "parentId": "9.4",
+      "level": "control",
+      "sortId": "00187",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.4.6.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.4.7",
+      "title": "PCI DSS reference 9.4.7",
+      "parentId": "9.4",
+      "level": "control",
+      "sortId": "00188",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.4.7.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.5",
+      "title": "PCI DSS reference 9.5",
+      "parentId": "9",
+      "level": "category",
+      "sortId": "00189",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.5.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "backup",
+            "ransomware",
+            "backup-deletion",
+            "backup-exposed",
+            "shadow-copy"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "9.5.1",
+      "title": "PCI DSS reference 9.5.1",
+      "parentId": "9.5",
+      "level": "control",
+      "sortId": "00190",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "9",
+        "requirementTitle": "PCI DSS reference 9",
+        "description": "Consult the official PCI DSS documentation for reference 9.5.1.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "backup",
+            "ransomware",
+            "backup-deletion",
+            "backup-exposed",
+            "shadow-copy"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.1",
+      "title": "PCI DSS reference 10.1",
+      "parentId": "10",
+      "level": "category",
+      "sortId": "00191",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.1.1",
+      "title": "PCI DSS reference 10.1.1",
+      "parentId": "10.1",
+      "level": "control",
+      "sortId": "00192",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.1.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.1.2",
+      "title": "PCI DSS reference 10.1.2",
+      "parentId": "10.1",
+      "level": "control",
+      "sortId": "00193",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.1.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.2",
+      "title": "PCI DSS reference 10.2",
+      "parentId": "10",
+      "level": "category",
+      "sortId": "00194",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.2.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "log",
+            "logging",
+            "audit",
+            "tampering",
+            "log-injection"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.2.1",
+      "title": "PCI DSS reference 10.2.1",
+      "parentId": "10.2",
+      "level": "control",
+      "sortId": "00195",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.2.1.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "log",
+            "logging",
+            "audit",
+            "tampering",
+            "log-injection"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.2.2",
+      "title": "PCI DSS reference 10.2.2",
+      "parentId": "10.2",
+      "level": "control",
+      "sortId": "00196",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.2.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.3",
+      "title": "PCI DSS reference 10.3",
+      "parentId": "10",
+      "level": "category",
+      "sortId": "00197",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.3.1",
+      "title": "PCI DSS reference 10.3.1",
+      "parentId": "10.3",
+      "level": "control",
+      "sortId": "00198",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.3.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.3.2",
+      "title": "PCI DSS reference 10.3.2",
+      "parentId": "10.3",
+      "level": "control",
+      "sortId": "00199",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.3.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.3.3",
+      "title": "PCI DSS reference 10.3.3",
+      "parentId": "10.3",
+      "level": "control",
+      "sortId": "00200",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.3.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.3.4",
+      "title": "PCI DSS reference 10.3.4",
+      "parentId": "10.3",
+      "level": "control",
+      "sortId": "00201",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.3.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.4",
+      "title": "PCI DSS reference 10.4",
+      "parentId": "10",
+      "level": "category",
+      "sortId": "00202",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.4.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "log",
+            "logging",
+            "audit",
+            "tampering",
+            "log-injection"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.4.1",
+      "title": "PCI DSS reference 10.4.1",
+      "parentId": "10.4",
+      "level": "control",
+      "sortId": "00203",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.4.1.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "log",
+            "logging",
+            "audit",
+            "tampering",
+            "log-injection"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.4.2",
+      "title": "PCI DSS reference 10.4.2",
+      "parentId": "10.4",
+      "level": "control",
+      "sortId": "00204",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.4.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.4.3",
+      "title": "PCI DSS reference 10.4.3",
+      "parentId": "10.4",
+      "level": "control",
+      "sortId": "00205",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.4.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.5",
+      "title": "PCI DSS reference 10.5",
+      "parentId": "10",
+      "level": "category",
+      "sortId": "00206",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.5.1",
+      "title": "PCI DSS reference 10.5.1",
+      "parentId": "10.5",
+      "level": "control",
+      "sortId": "00207",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.5.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.6",
+      "title": "PCI DSS reference 10.6",
+      "parentId": "10",
+      "level": "category",
+      "sortId": "00208",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.6.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.6.1",
+      "title": "PCI DSS reference 10.6.1",
+      "parentId": "10.6",
+      "level": "control",
+      "sortId": "00209",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.6.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.6.2",
+      "title": "PCI DSS reference 10.6.2",
+      "parentId": "10.6",
+      "level": "control",
+      "sortId": "00210",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.6.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.6.3",
+      "title": "PCI DSS reference 10.6.3",
+      "parentId": "10.6",
+      "level": "control",
+      "sortId": "00211",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.6.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.7",
+      "title": "PCI DSS reference 10.7",
+      "parentId": "10",
+      "level": "category",
+      "sortId": "00212",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.7.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.7.1",
+      "title": "PCI DSS reference 10.7.1",
+      "parentId": "10.7",
+      "level": "control",
+      "sortId": "00213",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.7.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.7.2",
+      "title": "PCI DSS reference 10.7.2",
+      "parentId": "10.7",
+      "level": "control",
+      "sortId": "00214",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.7.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "10.7.3",
+      "title": "PCI DSS reference 10.7.3",
+      "parentId": "10.7",
+      "level": "control",
+      "sortId": "00215",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "10",
+        "requirementTitle": "PCI DSS reference 10",
+        "description": "Consult the official PCI DSS documentation for reference 10.7.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.1",
+      "title": "PCI DSS reference 11.1",
+      "parentId": "11",
+      "level": "category",
+      "sortId": "00216",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.1.1",
+      "title": "PCI DSS reference 11.1.1",
+      "parentId": "11.1",
+      "level": "control",
+      "sortId": "00217",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.1.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.1.2",
+      "title": "PCI DSS reference 11.1.2",
+      "parentId": "11.1",
+      "level": "control",
+      "sortId": "00218",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.1.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.2",
+      "title": "PCI DSS reference 11.2",
+      "parentId": "11",
+      "level": "category",
+      "sortId": "00219",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.2.1",
+      "title": "PCI DSS reference 11.2.1",
+      "parentId": "11.2",
+      "level": "control",
+      "sortId": "00220",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.2.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.2.2",
+      "title": "PCI DSS reference 11.2.2",
+      "parentId": "11.2",
+      "level": "control",
+      "sortId": "00221",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.2.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.3",
+      "title": "PCI DSS reference 11.3",
+      "parentId": "11",
+      "level": "category",
+      "sortId": "00222",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.3.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "xss",
+            "sqli",
+            "command-injection",
+            "rce",
+            "code-injection",
+            "path-traversal",
+            "ssrf",
+            "xxe",
+            "deserialization",
+            "idor",
+            "broken-access-control",
+            "upload",
+            "open-redirect",
+            "supply-chain",
+            "dependency",
+            "malicious-package",
+            "typosquatting",
+            "dependency-confusion"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.3.1",
+      "title": "PCI DSS reference 11.3.1",
+      "parentId": "11.3",
+      "level": "control",
+      "sortId": "00223",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.3.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.3.2",
+      "title": "PCI DSS reference 11.3.2",
+      "parentId": "11.3",
+      "level": "control",
+      "sortId": "00224",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.3.2.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "xss",
+            "sqli",
+            "command-injection",
+            "rce",
+            "code-injection",
+            "path-traversal",
+            "ssrf",
+            "xxe",
+            "deserialization",
+            "idor",
+            "broken-access-control",
+            "upload",
+            "open-redirect",
+            "supply-chain",
+            "dependency",
+            "malicious-package",
+            "typosquatting",
+            "dependency-confusion"
+          ],
+          "cwes": [
+            "89",
+            "78",
+            "79",
+            "22",
+            "94",
+            "918",
+            "502",
+            "434",
+            "611",
+            "77",
+            "95"
+          ]
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.4",
+      "title": "PCI DSS reference 11.4",
+      "parentId": "11",
+      "level": "category",
+      "sortId": "00225",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.4.1",
+      "title": "PCI DSS reference 11.4.1",
+      "parentId": "11.4",
+      "level": "control",
+      "sortId": "00226",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.4.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.4.2",
+      "title": "PCI DSS reference 11.4.2",
+      "parentId": "11.4",
+      "level": "control",
+      "sortId": "00227",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.4.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.4.3",
+      "title": "PCI DSS reference 11.4.3",
+      "parentId": "11.4",
+      "level": "control",
+      "sortId": "00228",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.4.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.4.4",
+      "title": "PCI DSS reference 11.4.4",
+      "parentId": "11.4",
+      "level": "control",
+      "sortId": "00229",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.4.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.4.5",
+      "title": "PCI DSS reference 11.4.5",
+      "parentId": "11.4",
+      "level": "control",
+      "sortId": "00230",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.4.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.4.6",
+      "title": "PCI DSS reference 11.4.6",
+      "parentId": "11.4",
+      "level": "control",
+      "sortId": "00231",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.4.6.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.4.7",
+      "title": "PCI DSS reference 11.4.7",
+      "parentId": "11.4",
+      "level": "control",
+      "sortId": "00232",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.4.7.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.5",
+      "title": "PCI DSS reference 11.5",
+      "parentId": "11",
+      "level": "category",
+      "sortId": "00233",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.5.1",
+      "title": "PCI DSS reference 11.5.1",
+      "parentId": "11.5",
+      "level": "control",
+      "sortId": "00234",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.5.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.5.2",
+      "title": "PCI DSS reference 11.5.2",
+      "parentId": "11.5",
+      "level": "control",
+      "sortId": "00235",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.5.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.6",
+      "title": "PCI DSS reference 11.6",
+      "parentId": "11",
+      "level": "category",
+      "sortId": "00236",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.6.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "11.6.1",
+      "title": "PCI DSS reference 11.6.1",
+      "parentId": "11.6",
+      "level": "control",
+      "sortId": "00237",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "11",
+        "requirementTitle": "PCI DSS reference 11",
+        "description": "Consult the official PCI DSS documentation for reference 11.6.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.1",
+      "title": "PCI DSS reference 12.1",
+      "parentId": "12",
+      "level": "category",
+      "sortId": "00238",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.1.1",
+      "title": "PCI DSS reference 12.1.1",
+      "parentId": "12.1",
+      "level": "control",
+      "sortId": "00239",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.1.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.1.2",
+      "title": "PCI DSS reference 12.1.2",
+      "parentId": "12.1",
+      "level": "control",
+      "sortId": "00240",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.1.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.1.3",
+      "title": "PCI DSS reference 12.1.3",
+      "parentId": "12.1",
+      "level": "control",
+      "sortId": "00241",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.1.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.1.4",
+      "title": "PCI DSS reference 12.1.4",
+      "parentId": "12.1",
+      "level": "control",
+      "sortId": "00242",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.1.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.2",
+      "title": "PCI DSS reference 12.2",
+      "parentId": "12",
+      "level": "category",
+      "sortId": "00243",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.2.1",
+      "title": "PCI DSS reference 12.2.1",
+      "parentId": "12.2",
+      "level": "control",
+      "sortId": "00244",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.2.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.3",
+      "title": "PCI DSS reference 12.3",
+      "parentId": "12",
+      "level": "category",
+      "sortId": "00245",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.3.1",
+      "title": "PCI DSS reference 12.3.1",
+      "parentId": "12.3",
+      "level": "control",
+      "sortId": "00246",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.3.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.3.2",
+      "title": "PCI DSS reference 12.3.2",
+      "parentId": "12.3",
+      "level": "control",
+      "sortId": "00247",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.3.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.3.3",
+      "title": "PCI DSS reference 12.3.3",
+      "parentId": "12.3",
+      "level": "control",
+      "sortId": "00248",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.3.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.3.4",
+      "title": "PCI DSS reference 12.3.4",
+      "parentId": "12.3",
+      "level": "control",
+      "sortId": "00249",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.3.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.4",
+      "title": "PCI DSS reference 12.4",
+      "parentId": "12",
+      "level": "category",
+      "sortId": "00250",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.4.1",
+      "title": "PCI DSS reference 12.4.1",
+      "parentId": "12.4",
+      "level": "control",
+      "sortId": "00251",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.4.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.4.2",
+      "title": "PCI DSS reference 12.4.2",
+      "parentId": "12.4",
+      "level": "control",
+      "sortId": "00252",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.4.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.5",
+      "title": "PCI DSS reference 12.5",
+      "parentId": "12",
+      "level": "category",
+      "sortId": "00253",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.5.1",
+      "title": "PCI DSS reference 12.5.1",
+      "parentId": "12.5",
+      "level": "control",
+      "sortId": "00254",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.5.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.5.2",
+      "title": "PCI DSS reference 12.5.2",
+      "parentId": "12.5",
+      "level": "control",
+      "sortId": "00255",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.5.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.5.3",
+      "title": "PCI DSS reference 12.5.3",
+      "parentId": "12.5",
+      "level": "control",
+      "sortId": "00256",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.5.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.6",
+      "title": "PCI DSS reference 12.6",
+      "parentId": "12",
+      "level": "category",
+      "sortId": "00257",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.6.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.6.1",
+      "title": "PCI DSS reference 12.6.1",
+      "parentId": "12.6",
+      "level": "control",
+      "sortId": "00258",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.6.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.6.2",
+      "title": "PCI DSS reference 12.6.2",
+      "parentId": "12.6",
+      "level": "control",
+      "sortId": "00259",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.6.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.6.3",
+      "title": "PCI DSS reference 12.6.3",
+      "parentId": "12.6",
+      "level": "control",
+      "sortId": "00260",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.6.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.7",
+      "title": "PCI DSS reference 12.7",
+      "parentId": "12",
+      "level": "category",
+      "sortId": "00261",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.7.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.7.1",
+      "title": "PCI DSS reference 12.7.1",
+      "parentId": "12.7",
+      "level": "control",
+      "sortId": "00262",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.7.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.8",
+      "title": "PCI DSS reference 12.8",
+      "parentId": "12",
+      "level": "category",
+      "sortId": "00263",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.8.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.8.1",
+      "title": "PCI DSS reference 12.8.1",
+      "parentId": "12.8",
+      "level": "control",
+      "sortId": "00264",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.8.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.8.2",
+      "title": "PCI DSS reference 12.8.2",
+      "parentId": "12.8",
+      "level": "control",
+      "sortId": "00265",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.8.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.8.3",
+      "title": "PCI DSS reference 12.8.3",
+      "parentId": "12.8",
+      "level": "control",
+      "sortId": "00266",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.8.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.8.4",
+      "title": "PCI DSS reference 12.8.4",
+      "parentId": "12.8",
+      "level": "control",
+      "sortId": "00267",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.8.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.8.5",
+      "title": "PCI DSS reference 12.8.5",
+      "parentId": "12.8",
+      "level": "control",
+      "sortId": "00268",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.8.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.9",
+      "title": "PCI DSS reference 12.9",
+      "parentId": "12",
+      "level": "category",
+      "sortId": "00269",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.9.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.9.1",
+      "title": "PCI DSS reference 12.9.1",
+      "parentId": "12.9",
+      "level": "control",
+      "sortId": "00270",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.9.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.9.2",
+      "title": "PCI DSS reference 12.9.2",
+      "parentId": "12.9",
+      "level": "control",
+      "sortId": "00271",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.9.2.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.10",
+      "title": "PCI DSS reference 12.10",
+      "parentId": "12",
+      "level": "category",
+      "sortId": "00272",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.10.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "backup",
+            "ransomware",
+            "backup-deletion",
+            "backup-exposed",
+            "shadow-copy"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.10.1",
+      "title": "PCI DSS reference 12.10.1",
+      "parentId": "12.10",
+      "level": "control",
+      "sortId": "00273",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.10.1.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.10.2",
+      "title": "PCI DSS reference 12.10.2",
+      "parentId": "12.10",
+      "level": "control",
+      "sortId": "00274",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.10.2.",
+        "coverage": "evaluable",
+        "mappingBasis": "argos-finding-signals",
+        "signals": {
+          "tags": [
+            "backup",
+            "ransomware",
+            "backup-deletion",
+            "backup-exposed",
+            "shadow-copy"
+          ],
+          "cwes": []
+        }
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.10.3",
+      "title": "PCI DSS reference 12.10.3",
+      "parentId": "12.10",
+      "level": "control",
+      "sortId": "00275",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.10.3.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.10.4",
+      "title": "PCI DSS reference 12.10.4",
+      "parentId": "12.10",
+      "level": "control",
+      "sortId": "00276",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.10.4.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.10.5",
+      "title": "PCI DSS reference 12.10.5",
+      "parentId": "12.10",
+      "level": "control",
+      "sortId": "00277",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.10.5.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.10.6",
+      "title": "PCI DSS reference 12.10.6",
+      "parentId": "12.10",
+      "level": "control",
+      "sortId": "00278",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.10.6.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    },
+    {
+      "id": "12.10.7",
+      "title": "PCI DSS reference 12.10.7",
+      "parentId": "12.10",
+      "level": "control",
+      "sortId": "00279",
+      "framework": "pci_dss_v4",
+      "attributes": {
+        "requirement": "12",
+        "requirementTitle": "PCI DSS reference 12",
+        "description": "Consult the official PCI DSS documentation for reference 12.10.7.",
+        "coverage": "not-evaluable",
+        "mappingBasis": "argos-finding-signals"
+      },
+      "source": "PCI DSS v4.0.1 — Requirements and Testing Procedures (PCI Security Standards Council, June 2024)"
+    }
+  ]
+}

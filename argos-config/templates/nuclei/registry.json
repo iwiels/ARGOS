@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "packs": [
+    {
+      "id": "business-logic",
+      "name": "Business logic",
+      "description": "Señales de confianza en valores que el servidor debe recalcular: importes, descuentos y acciones que mutan estado por GET.",
+      "path": "business-logic",
+      "enabled": true,
+      "requiresAuth": true,
+      "minSeverity": "medium",
+      "tags": ["business-logic", "cwe-472", "cwe-650"],
+      "notes": "Sin una sesión autenticada sólo cubre flujos públicos. Para el flujo completo, el auditor re-ejecuta con la cookie de la cuenta de prueba y confirma el total del pedido."
+    },
+    {
+      "id": "idor",
+      "name": "IDOR / BOLA",
+      "description": "Objetos de usuario, pedido y factura devueltos sin credenciales, con identificadores secuenciales.",
+      "path": "idor",
+      "enabled": true,
+      "requiresAuth": false,
+      "minSeverity": "high",
+      "tags": ["idor", "bola", "cwe-639"],
+      "notes": "Confirma acceso no autenticado. La variante autenticada entre inquilinos requiere dos cuentas y se revisa a mano."
+    },
+    {
+      "id": "framework",
+      "name": "Framework misconfiguration",
+      "description": "Modo desarrollo y endpoints de diagnóstico expuestos en Django, Rails, Spring Boot y Next.js.",
+      "path": "framework",
+      "enabled": true,
+      "requiresAuth": false,
+      "minSeverity": "medium",
+      "tags": ["django", "rails", "spring", "nextjs", "cwe-209", "cwe-489"],
+      "notes": "El pack de Spring evita /actuator/heapdump a propósito: descargar un heap dump puede pesar gigabytes y degradar el target. Se revisa a mano."
+    },
+    {
+      "id": "cicd",
+      "name": "CI/CD y cloud nativo",
+      "description": "Artefactos de pipeline y superficies de infraestructura publicados: estado de Terraform, registro Docker, consola de Jenkins y API de Kubernetes.",
+      "path": "cicd",
+      "enabled": true,
+      "requiresAuth": false,
+      "minSeverity": "medium",
+      "tags": ["terraform", "docker", "jenkins", "kubernetes", "cwe-538", "cwe-306"],
+      "notes": "Sólo cubre lo observable por HTTP. GitHub Actions, Dockerfiles y módulos de Terraform como código se escanean con web.code_scan (semgrep, trivy, gitleaks), no con plantillas HTTP."
+    }
+  ]
+}

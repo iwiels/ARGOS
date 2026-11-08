@@ -1,0 +1,171 @@
+[data-component="markdown"] {
+  /* Reset & Base Typography */
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  color: var(--text-strong);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base); /* 14px */
+  line-height: 160%;
+
+  /* Spacing for flow */
+  > *:first-child {
+    margin-top: 0;
+  }
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Headings: Same size, distinguished by color and spacing */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 14px;
+    color: var(--text-strong);
+    font-weight: var(--font-weight-medium);
+    margin-top: 0px;
+    margin-bottom: 24px;
+    line-height: var(--line-height-large);
+  }
+
+  /* Emphasis & Strong: Neutral strong color */
+  strong,
+  b {
+    color: var(--text-strong);
+    font-weight: var(--font-weight-medium);
+  }
+
+  /* Paragraphs */
+  p {
+    margin-bottom: 12px;
+  }
+
+  /* Links */
+  a {
+    color: var(--text-interactive-base);
+    text-decoration: none;
+    font-weight: inherit;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* Lists */
+  ul,
+  ol {
+    margin-top: 8px;
+    margin-bottom: 12px;
+    margin-left: 0;
+    padding-left: 32px;
+    list-style-position: outside;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+    padding-left: 2.25rem;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+
+  li > p:first-child {
+    display: inline;
+    margin: 0;
+  }
+
+  li > p + p {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  li::marker {
+    color: var(--text-secondary);
+    font-family: var(--font-family-mono);
+  }
+
+  /* Inline Code */
+  :not(pre) > code {
+    font-family: var(--font-family-mono);
+    font-feature-settings: var(--font-family-mono--font-feature-settings);
+    color: var(--text-primary);
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border-weak-base);
+    font-weight: var(--font-weight-medium);
+    font-size: 12px;
+    padding: 1.5px 5px;
+    margin: 0 1px;
+    border-radius: 4px;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    border-left: 2px solid var(--border-strong);
+    margin: 1rem 0;
+    padding-left: 0.75rem;
+    color: var(--text-secondary);
+    font-style: normal;
+  }
+
+  pre {
+    margin-top: 12px;
+    margin-bottom: 24px;
+    overflow: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border-default);
+    background: var(--bg-surface);
+    padding: 12px;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: var(--font-size-base);
+    display: block;
+    overflow-x: auto;
+  }
+
+  th,
+  td {
+    /* Minimal borders for structure, matching TUI "lines" roughly but keeping it web-clean */
+    border-bottom: 1px solid var(--border-weaker-base);
+    padding: 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    color: var(--text-strong);
+    font-weight: var(--font-weight-medium);
+    border-bottom: 1px solid var(--border-weak-base);
+  }
+
+  /* Images */
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+    display: block;
+  }
+}
+
+[data-component="markdown"] a.external-link:hover > code {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

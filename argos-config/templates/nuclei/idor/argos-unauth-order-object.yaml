@@ -1,0 +1,83 @@
+id: argos-unauth-order-object
+
+info:
+  name: Unauthenticated access to an order or invoice object
+  author: argos
+  severity: high
+  description: |
+    Un endpoint de pedidos o facturas devuelve el objeto completo — importe,
+    correo, dirección de envío — sin pedir credenciales. Es el patrón clásico
+    de BOLA (broken object level authorization): el identificador del pedido es
+    la única barrera y suele ser secuencial.
+
+    El hallazgo se confirma comparando dos identificadores consecutivos: si
+    devuelven pedidos distintos, el acceso no está autorizado por objeto.
+  remediation: |
+    Autorizar por objeto en el servidor: el pedido se busca siempre acotado por
+    el sujeto autenticado (o por su organización), nunca por el identificador
+    solo. Usar identificadores no adivinables como segunda barrera, no como
+    reemplazo de la autorización.
+  reference:
+    - https://owasp.org/www-project-api-security/
+    - https://cwe.mitre.org/data/definitions/639.html
+  classification:
+    cwe-id: CWE-639
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+  metadata:
+    max-request: 6
+    argos-pack: idor
+    argos-requires-auth: "false"
+    argos-severity-floor: high
+    argos-evidence: "pedido o factura completa devuelta sin credenciales"
+    argos-owasp: "A01:2021 Broken Access Control"
+  tags: idor,exposure,api
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/orders/1"
+      - "{{BaseURL}}/api/v1/orders/1"
+      - "{{BaseURL}}/api/invoices/1"
+      - "{{BaseURL}}/api/v1/invoices/1"
+      - "{{BaseURL}}/api/purchases/1"
+      - "{{BaseURL}}/api/tickets/1"
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: header
+        words:
+          - "application/json"
+      - type: word
+        part: body
+        words:
+          - '"order_id"'
+          - '"order_number"'
+          - '"invoice"'
+          - '"order"'
+        condition: or
+      - type: word
+        part: body
+        words:
+          - '"total"'
+          - '"amount"'
+          - '"subtotal"'
+        condition: or
+      - type: word
+        part: body
+        words:
+          - '"email"'
+          - '"shipping"'
+          - '"billing"'
+          - '"customer"'
+        condition: or
+    extractors:
+      - type: regex
+        part: body
+        name: object_id
+        regex:
+          - '"(order_id|order_number|invoice_id|id)"\s*:\s*"?[A-Za-z0-9_-]+"?'

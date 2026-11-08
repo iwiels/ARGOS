@@ -1,0 +1,9 @@
+jsx = "react-jsx"
+jsxImportSource = "solid-js/h"
+
+[test]
+root = "./src"
+preload = ["./happydom.ts"]
+# Nota: no usar coverageThreshold de bunfig (exit 1 silencioso/errático en
+# este entorno). El gate de cobertura vive en scripts/coverage-gate.ts y se
+# aplica en CI sobre `bun test --coverage`.

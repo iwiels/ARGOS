@@ -1,0 +1,64 @@
+id: argos-client-controlled-price-field
+
+info:
+  name: Client-controlled price or discount field in the purchase flow
+  author: argos
+  severity: medium
+  description: |
+    El flujo de compra transporta el importe, el descuento o el total en un
+    campo del formulario que el navegador puede editar. Si el servidor confía
+    en ese valor en lugar de recalcularlo a partir del producto y la cantidad,
+    el atacante paga el importe que decide.
+
+    El hallazgo es una señal, no una prueba de explotación: confirma la
+    presencia del campo, no que el backend lo acepte. Se confirma enviando el
+    formulario con un importe alterado y verificando el total del pedido.
+  remediation: |
+    Recalcular el precio y los descuentos en el servidor a partir del catálogo y
+    la cantidad. Tratar cualquier importe recibido del cliente como una
+    intención, nunca como un valor: si no coincide con el recalculado, rechazar
+    la operación y registrar el intento.
+  reference:
+    - https://owasp.org/www-community/vulnerabilities/Web_Parameter_Tampering
+    - https://cwe.mitre.org/data/definitions/472.html
+  classification:
+    cwe-id: CWE-472
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+    cvss-score: 6.5
+  metadata:
+    max-request: 5
+    argos-pack: business-logic
+    argos-requires-auth: "true"
+    argos-severity-floor: medium
+    argos-evidence: "campo de importe o descuento en el formulario de compra"
+    argos-owasp: "A04:2021 Insecure Design"
+  tags: business-logic,generic
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/cart"
+      - "{{BaseURL}}/checkout"
+      - "{{BaseURL}}/basket"
+      - "{{BaseURL}}/shop/cart"
+      - "{{BaseURL}}/order"
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "<form"
+      - type: regex
+        part: body
+        regex:
+          - '(?i)<input[^>]*name=["'']?(price|amount|total|subtotal|unit_price|discount|discount_amount)["'']?[^>]*>'
+    extractors:
+      - type: regex
+        part: body
+        name: field
+        regex:
+          - '(?i)<input[^>]*name=["'']?(price|amount|total|subtotal|unit_price|discount|discount_amount)["'']?[^>]*>'

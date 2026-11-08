@@ -1,0 +1,689 @@
+{
+  "meta": {
+    "framework": "soc2",
+    "title": "SOC 2 Trust Services Criteria",
+    "version": "TSC 2017 (rev. 2022)",
+    "generatedFrom": "iso27001_crosswalk.json (bundled)",
+    "crosswalkVersion": "0.4.0",
+    "disclaimer": "Mappings are interpretive. Framework crosswalks are inherently approximate because controls differ in scope and intent. Always have mappings reviewed against the source standards before relying on them for audit or compliance evidence.",
+    "unmappedIsoControls": [
+      "A.5.32"
+    ],
+    "isoControlsCoveredByEquivalence": [
+      "A.5.32"
+    ],
+    "declaredButUnmappedControls": []
+  },
+  "controls": [
+    {
+      "id": "Security",
+      "title": "Security (Common Criteria)",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00001",
+      "framework": "soc2",
+      "attributes": {
+        "groupingBasis": "AICPA TSC 2017 (rev. 2022) — categoría Security (Common Criteria CC1–CC9)",
+        "mappingBasis": "structure"
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "CC1",
+      "title": "Control Environment — integrity and ethical values, board oversight, organizational structure, authority and responsibility, and commitment to competence",
+      "parentId": "Security",
+      "level": "control",
+      "sortId": "00002",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.1",
+          "A.5.2",
+          "A.5.4",
+          "A.5.8",
+          "A.5.10",
+          "A.5.31",
+          "A.5.36",
+          "A.6.1",
+          "A.6.2",
+          "A.6.3",
+          "A.6.4",
+          "A.6.5"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.32"
+        ],
+        "nistEquivalents": [
+          "GV.PO-01",
+          "GV.PO-02",
+          "GV.RR-02",
+          "GV.RR-01",
+          "ID.RA-01",
+          "PR.AA-01",
+          "GV.OC-03",
+          "GV.OV-03",
+          "GV.RR-04",
+          "PR.AT-01",
+          "PR.AT-02"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "CC2",
+      "title": "Communication and Information — internal and external communication of security objectives, responsibilities and policies",
+      "parentId": "Security",
+      "level": "control",
+      "sortId": "00003",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.5",
+          "A.5.6",
+          "A.6.8"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.32"
+        ],
+        "nistEquivalents": [
+          "GV.OC-03",
+          "RS.CO-02",
+          "ID.RA-02",
+          "DE.AE-08"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "CC3",
+      "title": "Risk Assessment — identification and analysis of risks to objectives, including fraud risk and risk from change",
+      "parentId": "Security",
+      "level": "control",
+      "sortId": "00004",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.7",
+          "A.8.8"
+        ],
+        "isoEquivalentsByEquivalence": [],
+        "nistEquivalents": [
+          "ID.RA-02",
+          "ID.RA-03",
+          "ID.RA-01",
+          "ID.RA-06"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "CC4",
+      "title": "Monitoring Activities — ongoing and separate evaluations to ascertain whether controls are present and functioning",
+      "parentId": "Security",
+      "level": "control",
+      "sortId": "00005",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.22",
+          "A.5.27",
+          "A.5.35",
+          "A.5.36",
+          "A.8.16"
+        ],
+        "isoEquivalentsByEquivalence": [],
+        "nistEquivalents": [
+          "GV.SC-07",
+          "ID.IM-01",
+          "GV.OV-01",
+          "GV.OV-03",
+          "DE.CM-01",
+          "DE.AE-02"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "CC5",
+      "title": "Control Activities — selection and development of control activities that mitigate risk to acceptable levels",
+      "parentId": "Security",
+      "level": "control",
+      "sortId": "00006",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.1",
+          "A.5.3",
+          "A.5.8",
+          "A.5.37"
+        ],
+        "isoEquivalentsByEquivalence": [],
+        "nistEquivalents": [
+          "GV.PO-01",
+          "GV.PO-02",
+          "GV.RR-02",
+          "PR.AA-05",
+          "ID.RA-01"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "CC6",
+      "title": "Logical and Physical Access Controls — restricting logical and physical access to systems, data and facilities to authorized users",
+      "parentId": "Security",
+      "level": "control",
+      "sortId": "00007",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.9",
+          "A.5.10",
+          "A.5.11",
+          "A.5.14",
+          "A.5.15",
+          "A.5.16",
+          "A.5.17",
+          "A.5.18",
+          "A.5.23",
+          "A.5.33",
+          "A.6.5",
+          "A.6.7",
+          "A.7.1",
+          "A.7.2",
+          "A.7.3",
+          "A.7.4",
+          "A.7.5",
+          "A.7.6",
+          "A.7.7",
+          "A.7.8",
+          "A.7.9",
+          "A.7.10",
+          "A.7.12",
+          "A.7.14",
+          "A.8.1",
+          "A.8.2",
+          "A.8.3",
+          "A.8.4",
+          "A.8.5",
+          "A.8.7",
+          "A.8.18",
+          "A.8.20",
+          "A.8.21",
+          "A.8.22",
+          "A.8.23",
+          "A.8.24"
+        ],
+        "isoEquivalentsByEquivalence": [],
+        "nistEquivalents": [
+          "ID.AM-01",
+          "ID.AM-02",
+          "PR.AA-01",
+          "PR.DS-02",
+          "PR.AA-05",
+          "PR.AA-02",
+          "GV.SC-06",
+          "PR.DS-01",
+          "GV.RR-04",
+          "PR.AA-06",
+          "PR.IR-01",
+          "DE.CM-02",
+          "PR.IR-02",
+          "PR.PS-01",
+          "PR.AA-03",
+          "PR.PS-05",
+          "DE.CM-01"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "CC7",
+      "title": "System Operations — detecting, monitoring and responding to security events, incidents and vulnerabilities",
+      "parentId": "Security",
+      "level": "control",
+      "sortId": "00008",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.5",
+          "A.5.24",
+          "A.5.25",
+          "A.5.26",
+          "A.5.27",
+          "A.5.28",
+          "A.5.29",
+          "A.6.8",
+          "A.7.4",
+          "A.7.13",
+          "A.8.7",
+          "A.8.8",
+          "A.8.9",
+          "A.8.15",
+          "A.8.16",
+          "A.8.17",
+          "A.8.29",
+          "A.8.34"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.32"
+        ],
+        "nistEquivalents": [
+          "GV.OC-03",
+          "RS.CO-02",
+          "RS.MA-01",
+          "GV.RR-02",
+          "DE.AE-08",
+          "RS.MA-02",
+          "RS.MA-05",
+          "RS.MI-01",
+          "ID.IM-01",
+          "RS.AN-06",
+          "RS.AN-07",
+          "RC.RP-01",
+          "DE.CM-02",
+          "PR.PS-03",
+          "PR.PS-05",
+          "DE.CM-01",
+          "ID.RA-01",
+          "ID.RA-06",
+          "PR.PS-01",
+          "DE.CM-03",
+          "DE.AE-02",
+          "PR.PS-06"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "CC8",
+      "title": "Change Management — authorizing, designing, developing, testing, approving and implementing changes to infrastructure, software and procedures",
+      "parentId": "Security",
+      "level": "control",
+      "sortId": "00009",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.8.4",
+          "A.8.9",
+          "A.8.19",
+          "A.8.25",
+          "A.8.26",
+          "A.8.27",
+          "A.8.28",
+          "A.8.29",
+          "A.8.30",
+          "A.8.31",
+          "A.8.32",
+          "A.8.33",
+          "A.8.34"
+        ],
+        "isoEquivalentsByEquivalence": [],
+        "nistEquivalents": [
+          "PR.AA-05",
+          "PR.PS-01",
+          "PR.PS-05",
+          "PR.PS-06",
+          "PR.IR-03",
+          "GV.SC-05",
+          "PR.DS-01"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "CC9",
+      "title": "Risk Mitigation — managing risk arising from potential business disruption and from vendor/business-partner relationships",
+      "parentId": "Security",
+      "level": "control",
+      "sortId": "00010",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.19",
+          "A.5.20",
+          "A.5.21",
+          "A.5.22",
+          "A.5.23",
+          "A.8.30"
+        ],
+        "isoEquivalentsByEquivalence": [],
+        "nistEquivalents": [
+          "GV.SC-01",
+          "GV.SC-04",
+          "GV.SC-05",
+          "GV.SC-07",
+          "GV.SC-09",
+          "GV.SC-06"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "ProcessingIntegrity",
+      "title": "Processing Integrity",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00011",
+      "framework": "soc2",
+      "attributes": {
+        "groupingBasis": "AICPA TSC 2017 (rev. 2022) — categoría Processing Integrity (PI1)",
+        "mappingBasis": "structure"
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "PI1",
+      "title": "Processing Integrity — system processing is complete, valid, accurate, timely and authorized",
+      "parentId": "ProcessingIntegrity",
+      "level": "control",
+      "sortId": "00012",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.8.10",
+          "A.8.26"
+        ],
+        "isoEquivalentsByEquivalence": [],
+        "nistEquivalents": [
+          "PR.DS-01",
+          "PR.PS-06"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "Availability",
+      "title": "Availability",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00013",
+      "framework": "soc2",
+      "attributes": {
+        "groupingBasis": "AICPA TSC 2017 (rev. 2022) — categoría Availability (A1)",
+        "mappingBasis": "structure"
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "A1",
+      "title": "Availability — the system is available for operation and use as committed or agreed, including capacity planning and tested backup/recovery",
+      "parentId": "Availability",
+      "level": "control",
+      "sortId": "00014",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.29",
+          "A.5.30",
+          "A.7.5",
+          "A.7.11",
+          "A.7.13",
+          "A.8.6",
+          "A.8.13",
+          "A.8.14"
+        ],
+        "isoEquivalentsByEquivalence": [],
+        "nistEquivalents": [
+          "RC.RP-01",
+          "ID.IM-04",
+          "PR.IR-02",
+          "PR.IR-04",
+          "PR.PS-03",
+          "PR.DS-11"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "Confidentiality",
+      "title": "Confidentiality",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00015",
+      "framework": "soc2",
+      "attributes": {
+        "groupingBasis": "AICPA TSC 2017 (rev. 2022) — categoría Confidentiality (C1)",
+        "mappingBasis": "structure"
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "C1",
+      "title": "Confidentiality — information designated as confidential is protected as committed or agreed",
+      "parentId": "Confidentiality",
+      "level": "control",
+      "sortId": "00016",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.12",
+          "A.5.13",
+          "A.5.14",
+          "A.5.33",
+          "A.6.6",
+          "A.7.7",
+          "A.7.10",
+          "A.7.14",
+          "A.8.10",
+          "A.8.11",
+          "A.8.12",
+          "A.8.24",
+          "A.8.33"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.32"
+        ],
+        "nistEquivalents": [
+          "ID.AM-05",
+          "PR.DS-02",
+          "PR.DS-01",
+          "GV.OC-03",
+          "PR.PS-01"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "Privacy",
+      "title": "Privacy",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00017",
+      "framework": "soc2",
+      "attributes": {
+        "groupingBasis": "AICPA TSC 2017 (rev. 2022) — categoría Privacy (P1–P8)",
+        "mappingBasis": "structure"
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "P1",
+      "title": "Privacy: Notice — the entity provides notice about its privacy practices",
+      "parentId": "Privacy",
+      "level": "control",
+      "sortId": "00018",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.34"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.32"
+        ],
+        "nistEquivalents": [
+          "GV.OC-03",
+          "PR.DS-01"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "P2",
+      "title": "Privacy: Choice and Consent — the entity communicates choices and obtains consent for the collection, use and disclosure of personal information",
+      "parentId": "Privacy",
+      "level": "control",
+      "sortId": "00019",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.34"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.32"
+        ],
+        "nistEquivalents": [
+          "GV.OC-03",
+          "PR.DS-01"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "P3",
+      "title": "Privacy: Collection — personal information is collected consistently with the entity's objectives related to privacy",
+      "parentId": "Privacy",
+      "level": "control",
+      "sortId": "00020",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.34"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.32"
+        ],
+        "nistEquivalents": [
+          "GV.OC-03",
+          "PR.DS-01"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "P4",
+      "title": "Privacy: Use, Retention and Disposal — personal information is used, retained and disposed of consistently with the entity's commitments",
+      "parentId": "Privacy",
+      "level": "control",
+      "sortId": "00021",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.34"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.32"
+        ],
+        "nistEquivalents": [
+          "GV.OC-03",
+          "PR.DS-01"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "P5",
+      "title": "Privacy: Access — data subjects can access their personal information for review and, where appropriate, correction",
+      "parentId": "Privacy",
+      "level": "control",
+      "sortId": "00022",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.34"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.32"
+        ],
+        "nistEquivalents": [
+          "GV.OC-03",
+          "PR.DS-01"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "P6",
+      "title": "Privacy: Disclosure and Notification — personal information is disclosed to third parties, and breaches are communicated, consistently with commitments",
+      "parentId": "Privacy",
+      "level": "control",
+      "sortId": "00023",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.34"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.32"
+        ],
+        "nistEquivalents": [
+          "GV.OC-03",
+          "PR.DS-01"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "P7",
+      "title": "Privacy: Quality — personal information is accurate, complete and relevant to the purposes identified",
+      "parentId": "Privacy",
+      "level": "control",
+      "sortId": "00024",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.34"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.32"
+        ],
+        "nistEquivalents": [
+          "GV.OC-03",
+          "PR.DS-01"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "P8",
+      "title": "Privacy: Monitoring and Enforcement — the entity monitors compliance with its privacy commitments and addresses inquiries and complaints",
+      "parentId": "Privacy",
+      "level": "control",
+      "sortId": "00025",
+      "framework": "soc2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.34"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.32"
+        ],
+        "nistEquivalents": [
+          "GV.OC-03",
+          "PR.DS-01"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    }
+  ]
+}

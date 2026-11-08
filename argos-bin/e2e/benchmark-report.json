@@ -1,0 +1,850 @@
+{
+  "timestamp": "2026-10-22T14:20:11Z",
+  "target": "http://127.0.0.1:6558",
+  "mode": "light",
+  "duration_seconds": 35.6351357,
+  "total_ground_truth": 44,
+  "light_ground_truth": 18,
+  "unsupported_ground_truth": 17,
+  "runners": [
+    {
+      "runner": "argos_full",
+      "description": "the Argos tools with the canonical contract and the taxonomy dedup",
+      "measured": true,
+      "duration_seconds": 33.1701435,
+      "total_reported_findings": 18,
+      "true_positives": 18,
+      "false_positives": 0,
+      "detected_ground_truth": 18,
+      "recall_percent": 40.909090909090914,
+      "light_recall_percent": 100,
+      "precision_percent": 100,
+      "false_positive_rate_percent": 0
+    },
+    {
+      "runner": "argos_no_agents",
+      "description": "the same tools without the canonical contract: only the title and the URL survive",
+      "measured": true,
+      "duration_seconds": 33.1701435,
+      "total_reported_findings": 28,
+      "true_positives": 28,
+      "false_positives": 0,
+      "detected_ground_truth": 18,
+      "recall_percent": 40.909090909090914,
+      "light_recall_percent": 100,
+      "precision_percent": 100,
+      "false_positive_rate_percent": 0
+    },
+    {
+      "runner": "raw_tools",
+      "description": "the third party scanners (nuclei, dalfox) without Argos in the path",
+      "measured": false,
+      "reason": "the third party binaries are not available: nuclei: not installed; dalfox: not installed",
+      "duration_seconds": 0,
+      "total_reported_findings": 0,
+      "true_positives": 0,
+      "false_positives": 0,
+      "detected_ground_truth": 0,
+      "recall_percent": 0,
+      "light_recall_percent": 0,
+      "precision_percent": 0,
+      "false_positive_rate_percent": 0
+    }
+  ],
+  "ground_truth_items": [
+    {
+      "id": "GT-SQLI-01",
+      "category": "sqli",
+      "path": "/search?q=1",
+      "description": "SQLi in query parameter q (blind / syntax error)",
+      "severity": "critical",
+      "expected_tool": "web.sqli",
+      "mode": "full",
+      "probe": "/search?q=1",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": [
+        {
+          "tool": "web.sqli",
+          "path": "/search",
+          "any": [
+            "sqli"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-SQLI-02",
+      "category": "sqli",
+      "path": "/item?id=1",
+      "description": "SQLi in query parameter id (numeric boolean differential)",
+      "severity": "critical",
+      "expected_tool": "web.sqli",
+      "mode": "full",
+      "probe": "/item?id=1",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": [
+        {
+          "tool": "web.sqli",
+          "path": "/item",
+          "any": [
+            "sqli"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-XSS-01",
+      "category": "xss",
+      "path": "/profile?user=admin",
+      "description": "Reflected XSS in parameter user",
+      "severity": "medium",
+      "expected_tool": "web.xss",
+      "mode": "full",
+      "probe": "/profile?user=admin",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": [
+        {
+          "tool": "web.xss",
+          "path": "/profile",
+          "any": [
+            "xss"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-LEAK-ENV",
+      "category": "exposure",
+      "path": "/.env",
+      "description": "Exposed environment configuration file",
+      "severity": "high",
+      "expected_tool": "web.fuzz",
+      "mode": "full",
+      "probe": "/.env",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": [
+        {
+          "tool": "web.fuzz",
+          "any": [
+            ".env"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-LEAK-BACKUP",
+      "category": "exposure",
+      "path": "/backup.zip",
+      "description": "Exposed backup archive",
+      "severity": "high",
+      "expected_tool": "web.fuzz",
+      "mode": "full",
+      "probe": "/backup.zip",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": [
+        {
+          "tool": "web.fuzz",
+          "any": [
+            "backup"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-ROBOTS",
+      "category": "recon",
+      "path": "/robots.txt",
+      "description": "Exposed robots.txt disclosing sensitive routes",
+      "severity": "low",
+      "expected_tool": "unsupported",
+      "mode": "none",
+      "probe": "/robots.txt",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": []
+    },
+    {
+      "id": "GT-HEADER-CSP",
+      "category": "misconfig",
+      "path": "/",
+      "description": "Missing Content-Security-Policy header",
+      "severity": "low",
+      "expected_tool": "web.scan",
+      "mode": "full",
+      "probe": "/",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": [
+        {
+          "any": [
+            "content-security-policy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-HEADER-HSTS",
+      "category": "misconfig",
+      "path": "/",
+      "description": "Missing Strict-Transport-Security header",
+      "severity": "low",
+      "expected_tool": "web.scan",
+      "mode": "full",
+      "probe": "/",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": [
+        {
+          "any": [
+            "strict-transport-security"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-HEADER-XFO",
+      "category": "misconfig",
+      "path": "/",
+      "description": "Missing X-Frame-Options header (clickjacking)",
+      "severity": "low",
+      "expected_tool": "web.scan",
+      "mode": "full",
+      "probe": "/",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": [
+        {
+          "any": [
+            "x-frame-options",
+            "frame-ancestors"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-IDOR-01",
+      "category": "idor",
+      "path": "/api/item/{id}",
+      "description": "IDOR/BOLA: the record of any user is returned without checking the session",
+      "severity": "critical",
+      "expected_tool": "unsupported",
+      "mode": "none",
+      "probe": "/api/item/2",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": []
+    },
+    {
+      "id": "GT-CSRF-01",
+      "category": "csrf",
+      "path": "/login",
+      "description": "CSRF: the login form has no anti-CSRF token",
+      "severity": "high",
+      "expected_tool": "web.csrf",
+      "mode": "light",
+      "probe": "/login",
+      "probe_status": 200,
+      "detected": true,
+      "matched_by": "web.csrf",
+      "matchers": [
+        {
+          "tool": "web.csrf",
+          "path": "/login",
+          "all": [
+            "csrf",
+            "anti-csrf token"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-CSRF-02",
+      "category": "csrf",
+      "path": "/api/transfer",
+      "description": "CSRF: a state changing endpoint with no token and no Origin validation",
+      "severity": "high",
+      "expected_tool": "unsupported",
+      "mode": "none",
+      "probe": "/api/transfer",
+      "probe_status": 405,
+      "detected": false,
+      "matchers": []
+    },
+    {
+      "id": "GT-JWT-01",
+      "category": "jwt",
+      "path": "/api/token",
+      "description": "JWT signed with alg:none (the signature is never verified)",
+      "severity": "critical",
+      "expected_tool": "web.jwt",
+      "mode": "light",
+      "probe": "/api/token",
+      "probe_status": 200,
+      "detected": true,
+      "matched_by": "web.jwt",
+      "matchers": [
+        {
+          "tool": "web.jwt",
+          "any": [
+            "alg=none"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-JWT-02",
+      "category": "jwt",
+      "path": "/api/token",
+      "description": "JWT without exp claim: the token never expires",
+      "severity": "medium",
+      "expected_tool": "web.jwt",
+      "mode": "light",
+      "probe": "/api/token",
+      "probe_status": 200,
+      "detected": true,
+      "matched_by": "web.jwt",
+      "matchers": [
+        {
+          "tool": "web.jwt",
+          "any": [
+            "without exp claim"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-JWT-03",
+      "category": "jwt",
+      "path": "/api/token",
+      "description": "JWT without aud claim: the audience cannot be validated",
+      "severity": "medium",
+      "expected_tool": "web.jwt",
+      "mode": "light",
+      "probe": "/api/token",
+      "probe_status": 200,
+      "detected": true,
+      "matched_by": "web.jwt",
+      "matchers": [
+        {
+          "tool": "web.jwt",
+          "any": [
+            "without aud claim"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-JWT-04",
+      "category": "jwt",
+      "path": "/api/token",
+      "description": "JWT carries a mutable privilege claim: the role of the token is client controlled",
+      "severity": "high",
+      "expected_tool": "web.jwt",
+      "mode": "light",
+      "probe": "/api/token",
+      "probe_status": 200,
+      "detected": true,
+      "matched_by": "web.jwt",
+      "matchers": [
+        {
+          "tool": "web.jwt",
+          "any": [
+            "mutable privilege claim"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-JWT-05",
+      "category": "jwt",
+      "path": "/api/token",
+      "description": "JWT without iss claim: the issuer cannot be validated",
+      "severity": "low",
+      "expected_tool": "web.jwt",
+      "mode": "light",
+      "probe": "/api/token",
+      "probe_status": 200,
+      "detected": true,
+      "matched_by": "web.jwt",
+      "matchers": [
+        {
+          "tool": "web.jwt",
+          "any": [
+            "without iss claim"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-SSRF-01",
+      "category": "ssrf",
+      "path": "/fetch?url=",
+      "description": "Blind SSRF: the server fetches the URL it receives and leaks the internal failure",
+      "severity": "high",
+      "expected_tool": "web.ssrf",
+      "mode": "light",
+      "probe": "/fetch?url=http://127.0.0.1:1/",
+      "probe_status": 200,
+      "detected": true,
+      "matched_by": "web.ssrf",
+      "matchers": [
+        {
+          "tool": "web.ssrf",
+          "path": "/fetch",
+          "any": [
+            "ssrf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-XXE-01",
+      "category": "xxe",
+      "path": "/api/xml",
+      "description": "XXE: the XML parser resolves external entities and reads local files",
+      "severity": "high",
+      "expected_tool": "unsupported",
+      "mode": "none",
+      "probe": "/api/xml",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": []
+    },
+    {
+      "id": "GT-SSTI-01",
+      "category": "ssti",
+      "path": "/render?tpl=",
+      "description": "SSTI: the template evaluates the expression of the request",
+      "severity": "critical",
+      "expected_tool": "web.ssti",
+      "mode": "light",
+      "probe": "/render?tpl=%7B%7B7*7%7D%7D",
+      "probe_status": 200,
+      "detected": true,
+      "matched_by": "web.ssti",
+      "matchers": [
+        {
+          "tool": "web.ssti",
+          "path": "/render",
+          "any": [
+            "template injection",
+            "ssti"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-OPENREDIR-01",
+      "category": "redirect",
+      "path": "/redirect?u=",
+      "description": "Open redirect: any destination is accepted",
+      "severity": "medium",
+      "expected_tool": "unsupported",
+      "mode": "none",
+      "probe": "/redirect?u=https://evil.example/",
+      "probe_status": 302,
+      "detected": false,
+      "matchers": []
+    },
+    {
+      "id": "GT-PATHTRAV-01",
+      "category": "traversal",
+      "path": "/download?file=",
+      "description": "Path traversal: the file name escapes the base directory",
+      "severity": "high",
+      "expected_tool": "unsupported",
+      "mode": "none",
+      "probe": "/download?file=../../../../etc/passwd",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": []
+    },
+    {
+      "id": "GT-CMDI-01",
+      "category": "cmd-injection",
+      "path": "/ping?host=",
+      "description": "Command injection: the host is concatenated into a shell command",
+      "severity": "critical",
+      "expected_tool": "unsupported",
+      "mode": "none",
+      "probe": "/ping?host=127.0.0.1",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": []
+    },
+    {
+      "id": "GT-DESER-01",
+      "category": "deserialization",
+      "path": "/api/deserialize",
+      "description": "Unsafe deserialization: the gadget of the payload reaches the shell",
+      "severity": "critical",
+      "expected_tool": "unsupported",
+      "mode": "none",
+      "probe": "/api/deserialize",
+      "probe_status": 400,
+      "detected": false,
+      "matchers": []
+    },
+    {
+      "id": "GT-GQL-01",
+      "category": "graphql",
+      "path": "/graphql",
+      "description": "GraphQL introspection is enabled: the whole schema is readable",
+      "severity": "medium",
+      "expected_tool": "web.graphql",
+      "mode": "light",
+      "probe": "/graphql",
+      "probe_status": 200,
+      "detected": true,
+      "matched_by": "web.graphql",
+      "matchers": [
+        {
+          "tool": "web.graphql",
+          "path": "/graphql",
+          "all": [
+            "graphql introspection"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-GQL-02",
+      "category": "graphql",
+      "path": "/graphql",
+      "description": "The GraphQL schema exposes sensitive fields (the password of the user)",
+      "severity": "medium",
+      "expected_tool": "web.graphql",
+      "mode": "light",
+      "probe": "/graphql",
+      "probe_status": 200,
+      "detected": true,
+      "matched_by": "web.graphql",
+      "matchers": [
+        {
+          "tool": "web.graphql",
+          "path": "/graphql",
+          "any": [
+            "sensitive fields"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-GQL-03",
+      "category": "graphql",
+      "path": "/graphql",
+      "description": "GraphQL exposes state changing mutations without an authorization rule",
+      "severity": "medium",
+      "expected_tool": "web.graphql",
+      "mode": "light",
+      "probe": "/graphql",
+      "probe_status": 200,
+      "detected": true,
+      "matched_by": "web.graphql",
+      "matchers": [
+        {
+          "tool": "web.graphql",
+          "path": "/graphql",
+          "any": [
+            "state changing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-GQL-04",
+      "category": "graphql",
+      "path": "/graphql",
+      "description": "GraphQL has no depth limit: a deeply nested query is accepted",
+      "severity": "medium",
+      "expected_tool": "web.graphql",
+      "mode": "light",
+      "probe": "/graphql",
+      "probe_status": 200,
+      "detected": true,
+      "matched_by": "web.graphql",
+      "matchers": [
+        {
+          "tool": "web.graphql",
+          "path": "/graphql",
+          "any": [
+            "depth limit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-GQL-05",
+      "category": "graphql",
+      "path": "/graphql",
+      "description": "GraphQL processes batched operations: a single request is amplified",
+      "severity": "medium",
+      "expected_tool": "web.graphql",
+      "mode": "light",
+      "probe": "/graphql",
+      "probe_status": 200,
+      "detected": true,
+      "matched_by": "web.graphql",
+      "matchers": [
+        {
+          "tool": "web.graphql",
+          "path": "/graphql",
+          "any": [
+            "batched operations"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-SMUGGLE-01",
+      "category": "smuggling",
+      "path": "/ (front proxy)",
+      "description": "HTTP request smuggling: the front-end accepts an ambiguous framing (CL+TE)",
+      "severity": "high",
+      "expected_tool": "web.smuggle",
+      "mode": "light",
+      "detected": true,
+      "matched_by": "web.smuggle",
+      "matchers": [
+        {
+          "tool": "web.smuggle",
+          "any": [
+            "smuggling"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-RACE-01",
+      "category": "race",
+      "path": "/api/coupon",
+      "description": "Race condition: a single use coupon is redeemed twice concurrently",
+      "severity": "medium",
+      "expected_tool": "unsupported",
+      "mode": "none",
+      "probe": "/api/coupon",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": []
+    },
+    {
+      "id": "GT-USERENUM-01",
+      "category": "auth",
+      "path": "/api/login",
+      "description": "User enumeration: the response time tells whether the account exists",
+      "severity": "medium",
+      "expected_tool": "unsupported",
+      "mode": "none",
+      "probe": "/api/login?user=admin",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": []
+    },
+    {
+      "id": "GT-RATELIMIT-01",
+      "category": "auth",
+      "path": "/api/login",
+      "description": "Missing rate limit: the login endpoint never throttles",
+      "severity": "medium",
+      "expected_tool": "unsupported",
+      "mode": "none",
+      "probe": "/api/login?user=admin",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": []
+    },
+    {
+      "id": "GT-GIT-01",
+      "category": "exposure",
+      "path": "/.git/",
+      "description": "The git repository is exposed",
+      "severity": "high",
+      "expected_tool": "web.fuzz",
+      "mode": "full",
+      "probe": "/.git/",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": [
+        {
+          "tool": "web.fuzz",
+          "any": [
+            ".git"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-GIT-02",
+      "category": "exposure",
+      "path": "/.git/config",
+      "description": "A personal access token travels in the URL of the git remote",
+      "severity": "high",
+      "expected_tool": "web.artifact",
+      "mode": "light",
+      "probe": "/.git/config",
+      "probe_status": 200,
+      "detected": true,
+      "matched_by": "web.artifact",
+      "matchers": [
+        {
+          "tool": "web.artifact",
+          "path": "/.git/config",
+          "any": [
+            "github token"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-CORS-01",
+      "category": "cors",
+      "path": "/api/cors",
+      "description": "Permissive CORS: any origin is accepted together with the credentials",
+      "severity": "high",
+      "expected_tool": "web.csrf",
+      "mode": "light",
+      "probe": "/api/cors",
+      "probe_status": 200,
+      "detected": true,
+      "matched_by": "web.csrf",
+      "matchers": [
+        {
+          "tool": "web.csrf",
+          "path": "/api/cors",
+          "any": [
+            "access-control-allow-origin"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-COOKIE-01",
+      "category": "misconfig",
+      "path": "/login",
+      "description": "The session cookie travels without Secure, HttpOnly nor SameSite",
+      "severity": "medium",
+      "expected_tool": "unsupported",
+      "mode": "none",
+      "detected": false,
+      "matchers": []
+    },
+    {
+      "id": "GT-VERB-01",
+      "category": "misconfig",
+      "path": "/api/data",
+      "description": "Verb tampering: the endpoint answers the state changing verbs too",
+      "severity": "low",
+      "expected_tool": "unsupported",
+      "mode": "none",
+      "probe": "/api/data",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": []
+    },
+    {
+      "id": "GT-DEBUGVARS-01",
+      "category": "exposure",
+      "path": "/debug/vars",
+      "description": "Information disclosure: the debug endpoint exposes the configuration and its secrets",
+      "severity": "medium",
+      "expected_tool": "web.artifact",
+      "mode": "light",
+      "probe": "/debug/vars",
+      "probe_status": 200,
+      "detected": true,
+      "matched_by": "web.artifact",
+      "matchers": [
+        {
+          "tool": "web.artifact",
+          "path": "/debug/vars",
+          "any": [
+            "aws access key"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GT-SECTXT-01",
+      "category": "recon",
+      "path": "/security.txt",
+      "description": "security.txt is missing: the contact channel of the project does not exist",
+      "severity": "info",
+      "expected_tool": "unsupported",
+      "mode": "none",
+      "probe": "/security.txt",
+      "probe_status": 404,
+      "detected": false,
+      "matchers": []
+    },
+    {
+      "id": "GT-SUBDOMAIN-01",
+      "category": "recon",
+      "path": "dev.payments.acme-corp.local",
+      "description": "Subdomain takeover: the vhost still answers from a deleted bucket",
+      "severity": "high",
+      "expected_tool": "unsupported",
+      "mode": "none",
+      "detected": false,
+      "matchers": []
+    },
+    {
+      "id": "GT-CACHE-01",
+      "category": "misconfig",
+      "path": "/api/cache",
+      "description": "Cache poisoning: a shared cache serves a response that depends on the headers without Vary",
+      "severity": "medium",
+      "expected_tool": "unsupported",
+      "mode": "none",
+      "probe": "/api/cache",
+      "probe_status": 200,
+      "detected": false,
+      "matchers": []
+    },
+    {
+      "id": "GT-UNICODE-01",
+      "category": "misconfig",
+      "path": "/unicode/",
+      "description": "Unicode smuggling: the fullwidth spelling of a blocked path slips through the edge",
+      "severity": "medium",
+      "expected_tool": "unsupported",
+      "mode": "none",
+      "probe": "/unicode/admin",
+      "probe_status": 403,
+      "detected": false,
+      "matchers": []
+    },
+    {
+      "id": "GT-SECRETJS-01",
+      "category": "exposure",
+      "path": "/static/app.js",
+      "description": "The API key of the backend travels in the JavaScript bundle",
+      "severity": "high",
+      "expected_tool": "web.artifact",
+      "mode": "light",
+      "probe": "/static/app.js",
+      "probe_status": 200,
+      "detected": true,
+      "matched_by": "web.artifact",
+      "matchers": [
+        {
+          "tool": "web.artifact",
+          "path": "/static/app.js",
+          "any": [
+            "aws access key"
+          ]
+        }
+      ]
+    }
+  ],
+  "gate": {
+    "checked": true,
+    "passed": true,
+    "baseline_recall_percent": 100,
+    "baseline_precision_percent": 100
+  }
+}

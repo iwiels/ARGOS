@@ -1,0 +1,35 @@
+Argos Auditor
+Copyright 2026 Victor Celadita and Argos contributors.
+
+Argos-authored code is licensed under the MIT License.
+See LICENSE for the full license text. Third-party material retains its
+separate license terms; see THIRD_PARTY_NOTICES.md.
+
+Attribution notices retained as required by upstream licenses:
+
+1. OpenCode (https://github.com/sst/opencode), MIT License,
+   Copyright (c) SST. This project incorporates portions of OpenCode.
+   The original MIT notice obligations apply to the upstream portions
+   retained in this repository.
+
+2. Cybersecurity skills under `argos-config/skills/library/` are adapted from
+   Anthropic-Cybersecurity-Skills (https://github.com/mukul975/Anthropic-Cybersecurity-Skills),
+   which attributes its upstream material to Anthropic. The adapted skills
+   are provided under Apache License 2.0. A copy of that license is included
+   at `argos-config/skills/library/LICENSE-2.0.txt`; adaptation details are in
+   `argos-config/skills/library/NOTICE.md`.
+
+3. Pixel source icons in `docs/design-reference/streamline-pixel/` and the
+   generated icon definitions in `packages/ui` are derived from Streamline Pixel Icons
+   (https://www.streamlinehq.com/icons/pixel), by Streamline, under Creative
+   Commons Attribution 4.0 International (CC BY 4.0),
+   https://creativecommons.org/licenses/by/4.0/. The SVG path data was
+   converted into generated TypeScript icon definitions; Argos also defines
+   aliases and additional icons. Streamline does not endorse Argos.
+
+4. Trademark Reservation:
+   "Argos Auditor" is a trademark of Victor Celadita.
+   This license does not grant permission to use the trade names, trademarks,
+   service marks, or product names of the Licensor except as required for
+   reasonable and customary use in describing the origin of the Work and
+   reproducing this NOTICE file.

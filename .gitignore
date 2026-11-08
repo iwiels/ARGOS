@@ -1,0 +1,129 @@
+# Dependencies & Caches
+node_modules/
+**/node_modules/
+.pnpm-store/
+.turbo/
+.cache/
+**/.cache/
+.vite/
+**/.vite/
+
+# Build Outputs & Bundles
+dist/
+**/dist/
+out/
+**/out/
+build/
+**/build/
+ts-dist/
+*.tsbuildinfo
+**/*.tsbuildinfo
+*.bun-build
+
+# Lighthouse / audit reports generated at the repo root
+/report.html
+/report.json
+
+# Electron Package & Installer Outputs
+release/
+**/release/
+release-builds/
+electron-builder-output/
+*.exe
+*.msi
+*.dmg
+*.pkg
+*.deb
+*.rpm
+*.AppImage
+*.snap
+*.asar
+*.zip
+*.tar.gz
+
+# Client deliverables — never publish in OSS
+*.pdf
+*.pptx
+*.ppt
+
+# Generated Go runtime packages
+argos-bin/bin/
+
+# Argos binaries & dynamic libs
+argos-bin/*.exe
+argos-bin/*.dll
+argos-bin/*.pdb
+
+# Indexers, Agent & Tool Caches
+.freebuff/
+.codebase-synapse/
+**/.codebase-synapse/
+.serena/
+**/.serena/
+.omo/
+**/.omo/
+.codex/
+.gemini/
+scratch/
+playground/
+tmp/
+refs/
+.sst/
+.worktrees/
+/result/
+.stryker-tmp/
+**/.stryker-tmp/
+.quality-mcp/
+**/.quality-mcp/
+.zcode/
+**/.zcode/
+
+# IDE & OS Files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*~
+*.swp
+*.swo
+Session.vim
+
+# Environment & Secrets
+.env
+.env.*
+.env.local
+.env.*.local
+!.env.example
+!.env.*.example
+
+# Logs & Runtime Data
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+error.log
+
+# Compiled script artifacts
+packages/desktop/scripts/*.js
+packages/opencode/script/*.js
+packages/**/script/*.js
+packages/**/script/**/*.js
+packages/**/specs/**/*.js
+packages/argos/test/**/*.js
+packages/*/test/**/*.js
+argos-config/skills/*/scripts/*.js
+a.out
+target/
+.scripts/
+.direnv/
+
+
+# Agent/coder caches locales
+.agents/
+.superpowers/
+
+# Build/test artifacts locales
+**/.artifacts/
+demo-target/
+.claude/launch.json

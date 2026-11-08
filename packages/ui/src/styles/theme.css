@@ -1,0 +1,643 @@
+@layer theme {
+  /* ══════════════════════════════════════════════════════════════
+     ARGOS DESIGN TOKENS — Single Source of Truth
+     16 semantic primaries + domain tokens
+     Zero OpenCode, Zero v2-, Zero aliases
+     ══════════════════════════════════════════════════════════════ */
+
+  /* ── Palette base (Tailwind zinc) ── shared by all modes ── */
+  :root {
+    --grey-50: #fafafa;
+    --grey-100: #f4f4f5;
+    --grey-200: #e4e4e7;
+    --grey-300: #d4d4d8;
+    --grey-400: #a1a1aa;
+    --grey-500: #71717a;
+    --grey-600: #52525b;
+    /* V1 (C15): --grey-700 (zinc-700) añadido; la rampa saltaba de 600 a 800 */
+    --grey-700: #3f3f46;
+    --grey-800: #27272a;
+    --grey-900: #18181b;
+    --grey-950: #09090b;
+
+    /* ── Paleta Verde-Negro WCAG 2.2 ── */
+    --green-500: #10B981;
+    --black-0:   #FFFFFF;
+    --black-100: #F5F5F5;
+    --black-900: #0A0A0A;
+    --white: #ffffff;
+    --black: #000000;
+    --w-sidebar: 240px;
+  }
+
+  /* ══════════════════════════════════════════════════════════════
+     DARK (default)
+     ══════════════════════════════════════════════════════════════ */
+  :root,
+  [data-color-scheme="dark"] {
+    color-scheme: dark;
+
+    /* ── 16 Primarios: Background (Mosby Archival Cockpit) ── */
+    --bg-base: #121212;
+    --background-base: var(--bg-base);
+    --bg-surface: #191919;
+    --bg-elevated: #242424;
+    --bg-contrast: var(--black-0);
+
+    /* ── 16 Primarios: Text (6) ── */
+    --text-primary: var(--black-100);
+    --text-secondary: #B0B0B0;
+    --text-tertiary: #a8a8b0;
+    --text-link: var(--green-500);
+    --text-accent: var(--green-500);
+    --text-on-critical: var(--black-900);
+
+    /* ── 16 Primarios: Border (2) ── */
+    --border-default: rgba(255, 255, 255, 0.05);
+    --border-strong: rgba(255, 255, 255, 0.12);
+
+    /* ── 16 Primarios: Interactive (3) ── */
+    --accent: var(--green-500);
+    --accent-fg: var(--black-900);
+    --danger: #EF4444;
+
+    /* ── 16 Primarios: Focus ── */
+    --focus-ring: rgba(16, 185, 129, 0.55);
+
+    /* ── 16 Primarios: Icon (2) ── */
+    --icon: var(--black-100);
+    --icon-muted: #8A8A8A;
+
+    /* ── 16 Primarios: Overlay (2) ── */
+    --overlay-hover: rgba(255, 255, 255, 0.06);
+    --overlay-pressed: rgba(255, 255, 255, 0.12);
+
+    /* ── Severity Tokens (Auditoría WCAG 2.2) ── */
+    --severity-bg-critical: rgba(239, 68, 68, 0.15);
+    --severity-fg-critical: #F87171;
+    --severity-border-critical: rgba(239, 68, 68, 0.40);
+
+    --severity-bg-high: rgba(249, 115, 22, 0.15);
+    --severity-fg-high: #FB923C;
+    --severity-border-high: rgba(249, 115, 22, 0.40);
+
+    --severity-bg-medium: rgba(234, 179, 8, 0.15);
+    --severity-fg-medium: #FACC15;
+    --severity-border-medium: rgba(234, 179, 8, 0.40);
+
+    --severity-bg-low: rgba(59, 130, 246, 0.15);
+    --severity-fg-low: #60A5FA;
+    --severity-border-low: rgba(59, 130, 246, 0.40);
+
+    --severity-bg-info: rgba(148, 163, 184, 0.15);
+    --severity-fg-info: #a3b0c0;
+
+    /* ── Text domain tokens ── */
+    --text-strong: var(--text-primary);
+    --text-base: var(--text-primary);
+    --text-weak: var(--text-secondary);
+    --text-weaker: var(--text-tertiary);
+    --text-interactive-base: var(--text-accent);
+    --text-invert-base: #a0a0a0;
+    --text-invert-weak: #8a8a8a;
+    --text-invert-strong: #ededed;
+    --text-mix-blend-mode: normal;
+
+    /* ── Border domain tokens ── */
+    --border-weak-base: rgba(255, 255, 255, 0.06);
+    --border-strong-base: rgba(255, 255, 255, 0.18);
+    --border-weaker-base: rgba(255, 255, 255, 0.04);
+    --border-base: var(--border-default);
+    --border-active: rgba(255, 255, 255, 0.30);
+    --border-interactive-base: var(--accent);
+    --border-critical-base: var(--danger);
+    --border-selected: var(--accent);
+    /* C7: hue verde en dark / azul en light es deuda conocida; V1 no lo toca */
+    --border-weak-selected: rgba(16, 185, 129, 0.40);
+    --border-critical-selected: rgba(239, 68, 68, 0.50);
+    --shadow-xxs-border: 0 0 0 0.5px var(--border-weak-base, rgba(0, 0, 0, 0.07));
+    --shadow-xs-border-critical-base: 0 0 0 1px var(--border-critical-selected, #fc543a);
+
+    /* ── Icon domain tokens ── */
+    --icon-strong: var(--text-primary);
+    --icon-weak: var(--text-secondary);
+    /* C2: apunta a --icon-muted para que --icon-weak-base resuelva en dark */
+    --icon-weaker: var(--icon-muted);
+    --icon-active: #ffffff;
+    --icon-hover: var(--grey-100);
+    --icon-interactive-base: var(--accent);
+    --icon-invert-base: var(--bg-base);
+    --icon-warning-base: #f59e0b;
+
+    /* ── Overlay domain tokens ── */
+    --overlay-scrim: rgba(0, 0, 0, 0.50);
+    --overlay-contrast-hover: rgba(0, 0, 0, 0.18);
+    --overlay-contrast-pressed: rgba(0, 0, 0, 0.30);
+    --overlay-gradient-top: rgba(255, 255, 255, 0.06);
+    --overlay-gradient-bot: transparent;
+
+    /* ── Surface domain tokens ── */
+    --surface-base: var(--bg-base);
+    --surface-base-active: var(--bg-surface);
+    --surface-weak: var(--bg-surface);
+    --surface-raised-base: #1e1e21;
+    --surface-raised-base-hover: #26262a;
+    --surface-raised-base-active: #2e2e32;
+    --surface-raised-stronger: #2a2a2e;
+    --surface-raised-stronger-non-alpha: #2a2a2e;
+    --surface-inset-base: var(--bg-base);
+    --surface-critical-weak: rgba(239, 68, 68, 0.12);
+    --surface-interactive-weak: rgba(16, 185, 129, 0.12);
+    --surface-diff-hidden-base: rgba(16, 185, 129, 0.08);
+    --surface-diff-hidden-strong: rgba(16, 185, 129, 0.16);
+
+    /* ── Elevation domain tokens ── */
+    --elevation-raised:
+      0px 1px 2px 0px rgba(0, 0, 0, 0.40),
+      0px 0px 0px 0.5px rgba(255, 255, 255, 0.06);
+    --elevation-floating:
+      0px 4px 8px 0px rgba(0, 0, 0, 0.40),
+      0px 0px 0px 0.5px rgba(255, 255, 255, 0.08);
+    --elevation-overlay:
+      0px 8px 16px 0px rgba(0, 0, 0, 0.40),
+      0px 0px 0px 0.5px rgba(255, 255, 255, 0.08);
+    --elevation-button:
+      0px 1px 1.5px 0px rgba(0, 0, 0, 0.30),
+      0px 0px 0px 0.5px rgba(255, 255, 255, 0.10);
+    --elevation-switch-off:
+      inset 0px 1px 1px 0px rgba(0, 0, 0, 0.20),
+      inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.06);
+    --elevation-switch-on:
+      inset 0px 1px 1px 0px rgba(0, 0, 0, 0.30),
+      inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.12);
+    --elevation-elements: 0px 0.5px 0.5px 0px rgba(0, 0, 0, 0.30);
+
+    /* ── Shadow domain tokens ── */
+    --shadow-card-value:
+      0px 1px 2px 0px rgba(0, 0, 0, 0.40),
+      0px 0px 0px 0.5px rgba(255, 255, 255, 0.08);
+    --shadow-popover-value:
+      0px 4px 8px 0px rgba(0, 0, 0, 0.40),
+      0px 0px 0px 0.5px rgba(255, 255, 255, 0.10);
+    --shadow-modal-value:
+      0px 8px 16px 0px rgba(0, 0, 0, 0.50),
+      0px 0px 0px 0.5px rgba(255, 255, 255, 0.10);
+    --shadow-xs-border-value:
+      0 0 0 1px var(--border-base, rgba(11, 6, 0, 0.2)), 0 1px 2px -1px rgba(19, 16, 16, 0.04),
+      0 1px 2px 0 rgba(19, 16, 16, 0.06), 0 1px 3px 0 rgba(19, 16, 16, 0.08);
+    --shadow-xs-border-base-value:
+      0 0 0 1px var(--border-weak-base, rgba(17, 0, 0, 0.12)), 0 1px 2px -1px rgba(19, 16, 16, 0.04),
+      0 1px 2px 0 rgba(19, 16, 16, 0.06), 0 1px 3px 0 rgba(19, 16, 16, 0.08);
+    --shadow-xs-border-select-value:
+      0 0 0 3px var(--border-weak-selected, rgba(1, 103, 255, 0.29)),
+      0 0 0 1px var(--border-selected, rgba(0, 74, 255, 0.99)), 0 1px 2px -1px rgba(19, 16, 16, 0.25),
+      0 1px 2px 0 rgba(19, 16, 16, 0.08), 0 1px 3px 0 rgba(19, 16, 16, 0.12);
+    --shadow-xs-border-focus-value:
+      0 0 0 1px var(--border-base, rgba(11, 6, 0, 0.2)), 0 1px 2px -1px rgba(19, 16, 16, 0.25),
+      0 1px 2px 0 rgba(19, 16, 16, 0.08), 0 1px 3px 0 rgba(19, 16, 16, 0.12), 0 0 0 2px var(--bg-base, #1f1f1f),
+      0 0 0 3px var(--border-selected, rgba(0, 74, 255, 0.99));
+    --shadow-xs-border-hover-value:
+      0 0 0 1px var(--border-weak-selected, rgba(0, 112, 255, 0.22)), 0 1px 2px -1px rgba(19, 16, 16, 0.04),
+      0 1px 2px 0 rgba(19, 16, 16, 0.06), 0 1px 3px 0 rgba(19, 16, 16, 0.08);
+    --shadow-sidebar-overlay: -3px 0 8px 0 rgba(0, 0, 0, 0.40);
+
+    --transition-duration: 120ms;
+    --transition-easing: ease-out;
+
+    /* ── Z-Index Domain Tokens ── */
+    --z-base: 0;
+    --z-dock: 10;
+    --z-sticky: 20;
+    --z-dropdown: 30;
+    --z-overlay: 40;
+    --z-modal: 50;
+    --z-floating: 60;
+    --z-toast: 1000;
+
+    /* ── Radius domain tokens: 4px canónico congelado (C1) ──
+       sm/md/lg/dossier comparten 4px por decisión (tres nombres, un valor, intencional).
+       xl (6px) y 2xl (8px) solo espejan el puente Tailwind; no usar en superficies nuevas. */
+    --radius-xs: 2px;
+    --radius-sm: 4px;
+    --radius-md: 4px;
+    --radius-lg: 4px;
+    --radius-dossier: 4px;
+    --radius-xl: 6px;
+    --radius-2xl: 8px;
+    --stack-border-radius: 4px;
+
+    /* ── Typography domain tokens ── */
+    --font-family-text: "Inter", sans-serif;
+    --font-family-sans: "Inter", system-ui, -apple-system, sans-serif;
+    --font-family-sans--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    --font-family-display: "Inter", system-ui, sans-serif;
+    --font-family-serif: Georgia, serif;
+    --font-family-mono: "JetBrainsMono Nerd Font Mono", "JetBrains Mono", "Fira Code", monospace;
+    --font-family-mono--font-feature-settings: "calt", "liga";
+    --font-feature-settings-mono: "calt", "liga";
+    --font-size-xs: 11px;
+    --font-size-sm: 12px;
+    --font-size-base: 14px;
+    --font-size-lg: 16px;
+    --font-size-xl: 20px;
+    --font-size-2xl: 24px;
+    --font-size-x-small: 11px;
+    --font-size-small: 12px;
+    --font-size-large: 16px;
+    --font-size-x-large: 20px;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-regular: 400;
+    --line-height-normal: 1.5;
+    --line-height-large: 1.5;
+    --line-height-x-large: 1.7142857143; /* 171.429% */
+    --letter-spacing-normal: 0em;
+    --letter-spacing-tight: -0.01em;
+    --letter-spacing-tightest: -0.02em;
+
+    /* ── State domain tokens ── */
+    --state-fg-success: var(--green-500);
+    --state-fg-warning: #f59e0b;
+    --state-fg-danger: #F87171;
+    --state-bg-danger: rgba(239, 68, 68, 0.15);
+    --state-border-danger: rgba(239, 68, 68, 0.40);
+
+    /* ── Input domain tokens ── */
+    --input-base: var(--grey-900);
+
+    /* ── Button domain tokens ── */
+    --button-secondary-base: var(--grey-800);
+
+    /* ── Avatar domain tokens ── */
+    --avatar-fg: #ffffff;
+    --avatar-radius: 9999px;
+    --avatar-font-size: 13px;
+    --avatar-tracking: -0.01em;
+    --avatar-bg-gray: rgba(255, 255, 255, 0.08);
+    --avatar-border-gray: rgba(255, 255, 255, 0.15);
+    --avatar-bg-orange: #723d22;
+    --avatar-border-orange: #ff8648;
+    --avatar-bg-yellow: #68552b;
+    --avatar-border-yellow: #e7af36;
+    --avatar-bg-cyan: #005a6e;
+    --avatar-border-cyan: #0096b8;
+    --avatar-bg-green: #196130;
+    --avatar-border-green: #49c970;
+    --avatar-bg-red: #7a1f23;
+    --avatar-border-red: #d92e3c;
+    --avatar-bg-pink: #8c2d61;
+    --avatar-border-pink: #e4429e;
+    --avatar-bg-blue: #263fa9;
+    --avatar-border-blue: #7698fd;
+    --avatar-bg-purple: #361f83;
+    --avatar-border-purple: #7152f4;
+
+    /* ── Syntax domain tokens ── */
+    --syntax-comment: var(--text-tertiary);
+    --syntax-string: #7fd88f;
+    --syntax-keyword: var(--text-tertiary);
+    --syntax-property: #e488d8;
+    --syntax-type: #ecf58c;
+    --syntax-constant: #93e9f6;
+    --syntax-variable: var(--text-strong);
+    --syntax-operator: var(--text-tertiary);
+    --syntax-primitive: #ffba92;
+    --syntax-punctuation: var(--text-tertiary);
+    --syntax-regexp: var(--text-base);
+    --syntax-object: var(--text-strong);
+    --syntax-success: #22c55e;
+    --syntax-warning: #f59e0b;
+    --syntax-critical: #F87171;
+    --syntax-info: #93e9f6;
+    --syntax-diff-add: #7fd88f;
+    --syntax-diff-delete: #F87171;
+
+    /* ── Markdown domain tokens ── */
+
+    /* ── Diff domain tokens ── */
+    --icon-diff-add-base: #7fd88f;
+    --icon-diff-delete-base: #ef4444;
+    --icon-diff-modified-base: #ffba92;
+
+    /* ── Legacy alpha tokens (usados en gradients inline) ── */
+    --alpha-light-0: transparent;
+    --alpha-light-2: rgba(255, 255, 255, 0.02);
+    --alpha-light-6: rgba(255, 255, 255, 0.06);
+    --alpha-light-10: rgba(255, 255, 255, 0.10);
+    --alpha-light-16: rgba(255, 255, 255, 0.16);
+    --alpha-light-20: rgba(255, 255, 255, 0.20);
+    --alpha-dark-20: rgba(0, 0, 0, 0.20);
+    --alpha-dark-50: rgba(0, 0, 0, 0.50);
+
+    /* ── OC2 legacy tokens (aún usados por la UI) ── */
+    --background-strong: #121212;
+    --background-stronger: #151515;
+    --base: rgba(255, 255, 255, 0.034);
+    --surface-base-hover: rgba(255, 255, 255, 0.039);
+    --icon-base: #7e7e7e;
+    --icon-weak-base: var(--icon-weaker);
+    --icon-critical-base: #fc533a;
+    --icon-icon-accent: var(--accent);
+    --icon-info-active: #dfa7e3;
+    --icon-info-base: #c084fc;
+    --icon-on-interactive-base: #ededed;
+    --icon-strong-base: #ededed;
+    --icon-success-base: #12c905;
+    --icon-agent-plan-base: #94a3b8;
+    --icon-agent-docs-base: #f59e0b;
+    --icon-agent-ask-base: #60a5fa;
+    --icon-agent-build-base: #a78bfa;
+    --icon-agent-analyst-base: #34d399;
+    --icon-agent-triage-base: #fbbf24;
+    --icon-agent-hunter-base: #38bdf8;
+    --icon-agent-responder-base: #fb7185;
+    --surface-info-base: rgba(96, 165, 250, 0.12);
+    /* C7: hue verde en dark / azul en light es deuda conocida; V1 no lo toca */
+    --surface-interactive-hover: rgba(16, 185, 129, 0.18);
+    --surface-warning-strong: #fcd53a;
+    --text-diff-add-base: #7fd88f;
+    --text-diff-delete-base: #fc533a;
+    --text-on-critical-base: #fc533a;
+  }
+
+  /* ══════════════════════════════════════════════════════════════
+     LIGHT ([data-color-scheme="light"] / .light)
+     ══════════════════════════════════════════════════════════════ */
+  .light,
+  [data-color-scheme="light"] {
+    color-scheme: light;
+
+    /* ── 16 Primarios: Background ── */
+    --bg-base: var(--grey-50);
+    --bg-surface: var(--grey-100);
+    --bg-elevated: var(--grey-200);
+    --bg-contrast: var(--grey-950);
+
+    /* ── 16 Primarios: Text ── */
+    --text-primary: var(--grey-950);
+    --text-secondary: var(--grey-600);
+    --text-tertiary: #5f636b;
+    --text-link: #065f46;
+    --text-accent: #065f46;
+    --text-on-critical: #ffffff;
+
+    /* ── 16 Primarios: Border ── */
+    --border-default: rgba(0, 0, 0, 0.08);
+    --border-strong: rgba(0, 0, 0, 0.16);
+
+    /* ── 16 Primarios: Interactive ── */
+    --accent: #047857;
+    --accent-fg: #ffffff;
+    --danger: #dc2626;
+
+    /* ── 16 Primarios: Focus ── */
+    --focus-ring: rgba(4, 120, 87, 0.55);
+
+    /* ── 16 Primarios: Icon ── */
+    --icon: var(--grey-600);
+    --icon-muted: var(--grey-500);
+
+    /* ── 16 Primarios: Overlay ── */
+    --overlay-hover: rgba(0, 0, 0, 0.04);
+    --overlay-pressed: rgba(0, 0, 0, 0.08);
+
+    /* ── Text domain tokens ── */
+    --text-strong: var(--text-primary);
+    --text-base: var(--text-primary);
+    --text-weak: var(--text-secondary);
+    --text-weaker: var(--text-tertiary);
+    --text-interactive-base: var(--text-accent);
+    --text-invert-base: #3f3f46;
+    --text-invert-weak: #5f636b;
+    --text-invert-strong: #171717;
+    --text-mix-blend-mode: normal;
+
+    /* ── Border domain tokens ── */
+    --border-weak-base: rgba(0, 0, 0, 0.05);
+    --border-strong-base: rgba(0, 0, 0, 0.14);
+    --border-weaker-base: rgba(0, 0, 0, 0.03);
+    --border-base: var(--border-default);
+    --border-active: rgba(0, 0, 0, 0.24);
+    --border-interactive-base: var(--accent);
+    --border-critical-base: var(--danger);
+    --border-selected: var(--accent);
+    /* C7: hue azul en light / verde en dark es deuda conocida; V1 no lo toca */
+    --border-weak-selected: rgba(37, 99, 235, 0.30);
+    --border-critical-selected: rgba(220, 38, 38, 0.40);
+    --shadow-xxs-border: 0 0 0 0.5px var(--border-weak-base, rgba(0, 0, 0, 0.07));
+    --shadow-xs-border-critical-base: 0 0 0 1px var(--border-critical-selected, #fc543a);
+
+    /* ── Icon domain tokens ── */
+    --icon-strong: var(--grey-900);
+    --icon-weak: var(--grey-500);
+    --icon-weaker: var(--grey-500);
+    --icon-active: #000000;
+    --icon-hover: var(--grey-800);
+    --icon-interactive-base: var(--accent);
+    --icon-invert-base: var(--grey-50);
+    --icon-warning-base: #b45309;
+
+    /* ── Overlay domain tokens ── */
+    --overlay-scrim: rgba(0, 0, 0, 0.30);
+    --overlay-contrast-hover: rgba(255, 255, 255, 0.18);
+    --overlay-contrast-pressed: rgba(255, 255, 255, 0.30);
+    --overlay-gradient-top: rgba(0, 0, 0, 0.03);
+    --overlay-gradient-bot: transparent;
+
+    /* ── Surface domain tokens ── */
+    --surface-base: var(--grey-100);
+    --surface-base-active: var(--grey-200);
+    --surface-weak: var(--grey-200);
+    --surface-raised-base: #ffffff;
+    --surface-raised-base-hover: #f5f5f5;
+    --surface-raised-base-active: #ebebeb;
+    --surface-raised-stronger: #fafafa;
+    --surface-raised-stronger-non-alpha: #fafafa;
+    --surface-inset-base: var(--grey-100);
+    --surface-critical-weak: rgba(220, 38, 38, 0.08);
+    --surface-interactive-weak: rgba(4, 120, 87, 0.08);
+    --surface-info-base: rgba(37, 99, 235, 0.08);
+    --surface-diff-hidden-base: rgba(37, 99, 235, 0.06);
+    --surface-diff-hidden-strong: rgba(37, 99, 235, 0.12);
+
+    /* ── Elevation domain tokens ── */
+    --elevation-raised:
+      0px 1px 2px 0px rgba(0, 0, 0, 0.06),
+      0px 0px 0px 0.5px rgba(0, 0, 0, 0.08);
+    --elevation-floating:
+      0px 4px 8px 0px rgba(0, 0, 0, 0.06),
+      0px 0px 0px 0.5px rgba(0, 0, 0, 0.10);
+    --elevation-overlay:
+      0px 8px 16px 0px rgba(0, 0, 0, 0.08),
+      0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+    --elevation-button:
+      0px 1px 1.5px 0px rgba(0, 0, 0, 0.08),
+      0px 0px 0px 0.5px rgba(0, 0, 0, 0.10);
+    --elevation-switch-off:
+      inset 0px 1px 1px 0px rgba(0, 0, 0, 0.08),
+      inset 0px 0px 0px 0.5px rgba(0, 0, 0, 0.10);
+    --elevation-switch-on:
+      inset 0px 1px 1px 0px rgba(0, 0, 0, 0.12),
+      inset 0px 0px 0px 0.5px rgba(0, 0, 0, 0.16);
+    --elevation-elements: 0px 0.5px 0.5px 0px rgba(0, 0, 0, 0.10);
+
+    /* ── Shadow domain tokens ── */
+    --shadow-card-value:
+      0px 1px 2px 0px rgba(0, 0, 0, 0.05),
+      0px 0px 0px 0.5px rgba(0, 0, 0, 0.08);
+    --shadow-popover-value:
+      0px 4px 8px 0px rgba(0, 0, 0, 0.08),
+      0px 0px 0px 0.5px rgba(0, 0, 0, 0.10);
+    --shadow-modal-value:
+      0px 8px 16px 0px rgba(0, 0, 0, 0.12),
+      0px 0px 0px 0.5px rgba(0, 0, 0, 0.10);
+    --shadow-xs-border-value:
+      0 0 0 1px var(--border-base, rgba(11, 6, 0, 0.2)), 0 1px 2px -1px rgba(19, 16, 16, 0.04),
+      0 1px 2px 0 rgba(19, 16, 16, 0.06), 0 1px 3px 0 rgba(19, 16, 16, 0.08);
+    --shadow-xs-border-base-value:
+      0 0 0 1px var(--border-weak-base, rgba(17, 0, 0, 0.12)), 0 1px 2px -1px rgba(19, 16, 16, 0.04),
+      0 1px 2px 0 rgba(19, 16, 16, 0.06), 0 1px 3px 0 rgba(19, 16, 16, 0.08);
+    --shadow-xs-border-select-value:
+      0 0 0 3px var(--border-weak-selected, rgba(1, 103, 255, 0.29)),
+      0 0 0 1px var(--border-selected, rgba(0, 74, 255, 0.99)), 0 1px 2px -1px rgba(19, 16, 16, 0.25),
+      0 1px 2px 0 rgba(19, 16, 16, 0.08), 0 1px 3px 0 rgba(19, 16, 16, 0.12);
+    --shadow-xs-border-focus-value:
+      0 0 0 1px var(--border-base, rgba(11, 6, 0, 0.2)), 0 1px 2px -1px rgba(19, 16, 16, 0.25),
+      0 1px 2px 0 rgba(19, 16, 16, 0.08), 0 1px 3px 0 rgba(19, 16, 16, 0.12), 0 0 0 2px var(--bg-base, #ffffff),
+      0 0 0 3px var(--border-selected, rgba(0, 74, 255, 0.99));
+    --shadow-xs-border-hover-value:
+      0 0 0 1px var(--border-weak-selected, rgba(0, 112, 255, 0.22)), 0 1px 2px -1px rgba(19, 16, 16, 0.04),
+      0 1px 2px 0 rgba(19, 16, 16, 0.06), 0 1px 3px 0 rgba(19, 16, 16, 0.08);
+    --shadow-sidebar-overlay: -3px 0 8px 0 rgba(0, 0, 0, 0.12);
+
+    --transition-duration: 120ms;
+    --transition-easing: ease-out;
+
+    /* ── Typography domain tokens (inherit from :root) ── */
+
+    /* ── State domain tokens ── */
+    --state-fg-success: #166534;
+    --state-fg-warning: #92400e;
+    --state-fg-danger: #b91c1c;
+    --state-bg-danger: rgba(220, 38, 38, 0.10);
+    --state-border-danger: rgba(220, 38, 38, 0.30);
+
+    /* ── Input domain tokens ── */
+    --input-base: #ffffff;
+
+    /* ── Button domain tokens ── */
+    --button-secondary-base: var(--grey-100);
+
+    /* ── Severity domain tokens ── */
+    --severity-bg-critical: rgba(220, 38, 38, 0.10);
+    --severity-fg-critical: #991b1b;
+    --severity-border-critical: rgba(220, 38, 38, 0.25);
+    --severity-bg-high: rgba(234, 88, 12, 0.08);
+    --severity-fg-high: #9a3412;
+    --severity-border-high: rgba(234, 88, 12, 0.25);
+    --severity-bg-medium: rgba(202, 138, 4, 0.08);
+    --severity-fg-medium: #854d0e;
+    --severity-border-medium: rgba(202, 138, 4, 0.25);
+    --severity-bg-low: rgba(37, 99, 235, 0.08);
+    --severity-fg-low: #1d4ed8;
+    --severity-border-low: rgba(37, 99, 235, 0.25);
+    --severity-bg-info: rgba(0, 0, 0, 0.03);
+    --severity-fg-info: #4b5563;
+
+    /* ── OC2 legacy tokens mapped to light mode ── */
+    --icon-base: var(--icon);
+    --icon-weak-base: var(--icon-weak);
+    --icon-icon-accent: var(--accent);
+    --icon-on-interactive-base: #ffffff;
+    --icon-success-base: #16a34a;
+    --icon-critical-base: #dc2626;
+    --icon-agent-plan-base: #6b7280;
+    --icon-agent-docs-base: #d97706;
+    --icon-agent-ask-base: #2563eb;
+    --icon-agent-build-base: #7c3aed;
+    --icon-agent-analyst-base: #059669;
+    --icon-agent-triage-base: #d97706;
+    --icon-agent-hunter-base: #0284c7;
+    --icon-agent-responder-base: #e11d48;
+    --text-diff-add-base: #16a34a;
+    --text-diff-delete-base: #dc2626;
+    --text-on-critical-base: #ffffff;
+
+    /* ── Avatar domain tokens ── */
+    --avatar-bg-gray: rgba(0, 0, 0, 0.06);
+    --avatar-border-gray: rgba(0, 0, 0, 0.12);
+    --avatar-bg-orange: #fff1e7;
+    --avatar-border-orange: #ed5f00;
+    --avatar-bg-yellow: #fffbe6;
+    --avatar-border-yellow: #ca8a04;
+    --avatar-bg-cyan: #e7f9fb;
+    --avatar-border-cyan: #0894b3;
+    --avatar-bg-green: #eefadc;
+    --avatar-border-green: #16a34a;
+    --avatar-bg-red: #fef2f2;
+    --avatar-border-red: #dc2626;
+    --avatar-bg-pink: #feeef8;
+    --avatar-border-pink: #cd1d8d;
+    --avatar-bg-blue: #eff6ff;
+    --avatar-border-blue: #2563eb;
+    --avatar-bg-purple: #f9f1fe;
+    --avatar-border-purple: #8445bc;
+    --avatar-fg: var(--grey-900);
+
+    /* ── Syntax domain tokens ── */
+    --syntax-comment: var(--text-tertiary);
+    --syntax-string: #006656;
+    --syntax-keyword: var(--text-tertiary);
+    --syntax-property: #9d174d;
+    --syntax-type: #596600;
+    --syntax-constant: #155e75;
+    --syntax-variable: var(--text-strong);
+    --syntax-operator: var(--text-tertiary);
+    --syntax-primitive: #9a3412;
+    --syntax-punctuation: var(--text-tertiary);
+    --syntax-regexp: var(--text-base);
+    --syntax-object: var(--text-strong);
+    --syntax-success: #166534;
+    --syntax-warning: #92400e;
+    --syntax-critical: #991b1b;
+    --syntax-info: #155e75;
+    --syntax-diff-add: #006656;
+    --syntax-diff-delete: #991b1b;
+
+    /* ── Markdown domain tokens ── */
+
+    /* ── Diff domain tokens ── */
+    --icon-diff-add-base: #16a34a;
+    --icon-diff-delete-base: #dc2626;
+    --icon-diff-modified-base: #ea580c;
+
+    /* ── Legacy alpha tokens ── */
+    --alpha-light-0: transparent;
+    --alpha-light-2: rgba(0, 0, 0, 0.02);
+    --alpha-light-6: rgba(0, 0, 0, 0.06);
+    --alpha-light-10: rgba(0, 0, 0, 0.10);
+    --alpha-light-16: rgba(0, 0, 0, 0.16);
+    --alpha-light-20: rgba(0, 0, 0, 0.20);
+    --alpha-dark-20: rgba(0, 0, 0, 0.20);
+    --alpha-dark-50: rgba(0, 0, 0, 0.50);
+
+    /* ── OC2 legacy tokens (aún usados por la UI) ── */
+    --background-base: var(--bg-base);
+    --background-strong: #fcfcfc;
+    --background-stronger: #fcfcfc;
+    --base: rgba(0, 0, 0, 0.034);
+    --surface-base-hover: rgba(0, 0, 0, 0.059);
+    --icon-critical-base: #ed4831;
+    --icon-icon-accent: var(--accent);
+    --icon-info-active: #9b4da1;
+    --icon-info-base: #e6a8ea;
+    --icon-on-interactive-base: #fcfcfc;
+    --icon-strong-base: #171717;
+    --icon-success-base: #7add71;
+    /* C7: hue azul en light / verde en dark es deuda conocida; V1 no lo toca */
+    --surface-interactive-hover: rgba(37, 99, 235, 0.12);
+    --surface-warning-strong: #fbdd46;
+    --text-on-critical-base: #ed4831;
+  }
+}

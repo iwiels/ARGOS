@@ -1,0 +1,212 @@
+{
+  "$schema": "https://saasfort.com/schemas/nis2-control-library-v1.json",
+  "title": "SaaSFort ISO 27001:2022 Annex A Control Library",
+  "source": "ISO/IEC 27001:2022 Annex A",
+  "generated_at": "2026-04-28T01:20:46Z",
+  "license": "MIT",
+  "repository": "https://github.com/saasfort/nis2-controls",
+  "controls": [
+    {
+      "control": "ISO27001 A.5.14",
+      "checks": [
+        "DKIM records",
+        "DMARC record",
+        "Referrer policy",
+        "Referrer policy strength",
+        "SPF record"
+      ]
+    },
+    {
+      "control": "ISO27001 A.5.21",
+      "checks": [
+        "CORS credential reflection",
+        "JS library vulnerability summary",
+        "JavaScript library scan",
+        "Subresource Integrity (SRI)"
+      ]
+    },
+    {
+      "control": "ISO27001 A.5.7",
+      "checks": [
+        "Active subdomains",
+        "CA diversity",
+        "CT log query",
+        "CT log subdomain enumeration",
+        "Common subdomain enumeration",
+        "Recent certificate issuance"
+      ]
+    },
+    {
+      "control": "ISO27001 A.6.8",
+      "checks": [
+        "security.txt (RFC 9116)"
+      ]
+    },
+    {
+      "control": "ISO27001 A.8.20",
+      "checks": [
+        "CAA record",
+        "DKIM records",
+        "DMARC record",
+        "DNS zone transfer",
+        "DNSSEC",
+        "HSTS",
+        "HSTS preload list",
+        "HSTS strength",
+        "HTTP to HTTPS redirect",
+        "HTTP/2 support",
+        "HTTPS response",
+        "Insecure form action",
+        "MX records",
+        "Mixed content",
+        "Nameservers",
+        "SPF record",
+        "Subdomain security posture",
+        "TLS version",
+        "WAF/CDN detection"
+      ]
+    },
+    {
+      "control": "ISO27001 A.8.23",
+      "checks": [
+        "WAF/CDN detection"
+      ]
+    },
+    {
+      "control": "ISO27001 A.8.24",
+      "checks": [
+        "CA diversity",
+        "CAA record",
+        "CT log query",
+        "Certificate Transparency",
+        "Certificate chain (self-signed)",
+        "Certificate chain completeness",
+        "Certificate expiry",
+        "Certificate issuer",
+        "Certificate key size",
+        "Certificate validity",
+        "Cipher suite",
+        "Connection",
+        "Deprecated Expect-CT header",
+        "Deprecated HPKP header",
+        "HSTS",
+        "HSTS preload list",
+        "HSTS strength",
+        "HTTP to HTTPS redirect",
+        "Insecure form action",
+        "OCSP stapling",
+        "Recent certificate issuance",
+        "Signature algorithm",
+        "Strong cipher suites",
+        "Subdomain security posture",
+        "TLS 1.0 Supported",
+        "TLS 1.1 Supported",
+        "TLS 1.3 support",
+        "TLS SAN extraction",
+        "TLS session resumption",
+        "TLS version",
+        "Weak TLS versions",
+        "Weak cipher suites"
+      ]
+    },
+    {
+      "control": "ISO27001 A.8.26",
+      "checks": [
+        "API Content-Type security",
+        "COOP enforcement level",
+        "CORS credential reflection",
+        "CORS policy",
+        "CSP",
+        "CSP base-uri",
+        "CSP depth",
+        "CSP object-src",
+        "CSP quality",
+        "CSP reporting",
+        "Clear-Site-Data on logout",
+        "Clickjacking protection",
+        "Cookie security",
+        "Cross-Origin-Embedder-Policy",
+        "Cross-Origin-Opener-Policy",
+        "Cross-Origin-Resource-Policy",
+        "Cross-origin isolation",
+        "Dangerous HTTP methods",
+        "HTTP methods",
+        "Legacy X-XSS-Protection header",
+        "MIME sniffing protection",
+        "Rate limiting",
+        "X-Download-Options",
+        "X-Frame-Options quality"
+      ]
+    },
+    {
+      "control": "ISO27001 A.8.28",
+      "checks": [
+        "CSP",
+        "CSP quality",
+        "Host header injection",
+        "Open redirect",
+        "Reflected XSS",
+        "SQL injection error disclosure",
+        "SQL injection patterns",
+        "XSS reflection"
+      ]
+    },
+    {
+      "control": "ISO27001 A.8.5",
+      "checks": [
+        "Admin panel exposure",
+        "Clear-Site-Data on logout",
+        "Cookie prefix security",
+        "Cookie security",
+        "Well-known change password URL"
+      ]
+    },
+    {
+      "control": "ISO27001 A.8.8",
+      "checks": [
+        "API endpoint exposure",
+        "Active subdomains",
+        "CT log subdomain enumeration",
+        "Directory listing",
+        "Exposed .git directory",
+        "Host header injection",
+        "JS library vulnerability summary",
+        "JavaScript libraries detected",
+        "JavaScript library scan",
+        "Reflected XSS",
+        "SQL injection patterns",
+        "Sensitive file exposure",
+        "Source map exposure",
+        "Stale subdomain detection"
+      ]
+    },
+    {
+      "control": "ISO27001 A.8.9",
+      "checks": [
+        "API endpoint exposure",
+        "Admin panel exposure",
+        "Cache-Control",
+        "Common subdomain enumeration",
+        "DNS zone transfer",
+        "Dangerous HTTP methods",
+        "Deprecated HPKP header",
+        "Deprecated HPKP-RO header",
+        "Deprecated security headers",
+        "Directory listing",
+        "Error page information leakage",
+        "Exposed .git directory",
+        "Permissions policy",
+        "Permissions-Policy depth",
+        "Rate limiting",
+        "Robots.txt sensitive paths",
+        "Sensitive file exposure",
+        "Server header",
+        "Source map exposure",
+        "Stale subdomain detection",
+        "Technology fingerprint",
+        "X-Powered-By header",
+        "robots.txt"
+      ]
+    }
+  ]
+}

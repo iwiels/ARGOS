@@ -1,0 +1,65 @@
+{
+  "forbidden": [
+    {
+      "name": "ui-no-app-dependency",
+      "comment": "Shared UI package should not depend on the app layer",
+      "from": ["packages/ui"],
+      "to": ["packages/app"],
+      "severity": "error"
+    },
+    {
+      "name": "app-no-direct-server-dependency",
+      "comment": "App should communicate with the server through the SDK",
+      "from": ["packages/app"],
+      "to": ["packages/opencode", "packages/argos"],
+      "severity": "error"
+    },
+    {
+      "name": "core-no-application-dependency",
+      "comment": "Core domain logic should not import from server, app, desktop or the agent runtime (see docs/adr/0008-sesion-runtime-vs-engagement.md)",
+      "from": ["packages/core"],
+      "to": ["packages/server", "packages/app", "packages/desktop", "packages/argos"],
+      "severity": "error"
+    },
+    {
+      "name": "infra-no-application-dependency",
+      "comment": "Infrastructure adapters should not depend on server or app",
+      "from": ["packages/llm", "packages/http-recorder", "packages/effect-drizzle-sqlite", "packages/effect-sqlite-node"],
+      "to": ["packages/server", "packages/app", "packages/desktop"],
+      "severity": "error"
+    },
+    {
+      "name": "plugin-no-desktop",
+      "comment": "Plugins should be framework-agnostic and not depend on Electron",
+      "from": ["packages/plugin"],
+      "to": ["packages/desktop"],
+      "severity": "error"
+    },
+    {
+      "name": "context-no-component-imports",
+      "comment": "Context providers should not import UI components to avoid circular chains. Las 3 excepciones son deuda conocida (modulos de logica viviendo en components/); moverlos a hooks/ o utils/ y retirarlas del allow.",
+      "from": ["packages/app/src/context"],
+      "to": ["packages/app/src/components"],
+      "allow": [
+        { "file": "packages/app/src/context/highlights.tsx", "specifier": "@/components/dialog-release-notes" },
+        { "file": "packages/app/src/context/notification.tsx", "specifier": "@/components/session/findings-data" },
+        { "file": "packages/app/src/context/tabs.tsx", "specifier": "@/components/titlebar-session-events" }
+      ],
+      "severity": "error"
+    },
+    {
+      "name": "no-dist-imports",
+      "comment": "Source files must not import from dist, out, or build directories",
+      "from": ["packages/*/src"],
+      "to": ["packages/*/{dist,out,build}"],
+      "severity": "error"
+    },
+    {
+      "name": "desktop-main-isolation",
+      "comment": "Desktop main process should not import renderer code",
+      "from": ["packages/desktop/src/main"],
+      "to": ["packages/app/src"],
+      "severity": "error"
+    }
+  ]
+}

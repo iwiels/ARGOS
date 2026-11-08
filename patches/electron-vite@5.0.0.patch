@@ -1,0 +1,14 @@
+diff --git a/dist/chunks/lib-q6ns0vZr.js b/dist/chunks/lib-q6ns0vZr.js
+index fe0d0c62c9a4159f17437d44e8d128db4bea2ae4..52cb8ca3cbc379115e18acf4228141e9dee714fe 100644
+--- a/dist/chunks/lib-q6ns0vZr.js
++++ b/dist/chunks/lib-q6ns0vZr.js
+@@ -819,8 +819,7 @@ function esmShimPlugin() {
+                 if (code.includes(CJSShim) || !CJSyntaxRe.test(code)) {
+                     return null;
+                 }
+-                const lastESMImport = findStaticImports(code).pop();
+-                const indexToAppend = lastESMImport ? lastESMImport.end : 0;
++                const indexToAppend = code.startsWith('#!') ? code.indexOf('\n') + 1 : 0;
+                 const s = new MagicString(code);
+                 s.appendRight(indexToAppend, CJSShim);
+                 return {

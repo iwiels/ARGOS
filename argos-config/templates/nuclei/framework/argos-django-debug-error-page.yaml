@@ -1,0 +1,56 @@
+id: argos-django-debug-error-page
+
+info:
+  name: Django DEBUG=True technical error page
+  author: argos
+  severity: high
+  description: |
+    Django está sirviendo su página técnica de error en producción. Con
+    DEBUG=True la respuesta incluye la lista completa de rutas (URLconf), la
+    versión del framework, el entorno y, en errores 500, el traceback con los
+    valores de las variables locales — incluidos secretos de configuración.
+
+    La sonda pide una ruta que no existe: una instalación con DEBUG=False
+    devuelve un 404 neutro; una con DEBUG=True devuelve la página técnica.
+  remediation: |
+    Servir con DEBUG=False en producción y definir ALLOWED_HOSTS. Revisar que
+    ninguna configuración por entorno vuelva a activar DEBUG, y rotar los
+    secretos que hayan podido aparecer en un traceback.
+  reference:
+    - https://docs.djangoproject.com/en/stable/ref/settings/#debug
+    - https://cwe.mitre.org/data/definitions/209.html
+  classification:
+    cwe-id: CWE-209
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+  metadata:
+    max-request: 1
+    argos-pack: framework
+    argos-requires-auth: "false"
+    argos-severity-floor: high
+    argos-evidence: "página técnica de Django con la URLconf y la versión del framework"
+    argos-owasp: "A05:2021 Security Misconfiguration"
+  tags: django,misconfig,exposure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/argos-debug-probe-{{randstr}}"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 404
+          - 500
+      - type: word
+        part: body
+        words:
+          - "Using the URLconf defined in"
+          - "Django tried these URL patterns"
+        condition: and
+    extractors:
+      - type: regex
+        part: body
+        name: django_version
+        regex:
+          - 'Django Version:\s*[0-9][0-9.]*'

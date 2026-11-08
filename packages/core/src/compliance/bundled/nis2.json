@@ -1,0 +1,392 @@
+{
+  "meta": {
+    "framework": "nis2",
+    "title": "NIS2 (EU 2022/2555)",
+    "version": "Art. 21(2) (a)–(j)",
+    "generatedFrom": "iso27001_crosswalk.json (bundled)",
+    "crosswalkVersion": "0.4.0",
+    "disclaimer": "Mappings are interpretive. Framework crosswalks are inherently approximate because controls differ in scope and intent. Always have mappings reviewed against the source standards before relying on them for audit or compliance evidence.",
+    "unmappedIsoControls": [
+      "A.5.13",
+      "A.5.32",
+      "A.5.34",
+      "A.5.6"
+    ],
+    "isoControlsCoveredByEquivalence": [
+      "A.5.13",
+      "A.5.32",
+      "A.5.34",
+      "A.5.6"
+    ],
+    "declaredButUnmappedControls": []
+  },
+  "controls": [
+    {
+      "id": "Art.21.2",
+      "title": "Article 21(2) — Cybersecurity risk-management measures (a)–(j)",
+      "parentId": null,
+      "level": "theme",
+      "sortId": "00001",
+      "framework": "nis2",
+      "attributes": {
+        "groupingBasis": "Directive (EU) 2022/2555 (NIS2), Article 21(2)",
+        "mappingBasis": "structure"
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "21.2.a",
+      "title": "Policies on risk analysis and information system security",
+      "parentId": "Art.21.2",
+      "level": "control",
+      "sortId": "00002",
+      "framework": "nis2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.1",
+          "A.5.2",
+          "A.5.4",
+          "A.5.7",
+          "A.5.31",
+          "A.5.33",
+          "A.5.37",
+          "A.7.10",
+          "A.7.14",
+          "A.8.10",
+          "A.8.11",
+          "A.8.12"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.32",
+          "A.5.34",
+          "A.5.6"
+        ],
+        "nistEquivalents": [
+          "GV.PO-01",
+          "GV.PO-02",
+          "GV.RR-02",
+          "GV.RR-01",
+          "ID.RA-02",
+          "ID.RA-03",
+          "GV.OC-03",
+          "PR.DS-01",
+          "PR.PS-01",
+          "PR.DS-02"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "21.2.b",
+      "title": "Incident handling",
+      "parentId": "Art.21.2",
+      "level": "control",
+      "sortId": "00003",
+      "framework": "nis2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.5",
+          "A.5.24",
+          "A.5.25",
+          "A.5.26",
+          "A.5.27",
+          "A.5.28",
+          "A.6.8",
+          "A.8.15",
+          "A.8.16"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.32",
+          "A.5.34"
+        ],
+        "nistEquivalents": [
+          "GV.OC-03",
+          "RS.CO-02",
+          "RS.MA-01",
+          "GV.RR-02",
+          "DE.AE-08",
+          "RS.MA-02",
+          "RS.MA-05",
+          "RS.MI-01",
+          "ID.IM-01",
+          "RS.AN-06",
+          "RS.AN-07",
+          "DE.CM-01",
+          "DE.CM-03",
+          "DE.AE-02"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "21.2.c",
+      "title": "Business continuity, backup management, disaster recovery, crisis management",
+      "parentId": "Art.21.2",
+      "level": "control",
+      "sortId": "00004",
+      "framework": "nis2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.29",
+          "A.5.30",
+          "A.7.5",
+          "A.7.8",
+          "A.7.11",
+          "A.7.12",
+          "A.7.13",
+          "A.8.6",
+          "A.8.13",
+          "A.8.14"
+        ],
+        "isoEquivalentsByEquivalence": [],
+        "nistEquivalents": [
+          "RC.RP-01",
+          "ID.IM-04",
+          "PR.IR-02",
+          "PR.IR-04",
+          "PR.IR-01",
+          "PR.PS-03",
+          "PR.DS-11"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "21.2.d",
+      "title": "Supply chain security, including security-related aspects of relationships with suppliers",
+      "parentId": "Art.21.2",
+      "level": "control",
+      "sortId": "00005",
+      "framework": "nis2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.19",
+          "A.5.20",
+          "A.5.21",
+          "A.5.22",
+          "A.5.23",
+          "A.8.30"
+        ],
+        "isoEquivalentsByEquivalence": [],
+        "nistEquivalents": [
+          "GV.SC-01",
+          "GV.SC-04",
+          "GV.SC-05",
+          "GV.SC-07",
+          "GV.SC-09",
+          "GV.SC-06"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "21.2.e",
+      "title": "Security in network and information systems acquisition, development and maintenance, including vulnerability handling and disclosure",
+      "parentId": "Art.21.2",
+      "level": "control",
+      "sortId": "00006",
+      "framework": "nis2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.8",
+          "A.5.23",
+          "A.8.1",
+          "A.8.4",
+          "A.8.8",
+          "A.8.9",
+          "A.8.17",
+          "A.8.19",
+          "A.8.20",
+          "A.8.21",
+          "A.8.22",
+          "A.8.23",
+          "A.8.25",
+          "A.8.26",
+          "A.8.27",
+          "A.8.28",
+          "A.8.29",
+          "A.8.31",
+          "A.8.32",
+          "A.8.33"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.34"
+        ],
+        "nistEquivalents": [
+          "GV.PO-01",
+          "ID.RA-01",
+          "GV.SC-06",
+          "PR.PS-01",
+          "PR.AA-06",
+          "PR.AA-05",
+          "ID.RA-06",
+          "PR.PS-05",
+          "PR.IR-01",
+          "DE.CM-01",
+          "PR.PS-06",
+          "PR.IR-03",
+          "PR.DS-01"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "21.2.f",
+      "title": "Policies and procedures to assess the effectiveness of cybersecurity risk-management measures",
+      "parentId": "Art.21.2",
+      "level": "control",
+      "sortId": "00007",
+      "framework": "nis2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.35",
+          "A.5.36",
+          "A.8.34"
+        ],
+        "isoEquivalentsByEquivalence": [],
+        "nistEquivalents": [
+          "GV.OV-01",
+          "GV.OV-03",
+          "PR.PS-01"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "21.2.g",
+      "title": "Basic cyber hygiene practices and cybersecurity training",
+      "parentId": "Art.21.2",
+      "level": "control",
+      "sortId": "00008",
+      "framework": "nis2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.6.3",
+          "A.7.7",
+          "A.8.7"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.34"
+        ],
+        "nistEquivalents": [
+          "PR.AT-01",
+          "PR.AT-02",
+          "PR.DS-01",
+          "PR.PS-05",
+          "DE.CM-01"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "21.2.h",
+      "title": "Policies and procedures regarding the use of cryptography and, where appropriate, encryption",
+      "parentId": "Art.21.2",
+      "level": "control",
+      "sortId": "00009",
+      "framework": "nis2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.14",
+          "A.8.24"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.34"
+        ],
+        "nistEquivalents": [
+          "PR.DS-02",
+          "PR.DS-01"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "21.2.i",
+      "title": "Human resources security, access control policies and asset management",
+      "parentId": "Art.21.2",
+      "level": "control",
+      "sortId": "00010",
+      "framework": "nis2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.3",
+          "A.5.9",
+          "A.5.10",
+          "A.5.11",
+          "A.5.12",
+          "A.5.15",
+          "A.5.18",
+          "A.6.1",
+          "A.6.2",
+          "A.6.4",
+          "A.6.5",
+          "A.6.6",
+          "A.7.1",
+          "A.7.2",
+          "A.7.3",
+          "A.7.4",
+          "A.7.6",
+          "A.7.9",
+          "A.8.2",
+          "A.8.3",
+          "A.8.18"
+        ],
+        "isoEquivalentsByEquivalence": [
+          "A.5.13",
+          "A.5.32",
+          "A.5.34"
+        ],
+        "nistEquivalents": [
+          "GV.RR-02",
+          "PR.AA-05",
+          "ID.AM-01",
+          "ID.AM-02",
+          "PR.AA-01",
+          "ID.AM-05",
+          "GV.RR-04",
+          "GV.OC-03",
+          "PR.AA-06",
+          "DE.CM-02"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    },
+    {
+      "id": "21.2.j",
+      "title": "Use of multi-factor authentication or continuous authentication, secured communications and secured emergency communication systems",
+      "parentId": "Art.21.2",
+      "level": "control",
+      "sortId": "00011",
+      "framework": "nis2",
+      "attributes": {
+        "mappingBasis": "direct",
+        "isoEquivalents": [
+          "A.5.16",
+          "A.5.17",
+          "A.6.7",
+          "A.8.2",
+          "A.8.5"
+        ],
+        "isoEquivalentsByEquivalence": [],
+        "nistEquivalents": [
+          "PR.AA-01",
+          "PR.AA-02",
+          "PR.AA-06",
+          "PR.IR-01",
+          "PR.AA-05",
+          "PR.AA-03"
+        ]
+      },
+      "source": "iso27001_crosswalk.json (bundled)"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_internal/
+
+Sitemap: https://github.com/iwiels/ARGOS/sitemap.xml

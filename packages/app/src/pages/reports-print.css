@@ -1,0 +1,93 @@
+/**
+ * reports-print.css
+ *
+ * Estilos optimizados para impresión física y exportación a PDF (A4/Carta)
+ * desde el diálogo nativo de impresión del navegador.
+ */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 15mm;
+  }
+
+  /* Ocultar elementos de interfaz de la aplicación */
+  nav,
+  aside,
+  header:not(.report-header),
+  button,
+  .print\\:hidden,
+  .no-print,
+  [data-component="titlebar"],
+  [data-component="sidebar"],
+  #file-tree-panel {
+    display: none !important;
+  }
+
+  /* Reset de fondo y colores para impresión limpia */
+  html,
+  body,
+  #root,
+  .report-page-root {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    overflow: visible !important;
+    height: auto !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .report-container {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Portada del Reporte */
+  .report-cover {
+    page-break-after: always !important;
+    break-after: page !important;
+    min-height: 85vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding: 3rem 1rem !important;
+  }
+
+  /* Saltos de sección controlados */
+  .report-section-break {
+    page-break-before: always !important;
+    break-before: page !important;
+    padding-top: 1rem !important;
+  }
+
+  /* Evitar cortes a la mitad en tarjetas y hallazgos */
+  .report-card,
+  .finding-card,
+  .kpi-card,
+  .roadmap-card,
+  tr {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  /* Ajuste de tipografía para PDF */
+  h1, h2, h3, h4 {
+    color: #0f172a !important;
+  }
+
+  p, span, td, th {
+    color: #334155 !important;
+  }
+
+  code, pre {
+    background-color: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+    color: #0f172a !important;
+  }
+}

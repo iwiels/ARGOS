@@ -1,0 +1,141 @@
+title = "Argos reviewed scanner fixtures"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "github-pat"
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in argos-bin/internal/practicetarget/handler.go"
+condition = "AND"
+paths = ["(?:^|[\\\\/])argos-bin[\\\\/]internal[\\\\/]practicetarget[\\\\/]handler\\.go$"]
+regexes = ["^(?:ghp_0123456789abcdefghijklmnopqrstuvwxyz)$"]
+
+[[rules]]
+id = "aws-access-token"
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in argos-bin/cmd/web/tools/code_scan_test.go"
+condition = "AND"
+paths = ["(?:^|[\\\\/])argos-bin[\\\\/]cmd[\\\\/]web[\\\\/]tools[\\\\/]code_scan_test\\.go$"]
+regexes = ["^(?:AKIAQWERTYUIOPASDFGH)$"]
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in packages/argos/test/llm-proxy.test.ts"
+condition = "AND"
+paths = ["(?:^|[\\\\/])packages[\\\\/]argos[\\\\/]test[\\\\/]llm-proxy\\.test\\.ts$"]
+regexes = ["^(?:AKIA1234567890ABCDEF)$"]
+
+[[rules]]
+id = "generic-api-key"
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in argos-bin/cmd/web/tools/artifact_test.go"
+condition = "AND"
+paths = ["(?:^|[\\\\/])argos-bin[\\\\/]cmd[\\\\/]web[\\\\/]tools[\\\\/]artifact_test\\.go$"]
+regexes = ["^(?:AIzaSyD-abcdef123456789012345678901234)$"]
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in argos-bin/cmd/web/tools/code_scan_test.go"
+condition = "AND"
+paths = ["(?:^|[\\\\/])argos-bin[\\\\/]cmd[\\\\/]web[\\\\/]tools[\\\\/]code_scan_test\\.go$"]
+regexes = ["^(?:1234567890abcdef)$"]
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in packages/desktop/src/main/redact.test.ts"
+condition = "AND"
+paths = ["(?:^|[\\\\/])packages[\\\\/]desktop[\\\\/]src[\\\\/]main[\\\\/]redact\\.test\\.ts$"]
+regexes = ["^(?:AIzaSyD-1234567890)$"]
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in packages/sdk/js/src/gen/sdk.gen.ts"
+condition = "AND"
+paths = ["(?:^|[\\\\/])packages[\\\\/]sdk[\\\\/]js[\\\\/]src[\\\\/]gen[\\\\/]sdk\\.gen\\.ts$"]
+regexes = ["^(?:questionV2Reply)$"]
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in packages/argos/src/plugin/digitalocean.ts"
+condition = "AND"
+paths = ["(?:^|[\\\\/])packages[\\\\/]argos[\\\\/]src[\\\\/]plugin[\\\\/]digitalocean\\.ts$"]
+regexes = ["^(?:b1a6c5158156caac821fd1b30253ca8acb52454a48fa744420e41889cb589f82)$"]
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in packages/console/app/package.json"
+condition = "AND"
+paths = ["(?:^|[\\\\/])packages[\\\\/]console[\\\\/]app[\\\\/]package\\.json$"]
+regexes = ["^(?:pk_test_51RtuLNE7fOCwHSD4mewwzFejyytjdGoSDK7CAvhbffwaZnPbNb2rwJICw6LTOXCmWO320fSNXvb5NzI08RZVkAxd00syfqrW7t)$"]
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in packages/http-recorder/test/record-replay.test.ts"
+condition = "AND"
+paths = ["(?:^|[\\\\/])packages[\\\\/]http-recorder[\\\\/]test[\\\\/]record-replay\\.test\\.ts$"]
+regexes = ["^(?:sk-123456789012345678901234)$"]
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in packages/opencode/src/plugin/digitalocean.ts"
+condition = "AND"
+paths = ["(?:^|[\\\\/])packages[\\\\/]opencode[\\\\/]src[\\\\/]plugin[\\\\/]digitalocean\\.ts$"]
+regexes = ["^(?:b1a6c5158156caac821fd1b30253ca8acb52454a48fa744420e41889cb589f82)$"]
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in packages/sdk/js/src/v2/gen/sdk.gen.ts"
+condition = "AND"
+paths = ["(?:^|[\\\\/])packages[\\\\/]sdk[\\\\/]js[\\\\/]src[\\\\/]v2[\\\\/]gen[\\\\/]sdk\\.gen\\.ts$"]
+regexes = ["^(?:questionV2Reply)$"]
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in argos-bin/internal/artifact/artifact_test.go"
+condition = "AND"
+paths = ["(?:^|[\\\\/])argos-bin[\\\\/]internal[\\\\/]artifact[\\\\/]artifact_test\\.go$"]
+regexes = ["^(?:AIzaSyD-1234567890abcdefghijklmnopqrstu|eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\\.eyJzdWIiOiIxMjM0NTY3ODkwIn0\\.doNotLeakThisSignature)$"]
+
+[[rules.allowlists]]
+description = "UI keybinding labels in packages/app/src/pages/layout/register-layout-commands.ts are not API keys"
+condition = "AND"
+paths = ["(?:^|[\\\\/])packages[\\\\/]app[\\\\/]src[\\\\/]pages[\\\\/]layout[\\\\/]register-layout-commands\\.ts$"]
+
+[[rules]]
+id = "gcp-api-key"
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in argos-bin/internal/artifact/artifact_test.go"
+condition = "AND"
+paths = ["(?:^|[\\\\/])argos-bin[\\\\/]internal[\\\\/]artifact[\\\\/]artifact_test\\.go$"]
+regexes = ["^(?:AIzaSyD-1234567890abcdefghijklmnopqrstu)$"]
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in packages/http-recorder/test/record-replay.test.ts"
+condition = "AND"
+paths = ["(?:^|[\\\\/])packages[\\\\/]http-recorder[\\\\/]test[\\\\/]record-replay\\.test\\.ts$"]
+regexes = ["^(?:AIzaSyDHibiBRvJZLsFnPYPoiTwxY4ztQ55yqCE)$"]
+
+[[rules]]
+id = "jwt"
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in argos-bin/internal/artifact/artifact_test.go"
+condition = "AND"
+paths = ["(?:^|[\\\\/])argos-bin[\\\\/]internal[\\\\/]artifact[\\\\/]artifact_test\\.go$"]
+regexes = ["^(?:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\\.eyJzdWIiOiIxMjM0NTY3ODkwIn0\\.doNotLeakThisSignature)$"]
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in packages/core/test/pseudonymize.test.ts"
+condition = "AND"
+paths = ["(?:^|[\\\\/])packages[\\\\/]core[\\\\/]test[\\\\/]pseudonymize\\.test\\.ts$"]
+regexes = ["^(?:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\\.eyJzdWIiOiIxMjM0NTY3ODkwIn0\\.dozS6w_token)$"]
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in packages/core/test/security-pseudonymize.test.ts"
+condition = "AND"
+paths = ["(?:^|[\\\\/])packages[\\\\/]core[\\\\/]test[\\\\/]security-pseudonymize\\.test\\.ts$"]
+regexes = ["^(?:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\\.eyJzdWIiOiIxMjM0NTY3ODkwIn0\\.dozjgN_p_placeholder)$"]
+
+[[rules]]
+id = "curl-auth-header"
+
+[[rules.allowlists]]
+description = "Exact reviewed fixture or public identifier in packages/docs/ai-tools/cursor.mdx"
+condition = "AND"
+paths = ["(?:^|[\\\\/])packages[\\\\/]docs[\\\\/]ai-tools[\\\\/]cursor\\.mdx$"]
+regexes = ["^(?:YOUR_API_KEY)$"]

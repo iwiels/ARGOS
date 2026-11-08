@@ -1,0 +1,39 @@
+name: "Argos Security Audit Gate"
+
+on:
+  push:
+    branches: [ "main", "dev" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  argos-audit:
+    name: "Argos Autonomous Security Audit"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v4
+
+      - name: "Set up Bun"
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: "Run Argos Autonomous Audit"
+        run: |
+          bun x argos run \
+            --type full_audit \
+            --severity-threshold high \
+            --format sarif \
+            --output argos-results.sarif
+
+      - name: "Upload SARIF Security Report"
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: argos-results.sarif
+          category: argos

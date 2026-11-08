@@ -1,0 +1,47 @@
+id: argos-rails-development-mode
+
+info:
+  name: Rails development info endpoint reachable
+  author: argos
+  severity: medium
+  description: |
+    La aplicación expone /rails/info/properties, una ruta que Rails monta sólo
+    en desarrollo. La página publica la versión de Rails, de Ruby y de las
+    gemas, además del entorno: es huella exacta para elegir un exploit y, si el
+    servidor de desarrollo está expuesto, suele venir acompañado de errores
+    detallados y recarga de código en caliente.
+  remediation: |
+    Servir con RAILS_ENV=production y comprobar que las rutas de /rails/info no
+    estén montadas. Un servidor de desarrollo (Puma/Webrick en modo dev) no debe
+    escuchar en una interfaz pública.
+  reference:
+    - https://guides.rubyonrails.org/configuration.html
+    - https://cwe.mitre.org/data/definitions/489.html
+  classification:
+    cwe-id: CWE-489
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+  metadata:
+    max-request: 1
+    argos-pack: framework
+    argos-requires-auth: "false"
+    argos-severity-floor: medium
+    argos-evidence: "tabla de propiedades de Rails con versiones de framework y runtime"
+    argos-owasp: "A05:2021 Security Misconfiguration"
+  tags: rails,misconfig,exposure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/rails/info/properties"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "Rails version"
+          - "Ruby version"
+        condition: or

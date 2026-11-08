@@ -1,0 +1,5670 @@
+{
+  "version": "2026.10.1",
+  "vocabulary": [
+    ".env",
+    "0.0.0.0/0",
+    "2fa",
+    "account-creation",
+    "account-enum",
+    "alg-none",
+    "api-enumeration",
+    "api-key",
+    "audit",
+    "auth",
+    "authentication",
+    "aws",
+    "aws-access-key",
+    "azure",
+    "backdoor",
+    "backup",
+    "backup-deletion",
+    "backup-exposed",
+    "banner",
+    "base64",
+    "beacon",
+    "bec",
+    "bec-surface",
+    "bola",
+    "broken-access-control",
+    "broken-authentication",
+    "brute-force",
+    "bucket-list",
+    "buffer-overflow",
+    "c2",
+    "capability",
+    "certificate-transparency",
+    "certutil",
+    "cleartext",
+    "cloud-credential-exposure",
+    "cloud-misconfig",
+    "cloud-storage",
+    "cluster-admin",
+    "code-injection",
+    "command-injection",
+    "container",
+    "container-escape",
+    "crawling",
+    "credential-dump",
+    "credentials",
+    "cron",
+    "dangling-cname",
+    "dangling-dns",
+    "data-exfil",
+    "data-exfiltration",
+    "data-exposure",
+    "default-account",
+    "default-credentials",
+    "defender-bypass",
+    "dependency",
+    "dependency-confusion",
+    "deserialization",
+    "directory-enum",
+    "disable-security",
+    "dll-hijacking",
+    "dmarc",
+    "dmarc-none",
+    "dns",
+    "dns-recon",
+    "dnssec",
+    "docker",
+    "docker-socket",
+    "dos",
+    "download",
+    "email-harvesting",
+    "email-spoofing",
+    "employee-enumeration",
+    "encoded",
+    "encrypted-files",
+    "excessive-permissions",
+    "exposed-files",
+    "exposed-service",
+    "external-upload",
+    "file-upload",
+    "fingerprint",
+    "gcp",
+    "git-exposure",
+    "graphql-introspection",
+    "hardcoded-credentials",
+    "hardcoded-secret",
+    "host-mount",
+    "hsts",
+    "iam-overprivilege",
+    "idor",
+    "information-disclosure",
+    "invalid-cert",
+    "jwt",
+    "k8s",
+    "kerberoasting",
+    "kerberos",
+    "keychain",
+    "kill-process",
+    "kill-service",
+    "kubernetes",
+    "ldap-signing",
+    "llmnr",
+    "local-privilege",
+    "log",
+    "log-injection",
+    "log-tampering",
+    "logging",
+    "malicious-dependency",
+    "malicious-file",
+    "malicious-package",
+    "mfa-bypass",
+    "misconfig",
+    "missing-hsts",
+    "missing-tls",
+    "nbns",
+    "network-config",
+    "npm",
+    "ntlm-relay",
+    "obfuscation",
+    "oob",
+    "open-bucket",
+    "open-ports",
+    "open-redirect",
+    "open-share",
+    "org-recon",
+    "os-command",
+    "osint",
+    "otp",
+    "out-of-band",
+    "packed",
+    "pass-the-hash",
+    "password-guessing",
+    "password-spray",
+    "password-store",
+    "pastebin",
+    "path-hijacking",
+    "path-traversal",
+    "persistence",
+    "phishing",
+    "pii",
+    "plaintext",
+    "plaintext-transmission",
+    "port-scan",
+    "privilege-escalation",
+    "privileged-container",
+    "proxy",
+    "public-bucket",
+    "pypi",
+    "ransom-note",
+    "ransomware",
+    "rate-limit",
+    "rbac",
+    "rce",
+    "rdp",
+    "recon",
+    "registry-run",
+    "remote-access",
+    "resource-exhaustion",
+    "s3-exposure",
+    "saas-token-leak",
+    "scanning",
+    "scheduled-task",
+    "schema-disclosure",
+    "secret-exposure",
+    "security-group",
+    "self-signed",
+    "sensitive-files",
+    "service-account",
+    "service-creation",
+    "service-discovery",
+    "service-stop",
+    "session-reuse",
+    "setuid",
+    "shadow-account",
+    "shadow-copy",
+    "shadow-it",
+    "shared-content",
+    "shared-folder",
+    "smb-relay",
+    "smb-share",
+    "smb-signing",
+    "spf-permissive",
+    "spf-softfail",
+    "spn",
+    "spoof",
+    "sqli",
+    "ssh",
+    "ssrf",
+    "startup",
+    "subdomain-enum",
+    "subdomain-takeover",
+    "subnet",
+    "sudo",
+    "sudo-misconfig",
+    "supply-chain",
+    "tampering",
+    "tech-stack",
+    "timestomp",
+    "tls",
+    "token",
+    "token-reuse",
+    "tool-transfer",
+    "txt-record",
+    "typosquat",
+    "typosquatting",
+    "unauthenticated-storage",
+    "untrusted-search-path",
+    "upload",
+    "use-after-free",
+    "user-enum",
+    "vnc",
+    "vpn",
+    "vss",
+    "waterhole",
+    "weak-auth",
+    "weak-cipher",
+    "weak-crypto",
+    "weak-password",
+    "weak-secret",
+    "webshell",
+    "webshell-c2",
+    "wget",
+    "wildcard-policy",
+    "winrm",
+    "xss",
+    "xxe"
+  ],
+  "cwe_by_tag": {
+    "sqli": "CWE-89",
+    "xss": "CWE-79",
+    "command-injection": "CWE-78",
+    "os-command": "CWE-78",
+    "code-injection": "CWE-94",
+    "path-traversal": "CWE-22",
+    "ssrf": "CWE-918",
+    "xxe": "CWE-611",
+    "deserialization": "CWE-502",
+    "upload": "CWE-434",
+    "file-upload": "CWE-434",
+    "webshell": "CWE-94",
+    "backdoor": "CWE-94",
+    "open-redirect": "CWE-601",
+    "idor": "CWE-639",
+    "bola": "CWE-639",
+    "broken-access-control": "CWE-862",
+    "default-credentials": "CWE-1392",
+    "default-account": "CWE-1392",
+    "hardcoded-credentials": "CWE-798",
+    "hardcoded-secret": "CWE-798",
+    "api-key": "CWE-798",
+    "weak-auth": "CWE-287",
+    "brute-force": "CWE-307",
+    "password-spray": "CWE-307",
+    "weak-password": "CWE-521",
+    "password-guessing": "CWE-307",
+    "aws-access-key": "CWE-798",
+    "service-account": "CWE-522",
+    "cloud-credential-exposure": "CWE-200",
+    "proxy": "CWE-441",
+    "mfa-bypass": "CWE-287",
+    "jwt": "CWE-347",
+    "alg-none": "CWE-347",
+    "secret-exposure": "CWE-200",
+    "token": "CWE-200",
+    "credentials": "CWE-522",
+    "password-store": "CWE-256",
+    "tls": "CWE-295",
+    "self-signed": "CWE-295",
+    "invalid-cert": "CWE-295",
+    "weak-crypto": "CWE-326",
+    "weak-cipher": "CWE-327",
+    "cleartext": "CWE-311",
+    "plaintext": "CWE-319",
+    "plaintext-transmission": "CWE-319",
+    "missing-tls": "CWE-319",
+    "dos": "CWE-400",
+    "resource-exhaustion": "CWE-400",
+    "rate-limit": "CWE-400",
+    "information-disclosure": "CWE-200",
+    "data-exposure": "CWE-200",
+    "data-exfiltration": "CWE-200",
+    "git-exposure": "CWE-200",
+    "backup-exposed": "CWE-200",
+    "exposed-files": "CWE-200",
+    "exposed-service": "CWE-200",
+    "pii": "CWE-359",
+    "directory-enum": "CWE-548",
+    "user-enum": "CWE-204",
+    "account-enum": "CWE-204",
+    "open-bucket": "CWE-732",
+    "s3-exposure": "CWE-732",
+    "cloud-misconfig": "CWE-732",
+    "cloud-storage": "CWE-732",
+    "misconfig": "CWE-16",
+    "supply-chain": "CWE-1104",
+    "dependency": "CWE-1104",
+    "malicious-package": "CWE-1104",
+    "dependency-confusion": "CWE-1104",
+    "log-injection": "CWE-117",
+    "tampering": "CWE-117",
+    "spoof": "CWE-290",
+    "privilege-escalation": "CWE-269",
+    "sudo": "CWE-269",
+    "container-escape": "CWE-250",
+    "docker-socket": "CWE-269",
+    "subdomain-takeover": "CWE-284",
+    "dangling-dns": "CWE-284"
+  },
+  "rules": [
+    {
+      "id": "nuclei:airflow-debug",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:airflow-default-login",
+      "cwe": [
+        "CWE-522"
+      ],
+      "owasp": [
+        "A02:2021",
+        "A07:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "credentials",
+        "default-account",
+        "default-credentials",
+        "secret-exposure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/522.html",
+        "https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:airflow-v3-default-login",
+      "cwe": [
+        "CWE-522"
+      ],
+      "owasp": [
+        "A02:2021",
+        "A07:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "credentials",
+        "default-account",
+        "default-credentials",
+        "secret-exposure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/522.html",
+        "https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:antsword-backdoor",
+      "cwe": [
+        "CWE-553"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "backdoor"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/553.html",
+        "https://github.com/AntSwordProject/AntSword-Labs/tree/master/bypass_disable_functions/9"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:apache-apollo-default-login",
+      "cwe": [],
+      "owasp": [
+        "A05:2021",
+        "A07:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "default-account",
+        "default-credentials",
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:apache-couchdb-unauth",
+      "cwe": [],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "broken-access-control",
+        "misconfig"
+      ],
+      "references": [
+        "https://github.com/ax1sX/SecurityList/blob/main/Database/CouchDB.md",
+        "https://github.com/taomujian/linbing/blob/master/python/app/plugins/http/CouchDB/Couchdb_Unauthorized.py",
+        "https://github.com/mubix/tools/blob/master/nmap/scripts/couchdb-stats.nse"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:apache-drill-exposure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:apache-druid-log4j-rce",
+      "cwe": [
+        "CWE-502"
+      ],
+      "owasp": [
+        "A08:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "deserialization",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/502.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:apache-flink-unauth-rce",
+      "cwe": [
+        "CWE-77"
+      ],
+      "owasp": [
+        "A01:2021",
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "broken-access-control",
+        "command-injection",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/77.html",
+        "https://www.exploit-db.com/exploits/48978",
+        "https://adamc95.medium.com/apache-flink-1-9-x-part-1-set-up-5d85fd2770f3",
+        "https://github.com/LandGrey/flink-unauth-rce"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:apache-nifi-unauth",
+      "cwe": [
+        "CWE-285"
+      ],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "broken-access-control",
+        "misconfig"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/285.html",
+        "https://github.com/jm0x0/apache_nifi_processor_rce"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:apache-ofbiz-log4j-rce",
+      "cwe": [
+        "CWE-77"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "command-injection",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/77.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-44228",
+        "https://issues.apache.org/jira/browse/OFBIZ-12449",
+        "https://ofbiz.apache.org/",
+        "https://logging.apache.org/log4j/2.x/security.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:apache-solr-log4j-rce",
+      "cwe": [
+        "CWE-77"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "command-injection",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/77.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-44228",
+        "https://solr.apache.org/security.html#apache-solr-affected-by-apache-log4j-cve-2021-44228",
+        "https://twitter.com/sirifu4k1/status/1470011568834424837",
+        "https://github.com/apache/solr/pull/454",
+        "https://logging.apache.org/log4j/2.x/security.html",
+        "https://github.com/vulhub/vulhub/tree/master/log4j/CVE-2021-44228"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:apache-spark-env",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://spark.apache.org/docs/latest/monitoring.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:appveyor-configuration-file",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:aspnetcore-dev-env",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:aws-code-env",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "aws"
+      ],
+      "references": [
+        "https://aws.amazon.com/cli/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:aws-config",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A02:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "aws",
+        "credentials",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:aws-credentials",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A02:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "aws",
+        "credentials",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://aws.amazon.com/blogs/security/what-to-do-if-you-inadvertently-expose-an-aws-access-key/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:azure-apim-secretkey",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "azure",
+        "information-disclosure"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:backup-directory-listing",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "backup-exposed",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://www.invicti.com/learn/directory-listing/",
+        "https://hackerone.com/reports/684838"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:batflat-sqlite-exposure",
+      "cwe": [],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "backup-exposed",
+        "broken-access-control",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://batflat.org/",
+        "https://github.com/sruupl/batflat"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:bitbucket-clientsecret",
+      "cwe": [],
+      "owasp": [
+        "A02:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "information-disclosure",
+        "secret-exposure",
+        "token"
+      ],
+      "references": [
+        "https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/bitbucket-client-secret.yaml",
+        "https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/bitbucket-client-secret.go"
+      ]
+    },
+    {
+      "id": "nuclei:bitbucket-oauth-exposure",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A02:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "credentials",
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:blind-ssrf",
+      "cwe": [],
+      "owasp": [
+        "A10:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "ssrf"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:cache-poisoning-xss",
+      "cwe": [],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "xss"
+      ],
+      "references": [
+        "https://blog.melbadry9.xyz/fuzzing/nuclei-cache-poisoning",
+        "https://portswigger.net/research/practical-web-cache-poisoning",
+        "https://portswigger.net/web-security/web-cache-poisoning"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:cakefile-exposure",
+      "cwe": [
+        "CWE-538"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/538.html",
+        "https://coffeescript.org/v2/#cake"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:castel-digital-sqli",
+      "cwe": [],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "sqli"
+      ],
+      "references": [
+        "https://www.casteldigital.com.br/",
+        "https://cxsecurity.com/issue/WLB-2024050032"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:circleci-config",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://circleci.com/docs/2.0/sample-config/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:cloud-metadata",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "aws",
+        "gcp",
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://www.facebook.com/ExWareLabs/photos/pcb.5605494709514357/5605493856181109/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:cockroachdb-unauth-exposure",
+      "cwe": [],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "broken-access-control",
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:codeigniter-env",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:cookies-without-httponly",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [
+        "https://owasp.org/www-community/HttpOnly"
+      ]
+    },
+    {
+      "id": "nuclei:cookies-without-secure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [
+        "https://owasp.org/www-community/controls/SecureCookieAttribute"
+      ]
+    },
+    {
+      "id": "nuclei:cors-misconfig",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [
+        "https://portswigger.net/web-security/cors",
+        "https://portswigger.net/web-security/ssrf/url-validation-bypass-cheat-sheet",
+        "https://www.corben.io/advanced-cors-techniques/",
+        "https://www.geekboy.ninja/blog/exploiting-misconfigured-cors-cross-origin-resource-sharing/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:credentials-json",
+      "cwe": [],
+      "owasp": [
+        "A02:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "exposed-files",
+        "information-disclosure",
+        "secret-exposure"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:cs-cart-unauthenticated-lfi",
+      "cwe": [
+        "CWE-22"
+      ],
+      "owasp": [
+        "A01:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "path-traversal"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/22.html",
+        "https://cxsecurity.com/issue/WLB-2020100100"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:csp-script-src-wildcard",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2014-6271",
+      "cwe": [
+        "CWE-78"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "command-injection",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/78.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2014-6271",
+        "https://nvd.nist.gov/vuln/detail/CVE-2014-7169",
+        "http://www.kb.cert.org/vuls/id/252743",
+        "http://www.us-cert.gov/ncas/alerts/TA14-268A",
+        "http://advisories.mageia.org/MGASA-2014-0388.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2016-10033",
+      "cwe": [
+        "CWE-88"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/88.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2016-10033",
+        "https://exploitbox.io/vuln/WordPress-Exploit-4-6-RCE-CODE-EXEC-CVE-2016-10033.html",
+        "https://www.exploit-db.com/exploits/40970/",
+        "https://www.exploit-db.com/exploits/40968/",
+        "http://seclists.org/fulldisclosure/2016/Dec/78"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2017-12615",
+      "cwe": [
+        "CWE-434"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "rce",
+        "upload"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/434.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2017-12615",
+        "https://github.com/vulhub/vulhub/tree/master/tomcat/CVE-2017-12615",
+        "https://lists.apache.org/thread.html/8fcb1e2d5895413abcf266f011b9918ae03e0b7daceb118ffbf23f8c@%3Cannounce.tomcat.apache.org%3E",
+        "http://web.archive.org/web/20211206035549/https://securitytracker.com/id/1039392",
+        "http://breaktoprotect.blogspot.com/2017/09/the-case-of-cve-2017-12615-tomcat-7-put.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2017-5638",
+      "cwe": [
+        "CWE-20"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "code-injection",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/20.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2017-5638",
+        "https://github.com/mazen160/struts-pwn",
+        "https://isc.sans.edu/diary/22169",
+        "https://github.com/rapid7/metasploit-framework/issues/8064",
+        "http://blog.talosintelligence.com/2017/03/apache-0-day-exploited.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2018-2894",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-2894",
+        "https://blog.detectify.com/2018/11/14/technical-explanation-of-cve-2018-2894-oracle-weblogic-rce/",
+        "https://github.com/vulhub/vulhub/tree/fda47b97c7d2809660a4471539cd0e6dbf8fac8c/weblogic/CVE-2018-2894",
+        "http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html",
+        "http://www.securitytracker.com/id/1041301"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2020-0796",
+      "cwe": [
+        "CWE-119"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/119.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-0796",
+        "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-0796",
+        "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-0796",
+        "https://github.com/tdevworks/CVE-2020-0796-SMBGhost-Exploit-Demo",
+        "http://packetstormsecurity.com/files/156731/CoronaBlue-SMBGhost-Microsoft-Windows-10-SMB-3.1.1-Proof-Of-Concept.html",
+        "http://packetstormsecurity.com/files/156980/Microsoft-Windows-10-SMB-3.1.1-Local-Privilege-Escalation.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2020-14750",
+      "cwe": [],
+      "owasp": [
+        "A01:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "broken-access-control",
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-14750",
+        "https://github.com/pprietosanchez/CVE-2020-14750",
+        "https://www.oracle.com/security-alerts/alert-cve-2020-14750.html",
+        "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14750",
+        "http://packetstormsecurity.com/files/160143/Oracle-WebLogic-Server-Administration-Console-Handle-Remote-Code-Execution.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2020-14882",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-14882",
+        "https://testbnull.medium.com/weblogic-rce-by-only-one-get-request-cve-2020-14882-analysis-6e4b09981dbf",
+        "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "https://twitter.com/jas502n/status/1321416053050667009",
+        "https://youtu.be/JFVDOIL0YtA",
+        "https://github.com/jas502n/CVE-2020-14882#eg"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2020-9484",
+      "cwe": [
+        "CWE-502"
+      ],
+      "owasp": [
+        "A08:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "deserialization",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/502.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-9484",
+        "http://packetstormsecurity.com/files/157924/Apache-Tomcat-CVE-2020-9484-Proof-Of-Concept.html",
+        "https://lists.apache.org/thread.html/r77eae567ed829da9012cadb29af17f2df8fa23bf66faf88229857bb1%40%3Cannounce.tomcat.apache.org%3E",
+        "https://lists.apache.org/thread.html/rf70f53af27e04869bdac18b1fc14a3ee529e59eb12292c8791a77926@%3Cusers.tomcat.apache.org%3E",
+        "http://lists.opensuse.org/opensuse-security-announce/2020-05/msg00057.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2021-21972",
+      "cwe": [
+        "CWE-22"
+      ],
+      "owasp": [
+        "A01:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "path-traversal",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/22.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-21972",
+        "https://swarm.ptsecurity.com/unauth-rce-vmware/",
+        "https://www.vmware.com/security/advisories/VMSA-2021-0002.html",
+        "http://packetstormsecurity.com/files/161590/VMware-vCenter-Server-7.0-Arbitrary-File-Upload.html",
+        "https://github.com/NS-Sp4ce/CVE-2021-21972"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2021-21985",
+      "cwe": [
+        "CWE-20"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "code-injection",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/20.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-21985",
+        "https://www.vmware.com/security/advisories/VMSA-2021-0010.html",
+        "https://github.com/alt3kx/CVE-2021-21985_PoC",
+        "http://packetstormsecurity.com/files/162812/VMware-Security-Advisory-2021-0010.html",
+        "https://github.com/onSec-fr/CVE-2021-21985-Checker"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2021-26855",
+      "cwe": [
+        "CWE-918"
+      ],
+      "owasp": [
+        "A10:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "rce",
+        "ssrf"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/918.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-26855",
+        "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2021-26855",
+        "https://proxylogon.com/#timeline",
+        "https://web.archive.org/web/20210306113850/https://raw.githubusercontent.com/microsoft/CSS-Exchange/main/Security/http-vuln-cve2021-26855.nse",
+        "https://gist.github.com/testanull/324546bffab2fe4916d0f9d1f03ffa09",
+        "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-26855"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2021-3129",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-3129",
+        "https://www.ambionics.io/blog/laravel-debug-rce",
+        "https://github.com/vulhub/vulhub/tree/master/laravel/CVE-2021-3129",
+        "https://github.com/facade/ignition/pull/334",
+        "https://github.com/d4n-sec/d4n-sec.github.io"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2021-3156",
+      "cwe": [
+        "CWE-193"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "sudo"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/193.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-3156",
+        "https://medium.com/mii-cybersec/privilege-escalation-cve-2021-3156-new-sudo-vulnerability-4f9e84a9f435",
+        "https://blog.qualys.com/vulnerabilities-threat-research/2021/01/26/cve-2021-3156-heap-based-buffer-overflow-in-sudo-baron-samedit",
+        "https://infosecwriteups.com/baron-samedit-cve-2021-3156-tryhackme-76d7dedc3cff",
+        "http://packetstormsecurity.com/files/161160/Sudo-Heap-Based-Buffer-Overflow.html",
+        "http://packetstormsecurity.com/files/176932/glibc-syslog-Heap-Based-Buffer-Overflow.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2021-41773",
+      "cwe": [
+        "CWE-22"
+      ],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "misconfig",
+        "path-traversal",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/22.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-41773",
+        "https://github.com/apache/httpd/commit/e150697086e70c552b2588f369f2d17815cb1782",
+        "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-41773",
+        "https://twitter.com/ptswarm/status/1445376079548624899",
+        "https://twitter.com/h4x0r_dz/status/1445401960371429381",
+        "https://github.com/blasty/CVE-2021-41773"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2021-42013",
+      "cwe": [
+        "CWE-22"
+      ],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "misconfig",
+        "path-traversal",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/22.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-42013",
+        "https://httpd.apache.org/security/vulnerabilities_24.html",
+        "https://github.com/apache/httpd/commit/5c385f2b6c8352e2ca0665e66af022d6e936db6d",
+        "https://twitter.com/itsecurityco/status/1446136957117943815",
+        "http://jvn.jp/en/jp/JVN51106450/index.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2021-44228",
+      "cwe": [
+        "CWE-20",
+        "CWE-917"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "code-injection",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/20.html",
+        "https://cwe.mitre.org/data/definitions/917.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-44228",
+        "https://logging.apache.org/log4j/2.x/security.html",
+        "https://github.com/advisories/GHSA-jfh8-c2jp-5v3q",
+        "https://www.lunasec.io/docs/blog/log4j-zero-day/",
+        "https://gist.github.com/bugbountynights/dde69038573db1c12705edb39f9a704a"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2022-1388",
+      "cwe": [
+        "CWE-306"
+      ],
+      "owasp": [
+        "A01:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "rce",
+        "weak-auth"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/306.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-1388",
+        "https://twitter.com/GossiTheDog/status/1523566937414193153",
+        "https://www.horizon3.ai/f5-icontrol-rest-endpoint-authentication-bypass-technical-deep-dive/",
+        "https://support.f5.com/csp/article/K23605346",
+        "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1388",
+        "https://www.secpod.com/blog/critical-f5-big-ip-remote-code-execution-vulnerability-patch-now/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2022-22947",
+      "cwe": [
+        "CWE-917",
+        "CWE-94"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "code-injection"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/917.html",
+        "https://cwe.mitre.org/data/definitions/94.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-22947",
+        "https://wya.pl/2022/02/26/cve-2022-22947-spel-casting-and-evil-beans/",
+        "https://github.com/wdahlenburg/spring-gateway-demo",
+        "https://spring.io/blog/2022/03/01/spring-cloud-gateway-cve-reports-published",
+        "https://tanzu.vmware.com/security/cve-2022-22947"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2022-26134",
+      "cwe": [
+        "CWE-917"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "code-injection",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/917.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-26134",
+        "https://attackerkb.com/topics/BH1D56ZEhs/cve-2022-26134/rapid7-analysis",
+        "https://confluence.atlassian.com/doc/confluence-security-advisory-2022-06-02-1130377146.html",
+        "https://www.rapid7.com/blog/post/2022/06/02/active-exploitation-of-confluence-cve-2022-26134/",
+        "https://jira.atlassian.com/browse/CONFSERVER-79016",
+        "http://packetstormsecurity.com/files/167431/Through-The-Wire-CVE-2022-26134-Confluence-Proof-Of-Concept.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2022-42889",
+      "cwe": [
+        "CWE-94"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "code-injection",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/94.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-42889",
+        "https://lists.apache.org/thread/n2bd4vdsgkqh2tm14l1wyc3jyol7s1om",
+        "http://www.openwall.com/lists/oss-security/2022/10/13/4",
+        "http://www.openwall.com/lists/oss-security/2022/10/18/1",
+        "https://securitylab.github.com/advisories/GHSL-2022-018_Apache_Commons_Text/",
+        "https://github.com/silentsignal/burp-text4shell"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2023-20198",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "rce"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-20198",
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iosxe-webui-privesc-j22SaA4z",
+        "https://www.rapid7.com/blog/post/2023/10/16/etr-cisco-ios-xe-web-ui-cve-2023-20198-active-exploitation/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2023-34362",
+      "cwe": [
+        "CWE-89"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "rce",
+        "sqli"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/89.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-34362",
+        "https://github.com/horizon3ai/CVE-2023-34362",
+        "https://www.horizon3.ai/moveit-transfer-cve-2023-34362-deep-dive-and-indicators-of-compromise/",
+        "http://packetstormsecurity.com/files/172883/MOVEit-Transfer-SQL-Injection-Remote-Code-Execution.html",
+        "http://packetstormsecurity.com/files/173110/MOVEit-SQL-Injection.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2023-3519",
+      "cwe": [
+        "CWE-94"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "code-injection",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/94.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-3519",
+        "https://github.com/assetnote/exploits/blob/main/citrix/CVE-2023-3519/README.md",
+        "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX561482",
+        "https://www.assetnote.io/resources/research/analysis-of-cve-2023-3519-in-citrix-adc-and-netscaler-gateway"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2023-4966",
+      "cwe": [
+        "CWE-119"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/119.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-4966",
+        "https://github.com/assetnote/exploits/blob/main/citrix/CVE-2023-4966/exploit.py",
+        "https://github.com/Chocapikk/CVE-2023-4966",
+        "https://www.assetnote.io/resources/research/citrix-bleed-leaking-session-tokens-with-cve-2023-4966",
+        "https://x.com/assetnote/status/1716757539323564196?s=20",
+        "https://www.netscaler.com/blog/news/cve-2023-4966-critical-security-update-now-available-for-netscaler-adc-and-netscaler-gateway/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:CVE-2024-3400",
+      "cwe": [
+        "CWE-20",
+        "CWE-77"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "code-injection",
+        "command-injection",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/20.html",
+        "https://cwe.mitre.org/data/definitions/77.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-3400",
+        "https://labs.watchtowr.com/palo-alto-putting-the-protecc-in-globalprotect-CVE-2024-3400/",
+        "https://attackerkb.com/topics/SSTk336Tmf/cve-2024-3400/rapid7-analysis",
+        "https://github.com/zam89/CVE-2024-3400-pot",
+        "https://github.com/ZephrFish/CVE-2024-3400-Canary"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:database-credentials",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "exposed-files",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:database-error",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:db-schema",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "backup-exposed",
+        "exposed-files",
+        "information-disclosure"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:dbgate-unauth-rce",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "rce"
+      ],
+      "references": [
+        "https://github.com/dbgate/dbgate",
+        "https://dbgate.org/docs/env-variables.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:deprecated-tls",
+      "cwe": [],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "tls"
+      ],
+      "references": [
+        "https://ssl-config.mozilla.org/#config=intermediate"
+      ]
+    },
+    {
+      "id": "nuclei:detect-dangling-cname",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "dns",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://securitytrails.com/blog/subdomain-takeover-tips",
+        "https://nominetcyber.com/dangling-dns-is-no-laughing-matter/",
+        "https://nabeelxy.medium.com/dangling-dns-records-are-a-real-vulnerability-361f2a29d37f",
+        "https://docs.microsoft.com/en-us/azure/security/fundamentals/subdomain-takeover"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:digitalrebar-default-login",
+      "cwe": [
+        "CWE-522"
+      ],
+      "owasp": [
+        "A02:2021",
+        "A07:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "credentials",
+        "default-account",
+        "default-credentials",
+        "secret-exposure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/522.html",
+        "https://docs.rackn.io/en/latest/doc/faq-troubleshooting.html?#what-are-the-default-passwords",
+        "https://rackn.com/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:digitalrebar-traversal",
+      "cwe": [
+        "CWE-22"
+      ],
+      "owasp": [
+        "A01:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "path-traversal"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/22.html",
+        "https://docs.rackn.io/en/latest/doc/security/cve_20200924A.html",
+        "https://docs.rackn.io/en/latest/doc/release.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:django-debug-exposure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://twitter.com/Alra3ees/status/1397660633928286208"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:django-secret-key",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "exposed-files",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://docs.gitguardian.com/secrets-detection/detectors/specifics/django_secret_key"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:django-variables-exposed",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://docs.djangoproject.com/en/1.11/ref/exceptions/",
+        "https://docs.djangoproject.com/en/1.11/topics/logging/#django-security",
+        "https://github.com/projectdiscovery/nuclei-templates/blob/master/file/logs/django-framework-"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:dkim-record-detect",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "dns"
+      ],
+      "references": [
+        "https://www.rfc-editor.org/rfc/rfc6376",
+        "https://dkim.org/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:dmarc-detect",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021",
+        "A07:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "dmarc",
+        "dns",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://dmarc.org/",
+        "https://dmarc.org/wiki/FAQ#Why_is_DMARC_important.3F"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:dns-axfr-enabled",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "dns"
+      ],
+      "references": [
+        "https://beaglesecurity.com/blog/vulnerability/dns-zone-transfer.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:dnssec-detection",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "dns",
+        "dnssec",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://www.icann.org/resources/pages/dnssec-what-is-it-why-important-2019-03-05-en",
+        "https://www.cyberciti.biz/faq/unix-linux-test-and-validate-dnssec-using-dig-command-line/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:docker-compose-config",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:docker-daemon-exposed",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "docker",
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:docker-registry",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "docker",
+        "misconfig"
+      ],
+      "references": [
+        "https://notsosecure.com/anatomy-of-a-hack-docker-registry"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:dockercfg-config",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "docker",
+        "information-disclosure"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:dockerfile-hidden-disclosure",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/dockerfile-hidden-disclosure.json"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:dockerrun-aws-json-exposure",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "aws",
+        "docker",
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_docker_v2config.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:dom-xss",
+      "cwe": [],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "xss"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:dot-credentials-exposure",
+      "cwe": [],
+      "owasp": [
+        "A02:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "credentials",
+        "information-disclosure",
+        "token"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:drupal-jsonapi-user-listing",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://www.drupal.org/project/drupal/issues/3240913"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:drupal7-elfinder-rce",
+      "cwe": [
+        "CWE-434"
+      ],
+      "owasp": [
+        "A03:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "information-disclosure",
+        "upload"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/434.html",
+        "https://github.com/Kro0oz/drupal-7-elfinder"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:dubbo-admin-default-login",
+      "cwe": [
+        "CWE-522"
+      ],
+      "owasp": [
+        "A02:2021",
+        "A07:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "credentials",
+        "default-account",
+        "default-credentials",
+        "secret-exposure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/522.html",
+        "https://www.cnblogs.com/wishwzp/p/9438658.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:ec2-instance-information",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "aws",
+        "misconfig"
+      ],
+      "references": [
+        "https://www.facebook.com/ExWareLabs/photos/a.361854183878462/5567070616690100/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:eks-kubernetes-secrets-encryption",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "aws"
+      ],
+      "references": [
+        "https://docs.aws.amazon.com/eks/latest/userguide/encryption-configuration.html",
+        "https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:elasticsearch",
+      "cwe": [],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "broken-access-control",
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:environment-rb",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "exposed-files",
+        "information-disclosure"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:envoy-admin-exposure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://www.envoyproxy.io/docs/envoy/latest/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:error-based-sql-injection",
+      "cwe": [
+        "CWE-89"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "sqli"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/89.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:everything-listing",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://www.voidtools.com/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:expect-ct-misconfigured",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT",
+        "https://scotthelme.co.uk/a-new-security-header-expect-ct/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:expired-ssl",
+      "cwe": [],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "tls"
+      ],
+      "references": [
+        "https://www.acunetix.com/vulnerabilities/web/tls-ssl-certificate-about-to-expire/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:exposed-authentication-asmx",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://www.exploit-db.com/ghdb/6604"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:exposed-docker-api",
+      "cwe": [],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "broken-access-control",
+        "docker",
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:exposed-env-file",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A02:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "secret-exposure",
+        ".env",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:exposed-gitignore",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "git-exposure",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://twitter.com/pratiky9967/status/1230001391701086208",
+        "https://www.tenable.com/plugins/was/98595"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:exposed-gitmodules",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "git-exposure",
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://www.acunetix.com/vulnerabilities/web/git-repository-found/",
+        "https://pentester.land/tutorials/2018/10/25/source-code-disclosure-via-exposed-git-folder.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:exposed-mysql-initial",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://hackerone.com/reports/1081817"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:exposed-pki-cert",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:exposed-sqlite-manager",
+      "cwe": [],
+      "owasp": [
+        "A03:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "misconfig",
+        "sqli"
+      ],
+      "references": [
+        "https://www.exploit-db.com/ghdb/5003"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:forgejo-repo-exposure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:froxlor-database-backup",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "backup-exposed",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:gcloud-access-token",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "exposed-files",
+        "information-disclosure"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:gcloud-credentials",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "exposed-files",
+        "information-disclosure"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:generic-blind-xxe",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "xxe"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:generic-db",
+      "cwe": [],
+      "owasp": [
+        "A03:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "exposed-files",
+        "information-disclosure",
+        "sqli"
+      ],
+      "references": [
+        "https://laravel.com/docs/11.x/database#sqlite-configuration # database/database.sqlite",
+        "https://laravel.com/docs/5.2/database # database/database.sqlite",
+        "https://github.com/laracasts/larabook/blob/master/app/config/database.php#L51 # app/database/production.sqlite",
+        "https://forum.codeigniter.com/post-389846.html # writable/db.sqlite3",
+        "https://github.com/codeigniter4projects/playground/blob/develop/.env.example#L33 # writable/database.db",
+        "https://symfony.com/doc/current/doctrine.html#configuring-the-database # var/app.db",
+        "https://symfony.com/doc/4.x/doctrine.html#configuring-the-database # var/app.db",
+        "https://symfony.com/doc/3.x/doctrine.html # app/sqlite.db",
+        "https://symfony.com/doc/2.x/doctrine.html # sqlite.db",
+        "https://openclassrooms.com/forum/sujet/symfony3-sqlite-could-not-create-database # var/data/db.sqlite",
+        "https://symfony.com/doc/current/reference/configuration/doctrine.html#doctrine-dbal-configuration # var/data/data.sqlite",
+        "https://stackoverflow.com/questions/31762878/sqlite-3-database-with-django # db.sqlite3",
+        "https://medium.com/@codewithbushra/using-sqlite-as-a-database-backend-in-django-projects-code-with-bushra-d23e3100686e # db.sqlite3",
+        "https://gist.github.com/jwo/4512764?permalink_comment_id=2235763#gistcomment-2235763 # db/production.sqlite3",
+        "https://stackoverflow.com/a/30345819/1632572 # db/production.sqlite3",
+        "https://developerhowto.com/2018/12/29/build-a-rest-api-with-node-js-and-express-js/ # db.sqlite",
+        "https://sqldocs.org/sqlite/sqlite-nodejs/ # mydb.sqlite",
+        "https://stackoverflow.com/questions/41620788/error-database-connection-sqlite-is-missing-or-could-not-be-created-cakephp # app/data/app_db.sqlite",
+        "https://stackoverflow.com/questions/2722383/using-sqlite3-with-cakephp # app/webroot/database.sqlite, app/database.sqlite",
+        "https://levelup.gitconnected.com/how-to-connect-and-use-the-sqlite-database-in-codeigniter-3-48cd50d3e78d # application/databases/db.sqlite",
+        "https://turmanauli.medium.com/how-to-connect-codeigniter-to-sqlite3-database-like-a-pro-2177497a6d30 # application/db/database.sqlite",
+        "https://forum.codeigniter.com/thread-74522.html # application/Database/db1.db",
+        "https://stackoverflow.com/a/37088960/1632572 # application/database/data.db",
+        "https://docs.laminas.dev/tutorials/getting-started/database-and-models/ # data/*.db",
+        "https://phalcon-nucleon.github.io/#!database/getting-started.html # storage/database/database.sqlite",
+        "https://www.yiiframework.com/doc/blog/1.1/en/prototype.database # protected/data/*.db",
+        "https://pusher.com/tutorials/rest-api-slim-part-1/ # db/database.db",
+        "https://www.digitalocean.com/community/tutorials/how-to-use-the-fat-free-php-framework # db/database.sqlite",
+        "https://doc.nette.org/en/database/configuration#toc-single-connection # app/Model/*.db",
+        "https://www.sqlite.org/fileformat.html # SQLite file always starts with \"SQLite format {sqlite_version}\"",
+        "https://en.wikipedia.org/wiki/List_of_file_signatures # SQLite binary signature: 53 51 4C 69 74 65 20 66 6F 72 6D 61 74 20"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:generic-env",
+      "cwe": [
+        "CWE-522"
+      ],
+      "owasp": [
+        "A02:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        ".env",
+        "credentials",
+        "information-disclosure",
+        "secret-exposure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/522.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:generic-j2ee-lfi",
+      "cwe": [],
+      "owasp": [
+        "A01:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "path-traversal"
+      ],
+      "references": [
+        "https://github.com/ilmila/J2EEScan/blob/master/src/main/java/burp/j2ee/issues/impl/LFIModule.java",
+        "https://gist.github.com/harisec/519dc6b45c6b594908c37d9ac19edbc3"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:generic-linux-lfi",
+      "cwe": [
+        "CWE-22"
+      ],
+      "owasp": [
+        "A01:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "path-traversal"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/22.html",
+        "https://github.com/imhunterand/ApachSAL/blob/main/assets/exploits.json"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:generic-php-files",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "backup-exposed",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:generic-windows-lfi",
+      "cwe": [
+        "CWE-22"
+      ],
+      "owasp": [
+        "A01:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "azure",
+        "path-traversal"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/22.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:git-config",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "git-exposure",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:git-credentials-disclosure",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/git-credentials-disclosure.json"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:git-exposure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "git-exposure",
+        "information-disclosure",
+        "log"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:git-logs-exposure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "git-exposure",
+        "information-disclosure",
+        "log"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:gitea-public-repo-exposure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "git-exposure",
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://gitea.io/",
+        "https://docs.gitea.io/en-us/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:gitea-public-signup",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [
+        "https://www.youtube.com/watch?v=oHhofSj9lEM&t=157s",
+        "https://gitea.io/en-us/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:github-debug",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:github-oauth-token",
+      "cwe": [],
+      "owasp": [
+        "A02:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "exposed-files",
+        "token"
+      ],
+      "references": []
+    },
+    {
+      "id": "nuclei:github-workflows-disclosure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/github-workflows-disclosure.json"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:gitlab-ci-yml",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://x.com/RootMoksha/status/1816571625388818923/photo/1"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:gitlab-personal-accesstoken",
+      "cwe": [],
+      "owasp": [
+        "A02:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "exposed-files",
+        "token"
+      ],
+      "references": [
+        "https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/gitlab.yml",
+        "https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html"
+      ]
+    },
+    {
+      "id": "nuclei:gitlab-public-repos",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://twitter.com/ldionmarcil/status/1370052344562470922",
+        "https://github.com/ldionmarcil/gitlab-unauth-parser"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:gitlab-public-snippets",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://gist.github.com/vysecurity/20311c29d879e0aba9dcffbe72a88b10",
+        "https://twitter.com/intigriti/status/1375078783338876929"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:gitlab-rce",
+      "cwe": [
+        "CWE-20"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "code-injection",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/20.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-22205",
+        "https://security.humanativaspa.it/gitlab-ce-cve-2021-22205-in-the-wild/",
+        "https://hackerone.com/reports/1154542"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:gitlab-uninitialized-password",
+      "cwe": [],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "broken-access-control",
+        "misconfig"
+      ],
+      "references": [
+        "https://gitlab.com/gitlab-org/gitlab/-/issues/211328",
+        "https://gitlab.com/gitlab-org/omnibus-gitlab/-/merge_requests/5331",
+        "https://docs.gitlab.com/omnibus/installation/#set-up-the-initial-password"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:gitlab-weak-login",
+      "cwe": [
+        "CWE-798"
+      ],
+      "owasp": [
+        "A02:2021",
+        "A07:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "default-account",
+        "default-credentials",
+        "hardcoded-credentials",
+        "hardcoded-secret"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/798.html",
+        "https://twitter.com/0xmahmoudJo0/status/1467394090685943809",
+        "https://git-scm.com/book/en/v2/Git-on-the-Server-GitLab"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:gocd-unauth-dashboard",
+      "cwe": [],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "broken-access-control",
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:google-api-private-key",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "exposed-files",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://www.exploit-db.com/ghdb/6037"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:google-services-json",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "exposed-files",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://www.exploit-db.com/ghdb/6886"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:grafana-unauth-access",
+      "cwe": [
+        "CWE-306"
+      ],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "broken-access-control",
+        "information-disclosure",
+        "misconfig",
+        "weak-auth"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/306.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:graphql-alias-batching",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "graphql-introspection",
+        "misconfig"
+      ],
+      "references": [
+        "https://github.com/dolevf/Damn-Vulnerable-GraphQL-Application",
+        "https://cheatsheetseries.owasp.org/cheatsheets/GraphQL_Cheat_Sheet.html",
+        "https://graphql.security/",
+        "https://stackoverflow.com/questions/62421352/graphql-difference-between-using-alias-versus-multiple-query-objects-when-doin"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:graphql-array-batching",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "graphql-introspection",
+        "misconfig"
+      ],
+      "references": [
+        "https://stackoverflow.com/questions/62421352/graphql-difference-between-using-alias-versus-multiple-query-objects-when-doin",
+        "https://github.com/dolevf/Damn-Vulnerable-GraphQL-Application",
+        "https://graphql.security/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:graphql-directive-overloading",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "graphql-introspection",
+        "misconfig"
+      ],
+      "references": [
+        "https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/12-API_Testing/01-Testing_GraphQL",
+        "https://github.com/dolevf/graphql-cop/blob/main/lib/tests/dos_directive_overloading.py"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:graphql-field-suggestion",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "graphql-introspection",
+        "misconfig"
+      ],
+      "references": [
+        "https://github.com/webonyx/graphql-php/issues/454",
+        "https://github.com/dolevf/Damn-Vulnerable-GraphQL-Application",
+        "https://cheatsheetseries.owasp.org/cheatsheets/GraphQL_Cheat_Sheet.html",
+        "https://graphql.security"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:graphql-get-method",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "graphql-introspection",
+        "misconfig"
+      ],
+      "references": [
+        "https://graphql.org/learn/serving-over-http/#get-request",
+        "https://github.com/dolevf/Damn-Vulnerable-GraphQL-Application",
+        "https://cheatsheetseries.owasp.org/cheatsheets/GraphQL_Cheat_Sheet.html",
+        "https://graphql.security/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:hashicorp-consul-unauth",
+      "cwe": [],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "broken-access-control",
+        "misconfig"
+      ],
+      "references": [
+        "https://www.acunetix.com/vulnerabilities/web/hashicorp-consul-api-is-accessible-without-authentication/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:header-command-injection",
+      "cwe": [
+        "CWE-77"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "command-injection",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/77.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:hrsale-unauthenticated-lfi",
+      "cwe": [
+        "CWE-22"
+      ],
+      "owasp": [
+        "A01:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "path-traversal"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/22.html",
+        "https://www.exploit-db.com/exploits/48920"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:http-missing-security-headers",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:https-to-http-redirect",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:hue-default-credential",
+      "cwe": [
+        "CWE-522"
+      ],
+      "owasp": [
+        "A02:2021",
+        "A07:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "credentials",
+        "default-account",
+        "default-credentials",
+        "secret-exposure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/522.html",
+        "https://github.com/cloudera/hue"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:ibm-storage-default-login",
+      "cwe": [
+        "CWE-522"
+      ],
+      "owasp": [
+        "A02:2021",
+        "A07:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "credentials",
+        "default-account",
+        "default-credentials",
+        "secret-exposure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/522.html",
+        "https://www.ibm.com/docs/en/power-sys-solutions/0008-ESS?topic=5148-starting-elastic-storage-server-management-server-gui"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:insecure-cipher-suite-detect",
+      "cwe": [],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "tls"
+      ],
+      "references": [
+        "https://www.acunetix.com/vulnerabilities/web/tls-ssl-weak-cipher-suites/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:javascript-env",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:javascript-env-config",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:jeecg-boot-swagger",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "api-enumeration",
+        "information-disclosure"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:jeeplus-cms-resetpassword-sqli",
+      "cwe": [],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "sqli"
+      ],
+      "references": [
+        "https://github.com/wy876/wiki/blob/main/JeePlus%E4%BD%8E%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E5%B9%B3%E5%8F%B0/JeePlus%E4%BD%8E%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E5%B9%B3%E5%8F%B0%E5%AD%98%E5%9C%A8SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md",
+        "http://www.cstam.oyg.cn/detail/429410"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:jenkins-script",
+      "cwe": [
+        "CWE-77"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "command-injection",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/77.html",
+        "https://hackerone.com/reports/403402",
+        "https://medium.com/@gokulsspace/the-30000-bounty-affair-3f025ee6b834"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:jenkins-users-exposure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://issues.jenkins.io/browse/JENKINS-18884"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:jupyter-notebooks-exposed",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [
+        "https://blog.aquasec.com/python-ransomware-jupyter-notebook"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:kafka-center-default-login",
+      "cwe": [
+        "CWE-522"
+      ],
+      "owasp": [
+        "A02:2021",
+        "A07:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "credentials",
+        "default-account",
+        "default-credentials",
+        "secret-exposure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/522.html",
+        "https://developer.ibm.com/tutorials/kafka-authn-authz/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:kafka-manager-unauth",
+      "cwe": [],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "broken-access-control",
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://github.com/yahoo/CMAK"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:kube-state-metrics",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "information-disclosure",
+        "k8s",
+        "kubernetes",
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:kubernetes-dashboard",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "information-disclosure",
+        "kubernetes"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:kubernetes-dockercfg-secret",
+      "cwe": [],
+      "owasp": [
+        "A02:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "exposed-files",
+        "k8s",
+        "kubernetes",
+        "secret-exposure"
+      ],
+      "references": [
+        "https://blog.aquasec.com/the-ticking-supply-chain-attack-bomb-of-exposed-kubernetes-secrets"
+      ]
+    },
+    {
+      "id": "nuclei:kubernetes-dockerconfigjson-secret",
+      "cwe": [],
+      "owasp": [
+        "A02:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "exposed-files",
+        "k8s",
+        "kubernetes",
+        "secret-exposure"
+      ],
+      "references": [
+        "https://blog.aquasec.com/the-ticking-supply-chain-attack-bomb-of-exposed-kubernetes-secrets"
+      ]
+    },
+    {
+      "id": "nuclei:kubernetes-etcd-keys",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "exposed-files",
+        "information-disclosure",
+        "k8s",
+        "kubernetes"
+      ],
+      "references": [
+        "https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:kubernetes-kustomization-disclosure",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure",
+        "kubernetes"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/kubernetes-kustomization-disclosure.json"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:laragon-phpinfo",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:laravel-debug-enabled",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:laravel-debug-infoleak",
+      "cwe": [
+        "CWE-215"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/215.html",
+        "https://github.com/dem0ns/improper/blob/master/laravel/5_debug/1.png"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:laravel-env",
+      "cwe": [
+        "CWE-522"
+      ],
+      "owasp": [
+        "A02:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "credentials",
+        "information-disclosure",
+        "secret-exposure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/522.html",
+        "https://laravel.com/docs/master/configuration#environment-configuration",
+        "https://stackoverflow.com/questions/38331397/how-to-protect-env-file-in-laravel"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:lfi-keyed",
+      "cwe": [],
+      "owasp": [
+        "A01:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "path-traversal"
+      ],
+      "references": [
+        "https://owasp.org/www-community/attacks/Unicode_Encoding"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:magento-downloader-fpd",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://magento.com"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:mailpit-app-info-disclosure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://github.com/axllent/mailpit",
+        "https://mailpit.axllent.org/docs/api/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:mantisbt-default-credential",
+      "cwe": [
+        "CWE-522"
+      ],
+      "owasp": [
+        "A02:2021",
+        "A07:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "credentials",
+        "default-account",
+        "default-credentials",
+        "secret-exposure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/522.html",
+        "https://mantisbt.org/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:mismatched-ssl-certificate",
+      "cwe": [],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "tls"
+      ],
+      "references": [
+        "https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/ssl-certificate-name-hostname-mismatch/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:missing-cookie-samesite-strict",
+      "cwe": [
+        "CWE-693"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/693.html",
+        "https://pulsesecurity.co.nz/articles/samesite-lax-csrf"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:missing-sri",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [
+        "https://cheatsheetseries.owasp.org/cheatsheets/Third_Party_Javascript_Management_Cheat_Sheet.html#subresource-integrity",
+        "https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity"
+      ]
+    },
+    {
+      "id": "nuclei:mixed-active-content",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [
+        "https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content",
+        "https://portswigger.net/kb/issues/01000400_mixed-content",
+        "https://resources.infosecinstitute.com/topics/vulnerabilities/https-mixed-content-vulnerability/",
+        "https://docs.gitlab.com/ee/user/application_security/dast/checks/319.1.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:mixed-passive-content",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [
+        "https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content",
+        "https://portswigger.net/kb/issues/01000400_mixed-content",
+        "https://resources.infosecinstitute.com/topics/vulnerabilities/https-mixed-content-vulnerability/",
+        "https://docs.gitlab.com/ee/user/application_security/dast/checks/319.1.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:mongodb-exposure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:mysql-dump",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "backup-exposed",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:mysql-history",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "http://doc.docs.sk/mysql-refman-5.5/mysql-history-file.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:natshell-rce",
+      "cwe": [
+        "CWE-77"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "command-injection",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/77.html",
+        "https://mp.weixin.qq.com/s/g4YNI6UBqIQcKL0TRkKWlw"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:nextjs-vite-public-env",
+      "cwe": [],
+      "owasp": [
+        "A02:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        ".env",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://nextjs.org/docs/app/building-your-application/configuring/environment-variables",
+        "https://vite.dev/guide/env-and-mode.html",
+        "https://supabase.com/docs/guides/api#api-keys"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:nexus-repository-anonymous-access",
+      "cwe": [
+        "CWE-276"
+      ],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "broken-access-control",
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/276.html",
+        "https://help.sonatype.com/en/anonymous-access.html",
+        "https://help.sonatype.com/en/access-control.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:nginx-api-traversal",
+      "cwe": [],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "misconfig",
+        "path-traversal"
+      ],
+      "references": [
+        "https://nginx.org/en/docs/http/ngx_http_api_module.html",
+        "https://x.com/akshaysharma71/status/1825815869953552844"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:node-express-dev-env",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [
+        "https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/express-development-mode-is-enabled/",
+        "https://www.synopsys.com/blogs/software-security/nodejs-mean-stack-vulnerabilities.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:npmrc-authtoken",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "information-disclosure",
+        "npm"
+      ],
+      "references": [
+        "https://docs.npmjs.com/cli/v8/configuring-npm/npmrc",
+        "https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:oauth-credentials-json",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "exposed-files",
+        "information-disclosure"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:open-redirect-generic",
+      "cwe": [
+        "CWE-601"
+      ],
+      "owasp": [
+        "A01:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "open-redirect"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/601.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:opensearch-dashboard-unauth",
+      "cwe": [],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "broken-access-control",
+        "misconfig"
+      ],
+      "references": [
+        "https://opensearch.org/docs/latest/dashboards/index/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:openstack-config",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://docs.openstack.org/python-cloudkittyclient/stein/api_reference/info.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:php-backup-files",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "backup-exposed",
+        "information-disclosure"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:php-debugbar-exposure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://hackerone.com/reports/1883806",
+        "http://phpdebugbar.com/",
+        "https://github.com/maximebf/php-debugbar"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:php-errors",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "misconfig"
+      ],
+      "references": []
+    },
+    {
+      "id": "nuclei:php-src-diclosure",
+      "cwe": [
+        "CWE-540"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/540.html",
+        "https://blog.projectdiscovery.io/php-http-server-source-disclosure/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:php-zerodium-backdoor-rce",
+      "cwe": [
+        "CWE-77"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "backdoor",
+        "command-injection",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/77.html",
+        "https://news-web.php.net/php.internals/113838",
+        "https://flast101.github.io/php-8.1.0-dev-backdoor-rce/",
+        "https://github.com/flast101/php-8.1.0-dev-backdoor-rce/blob/main/revshell_php_8.1.0-dev.py"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:phpmyadmin-default-login",
+      "cwe": [
+        "CWE-522"
+      ],
+      "owasp": [
+        "A02:2021",
+        "A07:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "credentials",
+        "default-account",
+        "default-credentials",
+        "secret-exposure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/522.html",
+        "https://www.phpmyadmin.net"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:phpnow-works",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://www.facebook.com/photo/?fbid=618545156982674&set=a.467014098802448"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:postgres-credentials-exposure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://www.postgresql.org/docs/current/libpq-pgpass.html",
+        "https://cheatsheetseries.owasp.org/cheatsheets/Database_Security_Cheat_Sheet.html#postgresql"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:postgres-history-exposure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "information-disclosure"
+      ],
+      "references": [
+        "https://www.postgresql.org/docs/current/app-psql.html#APP-PSQL-FILES"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:private-key-exposure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:prometheus-unauth",
+      "cwe": [],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "broken-access-control",
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:rails-secret-token-disclosure",
+      "cwe": [],
+      "owasp": [
+        "A02:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "exposed-files",
+        "information-disclosure",
+        "token"
+      ],
+      "references": [
+        "https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/ruby-on-rails-secret-token-disclosure.json"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:reflected-xss",
+      "cwe": [],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "xss"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:response-ssrf",
+      "cwe": [],
+      "owasp": [
+        "A10:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "ssrf"
+      ],
+      "references": [
+        "https://github.com/bugcrowd/HUNT/blob/master/ZAP/scripts/passive/SSRF.py"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:revoked-ssl-certificate",
+      "cwe": [],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "tls"
+      ],
+      "references": [
+        "https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/revoked-ssl-certificate/",
+        "https://www.tenable.com/plugins/nnm/5837"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:ricoh-default-login",
+      "cwe": [
+        "CWE-522"
+      ],
+      "owasp": [
+        "A02:2021",
+        "A07:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "credentials",
+        "default-account",
+        "default-credentials",
+        "secret-exposure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/522.html",
+        "https://ricoh-printer.co/default-username-and-password-for-ricoh-web-image-monitor/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:s3-torrent",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "aws",
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:s3-username-disclosure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "aws",
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://github.com/s3tools/s3cmd/issues/1173",
+        "https://hackerone.com/reports/819146",
+        "https://medium.com/@jonathanbouman/how-s3cmd-discloses-your-linux-username-to-the-world-b9e4d79cb9e3"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:sangfor-login-rce",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "rce"
+      ],
+      "references": [
+        "https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/sangfor-login-rce.yaml"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:secret-token-rb",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "exposed-files",
+        "information-disclosure"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:self-signed-ssl",
+      "cwe": [],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "self-signed",
+        "tls"
+      ],
+      "references": [
+        "https://www.rapid7.com/db/vulnerabilities/ssl-self-signed-certificate/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:sharepoint-toolshell-backdoor",
+      "cwe": [],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "backdoor",
+        "webshell"
+      ],
+      "references": [
+        "https://research.eye.security/sharepoint-under-siege/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:shell-history",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:sitecore-debug-page",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:spf-record-detect",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "dns"
+      ],
+      "references": [
+        "https://www.mimecast.com/content/how-to-create-an-spf-txt-record"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:spring4shell-CVE-2022-22965",
+      "cwe": [
+        "CWE-94"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "code-injection",
+        "rce"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/94.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-22965",
+        "https://spring.io/security/cve-2022-22965",
+        "https://pentest-tools.com/blog/detect-exploit-spring4shell-cve-2022-22965",
+        "http://packetstormsecurity.com/files/167011/Spring4Shell-Spring-Framework-Class-Property-Remote-Code-Execution.html",
+        "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0005",
+        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-java-spring-rce-Zx9GUc67"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:springboot-env",
+      "cwe": [],
+      "owasp": [
+        "A02:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        ".env",
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:sql-server-dump",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "backup-exposed",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:sqli-error-based",
+      "cwe": [],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "sqli"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:sqlite-history-exposure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:ssh-authorized-keys",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure",
+        "ssh"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://www.ssh.com/academy/ssh/authorized-key"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:swagger-api",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "api-enumeration",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://swagger.io/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:theia-lfi-to-rce",
+      "cwe": [],
+      "owasp": [
+        "A01:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "broken-access-control",
+        "path-traversal",
+        "rce"
+      ],
+      "references": [
+        "https://theia-ide.org/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:thinkphp-errors",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:time-based-sqli",
+      "cwe": [],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "sqli"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:tls-version",
+      "cwe": [],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "tls"
+      ],
+      "references": []
+    },
+    {
+      "id": "nuclei:typo3-debug-mode",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:unauth-etcd-server",
+      "cwe": [],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "broken-access-control",
+        "fingerprint",
+        "k8s",
+        "kubernetes",
+        "misconfig",
+        "tech-stack"
+      ],
+      "references": [
+        "https://www.optiv.com/insights/source-zero/blog/kubernetes-attack-surface"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:unauth-redis-insight",
+      "cwe": [],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "broken-access-control",
+        "misconfig"
+      ],
+      "references": [
+        "https://redis.com/redis-enterprise/redis-insight/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:unauthenticated-mongo-express",
+      "cwe": [],
+      "owasp": [
+        "A01:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "broken-access-control",
+        "misconfig"
+      ],
+      "references": [
+        "https://www.exploit-db.com/ghdb/5684"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:untrusted-root-certificate",
+      "cwe": [],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "tls"
+      ],
+      "references": [
+        "https://www.sslmarket.com/ssl/trusted-and-untrusted-certificate",
+        "https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/ssl-untrusted-root-certificate/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:vercel-config-file",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "exposed-files",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://vercel.com/docs/project-configuration"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:weak-cipher-suites",
+      "cwe": [],
+      "owasp": [
+        "A02:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "misconfig",
+        "tls"
+      ],
+      "references": [
+        "https://www.acunetix.com/vulnerabilities/web/tls-ssl-weak-cipher-suites/",
+        "http://ciphersuite.info"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:weak-csp-detect",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "misconfig"
+      ],
+      "references": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors",
+        "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src",
+        "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/object-src",
+        "https://content-security-policy.com/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:webdav-enabled",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://www.acunetix.com/vulnerabilities/web/webdav-enabled/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:wildcard-tls",
+      "cwe": [],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "tls"
+      ],
+      "references": [
+        "https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html#carefully-consider-the-use-of-wildcard-certificates"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:wordpress-db-exposure",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "backup-exposed",
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html",
+        "https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload",
+        "https://wordpress.org/support/article/backing-up-your-database/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:wordpress-weak-credentials",
+      "cwe": [
+        "CWE-1391"
+      ],
+      "owasp": [
+        "A07:2021"
+      ],
+      "severity_floor": "critical",
+      "tags": [
+        "default-account",
+        "default-credentials"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/1391.html",
+        "https://www.wpwhitesecurity.com/strong-wordpress-passwords-wpscan/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:wordpress-wp-env-exposure",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "information-disclosure",
+        "misconfig"
+      ],
+      "references": [
+        "https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:wpconfig-aws-keys",
+      "cwe": [],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "aws",
+        "information-disclosure"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:xss-deprecated-header",
+      "cwe": [],
+      "owasp": [
+        "A03:2021",
+        "A05:2021"
+      ],
+      "severity_floor": "info",
+      "tags": [
+        "misconfig",
+        "xss"
+      ],
+      "references": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection",
+        "https://owasp.org/www-project-secure-headers/#x-xss-protection"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:xss-fuzz",
+      "cwe": [
+        "CWE-79"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "xss"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/79.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:xss-uri-reflected",
+      "cwe": [],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "low",
+      "tags": [
+        "xss"
+      ],
+      "references": [],
+      "matcher": "content"
+    },
+    {
+      "id": "nuclei:zip-backup-files",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "backup-exposed",
+        "information-disclosure"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/200.html"
+      ],
+      "matcher": "content"
+    },
+    {
+      "id": "semgrep:go.lang.security.audit.crypto.math_random.math-random-used",
+      "cwe": [
+        "CWE-338"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-crypto"
+      ],
+      "references": [
+        "https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html#secure-random-number-generation",
+        "https://semgrep.dev/r/go.lang.security.audit.crypto.math_random.math-random-used"
+      ]
+    },
+    {
+      "id": "semgrep:go.lang.security.audit.crypto.missing-ssl-minversion.missing-ssl-minversion",
+      "cwe": [
+        "CWE-327"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-cipher",
+        "weak-crypto"
+      ],
+      "references": [
+        "https://go.dev/doc/go1.22#minor_library_changes",
+        "https://pkg.go.dev/crypto/tls#:~:text=MinVersion",
+        "https://www.us-cert.gov/ncas/alerts/TA14-290A",
+        "https://semgrep.dev/r/go.lang.security.audit.crypto.missing-ssl-minversion.missing-ssl-minversion"
+      ]
+    },
+    {
+      "id": "semgrep:go.lang.security.audit.crypto.ssl.ssl-v3-is-insecure",
+      "cwe": [
+        "CWE-327"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-cipher",
+        "weak-crypto"
+      ],
+      "references": [
+        "https://golang.org/doc/go1.14#crypto/tls",
+        "https://www.us-cert.gov/ncas/alerts/TA14-290A",
+        "https://semgrep.dev/r/go.lang.security.audit.crypto.ssl.ssl-v3-is-insecure"
+      ]
+    },
+    {
+      "id": "semgrep:go.lang.security.audit.crypto.tls.tls-with-insecure-cipher",
+      "cwe": [
+        "CWE-327"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-cipher",
+        "weak-crypto"
+      ],
+      "references": [
+        "https://golang.org/pkg/crypto/tls/#InsecureCipherSuites",
+        "https://semgrep.dev/r/go.lang.security.audit.crypto.tls.tls-with-insecure-cipher"
+      ]
+    },
+    {
+      "id": "semgrep:java.java-jwt.security.jwt-hardcode.java-jwt-hardcoded-secret",
+      "cwe": [
+        "CWE-798"
+      ],
+      "owasp": [
+        "A07:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "hardcoded-credentials",
+        "hardcoded-secret",
+        "jwt",
+        "secret-exposure"
+      ],
+      "references": [
+        "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+        "https://semgrep.dev/r/java.java-jwt.security.jwt-hardcode.java-jwt-hardcoded-secret"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.anonymous-ldap-bind.anonymous-ldap-bind",
+      "cwe": [
+        "CWE-287"
+      ],
+      "owasp": [
+        "A07:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-auth"
+      ],
+      "references": [
+        "https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures",
+        "https://semgrep.dev/r/java.lang.security.audit.anonymous-ldap-bind.anonymous-ldap-bind"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.command-injection-formatted-runtime-call.command-injection-formatted-runtime-call",
+      "cwe": [
+        "CWE-78"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "command-injection"
+      ],
+      "references": [
+        "https://owasp.org/Top10/A03_2021-Injection",
+        "https://semgrep.dev/r/java.lang.security.audit.command-injection-formatted-runtime-call.command-injection-formatted-runtime-call"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.crypto.des-is-deprecated.des-is-deprecated",
+      "cwe": [
+        "CWE-326"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-crypto"
+      ],
+      "references": [
+        "https://www.nist.gov/news-events/news/2005/06/nist-withdraws-outdated-data-encryption-standard",
+        "https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html#algorithms",
+        "https://semgrep.dev/r/java.lang.security.audit.crypto.des-is-deprecated.des-is-deprecated"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.crypto.desede-is-deprecated.desede-is-deprecated",
+      "cwe": [
+        "CWE-326"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-crypto"
+      ],
+      "references": [
+        "https://csrc.nist.gov/News/2017/Update-to-Current-Use-and-Deprecation-of-TDEA",
+        "https://semgrep.dev/r/java.lang.security.audit.crypto.desede-is-deprecated.desede-is-deprecated"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.crypto.ecb-cipher.ecb-cipher",
+      "cwe": [
+        "CWE-327"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-cipher",
+        "weak-crypto"
+      ],
+      "references": [
+        "https://owasp.org/Top10/A02_2021-Cryptographic_Failures",
+        "https://semgrep.dev/r/java.lang.security.audit.crypto.ecb-cipher.ecb-cipher"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.crypto.no-null-cipher.no-null-cipher",
+      "cwe": [
+        "CWE-327"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-cipher",
+        "weak-crypto"
+      ],
+      "references": [
+        "https://owasp.org/Top10/A02_2021-Cryptographic_Failures",
+        "https://semgrep.dev/r/java.lang.security.audit.crypto.no-null-cipher.no-null-cipher"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.crypto.rsa-no-padding.rsa-no-padding",
+      "cwe": [
+        "CWE-326"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-crypto"
+      ],
+      "references": [
+        "https://rdist.root.org/2009/10/06/why-rsa-encryption-padding-is-critical/",
+        "https://semgrep.dev/r/java.lang.security.audit.crypto.rsa-no-padding.rsa-no-padding"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.crypto.ssl.avoid-implementing-custom-digests.avoid-implementing-custom-digests",
+      "cwe": [
+        "CWE-327"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-cipher",
+        "weak-crypto"
+      ],
+      "references": [
+        "https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html#custom-algorithms",
+        "https://semgrep.dev/r/java.lang.security.audit.crypto.ssl.avoid-implementing-custom-digests.avoid-implementing-custom-digests"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.crypto.ssl.defaulthttpclient-is-deprecated.defaulthttpclient-is-deprecated",
+      "cwe": [
+        "CWE-326"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-crypto"
+      ],
+      "references": [
+        "https://owasp.org/Top10/A02_2021-Cryptographic_Failures",
+        "https://semgrep.dev/r/java.lang.security.audit.crypto.ssl.defaulthttpclient-is-deprecated.defaulthttpclient-is-deprecated"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.crypto.ssl.insecure-hostname-verifier.insecure-hostname-verifier",
+      "cwe": [
+        "CWE-295"
+      ],
+      "owasp": [
+        "A07:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "invalid-cert",
+        "tls",
+        "weak-crypto"
+      ],
+      "references": [
+        "https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures",
+        "https://semgrep.dev/r/java.lang.security.audit.crypto.ssl.insecure-hostname-verifier.insecure-hostname-verifier"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.crypto.ssl.insecure-trust-manager.insecure-trust-manager",
+      "cwe": [
+        "CWE-295"
+      ],
+      "owasp": [
+        "A07:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "invalid-cert",
+        "tls",
+        "weak-crypto"
+      ],
+      "references": [
+        "https://stackoverflow.com/questions/2642777/trusting-all-certificates-using-httpclient-over-https",
+        "https://semgrep.dev/r/java.lang.security.audit.crypto.ssl.insecure-trust-manager.insecure-trust-manager"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.crypto.unencrypted-socket.unencrypted-socket",
+      "cwe": [
+        "CWE-319"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "cleartext",
+        "plaintext",
+        "weak-crypto"
+      ],
+      "references": [
+        "https://owasp.org/Top10/A02_2021-Cryptographic_Failures",
+        "https://semgrep.dev/r/java.lang.security.audit.crypto.unencrypted-socket.unencrypted-socket"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.crypto.use-of-aes-ecb.use-of-aes-ecb",
+      "cwe": [
+        "CWE-327"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-cipher",
+        "weak-crypto"
+      ],
+      "references": [
+        "https://owasp.org/Top10/A02_2021-Cryptographic_Failures",
+        "https://googleprojectzero.blogspot.com/2022/10/rc4-is-still-considered-harmful.html",
+        "https://semgrep.dev/r/java.lang.security.audit.crypto.use-of-aes-ecb.use-of-aes-ecb"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.crypto.use-of-blowfish.use-of-blowfish",
+      "cwe": [
+        "CWE-327"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-cipher",
+        "weak-crypto"
+      ],
+      "references": [
+        "https://owasp.org/Top10/A02_2021-Cryptographic_Failures",
+        "https://googleprojectzero.blogspot.com/2022/10/rc4-is-still-considered-harmful.html",
+        "https://semgrep.dev/r/java.lang.security.audit.crypto.use-of-blowfish.use-of-blowfish"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.crypto.use-of-default-aes.use-of-default-aes",
+      "cwe": [
+        "CWE-327"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-cipher",
+        "weak-crypto"
+      ],
+      "references": [
+        "https://owasp.org/Top10/A02_2021-Cryptographic_Failures",
+        "https://googleprojectzero.blogspot.com/2022/10/rc4-is-still-considered-harmful.html",
+        "https://semgrep.dev/r/java.lang.security.audit.crypto.use-of-default-aes.use-of-default-aes"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.crypto.use-of-rc2.use-of-rc2",
+      "cwe": [
+        "CWE-327"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-cipher",
+        "weak-crypto"
+      ],
+      "references": [
+        "https://owasp.org/Top10/A02_2021-Cryptographic_Failures",
+        "https://googleprojectzero.blogspot.com/2022/10/rc4-is-still-considered-harmful.html",
+        "https://semgrep.dev/r/java.lang.security.audit.crypto.use-of-rc2.use-of-rc2"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.crypto.use-of-rc4.use-of-rc4",
+      "cwe": [
+        "CWE-327"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-cipher",
+        "weak-crypto"
+      ],
+      "references": [
+        "https://owasp.org/Top10/A02_2021-Cryptographic_Failures",
+        "https://googleprojectzero.blogspot.com/2022/10/rc4-is-still-considered-harmful.html",
+        "https://semgrep.dev/r/java.lang.security.audit.crypto.use-of-rc4.use-of-rc4"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.crypto.weak-rsa.use-of-weak-rsa-key",
+      "cwe": [
+        "CWE-326"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-crypto"
+      ],
+      "references": [
+        "https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html#algorithms",
+        "https://semgrep.dev/r/java.lang.security.audit.crypto.weak-rsa.use-of-weak-rsa-key"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.md5-used-as-password.md5-used-as-password",
+      "cwe": [
+        "CWE-327"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "secret-exposure",
+        "weak-cipher",
+        "weak-crypto"
+      ],
+      "references": [
+        "https://tools.ietf.org/id/draft-lvelvindron-tls-md5-sha1-deprecate-01.html",
+        "https://github.com/returntocorp/semgrep-rules/issues/1609",
+        "https://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html#SecretKeyFactory",
+        "https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/crypto/bcrypt/BCryptPasswordEncoder.html",
+        "https://semgrep.dev/r/java.lang.security.audit.md5-used-as-password.md5-used-as-password"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.object-deserialization.object-deserialization",
+      "cwe": [
+        "CWE-502"
+      ],
+      "owasp": [
+        "A08:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "deserialization"
+      ],
+      "references": [
+        "https://www.owasp.org/index.php/Deserialization_of_untrusted_data",
+        "https://www.oracle.com/java/technologies/javase/seccodeguide.html#8",
+        "https://semgrep.dev/r/java.lang.security.audit.object-deserialization.object-deserialization"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.tainted-env-from-http-request.tainted-env-from-http-request",
+      "cwe": [
+        "CWE-454",
+        "CWE-77",
+        "CWE-94"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "code-injection",
+        "command-injection"
+      ],
+      "references": [
+        "https://owasp.org/Top10/A03_2021-Injection",
+        "https://developer.hashicorp.com/terraform/language/resources/provisioners/remote-exec",
+        "https://developer.hashicorp.com/terraform/language/resources/provisioners/local-exec",
+        "https://semgrep.dev/r/java.lang.security.audit.tainted-env-from-http-request.tainted-env-from-http-request"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.weak-ssl-context.weak-ssl-context",
+      "cwe": [
+        "CWE-326"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-crypto"
+      ],
+      "references": [
+        "https://tools.ietf.org/html/rfc7568",
+        "https://tools.ietf.org/id/draft-ietf-tls-oldversions-deprecate-02.html",
+        "https://semgrep.dev/r/java.lang.security.audit.weak-ssl-context.weak-ssl-context"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.xss.no-direct-response-writer.no-direct-response-writer",
+      "cwe": [
+        "CWE-79"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "xss"
+      ],
+      "references": [
+        "https://www3.ntu.edu.sg/home/ehchua/programming/java/JavaServerFaces.html",
+        "https://semgrep.dev/r/java.lang.security.audit.xss.no-direct-response-writer.no-direct-response-writer"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.xssrequestwrapper-is-insecure.xssrequestwrapper-is-insecure",
+      "cwe": [
+        "CWE-79"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "xss"
+      ],
+      "references": [
+        "https://owasp.org/Top10/A03_2021-Injection",
+        "https://semgrep.dev/r/java.lang.security.audit.xssrequestwrapper-is-insecure.xssrequestwrapper-is-insecure"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.xxe.documentbuilderfactory-disallow-doctype-decl-false.documentbuilderfactory-disallow-doctype-decl-false",
+      "cwe": [
+        "CWE-611"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "xxe"
+      ],
+      "references": [
+        "https://semgrep.dev/blog/2022/xml-security-in-java",
+        "https://semgrep.dev/docs/cheat-sheets/java-xxe/",
+        "https://blog.sonarsource.com/secure-xml-processor",
+        "https://xerces.apache.org/xerces2-j/features.html",
+        "https://semgrep.dev/r/java.lang.security.audit.xxe.documentbuilderfactory-disallow-doctype-decl-false.documentbuilderfactory-disallow-doctype-decl-false"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.xxe.documentbuilderfactory-disallow-doctype-decl-missing.documentbuilderfactory-disallow-doctype-decl-missing",
+      "cwe": [
+        "CWE-611"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "xxe"
+      ],
+      "references": [
+        "https://semgrep.dev/blog/2022/xml-security-in-java",
+        "https://semgrep.dev/docs/cheat-sheets/java-xxe/",
+        "https://blog.sonarsource.com/secure-xml-processor",
+        "https://xerces.apache.org/xerces2-j/features.html",
+        "https://semgrep.dev/r/java.lang.security.audit.xxe.documentbuilderfactory-disallow-doctype-decl-missing.documentbuilderfactory-disallow-doctype-decl-missing"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.xxe.documentbuilderfactory-external-general-entities-true.documentbuilderfactory-external-general-entities-true",
+      "cwe": [
+        "CWE-611"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "xxe"
+      ],
+      "references": [
+        "https://semgrep.dev/blog/2022/xml-security-in-java",
+        "https://semgrep.dev/docs/cheat-sheets/java-xxe/",
+        "https://blog.sonarsource.com/secure-xml-processor",
+        "https://semgrep.dev/r/java.lang.security.audit.xxe.documentbuilderfactory-external-general-entities-true.documentbuilderfactory-external-general-entities-true"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.xxe.documentbuilderfactory-external-parameter-entities-true.documentbuilderfactory-external-parameter-entities-true",
+      "cwe": [
+        "CWE-611"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "xxe"
+      ],
+      "references": [
+        "https://semgrep.dev/blog/2022/xml-security-in-java",
+        "https://semgrep.dev/docs/cheat-sheets/java-xxe/",
+        "https://blog.sonarsource.com/secure-xml-processor",
+        "https://semgrep.dev/r/java.lang.security.audit.xxe.documentbuilderfactory-external-parameter-entities-true.documentbuilderfactory-external-parameter-entities-true"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.xxe.saxparserfactory-disallow-doctype-decl-missing.saxparserfactory-disallow-doctype-decl-missing",
+      "cwe": [
+        "CWE-611"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "xxe"
+      ],
+      "references": [
+        "https://semgrep.dev/blog/2022/xml-security-in-java",
+        "https://semgrep.dev/docs/cheat-sheets/java-xxe/",
+        "https://blog.sonarsource.com/secure-xml-processor",
+        "https://xerces.apache.org/xerces2-j/features.html",
+        "https://semgrep.dev/r/java.lang.security.audit.xxe.saxparserfactory-disallow-doctype-decl-missing.saxparserfactory-disallow-doctype-decl-missing"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.audit.xxe.transformerfactory-dtds-not-disabled.transformerfactory-dtds-not-disabled",
+      "cwe": [
+        "CWE-611"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "xxe"
+      ],
+      "references": [
+        "https://semgrep.dev/blog/2022/xml-security-in-java",
+        "https://semgrep.dev/docs/cheat-sheets/java-xxe/",
+        "https://blog.sonarsource.com/secure-xml-processor",
+        "https://xerces.apache.org/xerces2-j/features.html",
+        "https://semgrep.dev/r/java.lang.security.audit.xxe.transformerfactory-dtds-not-disabled.transformerfactory-dtds-not-disabled"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.httpservlet-path-traversal.httpservlet-path-traversal",
+      "cwe": [
+        "CWE-22"
+      ],
+      "owasp": [
+        "A01:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "path-traversal"
+      ],
+      "references": [
+        "https://www.owasp.org/index.php/Path_Traversal",
+        "https://semgrep.dev/r/java.lang.security.httpservlet-path-traversal.httpservlet-path-traversal"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.insecure-jms-deserialization.insecure-jms-deserialization",
+      "cwe": [
+        "CWE-502"
+      ],
+      "owasp": [
+        "A08:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "deserialization"
+      ],
+      "references": [
+        "https://www.blackhat.com/docs/us-16/materials/us-16-Kaiser-Pwning-Your-Java-Messaging-With-Deserialization-Vulnerabilities-wp.pdf",
+        "https://semgrep.dev/r/java.lang.security.insecure-jms-deserialization.insecure-jms-deserialization"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.servletresponse-writer-xss.servletresponse-writer-xss",
+      "cwe": [
+        "CWE-79"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "xss"
+      ],
+      "references": [
+        "https://owasp.org/Top10/A03_2021-Injection",
+        "https://semgrep.dev/r/java.lang.security.servletresponse-writer-xss.servletresponse-writer-xss"
+      ]
+    },
+    {
+      "id": "semgrep:java.lang.security.xmlinputfactory-possible-xxe.xmlinputfactory-possible-xxe",
+      "cwe": [
+        "CWE-611"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "xxe"
+      ],
+      "references": [
+        "https://semgrep.dev/blog/2022/xml-security-in-java",
+        "https://semgrep.dev/docs/cheat-sheets/java-xxe/",
+        "https://www.blackhat.com/docs/us-15/materials/us-15-Wang-FileCry-The-New-Age-Of-XXE-java-wp.pdf",
+        "https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html#xmlinputfactory-a-stax-parser",
+        "https://semgrep.dev/r/java.lang.security.xmlinputfactory-possible-xxe.xmlinputfactory-possible-xxe"
+      ]
+    },
+    {
+      "id": "semgrep:javascript.lang.security.detect-no-csrf-before-method-override.detect-no-csrf-before-method-override",
+      "cwe": [
+        "CWE-352"
+      ],
+      "owasp": [
+        "A01:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [],
+      "references": [
+        "https://github.com/nodesecurity/eslint-plugin-security/blob/master/docs/bypass-connect-csrf-protection-by-abusing.md",
+        "https://semgrep.dev/r/javascript.lang.security.detect-no-csrf-before-method-override.detect-no-csrf-before-method-override"
+      ]
+    },
+    {
+      "id": "semgrep:javascript.lang.security.detect-pseudorandombytes.detect-pseudoRandomBytes",
+      "cwe": [
+        "CWE-338"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [],
+      "references": [
+        "https://owasp.org/Top10/A02_2021-Cryptographic_Failures",
+        "https://semgrep.dev/r/javascript.lang.security.detect-pseudorandombytes.detect-pseudoRandomBytes"
+      ]
+    },
+    {
+      "id": "semgrep:python.aws-lambda.security.dangerous-asyncio-shell.dangerous-asyncio-shell",
+      "cwe": [
+        "CWE-78"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "command-injection"
+      ],
+      "references": [
+        "https://docs.python.org/3/library/asyncio-subprocess.html",
+        "https://docs.python.org/3/library/shlex.html",
+        "https://semgrep.dev/r/python.aws-lambda.security.dangerous-asyncio-shell.dangerous-asyncio-shell"
+      ]
+    },
+    {
+      "id": "semgrep:python.aws-lambda.security.tainted-pickle-deserialization.tainted-pickle-deserialization",
+      "cwe": [
+        "CWE-502"
+      ],
+      "owasp": [
+        "A08:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "deserialization"
+      ],
+      "references": [
+        "https://docs.python.org/3/library/pickle.html",
+        "https://davidhamann.de/2020/04/05/exploiting-python-pickle/",
+        "https://semgrep.dev/r/python.aws-lambda.security.tainted-pickle-deserialization.tainted-pickle-deserialization"
+      ]
+    },
+    {
+      "id": "semgrep:python.cryptography.security.empty-aes-key.empty-aes-key",
+      "cwe": [
+        "CWE-327",
+        "CWE-310"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-cipher",
+        "weak-crypto"
+      ],
+      "references": [
+        "https://cwe.mitre.org/data/definitions/327.html",
+        "https://cwe.mitre.org/data/definitions/310.html",
+        "https://semgrep.dev/r/python.cryptography.security.empty-aes-key.empty-aes-key"
+      ]
+    },
+    {
+      "id": "semgrep:python.lang.security.audit.dangerous-asyncio-shell-tainted-env-args.dangerous-asyncio-shell-tainted-env-args",
+      "cwe": [
+        "CWE-78"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "command-injection"
+      ],
+      "references": [
+        "https://docs.python.org/3/library/asyncio-subprocess.html",
+        "https://docs.python.org/3/library/shlex.html",
+        "https://semgrep.dev/docs/cheat-sheets/python-command-injection/",
+        "https://semgrep.dev/r/python.lang.security.audit.dangerous-asyncio-shell-tainted-env-args.dangerous-asyncio-shell-tainted-env-args"
+      ]
+    },
+    {
+      "id": "semgrep:python.lang.security.audit.hardcoded-password-default-argument.hardcoded-password-default-argument",
+      "cwe": [
+        "CWE-798"
+      ],
+      "owasp": [
+        "A07:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "hardcoded-credentials",
+        "hardcoded-secret",
+        "secret-exposure"
+      ],
+      "references": [
+        "https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures",
+        "https://semgrep.dev/r/python.lang.security.audit.hardcoded-password-default-argument.hardcoded-password-default-argument"
+      ]
+    },
+    {
+      "id": "semgrep:python.lang.security.audit.logging.logger-credential-leak.python-logger-credential-disclosure",
+      "cwe": [
+        "CWE-532"
+      ],
+      "owasp": [
+        "A09:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "information-disclosure",
+        "secret-exposure"
+      ],
+      "references": [
+        "https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures",
+        "https://semgrep.dev/r/python.lang.security.audit.logging.logger-credential-leak.python-logger-credential-disclosure"
+      ]
+    },
+    {
+      "id": "semgrep:python.lang.security.audit.sha224-hash.sha224-hash",
+      "cwe": [
+        "CWE-327"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-cipher",
+        "weak-crypto"
+      ],
+      "references": [
+        "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar3.ipd.pdf",
+        "https://www.cyber.gov.au/resources-business-and-government/essential-cyber-security/ism/cyber-security-guidelines/guidelines-cryptography",
+        "https://semgrep.dev/r/python.lang.security.audit.sha224-hash.sha224-hash"
+      ]
+    },
+    {
+      "id": "semgrep:python.lang.security.audit.ssl-wrap-socket-is-deprecated.ssl-wrap-socket-is-deprecated",
+      "cwe": [
+        "CWE-326"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-crypto"
+      ],
+      "references": [
+        "https://docs.python.org/3/library/ssl.html#ssl.wrap_socket",
+        "https://docs.python.org/3/library/ssl.html#ssl.SSLContext.wrap_socket",
+        "https://semgrep.dev/r/python.lang.security.audit.ssl-wrap-socket-is-deprecated.ssl-wrap-socket-is-deprecated"
+      ]
+    },
+    {
+      "id": "semgrep:python.lang.security.audit.subprocess-shell-true.subprocess-shell-true",
+      "cwe": [
+        "CWE-78"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "command-injection"
+      ],
+      "references": [
+        "https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess",
+        "https://docs.python.org/3/library/subprocess.html",
+        "https://semgrep.dev/r/python.lang.security.audit.subprocess-shell-true.subprocess-shell-true"
+      ]
+    },
+    {
+      "id": "semgrep:python.lang.security.audit.weak-ssl-version.weak-ssl-version",
+      "cwe": [
+        "CWE-326"
+      ],
+      "owasp": [
+        "A02:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "weak-crypto"
+      ],
+      "references": [
+        "https://tools.ietf.org/html/rfc7568",
+        "https://tools.ietf.org/id/draft-ietf-tls-oldversions-deprecate-02.html",
+        "https://docs.python.org/3/library/ssl.html#ssl.PROTOCOL_TLSv1_2",
+        "https://semgrep.dev/r/python.lang.security.audit.weak-ssl-version.weak-ssl-version"
+      ]
+    },
+    {
+      "id": "semgrep:python.lang.security.deserialization.pickle.avoid-cPickle",
+      "cwe": [
+        "CWE-502"
+      ],
+      "owasp": [
+        "A08:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "deserialization"
+      ],
+      "references": [
+        "https://docs.python.org/3/library/pickle.html",
+        "https://semgrep.dev/r/python.lang.security.deserialization.pickle.avoid-cPickle"
+      ]
+    },
+    {
+      "id": "semgrep:python.lang.security.deserialization.pickle.avoid-dill",
+      "cwe": [
+        "CWE-502"
+      ],
+      "owasp": [
+        "A08:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "deserialization"
+      ],
+      "references": [
+        "https://docs.python.org/3/library/pickle.html",
+        "https://semgrep.dev/r/python.lang.security.deserialization.pickle.avoid-dill"
+      ]
+    },
+    {
+      "id": "semgrep:python.lang.security.deserialization.pickle.avoid-pickle",
+      "cwe": [
+        "CWE-502"
+      ],
+      "owasp": [
+        "A08:2021"
+      ],
+      "severity_floor": "medium",
+      "tags": [
+        "deserialization"
+      ],
+      "references": [
+        "https://docs.python.org/3/library/pickle.html",
+        "https://semgrep.dev/r/python.lang.security.deserialization.pickle.avoid-pickle"
+      ]
+    },
+    {
+      "id": "semgrep:yaml.argo.security.argo-workflow-parameter-command-injection.argo-workflow-parameter-command-injection",
+      "cwe": [
+        "CWE-78",
+        "CWE-94"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "severity_floor": "high",
+      "tags": [
+        "code-injection",
+        "command-injection"
+      ],
+      "references": [
+        "https://github.com/argoproj/argo-workflows/issues/5061",
+        "https://github.com/argoproj/argo-workflows/issues/5114#issue-808865370",
+        "https://semgrep.dev/r/yaml.argo.security.argo-workflow-parameter-command-injection.argo-workflow-parameter-command-injection"
+      ]
+    }
+  ]
+}

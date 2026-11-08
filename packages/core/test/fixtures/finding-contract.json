@@ -1,0 +1,91 @@
+{
+  "$comment": "ARG-053 — contrato canónico de hallazgos. Fuente única que verifican los dos lados: argos-bin/internal/contract/contract_test.go (Go) y packages/core/test/contract.test.ts (TS). Un campo, una severidad, una confianza o un límite que se agregue en un solo lado hace fallar el test del otro.",
+  "version": 1,
+  "severities": ["critical", "high", "medium", "low", "info"],
+  "confidences": ["confirmed", "probable", "possible"],
+  "fields": [
+    { "json": "id", "ts": "id", "go": "ID", "required": false },
+    { "json": "source", "ts": "source", "go": "Source", "required": true },
+    { "json": "source_tool", "ts": "source_tool", "go": "SourceTool", "required": false },
+    { "json": "rule_id", "ts": "rule_id", "go": "RuleID", "required": false },
+    { "json": "title", "ts": "title", "go": "Title", "required": true },
+    { "json": "severity", "ts": "severity", "go": "Severity", "required": true },
+    { "json": "confidence", "ts": "confidence", "go": "Confidence", "required": false },
+    { "json": "cwe", "ts": "cwe", "go": "CWE", "required": false },
+    { "json": "owasp", "ts": "owasp", "go": "OWASP", "required": false },
+    { "json": "target", "ts": "target", "go": "Target", "required": true },
+    { "json": "vector", "ts": "vector", "go": "Vector", "required": false },
+    { "json": "evidence", "ts": "evidence", "go": "Evidence", "required": false },
+    {
+      "json": "poc",
+      "ts": "poc",
+      "go": null,
+      "required": false,
+      "note": "Solo TS: las tools Go escriben el PoC dentro de evidence.poc y el normalizador lo promueve a este campo."
+    },
+    { "json": "remediation", "ts": "remediation", "go": "Remediation", "required": false },
+    { "json": "cvss", "ts": "cvss", "go": "CVSS", "required": false },
+    { "json": "tags", "ts": "tags", "go": "Tags", "required": false },
+    { "json": "references", "ts": "references", "go": "References", "required": false }
+  ],
+  "limits": {
+    "MAX_TITLE_CHARS": 512,
+    "MAX_AGENT_CHARS": 128,
+    "MAX_TARGET_CHARS": 2048,
+    "MAX_VECTOR_CHARS": 2048,
+    "MAX_CWE_CHARS": 64,
+    "MAX_EVIDENCE_CHARS": 32000,
+    "MAX_REMEDIATION_CHARS": 8000,
+    "MAX_TAGS": 32,
+    "MAX_TAG_CHARS": 64,
+    "MAX_RAW_CHARS": 48000,
+    "MAX_SOURCE_TOOL_CHARS": 128,
+    "MAX_RULE_ID_CHARS": 256,
+    "MAX_OWASP_ITEMS": 16,
+    "MAX_REFERENCES": 16,
+    "MAX_REFERENCE_CHARS": 512,
+    "MAX_ID_CHARS": 128
+  },
+  "sample": {
+    "id": "finding-1",
+    "source": "web.scan",
+    "source_tool": "web.sqli",
+    "rule_id": "nuclei:sqli-error-based",
+    "title": "Error-based SQL injection",
+    "severity": "HIGH",
+    "confidence": "confirmed",
+    "cwe": "89",
+    "owasp": ["A03:2021"],
+    "target": "https://example.test/item?id=1",
+    "vector": "GET /item?id=1",
+    "evidence": {
+      "request": "GET /item?id=1' HTTP/1.1",
+      "response": "You have an error in your SQL syntax"
+    },
+    "remediation": "Use parameterized queries.",
+    "cvss": { "AV": "N", "AC": "L", "PR": "N", "UI": "N", "S": "U", "C": "H", "I": "H", "A": "H" },
+    "tags": ["sqli", "injection", "SQLi"],
+    "references": ["https://cwe.mitre.org/data/definitions/89.html"]
+  },
+  "normalized": {
+    "id": "finding-1",
+    "source": "web.scan",
+    "sourceTool": "web.sqli",
+    "ruleId": "nuclei:sqli-error-based",
+    "title": "Error-based SQL injection",
+    "severity": "high",
+    "confidence": "confirmed",
+    "cwe": "CWE-89",
+    "owasp": ["A03:2021"],
+    "target": "https://example.test/item?id=1",
+    "vector": "GET /item?id=1",
+    "evidence": {
+      "request": "GET /item?id=1' HTTP/1.1",
+      "response": "You have an error in your SQL syntax"
+    },
+    "remediation": "Use parameterized queries.",
+    "cvss": { "AV": "N", "AC": "L", "PR": "N", "UI": "N", "S": "U", "C": "H", "I": "H", "A": "H" },
+    "tags": ["sqli", "injection"],
+    "references": ["https://cwe.mitre.org/data/definitions/89.html"]
+  }
+}

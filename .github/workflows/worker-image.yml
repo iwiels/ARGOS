@@ -1,0 +1,134 @@
+name: worker-image
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: argos-bin/go.mod
+          cache-dependency-path: argos-bin/go.sum
+      - name: Enable ARM64 worker image builds
+        uses: docker/setup-qemu-action@c7c53464625b32c7a7e944ae62b3e17d2b600130
+        with:
+          platforms: arm64
+      - name: Create BuildKit builder
+        run: |
+          docker buildx create --name argos-worker-ci --driver docker-container --use
+          docker buildx inspect --bootstrap
+      - name: Resolve pinned Playwright version
+        id: browser
+        run: |
+          version=$(node -p 'require("./argos-bin/worker/browser/package.json").dependencies["playwright-core"]')
+          echo "playwright-version=${version}" >> "${GITHUB_OUTPUT}"
+      - name: Build amd64 and arm64 worker images with attestations
+        env:
+          WORKER_REVISION: ${{ github.sha }}
+        run: |
+          docker buildx build \
+            --builder argos-worker-ci \
+            --platform linux/amd64,linux/arm64 \
+            --file argos-bin/worker/Dockerfile \
+            --build-arg ARGOS_WORKER_VERSION=ci-${WORKER_REVISION} \
+            --build-arg ARGOS_WORKER_REVISION=${WORKER_REVISION} \
+            --build-arg ARGOS_PLAYWRIGHT_VERSION=${{ steps.browser.outputs.playwright-version }} \
+            --sbom=true \
+            --provenance=mode=max \
+            --output type=oci,dest=${RUNNER_TEMP}/argos-worker.oci.tar \
+            argos-bin
+      - name: Build native image for the runtime smoke check
+        env:
+          WORKER_REVISION: ${{ github.sha }}
+        run: |
+          docker buildx build \
+            --builder argos-worker-ci \
+            --platform linux/amd64 \
+            --file argos-bin/worker/Dockerfile \
+            --build-arg ARGOS_WORKER_VERSION=ci-${WORKER_REVISION} \
+            --build-arg ARGOS_WORKER_REVISION=${WORKER_REVISION} \
+            --build-arg ARGOS_PLAYWRIGHT_VERSION=${{ steps.browser.outputs.playwright-version }} \
+            --tag argos-worker:ci \
+            --load \
+            argos-bin
+      - name: Verify non-root, glibc, read-only source, and relay environment
+        env:
+          WORKER_REVISION: ${{ github.sha }}
+        run: |
+          probe_version=$(docker run --rm --pull=never --network=none --read-only --user=65532:65532 --cap-drop=ALL --security-opt=no-new-privileges argos-worker:ci /usr/local/bin/argos-worker-probe --version)
+          test "$probe_version" = "argos-worker-probe ci-${WORKER_REVISION}"
+          docker run --rm \
+            --init \
+            --network=none \
+            --read-only \
+            --tmpfs /tmp:rw,nosuid,nodev,noexec,size=128m \
+            --user=65532:65532 \
+            --cap-drop=ALL \
+            --security-opt=no-new-privileges \
+            --security-opt=seccomp="${GITHUB_WORKSPACE}/argos-config/runtime/chromium-seccomp.json" \
+            --pids-limit=256 \
+            --cpus=2 \
+            --memory=1g \
+            argos-worker:ci \
+            /usr/local/bin/argos-browser-worker --preflight
+          docker run --rm \
+            --init \
+            --network=none \
+            --read-only \
+            --tmpfs /tmp:rw,nosuid,nodev,noexec,size=16m \
+            --user=65532:65532 \
+            --mount type=bind,src=${GITHUB_WORKSPACE}/argos-bin/worker,dst=/workspace,readonly,bind-recursive=readonly,bind-propagation=rprivate \
+            argos-worker:ci \
+            /usr/local/bin/argos-worker-relay \
+            --gateway-socket /run/argos/gateway.sock \
+            -- /bin/sh -ec 'test "$(id -u)" = 65532; test -n "$HTTP_PROXY"; test "$HTTP_PROXY" = "$HTTPS_PROXY"; getconf GNU_LIBC_VERSION; test ! -w /workspace'
+      - name: Start loopback-only practice target
+        run: |
+          cd argos-bin
+          CGO_ENABLED=0 go build -trimpath -o "$RUNNER_TEMP/argos-practice-target" ./cmd/practice-target
+          docker run -d \
+            --name argos-practice-target \
+            --network bridge \
+            --publish 127.0.0.1:80:8787 \
+            --read-only \
+            --tmpfs /tmp:rw,nosuid,nodev,noexec,size=16m \
+            --user 65532:65532 \
+            --cap-drop ALL \
+            --security-opt no-new-privileges \
+            --pids-limit 64 \
+            --cpus 1 \
+            --memory 128m \
+            --mount type=bind,src="$RUNNER_TEMP/argos-practice-target",dst=/usr/local/bin/argos-practice-target,readonly \
+            --entrypoint /usr/local/bin/argos-practice-target \
+            argos-worker:ci --host 0.0.0.0 --port 8787
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          docker logs argos-practice-target
+          exit 1
+      - name: Exercise scanner and browser through the isolated scope gateway
+        env:
+          ARGOS_RUN_DOCKER_INTEGRATION: "1"
+          ARGOS_BROWSER_SECCOMP_PROFILE: ${{ github.workspace }}/argos-config/runtime/chromium-seccomp.json
+        run: |
+          image_id=$(docker image inspect --format '{{.Id}}' argos-worker:ci)
+          cd argos-bin
+          export ARGOS_SANDBOX_IMAGE="$image_id"
+          go test ./cmd/worker-web-probe \
+            -run '^TestDockerScopeGatewayWorkerProbeIntegration$' -count=1 -v
+          go test ./cmd/web/tools \
+            -run '^TestDockerScopeGatewayBrowserWorkerIntegration$' -count=1 -v
+      - name: Stop loopback-only practice target
+        if: always()
+        run: docker rm --force argos-practice-target || true

@@ -1,0 +1,117 @@
+[data-component="folder-tab"] {
+  --tab-color: var(--accent);
+  --tab-text: var(--black-900);
+  --tab-height: 2.25rem;
+  /* C3: nombre canónico --tab-aspect-ratio (antes convivía con --tag-aspect-ratio por typo) */
+  --tab-aspect-ratio: 1.409;
+
+  position: relative;
+  display: inline-flex;
+  align-items: flex-end;
+  height: var(--tab-height);
+  user-select: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  outline: none;
+  transition: opacity 140ms ease-out;
+}
+
+[data-component="folder-tab"][data-active="true"] {
+  z-index: 10;
+}
+
+[data-component="folder-tab"][data-active="false"] {
+  opacity: 0.72;
+}
+
+[data-component="folder-tab"][data-active="false"]:hover {
+  opacity: 0.95;
+}
+
+[data-component="folder-tab"] .folder-tab-ear {
+  height: 100%;
+  aspect-ratio: var(--tab-aspect-ratio);
+  color: var(--tab-color);
+  flex-shrink: 0;
+  pointer-events: none;
+  transform-origin: top;
+}
+
+[data-component="folder-tab"] .folder-tab-ear-start {
+  transform: scale(-1, 1.01) translate(1px);
+}
+
+[data-component="folder-tab"] .folder-tab-ear-end {
+  transform: scaleY(1.01) translate(-1px);
+}
+
+[data-component="folder-tab"] .folder-tab-middle {
+  height: 100%;
+  background-color: var(--tab-color);
+  color: var(--tab-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.75rem;
+  font-family: var(--font-family-serif, var(--font-family-sans));
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 768px) {
+  [data-component="folder-tab"] .folder-tab-middle {
+    font-size: 0.9375rem;
+  }
+}
+
+[data-component="folder-tab"] .folder-tab-badge {
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--radius-xs, 2px);
+  font-size: 0.6875rem;
+  font-family: var(--font-family-mono);
+  background: rgba(0, 0, 0, 0.25);
+  color: inherit;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Dossier Card Container */
+[data-component="dossier-card"] {
+  position: relative;
+  border-radius: var(--stack-border-radius, 4px);
+  border: 1px solid var(--border-default);
+  background-color: var(--bg-surface);
+  /* C9: sombra ad-hoc absorbida a --shadow-card (era 0 1px 4px rgba(0,0,0,0.35)) */
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+[data-component="dossier-card-header"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-default);
+}
+
+/* ── Mosby unfold: la carpeta se inclina en 3D al hover ──
+   Réplica del stack de mosbyfiles.com: perspective en el contenedor,
+   rotateX(-3deg) + translateY en la carpeta, curva easeOutQuint a .65s. */
+[data-component="dossier-folder"] {
+  perspective: 3000px;
+}
+
+[data-component="dossier-folder"] [data-component="dossier-folder-sheet"] {
+  transform-origin: top;
+  transition: transform 0.65s cubic-bezier(0.33, 1, 0.68, 1),
+    box-shadow 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+[data-component="dossier-folder"]:hover
+  [data-component="dossier-folder-sheet"] {
+  transform: translateY(1rem) rotateX(-3deg);
+  box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.25);
+}

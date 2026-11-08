@@ -1,0 +1,29 @@
+#!/bin/sh
+set -e
+# Check if bun version matches .bun-version (root package.json's packageManager
+# pins pnpm, not bun -- bun is a separate tool used for tests/scripts, see
+# .gitlab-ci.yml's BUN_VERSION)
+# keep in sync with packages/script/src/index.ts semver qualifier
+bun -e '
+import { semver } from "bun";
+const expectedBunVersion = (await Bun.file(".bun-version").text()).trim();
+if (!expectedBunVersion) {
+  throw new Error(".bun-version not found at repo root");
+}
+const expectedBunVersionRange = `^${expectedBunVersion}`;
+if (!semver.satisfies(process.versions.bun, expectedBunVersionRange)) {
+  throw new Error(`This script requires bun@${expectedBunVersionRange}, but you are using bun@${process.versions.bun}`);
+}
+if (process.versions.bun !== expectedBunVersion) {
+  console.warn(`Warning: Bun version ${process.versions.bun} differs from expected ${expectedBunVersion}`);
+}
+'
+echo "🔍 Running typecheck..."
+bun typecheck
+
+echo "🧪 Running tests before push..."
+cd packages/app
+bun test --preload ./happydom.ts ./src --timeout 60000
+cd ../ui
+bun test src --timeout 60000
+cd ../..

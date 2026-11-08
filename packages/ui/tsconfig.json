@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@tsconfig/node22/tsconfig.json",
+  "compilerOptions": {
+    "skipLibCheck": true,
+    // General
+    "jsx": "react-jsx",
+    "jsxImportSource": "solid-js",
+    "target": "ESNext",
+    // Modules
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "noEmit": true,
+    "lib": ["es2023", "dom", "dom.iterable"],
+    // Type Checking & Safety
+    "strict": true,
+    "types": ["vite/client", "bun"]
+  },
+  "exclude": ["**/*.stories.*", "**/*.mdx"]
+}

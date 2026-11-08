@@ -1,0 +1,24 @@
+#!/bin/sh
+set -e
+
+echo "🎨 Auditing design tokens..."
+bun --cwd packages/ui audit:tailwind
+
+echo "🎨 Auditing design system & cascade layers..."
+bun audit:design
+
+echo "🎨 Auditing WCAG contrast AA (dark + light)..."
+bun --cwd packages/ui audit:contrast
+
+echo "🔍 Running lint..."
+bun lint
+
+echo "🔍 Running typecheck..."
+bun typecheck
+
+echo "🧪 Running tests..."
+cd packages/app
+bun test --preload ./happydom.ts ./src --timeout 30000
+cd ../ui
+bun test src --timeout 30000
+cd ../..

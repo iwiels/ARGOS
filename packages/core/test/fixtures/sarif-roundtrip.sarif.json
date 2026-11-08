@@ -1,0 +1,195 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Argos Security Operations Engine",
+          "version": "1.0.0",
+          "informationUri": "https://github.com/iwiels/ARGOS",
+          "rules": [
+            {
+              "id": "ARGOS-CWE-89",
+              "name": "SQL_injection_through_the_request_parameter",
+              "shortDescription": {
+                "text": "SQL injection through the request parameter"
+              },
+              "fullDescription": {
+                "text": "SQL injection through the request parameter\n\nRemediación: Use parameterized queries"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/89.html",
+              "properties": {
+                "tags": [
+                  "sqli",
+                  "CWE-89"
+                ],
+                "cwe": [
+                  "CWE-89"
+                ],
+                "owasp": [
+                  "A03:2021"
+                ],
+                "cvssScore": 9.8,
+                "cvssVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                "security-severity": "9.8"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "ARGOS-CWE-89",
+          "ruleIndex": 0,
+          "message": {
+            "text": "SQL injection through the request parameter [Severidad: CRITICAL | CVSS 9.8]"
+          },
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app/handler.py:42"
+                }
+              }
+            }
+          ],
+          "codeFlows": [
+            {
+              "message": {
+                "text": "Taint path reported by the analyzer"
+              },
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "app/handler.py"
+                          },
+                          "region": {
+                            "startLine": 42,
+                            "endLine": 42,
+                            "snippet": {
+                              "text": "value = request.args['id']"
+                            }
+                          }
+                        },
+                        "message": {
+                          "text": "Source: request.args"
+                        }
+                      }
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "app/handler.py"
+                          },
+                          "region": {
+                            "startLine": 45,
+                            "endLine": 45,
+                            "snippet": {
+                              "text": "cursor.execute(query)"
+                            }
+                          }
+                        },
+                        "message": {
+                          "text": "Sink: cursor.execute(query)"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "matchBasedId/v1": "9f2b1c8d4e7a6b5c",
+            "argos/v1": "cwe-89|app/handler.py:42"
+          },
+          "suppressions": [],
+          "taxa": [
+            {
+              "id": "CWE-89",
+              "toolComponent": {
+                "name": "CWE"
+              },
+              "properties": {
+                "name": "CWE-89",
+                "informationUri": "https://cwe.mitre.org/data/definitions/89.html"
+              }
+            },
+            {
+              "id": "A03:2021",
+              "toolComponent": {
+                "name": "OWASP"
+              },
+              "properties": {
+                "name": "A03:2021"
+              }
+            }
+          ],
+          "taxonomies": [
+            {
+              "id": "CWE-89",
+              "name": "CWE-89",
+              "toolComponent": {
+                "name": "CWE"
+              },
+              "informationUri": "https://cwe.mitre.org/data/definitions/89.html"
+            },
+            {
+              "id": "A03:2021",
+              "name": "A03:2021",
+              "toolComponent": {
+                "name": "OWASP"
+              }
+            }
+          ],
+          "properties": {
+            "findingId": "finding-roundtrip",
+            "severity": "critical",
+            "status": "open",
+            "sourceTool": "code.sast",
+            "remediation": "Use parameterized queries",
+            "cvssScore": 9.8,
+            "cvssVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cwe": [
+              "CWE-89"
+            ],
+            "owasp": [
+              "A03:2021"
+            ],
+            "security-severity": "9.8",
+            "dataflow": [
+              {
+                "file": "app/handler.py",
+                "line": 42,
+                "endLine": 42,
+                "message": "Source: request.args",
+                "snippet": "value = request.args['id']"
+              },
+              {
+                "file": "app/handler.py",
+                "line": 45,
+                "endLine": 45,
+                "message": "Sink: cursor.execute(query)",
+                "snippet": "cursor.execute(query)"
+              }
+            ],
+            "partialFingerprints": {
+              "matchBasedId/v1": "9f2b1c8d4e7a6b5c",
+              "argos/v1": "cwe-89|app/handler.py:42"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

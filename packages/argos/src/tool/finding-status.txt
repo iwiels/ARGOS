@@ -1,0 +1,22 @@
+Registra el veredicto de una re-verificación de un hallazgo de seguridad, actualizando su estado en la base de datos.
+
+Usá esta herramienta cuando el operador te pide re-verificar un hallazgo y ya reuniste evidencia suficiente para concluir si sigue vigente o no. Es la ÚNICA forma de que tu conclusión llegue al panel de Hallazgos — el texto de tu respuesta no actualiza nada por sí solo.
+
+## Cuándo usar cada estado
+
+- `verified` — comprobaste con evidencia concreta que la vulnerabilidad YA NO reproduce (el secreto fue rotado, la cabecera ahora está presente, el endpoint ya no es accesible). No lo uses por ausencia de evidencia: usalo solo si verificaste activamente que se corrigió.
+- `open` — comprobaste que la vulnerabilidad SIGUE vigente y explotable.
+- `remediated` — el código/configuración fue corregido pero todavía no pudiste confirmar el efecto en el sistema en vivo.
+- `in-progress` — intentaste verificar pero no llegaste a una conclusión (sin acceso al target, falta contexto, requiere una acción manual del operador). Es el estado honesto cuando no pudiste comprobar nada.
+- `false-positive` — determinaste que el hallazgo original era incorrecto: no hay vulnerabilidad real.
+- `accepted-risk` — la vulnerabilidad existe y fue aceptada explícitamente como riesgo por el cliente.
+
+## Regla crítica de honestidad
+
+NUNCA marques `verified` sin una comprobación real y específica de ESE hallazgo. Que un endpoint responda 200, que un archivo exista, o que el código "se vea bien" no prueba que una inyección SQL, una credencial filtrada o un puerto expuesto se hayan corregido. Si no pudiste comprobarlo, usá `in-progress` y explicá en `rationale` qué te faltó. Un `verified` falso hace que el cliente crea que está protegido cuando no lo está.
+
+## Parámetros
+
+- `findingID`: el identificador exacto del hallazgo, tal como te lo pasó el operador. No lo inventes ni lo modifiques.
+- `status`: uno de los estados de arriba.
+- `rationale`: la evidencia concreta detrás de tu veredicto, en 1-3 frases. Qué comprobaste, cómo, y qué observaste. Este texto queda registrado como justificación de la decisión — escribilo para que otro auditor pueda entender por qué cambiaste el estado sin repetir tu trabajo.

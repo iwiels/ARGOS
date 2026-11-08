@@ -1,0 +1,56 @@
+id: argos-kubernetes-api-anonymous
+
+info:
+  name: Kubernetes API allows anonymous namespace listing
+  author: argos
+  severity: critical
+  description: |
+    La API de Kubernetes responde /api/v1/namespaces sin credenciales. El
+    acceso anónimo al servidor de API expone el inventario de namespaces y, si
+    el rol system:anonymous conserva permisos, también pods, secretos y
+    service accounts. En clústeres mal configurados es el primer paso hacia la
+    toma del control plane.
+
+    El matcher exige kind=NamespaceList: la respuesta de un clúster que rechaza
+    el acceso es un Status de error, no una lista.
+  remediation: |
+    Deshabilitar el acceso anónimo (--anonymous-auth=false), aplicar RBAC
+    mínimo y no exponer el servidor de API fuera de la red del clúster. Auditar
+    los bindings de system:anonymous.
+  reference:
+    - https://kubernetes.io/docs/reference/access-authn-authz/authentication/#anonymous-authenticator-configuration
+    - https://cwe.mitre.org/data/definitions/306.html
+  classification:
+    cwe-id: CWE-306
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
+  metadata:
+    max-request: 1
+    argos-pack: cicd
+    argos-requires-auth: "false"
+    argos-severity-floor: critical
+    argos-evidence: "NamespaceList devuelta por el API server sin credenciales"
+    argos-owasp: "A07:2021 Identification and Authentication Failures"
+  tags: kubernetes,cloud,cicd,exposure,devops
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/v1/namespaces"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - '"kind":"NamespaceList"'
+          - '"kind": "NamespaceList"'
+        condition: or
+    extractors:
+      - type: regex
+        part: body
+        name: namespaces
+        regex:
+          - '"name":"[a-z0-9][a-z0-9-]{0,62}"'

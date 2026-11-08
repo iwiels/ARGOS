@@ -1,0 +1,491 @@
+/*
+  topology-canvas.css
+  Estilos del canvas de topología LAN
+  Sigue el mismo patrón arquitectónico de agent-states.css (proyecto_ciberseguridad).
+  NO usa colores hardcodeados: hereda siempre de las variables del design system.
+*/
+
+@layer components {
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     SHELL — contenedor del canvas infinito
+  ────────────────────────────────────────────────────────────────────────── */
+  .topo-shell {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    /* Dot grid — se actualiza vía JS igual que en AnalysisAgentView */
+    background-color: var(--bg-base);
+    background-image: radial-gradient(
+      circle,
+      var(--border-weaker-base) 1.5px,
+      transparent 1.5px
+    );
+    background-size: 48px 48px;
+    background-position: -24px -24px;
+
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none; /* evita scroll nativo del browser en touch */
+
+    /* Isolate stacking context */
+    isolation: isolate;
+  }
+
+  .topo-shell.is-panning {
+    cursor: grabbing !important;
+  }
+
+  /* Elementos interactivos mantienen su cursor semántico */
+  .topo-shell button,
+  .topo-shell a {
+    cursor: pointer;
+  }
+
+  .topo-shell input,
+  .topo-shell textarea {
+    cursor: text;
+    user-select: text;
+    -webkit-user-select: text;
+  }
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     STAGE — el div que recibe transform: translate+scale
+     will-change activa la capa GPU, eliminando jank durante Pan/Zoom
+  ────────────────────────────────────────────────────────────────────────── */
+  .topo-stage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: 0 0;
+    will-change: transform; /* GPU layer — clave para 120 FPS */
+  }
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     SVG ARISTAS
+  ────────────────────────────────────────────────────────────────────────── */
+  .topo-edges {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 1;
+  }
+
+  .topo-edge {
+    fill: none;
+    stroke: var(--border-weaker-base);
+    stroke-width: 1.5;
+    stroke-dasharray: 8 6;
+    opacity: 0.5;
+    transition: stroke 0.3s ease, opacity 0.3s ease;
+  }
+
+  .topo-edge.is-risky {
+    stroke: var(--border-critical-base);
+    stroke-width: 2;
+    opacity: 0.75;
+  }
+
+  /* Animación de flujo de datos */
+  @keyframes topo-flow {
+    to { stroke-dashoffset: -28; }
+  }
+
+  .topo-edge-animated {
+    animation: topo-flow 1.4s linear infinite;
+  }
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     NODOS — tarjetas posicionadas absolutamente
+  ────────────────────────────────────────────────────────────────────────── */
+  .topo-node {
+    position: absolute;
+    width: 260px;
+    transform: translate(-50%, -50%);
+
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-weaker-base);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xs);
+
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
+    z-index: 10;
+
+    /* Interacción */
+    cursor: default;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform; /* Permite que el browser optimice cada nodo también */
+  }
+
+  .topo-node:hover {
+    border-color: var(--border-weak-base);
+    box-shadow: var(--shadow-md);
+    z-index: 20;
+  }
+
+  .topo-node.is-risky {
+    background: var(--surface-critical-weak);
+    border-color: var(--border-critical-base);
+    box-shadow: var(--shadow-xs-border-critical-base);
+  }
+
+  .topo-node.is-risky:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Nodo Gateway */
+  .topo-node.is-gateway {
+    border-color: var(--border-success-base);
+    z-index: 15;
+  }
+
+  /* ── Cabecera del nodo ──────────────────────────────────────────────────── */
+  .topo-node-head {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.75rem 0.875rem;
+    border-bottom: 1px solid var(--border-weaker-base);
+  }
+
+  .topo-node.is-risky .topo-node-head {
+    border-bottom-color: var(--border-critical-base);
+  }
+
+  .topo-node-icon {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    background: var(--surface-base);
+    border: 1px solid var(--border-weaker-base);
+    border-radius: var(--radius-lg);
+    color: var(--icon-base);
+  }
+
+  .topo-node.is-risky .topo-node-icon {
+    background: var(--surface-critical-base);
+    border-color: var(--border-critical-base);
+    color: var(--icon-critical-base);
+  }
+
+  .topo-node.is-gateway .topo-node-icon {
+    background: var(--surface-success-weak);
+    border-color: var(--border-success-base);
+    color: var(--icon-success-base);
+  }
+
+  .topo-node-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .topo-node-name {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-strong);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+  }
+
+  .topo-node-ip {
+    font-family: var(--font-family-mono);
+    font-size: 0.6875rem;
+    color: var(--text-weak);
+    margin-top: 0.125rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .topo-node-badge {
+    flex-shrink: 0;
+    font-size: 0.5625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.1875rem 0.4375rem;
+    border-radius: 4px;
+    background: var(--surface-critical-strong);
+    color: var(--text-on-interactive-base);
+  }
+
+  .topo-node.is-gateway .topo-node-badge {
+    background: var(--surface-success-base);
+    color: var(--text-on-success-base);
+  }
+
+  /* ── Cuerpo del nodo (puertos) ──────────────────────────────────────────── */
+  .topo-node-body {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    padding: 0.5rem 0.875rem 0.625rem;
+  }
+
+  .topo-node-ports-label {
+    font-size: 0.5625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-weaker);
+    flex-shrink: 0;
+    margin-right: 0.125rem;
+  }
+
+  .topo-port-chip {
+    font-family: var(--font-family-mono);
+    font-size: 0.625rem;
+    font-weight: 500;
+    padding: 0.125rem 0.375rem;
+    border-radius: 4px;
+    background: var(--surface-base);
+    border: 1px solid var(--border-weaker-base);
+    color: var(--text-base);
+    white-space: nowrap;
+    line-height: 1.4;
+  }
+
+  .topo-port-chip.is-risky {
+    background: var(--surface-critical-base);
+    border-color: var(--border-critical-base);
+    color: var(--icon-critical-base);
+    font-weight: 700;
+  }
+
+  .topo-no-ports {
+    font-size: 0.6875rem;
+    font-style: italic;
+    color: var(--text-weaker);
+  }
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     HUD — panel flotante de información (no se transforma con el stage)
+  ────────────────────────────────────────────────────────────────────────── */
+  .topo-hud {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 50;
+    pointer-events: none; /* El HUD no interfiere con drag */
+
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-weaker-base);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xs);
+
+    padding: 0.875rem 1rem;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .topo-hud-title {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--text-strong);
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .topo-hud-sub {
+    font-size: 0.6875rem;
+    color: var(--text-weak);
+    margin: 0;
+  }
+
+  .topo-hud-divider {
+    height: 1px;
+    background: var(--border-weaker-base);
+    margin: 0.125rem 0;
+  }
+
+  .topo-hud-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .topo-hud-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--icon-success-base);
+    flex-shrink: 0;
+  }
+
+  @keyframes topo-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .topo-hud-dot.is-live {
+    animation: topo-pulse 2s ease-in-out infinite;
+  }
+
+  .topo-hud-count {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-strong);
+  }
+
+  .topo-hud-hint {
+    font-size: 0.5625rem;
+    color: var(--text-weaker);
+    margin: 0;
+  }
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     ZOOM CONTROLS — mini controles flotantes (abajo-derecha)
+  ────────────────────────────────────────────────────────────────────────── */
+  .topo-zoom-controls {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 50;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.125rem;
+    padding: 0.25rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-weaker-base);
+    border-radius: 999px;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .topo-zoom-btn {
+    appearance: none;
+    border: none;
+    background: transparent;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--text-strong);
+    cursor: pointer;
+    transition: background 0.15s ease;
+    line-height: 1;
+  }
+
+  .topo-zoom-btn:hover {
+    background: var(--surface-base);
+  }
+
+  .topo-zoom-btn:focus-visible {
+    outline: 2px solid var(--border-selected);
+    outline-offset: 1px;
+  }
+
+  .topo-zoom-pct {
+    font-family: var(--font-family-mono);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: var(--text-weak);
+    min-width: 2.75rem;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     ACCESIBILIDAD — sr-only para lectores de pantalla
+  ────────────────────────────────────────────────────────────────────────── */
+  .topo-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     EMPTY STATE — aún no hay resultados de escaneo
+  ────────────────────────────────────────────────────────────────────────── */
+  .topo-empty {
+    position: absolute;
+    inset: 0;
+    z-index: 40;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.75rem;
+    padding: 2rem;
+    
+    /* Fondo opaco con blur para oscurecer el canvas subyacente */
+    background: color-mix(in srgb, var(--bg-base) 70%, transparent);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  .topo-empty-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-default);
+    color: var(--text-secondary);
+  }
+
+  .topo-empty-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-strong);
+  }
+
+  .topo-empty-sub {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--text-weak);
+    max-width: 22rem;
+  }
+
+  .topo-empty-sub code {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.6875rem;
+    color: var(--text-strong);
+  }
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     REDUCED MOTION
+  ────────────────────────────────────────────────────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    .topo-edge-animated {
+      animation: none;
+    }
+    .topo-hud-dot.is-live {
+      animation: none;
+    }
+    .topo-node {
+      transition: none;
+    }
+  }
+
+} /* end @layer components */
