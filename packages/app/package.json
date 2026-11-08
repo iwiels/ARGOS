@@ -49,7 +49,7 @@
     "@argos/ui": "workspace:*",
     "@kobalte/core": "catalog:",
     "@sentry/solid": "catalog:",
-    "@shikijs/transformers": "3.9.2",
+    "@shikijs/transformers": "4.6.0",
     "@solid-primitives/active-element": "2.1.3",
     "@solid-primitives/audio": "1.4.2",
     "@solid-primitives/event-bus": "1.1.2",
