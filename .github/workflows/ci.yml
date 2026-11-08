@@ -55,7 +55,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm --filter @argos/app exec playwright install --with-deps chromium
       - run: pnpm test:browser
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: always()
         with:
           name: ui-browser-report
@@ -136,7 +136,7 @@ jobs:
           pnpm --filter @argos/desktop build
       - name: Package Linux desktop distributions
         run: pnpm --filter @argos/desktop package:linux
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: argos-desktop-linux
           path: packages/desktop/dist/*
@@ -175,7 +175,7 @@ jobs:
           SCRIPT
       - name: Upload the benchmark report
         if: always()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: benchmark-report
           path: argos-bin/e2e/benchmark-report.*
@@ -194,7 +194,7 @@ jobs:
           output-file: sbom.cdx.json
           upload-artifact: false
           upload-release-assets: false
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: sbom
           path: sbom.cdx.json
