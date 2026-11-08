@@ -61,7 +61,7 @@ catalog:
   "tailwindcss": "4.1.11"
   "typescript": "npm:@typescript/native-preview@7.0.0-dev.20251207.1"
   "ulid": "3.0.2"
-  "virtua": "0.49.1"
+  "virtua": "0.54.2"
   "vite": "7.1.4"
   "vite-plugin-solid": "2.11.10"
   "zod": "4.6.7"
