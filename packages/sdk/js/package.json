@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@argos/sdk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsgo --noEmit",
+    "build": "bun ./script/build.ts"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/client.ts",
+    "./v2": "./src/v2.ts",
+    "./server": "./src/server.ts",
+    "./data": "./src/data.ts",
+    "./gen/*": "./src/gen/*"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@hey-api/openapi-ts": "0.90.10",
+    "@tsconfig/node22": "catalog:",
+    "@types/cross-spawn": "catalog:",
+    "@types/node": "catalog:",
+    "@typescript/native-preview": "catalog:",
+    "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "cross-spawn": "catalog:"
+  }
+}
+

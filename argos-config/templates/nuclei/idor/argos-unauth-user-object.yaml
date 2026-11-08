@@ -1,0 +1,74 @@
+id: argos-unauth-user-object
+
+info:
+  name: Unauthenticated access to a full user object
+  author: argos
+  severity: high
+  description: |
+    Un endpoint de usuarios devuelve el objeto completo de un usuario — correo,
+    rol, teléfono o último acceso — sin pedir credenciales. Si el identificador
+    es secuencial, el mismo endpoint enumera la base de usuarios y expone datos
+    personales; si el objeto además incluye campos internos (rol, permisos),
+    habilita el escalamiento por asignación masiva.
+
+    El hallazgo se confirma recorriendo dos identificadores consecutivos y
+    verificando que devuelvan objetos distintos.
+  remediation: |
+    Exigir autenticación y autorización por objeto en el endpoint: el sujeto
+    autenticado sólo puede leer los objetos sobre los que tiene permiso, y el
+    identificador no es la prueba de ese permiso. Devolver únicamente los
+    campos que el consumidor necesita, no el objeto completo.
+  reference:
+    - https://owasp.org/www-project-api-security/
+    - https://cwe.mitre.org/data/definitions/639.html
+  classification:
+    cwe-id: CWE-639
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+  metadata:
+    max-request: 6
+    argos-pack: idor
+    argos-requires-auth: "false"
+    argos-severity-floor: high
+    argos-evidence: "objeto de usuario completo devuelto sin credenciales"
+    argos-owasp: "A01:2021 Broken Access Control"
+  tags: idor,exposure,api
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/users/1"
+      - "{{BaseURL}}/api/v1/users/1"
+      - "{{BaseURL}}/api/v2/users/1"
+      - "{{BaseURL}}/api/accounts/1"
+      - "{{BaseURL}}/api/customers/1"
+      - "{{BaseURL}}/api/members/1"
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: header
+        words:
+          - "application/json"
+      - type: word
+        part: body
+        words:
+          - '"email"'
+      - type: word
+        part: body
+        words:
+          - '"role"'
+          - '"last_login"'
+          - '"phone"'
+          - '"address"'
+          - '"permissions"'
+        condition: or
+    extractors:
+      - type: regex
+        part: body
+        name: object_id
+        regex:
+          - '"id"\s*:\s*"?[A-Za-z0-9_-]+"?'

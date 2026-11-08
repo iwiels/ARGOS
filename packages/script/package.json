@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@argos/script",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsgo --noEmit"
+  },
+  "dependencies": {
+    "semver": "^7.8.5"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:",
+    "@types/semver": "^7.5.8"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

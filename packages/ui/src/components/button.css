@@ -1,0 +1,172 @@
+[data-component="button"] {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 6px;
+  font-style: normal;
+  font-weight: 530;
+  font-size: 13px;
+  line-height: 1;
+  color: var(--text-primary);
+  text-shadow: none;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04px;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+}
+
+[data-component="button"]:focus {
+  outline: none;
+}
+
+[data-component="button"]:is(:focus-visible, [data-state="focus"]):not(:disabled) {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2.5px;
+}
+
+[data-component="button"][data-size="normal"] {
+  height: 28px;
+  padding: 0 11px;
+}
+
+[data-component="button"][data-size="small"] {
+  height: 24px;
+  padding: 0 9px;
+  border-radius: 4px;
+}
+
+[data-component="button"][data-size="large"] {
+  height: 32px;
+  padding: 0 15px;
+}
+
+[data-component="button"][data-icon][data-size="small"] {
+  padding-left: 9px;
+}
+
+[data-component="button"][data-icon][data-size="normal"] {
+  padding-left: 11px;
+}
+
+[data-component="button"][data-icon][data-size="large"] {
+  padding-left: 15px;
+}
+
+[data-component="button"] [data-slot="icon-svg"] {
+  color: currentColor;
+}
+
+/* Neutral / Secondary */
+[data-component="button"][data-variant="neutral"],
+[data-component="button"][data-variant="secondary"] {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  box-shadow: var(--elevation-button);
+}
+
+[data-component="button"][data-variant="neutral"]:is(:hover, [data-state="hover"]):not(:disabled),
+[data-component="button"][data-variant="secondary"]:is(:hover, [data-state="hover"]):not(:disabled) {
+  background-image:
+    linear-gradient(90deg, var(--overlay-hover) 0%, var(--overlay-hover) 100%),
+    linear-gradient(90deg, var(--bg-surface) 0%, var(--bg-surface) 100%);
+}
+
+[data-component="button"][data-variant="neutral"]:is(:active, [data-state="pressed"]):not(:disabled),
+[data-component="button"][data-variant="secondary"]:is(:active, [data-state="pressed"]):not(:disabled) {
+  background-image:
+    linear-gradient(90deg, var(--overlay-pressed) 0%, var(--overlay-pressed) 100%),
+    linear-gradient(90deg, var(--bg-surface) 0%, var(--bg-surface) 100%);
+}
+
+[data-component="button"][data-variant="neutral"]:is(:disabled, [data-state="disabled"]),
+[data-component="button"][data-variant="secondary"]:is(:disabled, [data-state="disabled"]) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Contrast / Primary (primary shares the contrast treatment; the DOM
+   keeps data-variant="primary" so the requested variant is never remapped) */
+[data-component="button"][data-variant="contrast"],
+[data-component="button"][data-variant="primary"] {
+  background-image:
+    linear-gradient(180deg, var(--alpha-light-20) 0%, var(--alpha-light-0) 100%),
+    linear-gradient(90deg, var(--bg-contrast) 0%, var(--bg-contrast) 100%);
+  color: var(--text-on-critical);
+  text-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--elevation-floating);
+}
+
+[data-component="button"][data-variant="contrast"]:is(:hover, [data-state="hover"]):not(:disabled),
+[data-component="button"][data-variant="primary"]:is(:hover, [data-state="hover"]):not(:disabled) {
+  background-image:
+    linear-gradient(
+      90deg,
+      var(--overlay-contrast-hover) 0%,
+      var(--overlay-contrast-hover) 100%
+    ),
+    linear-gradient(180deg, var(--alpha-light-20) 0%, var(--alpha-light-0) 100%),
+    linear-gradient(90deg, var(--bg-contrast) 0%, var(--bg-contrast) 100%);
+}
+
+[data-component="button"][data-variant="contrast"]:is(:active, [data-state="pressed"]):not(:disabled),
+[data-component="button"][data-variant="primary"]:is(:active, [data-state="pressed"]):not(:disabled) {
+  background-image:
+    linear-gradient(
+      90deg,
+      var(--overlay-contrast-pressed) 0%,
+      var(--overlay-contrast-pressed) 100%
+    ),
+    linear-gradient(180deg, var(--alpha-light-20) 0%, var(--alpha-light-0) 100%),
+    linear-gradient(90deg, var(--bg-contrast) 0%, var(--bg-contrast) 100%);
+}
+
+[data-component="button"][data-variant="contrast"]:is(:disabled, [data-state="disabled"]),
+[data-component="button"][data-variant="primary"]:is(:disabled, [data-state="disabled"]) {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Ghost */
+[data-component="button"][data-variant="ghost"] {
+  background-color: transparent;
+  color: var(--text-primary);
+}
+
+[data-component="button"][data-variant="ghost"]:is(:hover, [data-state="hover"]):not(:disabled) {
+  background-color: var(--overlay-hover);
+}
+
+[data-component="button"][data-variant="ghost"]:is(:active, [data-state="pressed"]):not(:disabled) {
+  background-color: var(--overlay-pressed);
+}
+
+[data-component="button"][data-variant="ghost"]:is(:disabled, [data-state="disabled"]) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Ghost muted */
+[data-component="button"][data-variant="ghost-muted"] {
+  background-color: transparent;
+  color: var(--text-secondary);
+}
+
+[data-component="button"][data-variant="ghost-muted"] [data-slot="icon-svg"] {
+  color: var(--icon-muted);
+}
+
+[data-component="button"][data-variant="ghost-muted"]:is(:hover, [data-state="hover"]):not(:disabled) {
+  background-color: var(--overlay-hover);
+}
+
+[data-component="button"][data-variant="ghost-muted"]:is(:active, [data-state="pressed"]):not(:disabled) {
+  background-color: var(--overlay-pressed);
+}
+
+[data-component="button"][data-variant="ghost-muted"]:is(:disabled, [data-state="disabled"]) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

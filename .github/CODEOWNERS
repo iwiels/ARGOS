@@ -1,0 +1,5 @@
+# Public code owners for Argos.
+* @iwiels
+/packages/ @iwiels
+/.github/ @iwiels
+/scripts/ @iwiels

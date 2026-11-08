@@ -1,0 +1,54 @@
+id: argos-docker-registry-catalog
+
+info:
+  name: Docker registry catalog readable without authentication
+  author: argos
+  severity: medium
+  description: |
+    El registro de contenedores responde /v2/_catalog sin credenciales. El
+    catálogo enumera todos los repositorios publicados y, a partir de ahí, cada
+    tag y su manifiesto: el atacante obtiene el inventario de imágenes, sus
+    versiones y, si el registro también permite pulls anónimos, el contenido de
+    las imágenes — donde suelen quedar secretos horneados en capas.
+
+    El matcher exige la clave "repositories" del catálogo: un 401 de registro
+    privado no matchea.
+  remediation: |
+    Exigir autenticación en el registro (o al menos en _catalog) y servir sólo
+    sobre TLS. Revisar las imágenes publicadas por secretos en capas y por tags
+    obsoletos.
+  reference:
+    - https://distribution.github.io/distribution/spec/api/
+    - https://cwe.mitre.org/data/definitions/306.html
+  classification:
+    cwe-id: CWE-306
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+  metadata:
+    max-request: 1
+    argos-pack: cicd
+    argos-requires-auth: "false"
+    argos-severity-floor: medium
+    argos-evidence: "catálogo de repositorios del registro Docker"
+    argos-owasp: "A07:2021 Identification and Authentication Failures"
+  tags: docker,registry,cicd,exposure,devops
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/v2/_catalog"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - '"repositories"'
+    extractors:
+      - type: regex
+        part: body
+        name: repositories
+        regex:
+          - '"repositories"\s*:\s*\[[^\]]{0,300}\]'

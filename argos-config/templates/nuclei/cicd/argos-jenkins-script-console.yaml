@@ -1,0 +1,49 @@
+id: argos-jenkins-script-console
+
+info:
+  name: Jenkins Script Console reachable without authentication
+  author: argos
+  severity: critical
+  description: |
+    La consola de scripts de Jenkins está accesible. Ejecuta Groovy arbitrario
+    en el controlador, así que equivale a ejecución remota de código con los
+    permisos del proceso: lectura de credenciales, movimiento lateral hacia los
+    agentes y modificación de los pipelines.
+
+    El matcher exige el título de la consola y la marca de Jenkins en la misma
+    respuesta: una página de login de Jenkins no matchea.
+  remediation: |
+    Exigir autenticación y autorización en Jenkins, deshabilitar la consola de
+    scripts para usuarios que no sean administradores y no exponer el
+    controlador a internet (usar una VPN o un reverse proxy con autenticación).
+  reference:
+    - https://www.jenkins.io/doc/book/security/securing-jenkins/
+    - https://cwe.mitre.org/data/definitions/306.html
+  classification:
+    cwe-id: CWE-306
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
+  metadata:
+    max-request: 1
+    argos-pack: cicd
+    argos-requires-auth: "false"
+    argos-severity-floor: critical
+    argos-evidence: "formulario de Script Console de Jenkins sin autenticación"
+    argos-owasp: "A07:2021 Identification and Authentication Failures"
+  tags: jenkins,cicd,exposure,devops
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/script"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "Script Console"
+          - "Jenkins"
+        condition: and

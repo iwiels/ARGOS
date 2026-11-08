@@ -1,0 +1,63 @@
+id: argos-spring-actuator-env
+
+info:
+  name: Spring Boot Actuator environment endpoint exposed
+  author: argos
+  severity: high
+  description: |
+    /actuator/env devuelve las propiedades efectivas de la aplicación: cadenas
+    de conexión, credenciales de bases de datos, claves de APIs y rutas
+    internas. Spring Boot lo expone por defecto cuando se habilita Actuator sin
+    restringir los endpoints, y muchas organizaciones lo dejan accesible desde
+    internet porque lo usan para monitoreo.
+
+    El matcher exige la estructura JSON real del endpoint (propertySources y
+    activeProfiles), no un 200 genérico: un proxy o una página de error que
+    devuelva 200 no produce el hallazgo.
+  remediation: |
+    Exponer sólo health e info en management.endpoints.web.exposure.include y
+    dejar el resto detrás de la red interna o de autenticación. Rotar cualquier
+    credencial que haya quedado publicada.
+  reference:
+    - https://docs.spring.io/spring-boot/reference/actuator/endpoints.html
+    - https://cwe.mitre.org/data/definitions/200.html
+  classification:
+    cwe-id: CWE-200
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+  metadata:
+    max-request: 3
+    argos-pack: framework
+    argos-requires-auth: "false"
+    argos-severity-floor: high
+    argos-evidence: "JSON de /actuator/env con propertySources y activeProfiles"
+    argos-owasp: "A05:2021 Security Misconfiguration"
+  tags: spring,misconfig,exposure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/actuator/env"
+      - "{{BaseURL}}/env"
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: header
+        words:
+          - "application/json"
+      - type: word
+        part: body
+        words:
+          - '"propertySources"'
+          - '"activeProfiles"'
+        condition: and
+    extractors:
+      - type: regex
+        part: body
+        name: active_profiles
+        regex:
+          - '"activeProfiles"\s*:\s*\[[^\]]{0,200}\]'

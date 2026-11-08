@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "updated_at": "2026-10-21",
+  "commit": "185af73ac39e35fc5715a38898d7d9ed4608308d",
+  "mode": "light",
+  "runner": "argos_full",
+  "ground_truth_total": 44,
+  "light_ground_truth_total": 18,
+  "recall_percent": 100.0,
+  "overall_recall_percent": 40.9,
+  "precision_percent": 100.0,
+  "recall_tolerance_percent": 5.0,
+  "precision_tolerance_percent": 2.0,
+  "notes": "Baseline of the light mode (the native tools of argos-web only, no binary download). recall_percent is the recall over the 18 vectors the light mode can measure; overall_recall_percent is the recall over the whole catalogue of 44 vectors (9 of them need the third party scanners and 17 of them are not measurable by any tool of Argos today). Update it only with an explicit justification in the PR: a lower value means a regression of the detectors, a higher value means the catalogue grew or a detector improved."
+}

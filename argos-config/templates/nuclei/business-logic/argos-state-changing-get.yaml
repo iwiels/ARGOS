@@ -1,0 +1,58 @@
+id: argos-state-changing-get
+
+info:
+  name: State-changing action exposed as a GET link
+  author: argos
+  severity: low
+  description: |
+    La aplicación expone acciones que cambian estado (agregar o quitar del
+    carrito, borrar una dirección, cancelar un pedido) como enlaces GET. Un
+    GET debe ser seguro e idempotente: los prefetch del navegador, los proxies
+    y los rastreadores lo repiten sin intención del usuario, y un tercero puede
+    dispararlo desde otra página.
+
+    El hallazgo es una señal de diseño: la confirmación requiere comprobar que
+    el enlace muta estado sin un token anti-CSRF.
+  remediation: |
+    Exponer las mutaciones como POST (o DELETE) con un token anti-CSRF y
+    verificar el token en el servidor. Si el enlace debe seguir siendo GET,
+    convertirlo en una página de confirmación que envíe un POST.
+  reference:
+    - https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/05-Testing_for_Cross_Site_Request_Forgery
+    - https://cwe.mitre.org/data/definitions/650.html
+  classification:
+    cwe-id: CWE-650
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    cvss-score: 4.3
+  metadata:
+    max-request: 4
+    argos-pack: business-logic
+    argos-requires-auth: "true"
+    argos-severity-floor: low
+    argos-evidence: "enlace GET cuyo path muta estado"
+    argos-owasp: "A04:2021 Insecure Design"
+  tags: business-logic,csrf
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/cart"
+      - "{{BaseURL}}/checkout"
+      - "{{BaseURL}}/account"
+      - "{{BaseURL}}/orders"
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: regex
+        part: body
+        regex:
+          - '(?i)href=["''][^"'']*/(cart|basket|order|orders|account|address|wishlist)/(add|remove|delete|update|apply|cancel)[^"'']*\?[^"'']*'
+    extractors:
+      - type: regex
+        part: body
+        name: link
+        regex:
+          - '(?i)href=["''][^"'']*/(cart|basket|order|orders|account|address|wishlist)/(add|remove|delete|update|apply|cancel)[^"'']*\?[^"'']*'

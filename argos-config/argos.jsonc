@@ -1,0 +1,65 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "task": "allow",
+    "skill": {
+      "*": "allow"
+    },
+    "argos*": "allow",
+    "argos-*": "allow",
+    "argos_*": "allow"
+  },
+  "mcp": {
+    "argos": {
+      "type": "local",
+      "command": ["{env:ARGOS_MCP_PATH}", "--mcp"],
+      "enabled": true
+    },
+    "argos-lan": {
+      "type": "local",
+      "command": ["{env:ARGOS_LAN_MCP_PATH}", "--mcp"],
+      "enabled": false
+    },
+    "argos-web": {
+      "type": "local",
+      "command": ["{env:ARGOS_WEB_MCP_PATH}", "--mcp"],
+      "enabled": false
+    },
+    "argos-es": {
+      "type": "local",
+      "command": ["{env:ARGOS_ES_MCP_PATH}", "--mcp"],
+      "enabled": false
+    },
+    "chrome-devtools": {
+      "type": "local",
+      "command": ["npx", "-y", "chrome-devtools-mcp@1.6.0"],
+      "enabled": false
+    }
+  },
+  "experimental": {
+    "mcp_timeout": 300000
+  },
+  "tool_output": {
+    "max_lines": 8000,
+    "max_bytes": 204800
+  },
+  "webTools": {
+    "nuclei": {
+      "repo": "projectdiscovery/nuclei",
+      "version": "v3.11.0",
+      "bin": "nuclei",
+      "archive": "zip",
+      "rateLimit": 10,
+      "concurrency": 25,
+      "packs": ["business-logic", "idor", "framework", "cicd"]
+    },
+    "httpx": { "repo": "projectdiscovery/httpx", "version": "v1.10.0", "bin": "httpx", "archive": "zip" },
+    "katana": { "repo": "projectdiscovery/katana", "version": "v1.6.1", "bin": "katana", "archive": "zip" },
+    "subfinder": { "repo": "projectdiscovery/subfinder", "version": "v2.14.0", "bin": "subfinder", "archive": "zip" },
+    "dnsx": { "repo": "projectdiscovery/dnsx", "version": "v1.3.0", "bin": "dnsx", "archive": "zip" },
+    "interactsh-client": { "repo": "projectdiscovery/interactsh", "version": "v1.3.1", "bin": "interactsh-client", "archive": "zip" },
+    "gau": { "repo": "lc/gau", "version": "v2.2.4", "bin": "gau", "archive": "zip" },
+    "dalfox": { "repo": "hahwul/dalfox", "version": "v3.2.0", "bin": "dalfox", "archive": "tar.gz" },
+    "ffuf": { "repo": "ffuf/ffuf", "version": "v2.2.1", "bin": "ffuf", "archive": "zip" }
+  }
+}

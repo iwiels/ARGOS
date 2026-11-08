@@ -1,0 +1,219 @@
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+/* Orden contract: styles/index.css (tipografía tokenizada .text-*) debe ir ANTES de las
+   utilidades core para que font-*, leading-*, tracking-* ganen en conflictos de la capa. */
+@import "../index.css";
+@import "tailwindcss/utilities.css" layer(utilities) source("../../../../");
+@import "./utilities.css";
+
+@theme {
+  --*: initial;
+
+  --spacing: 0.25rem;
+
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+  --breakpoint-3xl: 112rem;
+  --breakpoint-4xl: 128rem;
+  --breakpoint-5xl: 144rem;
+
+  --container-3xs: 16rem;
+  --container-2xs: 18rem;
+  --container-xs: 20rem;
+  --container-sm: 24rem;
+  --container-md: 28rem;
+  --container-lg: 32rem;
+  --container-xl: 36rem;
+  --container-2xl: 42rem;
+  --container-3xl: 48rem;
+  --container-4xl: 56rem;
+  --container-5xl: 64rem;
+  --container-6xl: 72rem;
+  --container-7xl: 80rem;
+
+  --font-sans: var(--font-family-sans);
+  --font-sans--font-feature-settings: var(--font-family-sans--font-feature-settings);
+  --font-mono: var(--font-family-mono);
+  --font-mono--font-feature-settings: var(--font-family-mono--font-feature-settings);
+  --font-display: var(--font-family-display, var(--font-family-sans));
+  --font-serif: var(--font-family-serif, Georgia, serif);
+
+  /* ── Typography scale (6 niveles, coincide con utilities.css) ── */
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+
+  --text-xs: var(--font-size-xs);
+  --text-sm: var(--font-size-sm);
+  --text-base: var(--font-size-base);
+  --text-lg: var(--font-size-lg);
+  --text-xl: var(--font-size-xl);
+  --text-2xl: var(--font-size-2xl);
+
+  /* ── Escala extendida: tamaños intermedios recurrentes ── */
+  --text-18: 1.125rem; /* 18px: títulos de página */
+  --text-22: 1.375rem; /* 22px: números de estadísticas */
+  --text-3xl: 2rem; /* 32px: íconos grandes */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+
+  --tracking-normal: var(--letter-spacing-normal);
+  --tracking-tight: var(--letter-spacing-tight);
+  --tracking-tightest: var(--letter-spacing-tightest);
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-linear: linear;
+
+  --default-transition-duration: var(--transition-duration, 120ms);
+  --default-transition-timing-function: var(--transition-easing, ease-out);
+
+  /* Radios: puente Tailwind — manda theme.css (C1: sm/md/lg/dossier = 4px canónico).
+     Este bloque solo espeja valores para generar rounded-*; no definir radios nuevos aquí.
+     --radius-dossier vive únicamente en theme.css (sin rounded-dossier en uso). */
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.375rem;
+  --radius-2xl: 0.5rem;
+
+  --z-floating: 60;
+  --z-toast: 1000;
+
+  --shadow-xs: var(--shadow-xs-real, 0px 0px 0px 0px transparent);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: var(--shadow-md-real, 0px 4px 6px -1px rgb(0 0 0 / 0.1), 0px 2px 4px -2px rgb(0 0 0 / 0.1));
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-xs-border: var(--shadow-xs-border-value);
+  --shadow-xs-border-base: var(--shadow-xs-border-base-value);
+  --shadow-xs-border-select: var(--shadow-xs-border-select-value);
+  --shadow-xs-border-focus: var(--shadow-xs-border-focus-value);
+  --shadow-xs-border-hover: var(--shadow-xs-border-hover-value);
+  --shadow-card: var(--shadow-card-value);
+  --shadow-modal: var(--shadow-modal-value);
+  --shadow-popover: var(--shadow-popover-value);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* ── Filter/effect tokens (defaults Tailwind v4, restaurados por --*: initial) ── */
+  --blur-xs: 4px;
+  --blur-sm: 8px;
+  --blur-md: 12px;
+  --blur-lg: 16px;
+  --blur-xl: 24px;
+  --blur-2xl: 40px;
+  --blur-3xl: 64px;
+  --backdrop-blur-xs: var(--blur-xs);
+  --backdrop-blur-sm: var(--blur-sm);
+  --backdrop-blur-md: var(--blur-md);
+  --backdrop-blur-lg: var(--blur-lg);
+  --backdrop-blur-xl: var(--blur-xl);
+  --backdrop-blur-2xl: var(--blur-2xl);
+  --backdrop-blur-3xl: var(--blur-3xl);
+  --drop-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.05);
+  --drop-shadow-md: 0 1px 3px rgb(0 0 0 / 0.1), 0 1px 2px rgb(0 0 0 / 0.06);
+  --drop-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --drop-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+  --drop-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+  /* ── Color tokens: Background ── */
+  --color-bg-base: var(--bg-base);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-elevated: var(--bg-elevated);
+
+  /* ── Color tokens: Text ── */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-strong: var(--text-strong);
+  --color-text-weak: var(--text-weak);
+  --color-text-weaker: var(--text-weaker);
+
+  /* ── Color tokens: Border ── */
+  --color-border-default: var(--border-default);
+  --color-border-strong: var(--border-strong);
+  --color-border-weak-base: var(--border-weak-base);
+  --color-border-base: var(--border-base);
+
+  /* ── Color tokens: Interactive ── */
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-danger: var(--danger);
+  --color-focus-ring: var(--focus-ring);
+
+  /* ── Color tokens: Icon ── */
+  --color-icon: var(--icon);
+  --color-icon-muted: var(--icon-muted);
+  --color-icon-interactive-base: var(--icon-interactive-base);
+  --color-icon-weaker: var(--icon-weaker);
+
+  /* ── Color tokens: Overlay ── */
+  --color-overlay-hover: var(--overlay-hover);
+  --color-overlay-pressed: var(--overlay-pressed);
+
+  /* ── Color tokens: Severity ── */
+  --color-severity-bg-critical: var(--severity-bg-critical);
+  --color-severity-fg-critical: var(--severity-fg-critical);
+  --color-severity-border-critical: var(--severity-border-critical);
+  --color-severity-bg-high: var(--severity-bg-high);
+  --color-severity-fg-high: var(--severity-fg-high);
+  --color-severity-border-high: var(--severity-border-high);
+  --color-severity-bg-medium: var(--severity-bg-medium);
+  --color-severity-fg-medium: var(--severity-fg-medium);
+  --color-severity-border-medium: var(--severity-border-medium);
+  --color-severity-bg-low: var(--severity-bg-low);
+  --color-severity-fg-low: var(--severity-fg-low);
+  --color-severity-border-low: var(--severity-border-low);
+  --color-severity-bg-info: var(--severity-bg-info);
+  --color-severity-fg-info: var(--severity-fg-info);
+
+  /* ── Color tokens: State ── */
+  --color-state-fg-success: var(--state-fg-success, var(--green-600, #22c55e));
+  --color-state-fg-danger: var(--state-fg-danger, var(--red-500, #ef4444));
+  --color-state-fg-warning: var(--state-fg-warning, var(--yellow-500, #f59e0b));
+  /* C10: fallback neutro dentro de paleta (era azul #3b82f6 fuera de paleta) */
+  --color-state-fg-info: var(--state-fg-info, var(--severity-fg-info, #a3b0c0));
+
+  /* ── Color tokens: Avatar ── */
+  /* C12: respeta el override light (--avatar-fg: grey-900) */
+  --color-avatar-fg: var(--avatar-fg);
+  --color-avatar-bg-orange: #723d22;
+  --color-avatar-border-orange: #ff8648;
+  --color-avatar-bg-yellow: #68552b;
+  --color-avatar-border-yellow: #e7af36;
+  --color-avatar-bg-cyan: #005a6e;
+  --color-avatar-border-cyan: #0096b8;
+  --color-avatar-bg-green: #196130;
+  --color-avatar-border-green: #49c970;
+  --color-avatar-bg-red: #7a1f23;
+  --color-avatar-border-red: #d92e3c;
+  --color-avatar-bg-pink: #8c2d61;
+  --color-avatar-border-pink: #e4429e;
+  --color-avatar-bg-blue: #263fa9;
+  --color-avatar-border-blue: #7698fd;
+  --color-avatar-bg-purple: #361f83;
+  --color-avatar-border-purple: #7152f4;
+
+  --animate-pulse: pulse-opacity 2s ease-in-out infinite;
+}
+
+@import "./colors.css";

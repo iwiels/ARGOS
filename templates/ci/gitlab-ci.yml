@@ -1,0 +1,18 @@
+stages:
+  - test
+  - security
+
+argos-security-audit:
+  stage: security
+  image: oven/bun:latest
+  script:
+    - bun x argos run --type full_audit --severity-threshold high --format junit --output argos-junit.xml
+  artifacts:
+    when: always
+    reports:
+      junit: argos-junit.xml
+    paths:
+      - argos-junit.xml
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"

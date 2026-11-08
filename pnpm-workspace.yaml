@@ -1,0 +1,135 @@
+packages:
+  - "packages/app"
+  - "packages/ui"
+  - "packages/sdk/js"
+  - "packages/desktop"
+  - "packages/server"
+  - "packages/core"
+  - "packages/http-recorder"
+  - "packages/effect-drizzle-sqlite"
+  - "packages/llm"
+  - "packages/plugin"
+  - "packages/script"
+  - "packages/argos"
+catalog:
+  "@effect/opentelemetry": "4.0.0-beta.74"
+  "@effect/platform": "4.0.0-beta.74"
+  "@effect/platform-node": "4.0.0-beta.74"
+  "@effect/platform-node-shared": "4.0.0-beta.74"
+  "@effect/sql": "4.0.0-beta.74"
+  "@effect/sql-sqlite-bun": "4.0.0-beta.74"
+  "@effect/cluster": "4.0.0-beta.74"
+  "@effect/rpc": "4.0.0-beta.74"
+  "@effect/experimental": "4.0.0-beta.74"
+  "@effect/workflow": "4.0.0-beta.74"
+  "@kobalte/core": "0.13.11"
+  "@lydell/node-pty": "1.2.0-beta.12"
+  "@octokit/rest": "22.0.1"
+  "@openauthjs/openauth": "0.4.3"
+  "@opentelemetry/api": "1.9.1"
+  "@pierre/diffs": "1.1.0-beta.18"
+  "@playwright/test": "1.59.1"
+  "@sentry/solid": "10.36.0"
+  "@sentry/vite-plugin": "4.6.0"
+  "@solid-primitives/storage": "4.3.3"
+  "@solidjs/meta": "0.29.4"
+  "@solidjs/router": "0.15.4"
+  "@tailwindcss/vite": "4.1.11"
+  "@tsconfig/bun": "1.0.9"
+  "@tsconfig/node22": "22.0.2"
+  "@types/bun": "1.3.13"
+  "@types/cross-spawn": "6.0.6"
+  "@types/luxon": "3.7.1"
+  "@types/node": "24.12.2"
+  "@types/semver": "7.7.1"
+  "@typescript/native-preview": "7.0.0-dev.20251207.1"
+  "ai": "6.0.168"
+  "cross-spawn": "7.0.6"
+  "diff": "8.0.3"
+  "drizzle-kit": "1.0.0-rc.2"
+  "drizzle-orm": "1.0.0-rc.2"
+  "effect": "4.0.0-beta.74"
+  "fuzzysort": "3.1.0"
+  "luxon": "3.6.1"
+  "marked": "17.0.1"
+  "marked-shiki": "1.2.1"
+  "remeda": "2.26.0"
+  "remend": "1.3.0"
+  "shiki": "3.20.0"
+  "solid-js": "1.9.10"
+  "solid-list": "0.3.0"
+  "tailwindcss": "4.1.11"
+  "typescript": "npm:@typescript/native-preview@7.0.0-dev.20251207.1"
+  "ulid": "3.0.2"
+  "virtua": "0.49.1"
+  "vite": "7.1.4"
+  "vite-plugin-solid": "2.11.10"
+  "zod": "4.6.7"
+overrides:
+  '@argos/sdk>typescript': 5.9.3
+  "@ai-sdk/provider-utils@>=4.0.0 <5.0.0": "4.0.62"
+  # Crítico: type confusion en deserialización, <=1.5.2. Llega como transitiva
+  # de solid-js vía kobalte. https://github.com/advisories/GHSA-mv8w-475r-vwqw
+  seroval: ">=1.5.3"
+  # Alto: confusión de host vía backslash en la autoridad de la URI.
+  fast-uri: ">=3.1.5"
+  # Alto: ReDoS. Overrides con rango de origen para no forzar un salto de
+  # major en las líneas 3.x/5.x/8.x/9.x que ya están fuera del rango vulnerable.
+  "minimatch@>=10.0.0 <10.2.3": ">=10.2.3 <11.0.0"
+  "brace-expansion@>=2.0.0 <2.1.4": ">=2.1.4 <3.0.0"
+  "brace-expansion@>=4.0.0 <5.0.9": ">=5.0.9 <6.0.0"
+  # La línea 5.x de undici (usada por @actions/http-client, solo scripts de
+  # CI/release) nunca recibió parche 5.x — las advisories solo listan
+  # "patched >=6.23+", así que hay que subirla a la línea 6.x también.
+  "undici@>=5.0.0 <6.0.0": ">=6.28.0 <7.0.0"
+  "undici@>=6.0.0 <6.28.0": ">=6.28.0 <7.0.0"
+  "undici@>=8.0.0 <8.9.0": ">=8.9.0 <9.0.0"
+  # Alto: ReDoS en el router de find-my-way (fastify).
+  find-my-way: ">=9.6.1"
+  # Alto: parsing inseguro de paquetes socket.io.
+  socket.io-parser: ">=4.2.7"
+  # Alto + moderado: SSRF/bypass de validación de IP.
+  ip-address: ">=10.3.1"
+  # Resto de advisories moderate/low, todos bump de patch dentro del mismo major.
+  # (diff se corrige arriba en el catalog, no hace falta override)
+  "@opentelemetry/core": ">=2.8.0"
+  tar: ">=7.5.21"
+  toml: "5.0.1"
+  hono: ">=4.12.34"
+  "@hono/node-server": ">=1.19.15"
+  # Alto: prototype pollution en la carga de YAML, <4.3.1 (y toda la línea
+  # 3.x). gray-matter@4.0.3 (última en npm, sin mantenimiento) todavía llama
+  # a safeLoad/safeDump, eliminados en v4 — parcheado vía pnpm patch para usar
+  # load/dump (seguros por defecto en v4).
+  js-yaml: ">=4.3.1"
+  effect: "catalog:"
+  "@effect/platform": "catalog:"
+  "@effect/platform-node": "catalog:"
+  "@effect/platform-node-shared": "catalog:"
+  "@effect/sql": "catalog:"
+  "@effect/sql-sqlite-bun": "catalog:"
+  "@effect/opentelemetry": "catalog:"
+  "@effect/cluster": "catalog:"
+  "@effect/rpc": "catalog:"
+  "@effect/experimental": "catalog:"
+  "@effect/workflow": "catalog:"
+  drizzle-orm: "catalog:"
+  drizzle-kit: "catalog:"
+  "@pierre/diffs": "catalog:"
+  zod: "catalog:"
+  "@opentelemetry/api": "catalog:"
+  typescript: "catalog:"
+allowBuilds:
+  '@parcel/watcher': true
+  '@sentry/cli': true
+  '@tailwindcss/oxide': true
+  electron: true
+  electron-winstaller: true
+  esbuild: true
+  msgpackr-extract: true
+  protobufjs: true
+  tree-sitter-bash: true
+  tree-sitter-powershell: true
+patchedDependencies:
+  electron-vite@5.0.0: patches/electron-vite@5.0.0.patch
+  gray-matter@4.0.3: patches/gray-matter@4.0.3.patch

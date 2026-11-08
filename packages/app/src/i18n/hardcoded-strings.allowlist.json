@@ -1,0 +1,13 @@
+[
+  "components/session/session-header.tsx:text:Copiar ID de sesión",
+  "components/session/session-header.tsx:text:Copiar ruta del alcance",
+  "components/session/session-new-design-view.tsx:text:Abrir carpeta...",
+  "components/session/session-new-design-view.tsx:text:Reciente",
+  "components/session/topology-canvas.tsx:text:build_topology",
+  "components/session/topology-canvas.tsx:text:host_discovery",
+  "components/session/topology-panel.tsx:text:/auditoria-red",
+  "pages/layout/sidebar-shell.tsx:text:Argos",
+  "pages/layout/sidebar-shell.tsx:title=Argos",
+  "pages/status.tsx:text:Git",
+  "pages/topology.tsx:text:/auditoria-red"
+]

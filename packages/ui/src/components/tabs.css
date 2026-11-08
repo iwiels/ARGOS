@@ -1,0 +1,303 @@
+[data-component="tabs"] {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: clip;
+}
+
+[data-component="tabs"][data-orientation="horizontal"] {
+  flex-direction: column;
+}
+
+[data-component="tabs"][data-orientation="vertical"] {
+  flex-direction: row;
+}
+
+[data-component="tabs"] [data-slot="tabs-content"] {
+  flex: 1;
+  overflow: auto;
+}
+
+[data-component="tabs"] [data-slot="tabs-list"] {
+  display: flex;
+}
+
+[data-component="tabs"][data-orientation="horizontal"] [data-slot="tabs-list"] {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+[data-component="tabs"][data-orientation="horizontal"] [data-slot="tabs-list"]::-webkit-scrollbar {
+  display: none;
+}
+
+[data-component="tabs"] [data-slot="tabs-trigger-wrapper"] {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+[data-component="tabs"] [data-slot="tabs-trigger"] {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  outline: none;
+
+  font-size: 13px;
+  font-weight: 440;
+  line-height: 100%;
+  letter-spacing: -0.04px;
+}
+
+[data-component="tabs"] [data-slot="tabs-trigger"]:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+[data-component="tabs"] [data-slot="tabs-close-button"] {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font: inherit;
+  width: 20px;
+  height: 20px;
+  margin-left: -5px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+}
+
+[data-component="tabs"] [data-slot="tabs-close-button"]:hover {
+  color: var(--text-secondary);
+}
+
+[data-component="tabs"] [data-component="icon-button"] {
+  margin: 0;
+}
+
+[data-component="tabs"] [data-slot="tabs-trigger-wrapper"]:disabled {
+  pointer-events: none;
+  color: var(--text-tertiary);
+}
+
+[data-component="tabs"][data-variant="normal"][data-orientation="horizontal"] [data-slot="tabs-list"] {
+  gap: 6px;
+  padding-inline: 8px;
+  height: 32px;
+  align-items: center;
+  position: relative;
+}
+
+[data-component="tabs"][data-variant="normal"][data-orientation="horizontal"] [data-slot="tabs-list"]::before {
+  height: 1px;
+  content: "";
+  width: calc(100% + 16px);
+  background-color: var(--border-default);
+  position: absolute;
+  bottom: 0px;
+  left: -8px;
+}
+
+[data-component="tabs"][data-variant="pill"][data-orientation="horizontal"] [data-slot="tabs-list"] {
+  gap: 6px;
+  padding-inline: 4px;
+  height: 100%;
+  align-items: center;
+  position: relative;
+  display: flex;
+}
+
+[data-component="tabs"][data-variant="normal"][data-orientation="horizontal"] [data-slot="tabs-trigger-wrapper"] {
+  height: 100%;
+  gap: 4px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid transparent;
+}
+
+[data-component="tabs"][data-variant="normal"][data-orientation="horizontal"] [data-slot="tabs-trigger"] {
+  height: 100%;
+  padding: 6px;
+}
+
+[data-component="tabs"][data-variant="normal"][data-orientation="horizontal"]
+  [data-slot="tabs-trigger-wrapper"]:hover:not(:disabled):not([data-selected]) {
+  color: var(--text-primary);
+}
+
+[data-component="tabs"][data-variant="normal"][data-orientation="horizontal"]
+  [data-slot="tabs-trigger-wrapper"]:has([data-selected]) {
+  border-bottom-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+[data-component="tabs"][data-variant="normal"][data-orientation="horizontal"]
+  [data-slot="tabs-trigger-wrapper"]:not(:has([data-selected])) {
+  color: var(--text-secondary);
+}
+
+[data-component="tabs"][data-variant="pill"][data-orientation="horizontal"] [data-slot="tabs-trigger-wrapper"] {
+  height: 26px;
+  border-radius: 6px;
+  border: 0.5px solid transparent;
+  box-sizing: border-box;
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+}
+
+[data-component="tabs"][data-variant="pill"][data-orientation="horizontal"] [data-slot="tabs-trigger"] {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  padding: 0 6px;
+  border: 0.5px solid transparent;
+}
+
+[data-component="tabs"][data-variant="pill"][data-orientation="horizontal"]
+  [data-slot="tabs-trigger-wrapper"]:hover:not(:disabled):not(:has([data-selected])) {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 0.5px solid var(--border-default);
+}
+
+[data-component="tabs"][data-variant="pill"][data-orientation="horizontal"]
+  [data-slot="tabs-trigger-wrapper"]:has([data-selected]) {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 0.5px solid var(--border-strong);
+}
+
+[data-component="tabs"][data-variant="settings"][data-orientation="vertical"] [data-slot="tabs-list"] {
+  flex-direction: column;
+  width: 240px;
+  min-width: 200px;
+  height: 100%;
+  padding: 12px;
+  gap: 4px;
+  overflow-y: auto;
+  border-right: 1px solid var(--border-default);
+}
+
+[data-component="tabs"][data-variant="settings"][data-orientation="vertical"] [data-slot="tabs-section-title"] {
+  width: 100%;
+  padding-left: 4px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+[data-component="tabs"][data-variant="settings"][data-orientation="vertical"] [data-slot="tabs-trigger-wrapper"] {
+  width: 100%;
+  height: 28px;
+  border-radius: 4px;
+  border: 0.5px solid transparent;
+  box-sizing: border-box;
+  color: var(--text-secondary);
+}
+
+[data-component="tabs"][data-variant="settings"][data-orientation="vertical"] [data-slot="tabs-trigger"] {
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  gap: 6px;
+  padding: 0 6px;
+}
+
+[data-component="tabs"][data-variant="settings"][data-orientation="vertical"]
+  [data-slot="tabs-trigger-wrapper"]:hover:not(:disabled):not(:has([data-selected])) {
+  color: var(--text-primary);
+}
+
+[data-component="tabs"][data-variant="settings"][data-orientation="vertical"]
+  [data-slot="tabs-trigger-wrapper"]:has([data-selected]) {
+  background-color: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 0.5px solid var(--border-default);
+}
+
+/* Dossier Folder Tabs (Mosby Files Archival Aesthetic)
+   REGLA DOSSIER (V3): esta variante es el tablist INTERACTIVO del dossier
+   (tabs de review en session-side-panel: findings/compliance/report/...,
+   con a11y de tablist). La etiqueta dossier ESTÁTICA (home, audit-list,
+   report-panel: "EXPEDIENTE // ...") es <FolderTab> (folder-tab.tsx), que no
+   es un tablist y no debe usarse para contenido conmutado. No borrar ninguno:
+   conviven por rol distinto. */
+[data-component="tabs"][data-variant="dossier"][data-orientation="horizontal"] [data-slot="tabs-list"] {
+  gap: 3px;
+  padding-inline: 8px;
+  height: 38px;
+  align-items: flex-end;
+  position: relative;
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-weaker-base);
+}
+
+[data-component="tabs"][data-variant="dossier"][data-orientation="horizontal"] [data-slot="tabs-trigger-wrapper"] {
+  height: 30px;
+  margin-bottom: -1px;
+  position: relative;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border: 1px solid var(--border-weaker-base);
+  border-bottom: 1px solid var(--border-weaker-base);
+  background-color: var(--bg-base);
+  color: var(--text-tertiary);
+  transition: all 120ms ease-out;
+}
+
+[data-component="tabs"][data-variant="dossier"][data-orientation="horizontal"] [data-slot="tabs-trigger"] {
+  height: 100%;
+  padding: 0 10px;
+  font-family: var(--font-family-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  gap: 6px;
+  display: flex;
+  align-items: center;
+}
+
+[data-component="tabs"][data-variant="dossier"][data-orientation="horizontal"]
+  [data-slot="tabs-trigger-wrapper"]:hover:not(:disabled):not([data-selected]):not(:has([data-selected])) {
+  background-color: var(--bg-elevated);
+  color: var(--text-secondary);
+  border-color: var(--border-default);
+}
+
+[data-component="tabs"][data-variant="dossier"][data-orientation="horizontal"]
+  [data-slot="tabs-trigger-wrapper"]:has([data-selected]),
+[data-component="tabs"][data-variant="dossier"][data-orientation="horizontal"]
+  [data-slot="tabs-trigger-wrapper"][data-selected] {
+  background-color: var(--bg-surface);
+  border-color: var(--border-strong);
+  border-bottom-color: var(--bg-surface);
+  color: var(--text-primary);
+  font-weight: 600;
+  z-index: 2;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.35);
+}
+
+[data-component="tabs"][data-variant="dossier"][data-orientation="horizontal"]
+  [data-slot="tabs-trigger-wrapper"]:has([data-selected])::before,
+[data-component="tabs"][data-variant="dossier"][data-orientation="horizontal"]
+  [data-slot="tabs-trigger-wrapper"][data-selected]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--accent);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}

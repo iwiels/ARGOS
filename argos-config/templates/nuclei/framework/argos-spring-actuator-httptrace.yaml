@@ -1,0 +1,62 @@
+id: argos-spring-actuator-httptrace
+
+info:
+  name: Spring Boot Actuator HTTP trace endpoint exposed
+  author: argos
+  severity: medium
+  description: |
+    /actuator/httptrace publica las últimas peticiones que recibió la
+    aplicación, con método, ruta, cabeceras y a veces el cuerpo. Las cabeceras
+    incluyen cookies de sesión y tokens de autorización de usuarios reales, así
+    que el endpoint es una vía directa a la suplantación de un usuario
+    autenticado.
+
+    El matcher exige la estructura JSON del endpoint (traces o exchanges) para
+    no confundirlo con un 200 genérico.
+  remediation: |
+    No exponer httptrace (ni heapdump, threaddump, loggers o auditevents) fuera
+    de la red interna. Si se necesita observabilidad, usar el endpoint de
+    métricas y un colector de trazas autenticado.
+  reference:
+    - https://docs.spring.io/spring-boot/reference/actuator/endpoints.html
+    - https://cwe.mitre.org/data/definitions/200.html
+  classification:
+    cwe-id: CWE-200
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+  metadata:
+    max-request: 2
+    argos-pack: framework
+    argos-requires-auth: "false"
+    argos-severity-floor: medium
+    argos-evidence: "JSON de httptrace con peticiones previas y sus cabeceras"
+    argos-owasp: "A05:2021 Security Misconfiguration"
+  tags: spring,misconfig,exposure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/actuator/httptrace"
+      - "{{BaseURL}}/actuator/httpexchanges"
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: header
+        words:
+          - "application/json"
+      - type: word
+        part: body
+        words:
+          - '"traces"'
+          - '"exchanges"'
+        condition: or
+      - type: word
+        part: body
+        words:
+          - '"request"'
+          - '"response"'
+        condition: and

@@ -1,0 +1,61 @@
+id: argos-terraform-state-disclosure
+
+info:
+  name: Terraform state file publicly readable
+  author: argos
+  severity: critical
+  description: |
+    El estado de Terraform quedó publicado. El archivo contiene la definición
+    completa de la infraestructura y, en texto plano, los atributos de los
+    recursos: contraseñas de bases de datos, claves de acceso, tokens y
+    direcciones privadas. Es el mapa y las llaves del entorno a la vez.
+
+    El matcher exige las dos claves del formato de estado (terraform_version y
+    resources): una página 404 que devuelva 200 no produce el hallazgo.
+  remediation: |
+    Mover el estado a un backend remoto con cifrado y acceso autenticado
+    (S3+DynamoDB, Terraform Cloud, etc.), sacarlo de la raíz web y rotar todos
+    los secretos que contenía.
+  reference:
+    - https://developer.hashicorp.com/terraform/language/state/sensitive-data
+    - https://cwe.mitre.org/data/definitions/538.html
+  classification:
+    cwe-id: CWE-538
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+    cvss-score: 9.1
+  metadata:
+    max-request: 6
+    argos-pack: cicd
+    argos-requires-auth: "false"
+    argos-severity-floor: critical
+    argos-evidence: "JSON de estado de Terraform con versión y recursos"
+    argos-owasp: "A05:2021 Security Misconfiguration"
+  tags: terraform,cicd,exposure,devops
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/terraform.tfstate"
+      - "{{BaseURL}}/terraform.tfstate.backup"
+      - "{{BaseURL}}/prod/terraform.tfstate"
+      - "{{BaseURL}}/env/prod/terraform.tfstate"
+      - "{{BaseURL}}/infra/terraform.tfstate"
+      - "{{BaseURL}}/.terraform/terraform.tfstate"
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - '"terraform_version"'
+          - '"resources"'
+        condition: and
+    extractors:
+      - type: regex
+        part: body
+        name: terraform_version
+        regex:
+          - '"terraform_version"\s*:\s*"[^"]+"'

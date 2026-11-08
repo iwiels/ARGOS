@@ -1,0 +1,9 @@
+[test]
+root = "./src"
+# Nota: no usar coverageThreshold de bunfig (exit 1 silencioso/errático en
+# este entorno). El gate de cobertura vive en scripts/coverage-gate.ts y se
+# aplica en CI sobre `bun test --coverage`.
+#
+# Los tests de DOM (tests/dom/*.test.tsx) corren con Vitest vía
+# `pnpm test:dom`, no con bun: bun no emite JSX de Solid compatible en este
+# entorno. root=./src evita que `bun test` los descubra.

@@ -1,0 +1,214 @@
+name: ci
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+        with:
+          version: 11.8.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: npm install -g bun@1.3.14
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: bun run scripts/audit-design-system.ts
+      - run: bun scripts/check-arch-rules.ts
+      - run: bun scripts/sync-finding-rules.ts --check
+      - run: pnpm test:unit
+      - run: pnpm test:ui:dom
+      - run: pnpm typecheck:all
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: argos-bin/go.mod
+          cache-dependency-path: argos-bin/go.sum
+      - run: cd argos-bin && go test -v ./...
+      - run: pnpm audit --prod --audit-level high
+
+  ui-browser-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+        with:
+          version: 11.8.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: npm install -g bun@1.3.14
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @argos/app exec playwright install --with-deps chromium
+      - run: pnpm test:browser
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: always()
+        with:
+          name: ui-browser-report
+          path: packages/app/e2e/playwright-report/
+          if-no-files-found: error
+          retention-days: 14
+
+  linux-runtime-matrix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - distro: Ubuntu 24.04 LTS
+            image: ubuntu:24.04
+          - distro: Debian stable
+            image: debian:stable-slim
+          - distro: Fedora current
+            image: fedora:latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: argos-bin/go.mod
+          cache-dependency-path: argos-bin/go.sum
+      - name: Build amd64 and arm64 Linux audit binaries
+        run: |
+          for arch in amd64 arm64; do
+            mkdir -p "argos-bin/bin/linux-${arch}"
+            for command in orquestador lan web argos-runner; do
+              (cd argos-bin && CGO_ENABLED=0 GOOS=linux GOARCH="${arch}" go build -trimpath -o "bin/linux-${arch}/${command}" "./cmd/${command}")
+            done
+          done
+      - name: Initialize Linux MCP servers on ${{ matrix.distro }}
+        run: |
+          docker run --rm -i \
+            -v "${GITHUB_WORKSPACE}/argos-bin/bin/linux-amd64:/argos:ro" \
+            "${{ matrix.image }}" sh -s <<'SCRIPT'
+          set -eu
+          getconf GNU_LIBC_VERSION
+          request='{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"argos-ci","version":"1"}}}'
+          for binary in /argos/orquestador /argos/lan /argos/web; do
+            response=$(printf '%s\n' "$request" | "$binary" --mcp --memory-dir /tmp/argos-memory)
+            printf '%s\n' "$response" | grep -F '"serverInfo"' >/dev/null
+          done
+          /argos/argos-runner --version | grep -F 'argos-runner ' >/dev/null
+          SCRIPT
+
+  linux-desktop-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      ARGOS_BUILD_LINUX_WORKER_IMAGE: "1"
+      ARGOS_REQUIRE_LINUX_WORKER_IMAGE: "1"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+        with:
+          version: 11.8.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: npm install -g bun@1.3.14
+      - run: pnpm install --frozen-lockfile
+      - name: Enable ARM64 worker image builds
+        uses: docker/setup-qemu-action@c7c53464625b32c7a7e944ae62b3e17d2b600130
+        with:
+          platforms: arm64
+      - name: Build desktop and Linux runtime package
+        run: |
+          pnpm --filter @argos/desktop prebuild
+          pnpm --filter @argos/desktop build
+      - name: Package Linux desktop distributions
+        run: pnpm --filter @argos/desktop package:linux
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: argos-desktop-linux
+          path: packages/desktop/dist/*
+          if-no-files-found: error
+          retention-days: 14
+
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: argos-bin/go.mod
+          cache-dependency-path: argos-bin/go.sum
+      - name: Benchmark (light mode)
+        env:
+          ARGOS_E2E: "1"
+          ARGOS_E2E_LIGHT: "1"
+        run: |
+          rm -f argos-bin/e2e/benchmark-report.json argos-bin/e2e/benchmark-report.md
+          cd argos-bin
+          go test -count=1 -v -run '^TestWebBenchmark$' ./e2e -timeout 20m
+      - name: Require measured coverage and an enforced baseline
+        run: |
+          node --input-type=module <<'SCRIPT'
+          import assert from "node:assert/strict"
+          import { readFileSync } from "node:fs"
+          const report = JSON.parse(readFileSync("argos-bin/e2e/benchmark-report.json", "utf8"))
+          assert.equal(report.mode, "light")
+          assert.equal(report.runners.find((runner) => runner.runner === "argos_full")?.measured, true)
+          assert.equal(report.gate.checked, true)
+          assert.equal(report.gate.passed, true)
+          SCRIPT
+      - name: Upload the benchmark report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: benchmark-report
+          path: argos-bin/e2e/benchmark-report.*
+          if-no-files-found: error
+          retention-days: 30
+
+  sbom:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0.24.0
+        with:
+          format: cyclonedx-json
+          output-file: sbom.cdx.json
+          upload-artifact: false
+          upload-release-assets: false
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: sbom
+          path: sbom.cdx.json
+          if-no-files-found: error
+          retention-days: 30
+
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: gitleaks/gitleaks-action@e0c47f4f8be36e29cdc102c57e68cb5cbf0e8d1e # v3.0.0
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITLEAKS_ENABLE_COMMENTS: "false"

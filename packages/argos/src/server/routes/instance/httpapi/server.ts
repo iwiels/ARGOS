@@ -1,0 +1,351 @@
+import { Config as EffectConfig, Context, Effect, Layer } from "effect"
+import { HttpApiBuilder, OpenApi } from "effect/unstable/httpapi"
+import {
+  FetchHttpClient,
+  HttpClient,
+  HttpMiddleware,
+  HttpRouter,
+  HttpServer,
+  HttpServerResponse,
+} from "effect/unstable/http"
+import * as Socket from "effect/unstable/socket/Socket"
+import { FSUtil } from "@argos/core/fs-util"
+import { Account } from "@/account/account"
+import { Agent } from "@/agent/agent"
+import { Auth } from "@/auth"
+import { BackgroundJob } from "@/background/job"
+import { Config } from "@/config/config"
+import { Command } from "@/command"
+import * as Observability from "@argos/core/effect/observability"
+import { Ripgrep } from "@argos/core/filesystem/ripgrep"
+import { Format } from "@/format"
+import { RuntimeFlags } from "@/effect/runtime-flags"
+import { LSP } from "@/lsp/lsp"
+import { MCP } from "@/mcp"
+import { Permission } from "@/permission"
+import { Installation } from "@/installation"
+import { InstanceLayer } from "@/project/instance-layer"
+import { Plugin } from "@/plugin"
+import { Project } from "@/project/project"
+import { ProjectV2 } from "@argos/core/project"
+import { ProjectCopy } from "@argos/core/project/copy"
+import { MoveSession } from "@argos/core/control-plane/move-session"
+import { ProviderAuth } from "@/provider/auth"
+import { ModelsDev } from "@argos/core/models-dev"
+import { Provider } from "@/provider/provider"
+import { PtyTicket } from "@argos/core/pty/ticket"
+import { Question } from "@/question"
+import { Reference } from "@/reference/reference"
+import { Session } from "@/session/session"
+import { SessionCompaction } from "@/session/compaction"
+import { LLM } from "@/session/llm"
+import { SessionPrompt } from "@/session/prompt"
+import { SessionRevert } from "@/session/revert"
+import { SessionRunState } from "@/session/run-state"
+import { SessionStatus } from "@/session/status"
+import { SessionSummary } from "@/session/summary"
+import { Todo } from "@/session/todo"
+import { SessionShare } from "@/share/session"
+import { ShareNext } from "@/share/share-next"
+import { Audit } from "@argos/core/audit"
+import { SessionKillSwitch } from "@argos/core/session/kill-switch"
+import { AuditHook } from "@/audit/hook"
+import { ThreatIntelHook } from "@/threat-intel/hook"
+import { ComplianceHook } from "@/compliance/hook"
+import { Compliance } from "@argos/core/compliance"
+import { EventBridge } from "@/event-bridge"
+import { EventV2 } from "@argos/core/event"
+import { Database } from "@argos/core/database/database"
+import { Skill } from "@/skill"
+import { Snapshot } from "@/snapshot"
+import { ToolRegistry } from "@/tool/registry"
+import { lazy } from "@/util/lazy"
+import { Vcs } from "@/project/vcs"
+import { Worktree } from "@/worktree"
+import { Workspace } from "@/control-plane/workspace"
+import { CorsConfig, isAllowedCorsOrigin, type CorsOptions } from "@/server/cors"
+import { PTY_CONNECT_TOKEN_HEADER } from "@/server/shared/pty-ticket"
+import { serveUIEffect } from "@/server/shared/ui"
+import { ServerAuth } from "@/server/auth"
+import { InstanceHttpApi, RootHttpApi } from "./api"
+import { Api } from "@argos/server/api"
+import { PublicApi } from "./public"
+import {
+  authorizationLayer,
+  authorizationRouterMiddleware,
+  ptyConnectAuthorizationLayer,
+  serverAuthorizationLayer,
+} from "./middleware/authorization"
+import { EventApi } from "./groups/event"
+import { PtyConnectApi } from "./groups/pty"
+import { eventHandlers } from "./handlers/event"
+import { auditHandlers } from "./handlers/audit"
+import { complianceHandlers } from "./handlers/compliance"
+import { configHandlers } from "./handlers/config"
+import { controlHandlers } from "./handlers/control"
+import { controlPlaneHandlers } from "./handlers/control-plane"
+import { experimentalHandlers } from "./handlers/experimental"
+import { fileHandlers } from "./handlers/file"
+import { findingHandlers } from "./handlers/finding"
+import { globalHandlers } from "./handlers/global"
+import { instanceHandlers } from "./handlers/instance"
+import { mcpHandlers } from "./handlers/mcp"
+import { permissionHandlers } from "./handlers/permission"
+import { projectHandlers } from "./handlers/project"
+import { projectCopyHandlers } from "./handlers/project-copy"
+import { providerHandlers } from "./handlers/provider"
+import { ptyConnectHandlers, ptyHandlers } from "./handlers/pty"
+import { questionHandlers } from "./handlers/question"
+import { referenceHandlers } from "./handlers/reference"
+import { reportHandlers } from "./handlers/report"
+import { sessionHandlers } from "./handlers/session"
+import { syncHandlers } from "./handlers/sync"
+import { trafficHandlers } from "./handlers/traffic"
+import { tuiHandlers } from "./handlers/tui"
+import { handlers } from "@argos/server/handlers"
+import { schemaErrorLayer as v2SchemaErrorLayer } from "@argos/server/middleware/schema-error"
+import { workspaceHandlers } from "./handlers/workspace"
+import { instanceContextLayer } from "./middleware/instance-context"
+import { workspaceRoutingLayer } from "./middleware/workspace-routing"
+import { disposeMiddleware } from "./lifecycle"
+import { memoMap } from "@argos/core/effect/memo-map"
+import { compressionLayer } from "./middleware/compression"
+import { corsVaryFix } from "./middleware/cors-vary"
+import { errorLayer } from "./middleware/error"
+import { fenceLayer } from "./middleware/fence"
+import { schemaErrorLayer } from "./middleware/schema-error"
+
+export const context = Context.makeUnsafe<unknown>(new Map())
+
+/**
+ * Headers propios que el cliente envía. Deben declararse explícitamente.
+ *
+ * Sin `allowedHeaders`, el middleware responde el preflight haciendo ECO de
+ * `Access-Control-Request-Headers`, con `Vary: Access-Control-Request-Headers`.
+ * Es HTTP válido, pero la caché de preflight del navegador no versiona por ese
+ * Vary: si una petición anterior a la MISMA URL pidió otros headers, la entrada
+ * cacheada no incluye `x-opencode-ticket` y el navegador lo rechaza sin volver a
+ * consultar al servidor. Resultado: la terminal no conecta aunque el servidor
+ * esté bien. Declarándolos, la respuesta es idéntica para cualquier petición y
+ * cachearla es seguro.
+ */
+const ALLOWED_HEADERS = [
+  "content-type",
+  "authorization",
+  PTY_CONNECT_TOKEN_HEADER,
+  "x-opencode-directory",
+  "x-opencode-workspace",
+]
+
+/** Headers de respuesta que el cliente necesita poder leer desde otro origen. */
+const EXPOSED_HEADERS = ["x-next-cursor"]
+
+/**
+ * Vida del preflight cacheado, en segundos.
+ *
+ * Estaba en 24h. Cachear tanto tiempo convierte cualquier error de CORS en un
+ * fallo que sobrevive al arreglo: el navegador deja de preguntar al servidor y
+ * sigue rechazando con la respuesta vieja durante todo un día, aunque el
+ * servidor ya responda bien. Además aporta poco aquí, porque los endpoints de
+ * PTY llevan un id único en la URL y casi nunca reutilizan una entrada.
+ * Diez minutos conservan el beneficio real y acotan el daño de un error futuro.
+ */
+const CORS_PREFLIGHT_MAX_AGE = 600
+
+const cors = (corsOptions?: CorsOptions) =>
+  HttpRouter.middleware(
+    HttpMiddleware.cors({
+      allowedOrigins: (origin) => isAllowedCorsOrigin(origin, corsOptions),
+      allowedHeaders: ALLOWED_HEADERS,
+      exposedHeaders: EXPOSED_HEADERS,
+      maxAge: CORS_PREFLIGHT_MAX_AGE,
+    }),
+    { global: true },
+  )
+
+// Route tree:
+// - rootApiRoutes: typed /global/* and control routes; auth is declared by RootHttpApi.
+// - eventApiRoutes: typed SSE route with instance routing context and its existing API contract.
+// - ptyConnectApiRoutes: typed WebSocket upgrade route with ticket-aware auth.
+// - instanceApiRoutes: remaining typed instance routes.
+// - uiRoute: raw catch-all fallback; auth is router middleware so public static assets can bypass it.
+const authOnlyRouterLayer = authorizationRouterMiddleware.layer.pipe(Layer.provide(ServerAuth.Config.defaultLayer))
+const httpApiAuthLayer = authorizationLayer.pipe(Layer.provide(ServerAuth.Config.defaultLayer))
+const ptyConnectHttpApiAuthLayer = ptyConnectAuthorizationLayer.pipe(Layer.provide(ServerAuth.Config.defaultLayer))
+const serverHttpApiAuthLayer = serverAuthorizationLayer.pipe(Layer.provide(ServerAuth.Config.defaultLayer))
+const workspaceRoutingLive = workspaceRoutingLayer.pipe(Layer.provide(Socket.layerWebSocketConstructorGlobal))
+const rootApiRoutes = HttpApiBuilder.layer(RootHttpApi).pipe(
+  Layer.provide([controlHandlers, controlPlaneHandlers, globalHandlers]),
+  Layer.provide(schemaErrorLayer),
+  Layer.provide(httpApiAuthLayer),
+)
+const eventApiRoutes = HttpApiBuilder.layer(EventApi).pipe(
+  Layer.provide(eventHandlers),
+  Layer.provide([httpApiAuthLayer, workspaceRoutingLive, instanceContextLayer]),
+)
+const ptyConnectApiRoutes = HttpApiBuilder.layer(PtyConnectApi).pipe(
+  Layer.provide(ptyConnectHandlers),
+  Layer.provide([ptyConnectHttpApiAuthLayer, workspaceRoutingLive, instanceContextLayer]),
+)
+const instanceApiRoutes = HttpApiBuilder.layer(InstanceHttpApi).pipe(
+  Layer.provide([
+    auditHandlers,
+    complianceHandlers,
+    configHandlers,
+    experimentalHandlers,
+    fileHandlers,
+    findingHandlers,
+    instanceHandlers,
+    mcpHandlers,
+    projectHandlers,
+    projectCopyHandlers,
+    ptyHandlers,
+    questionHandlers,
+    referenceHandlers,
+    reportHandlers,
+    permissionHandlers,
+    providerHandlers,
+    sessionHandlers,
+    syncHandlers,
+    trafficHandlers,
+    tuiHandlers,
+    workspaceHandlers,
+  ]),
+)
+
+const instanceRoutes = instanceApiRoutes.pipe(
+  Layer.provide([httpApiAuthLayer, workspaceRoutingLive, instanceContextLayer, schemaErrorLayer]),
+)
+const serverRoutes = HttpApiBuilder.layer(Api).pipe(
+  Layer.provide(handlers),
+  Layer.provide([serverHttpApiAuthLayer, v2SchemaErrorLayer]),
+)
+
+// `OpenApi.fromApi` is non-trivial; defer until /doc is actually hit so
+// processes that never serve it (CLI, scripts) don't pay at module load.
+// `HttpServerResponse.jsonUnsafe` runs JSON.stringify eagerly, so caching
+// the response also caches the serialized body â€” every /doc request reuses
+// the same Uint8Array instead of re-stringifying the spec.
+import { handleLlmProxy } from "./handlers/llm-proxy"
+
+const docResponse = lazy(() => HttpServerResponse.jsonUnsafe(OpenApi.fromApi(PublicApi)))
+
+const docRoute = HttpRouter.use((router) => router.add("GET", "/doc", () => Effect.succeed(docResponse()))).pipe(
+  Layer.provide(authOnlyRouterLayer),
+)
+
+const llmProxyRoute = HttpRouter.use((router) =>
+  Effect.gen(function* () {
+    yield* router.add("POST", "/llm-proxy/:providerID/*", handleLlmProxy)
+    yield* router.add("GET", "/llm-proxy/:providerID/*", handleLlmProxy)
+  }),
+).pipe(Layer.provide(authOnlyRouterLayer))
+
+const uiRoute = HttpRouter.use((router) =>
+  Effect.gen(function* () {
+    const fs = yield* FSUtil.Service
+    const client = yield* HttpClient.HttpClient
+    const flags = yield* RuntimeFlags.Service
+    yield* router.add("*", "/*", (request) =>
+      serveUIEffect(request, { fs, client, disableEmbeddedWebUi: flags.disableEmbeddedWebUi }),
+    )
+  }),
+).pipe(Layer.provide(authOnlyRouterLayer))
+
+type RouteRequirements =
+  | HttpRouter.HttpRouter
+  | HttpRouter.Request<"Error", unknown>
+  | HttpRouter.Request<"GlobalError", unknown>
+  | HttpRouter.Request<"Requires", unknown>
+  | HttpRouter.Request<"GlobalRequires", never>
+
+export function createRoutes(
+  corsOptions?: CorsOptions,
+): Layer.Layer<never, EffectConfig.ConfigError, RouteRequirements> {
+  return Layer.mergeAll(
+    rootApiRoutes,
+    eventApiRoutes,
+    ptyConnectApiRoutes,
+    instanceRoutes,
+    serverRoutes,
+    docRoute,
+    llmProxyRoute,
+    uiRoute,
+  ).pipe(
+    Layer.provide([
+      errorLayer,
+      compressionLayer,
+      corsVaryFix,
+      fenceLayer.pipe(Layer.provide(Database.defaultLayer)),
+      cors(corsOptions),
+      Database.defaultLayer,
+      Account.defaultLayer,
+      Agent.defaultLayer,
+      Auth.defaultLayer,
+      BackgroundJob.defaultLayer,
+      Command.defaultLayer,
+      Config.defaultLayer,
+      Format.defaultLayer,
+      LSP.defaultLayer,
+      LLM.defaultLayer,
+      Installation.defaultLayer,
+      MCP.defaultLayer,
+      ModelsDev.defaultLayer,
+      Permission.defaultLayer,
+      Plugin.defaultLayer,
+      Project.defaultLayer,
+      ProjectV2.defaultLayer,
+      ProjectCopy.defaultLayer,
+      MoveSession.defaultLayer,
+      ProviderAuth.defaultLayer,
+      Provider.defaultLayer,
+      PtyTicket.defaultLayer,
+      Question.defaultLayer,
+      Reference.defaultLayer,
+      Ripgrep.defaultLayer,
+      RuntimeFlags.defaultLayer,
+      Session.defaultLayer,
+      SessionCompaction.defaultLayer,
+      SessionPrompt.defaultLayer,
+      SessionRevert.defaultLayer,
+      SessionShare.defaultLayer,
+      SessionRunState.defaultLayer,
+      SessionStatus.defaultLayer,
+      SessionSummary.defaultLayer,
+      ShareNext.defaultLayer,
+      AuditHook.defaultLayer,
+      Audit.defaultLayer,
+      SessionKillSwitch.defaultLayer,
+      ThreatIntelHook.defaultLayer,
+      ComplianceHook.defaultLayer,
+      Compliance.defaultLayer,
+      Snapshot.defaultLayer,
+      EventBridge.defaultLayer,
+      EventV2.defaultLayer,
+      Skill.defaultLayer,
+      Todo.defaultLayer,
+      ToolRegistry.defaultLayer,
+      Vcs.defaultLayer,
+      Workspace.defaultLayer,
+      Worktree.appLayer,
+      FSUtil.defaultLayer,
+      FetchHttpClient.layer,
+      HttpServer.layerServices,
+    ]),
+    Layer.provide(Layer.succeed(CorsConfig)(corsOptions)),
+    Layer.provide(InstanceLayer.layer),
+    Layer.provide(Observability.layer),
+  )
+}
+
+export const routes = createRoutes()
+
+export const webHandler = lazy(() =>
+  HttpRouter.toWebHandler(routes, {
+    disableLogger: true,
+    memoMap,
+    middleware: disposeMiddleware,
+  }),
+)
+
+export * as HttpApiApp from "./server"
