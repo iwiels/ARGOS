@@ -28,7 +28,7 @@ catalog:
   "@openauthjs/openauth": "0.4.3"
   "@opentelemetry/api": "1.9.1"
   "@pierre/diffs": "1.1.0-beta.18"
-  "@playwright/test": "1.59.1"
+  "@playwright/test": "1.65.0"
   "@sentry/solid": "10.36.0"
   "@sentry/vite-plugin": "4.6.0"
   "@solid-primitives/storage": "4.3.3"
