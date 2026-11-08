@@ -55,7 +55,7 @@
     "@solid-primitives/event-bus": "1.1.2",
     "@solid-primitives/event-listener": "2.4.5",
     "@solid-primitives/i18n": "2.2.1",
-    "@solid-primitives/media": "2.3.3",
+    "@solid-primitives/media": "2.3.6",
     "@solid-primitives/resize-observer": "2.1.5",
     "@solid-primitives/scheduled": "1.5.3",
     "@solid-primitives/scroll": "2.1.3",
