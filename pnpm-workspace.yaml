@@ -51,7 +51,7 @@ catalog:
   "effect": "4.0.0-beta.74"
   "fuzzysort": "3.1.0"
   "luxon": "3.6.1"
-  "marked": "17.0.1"
+  "marked": "18.1.3"
   "marked-shiki": "1.2.1"
   "remeda": "2.26.0"
   "remend": "1.3.0"
