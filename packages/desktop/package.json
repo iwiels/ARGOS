@@ -57,7 +57,7 @@
     "typescript": "catalog:",
     "vite": "7.1.4",
     "vite-plugin-cjs-interop": "^4.0.3",
-    "zod-openapi": "5.4.6"
+    "zod-openapi": "6.0.2"
   },
   "optionalDependencies": {
     "@lydell/node-pty-darwin-arm64": "1.2.0-beta.12",
