@@ -146,7 +146,7 @@ overrides:
   '@effect/rpc': 4.0.0-beta.74
   '@effect/experimental': 4.0.0-beta.74
   '@effect/workflow': 4.0.0-beta.74
-  drizzle-orm: 1.0.0-rc.2
+  drizzle-orm: 1.0.0-rc.5
   drizzle-kit: 1.0.0-rc.2
   '@pierre/diffs': 1.1.0-beta.18
   zod: 4.6.7
@@ -503,8 +503,8 @@ importers:
         specifier: 'catalog:'
         version: 8.0.3
       drizzle-orm:
-        specifier: 1.0.0-rc.2
-        version: 1.0.0-rc.2(@opentelemetry/api@1.9.1)(bun-types@1.3.13)(effect@4.0.0-beta.74)(valibot@1.4.2(@typescript/native-preview@7.0.0-dev.20251207.1))(zod@4.6.7)
+        specifier: 1.0.0-rc.5
+        version: 1.0.0-rc.5(@effect/sql-sqlite-bun@4.0.0-beta.74(effect@4.0.0-beta.74))(@opentelemetry/api@1.9.1)(bun-types@1.3.13)(effect@4.0.0-beta.74)(valibot@1.4.2(@typescript/native-preview@7.0.0-dev.20251207.1))(zod@4.6.7)
       effect:
         specifier: 4.0.0-beta.74
         version: 4.0.0-beta.74
@@ -768,8 +768,8 @@ importers:
         specifier: 'catalog:'
         version: 7.0.6
       drizzle-orm:
-        specifier: 1.0.0-rc.2
-        version: 1.0.0-rc.2(@opentelemetry/api@1.9.1)(bun-types@1.3.13)(effect@4.0.0-beta.74)(valibot@1.4.2(@typescript/native-preview@7.0.0-dev.20251207.1))(zod@4.6.7)
+        specifier: 1.0.0-rc.5
+        version: 1.0.0-rc.5(@effect/sql-sqlite-bun@4.0.0-beta.74(effect@4.0.0-beta.74))(@opentelemetry/api@1.9.1)(bun-types@1.3.13)(effect@4.0.0-beta.74)(valibot@1.4.2(@typescript/native-preview@7.0.0-dev.20251207.1))(zod@4.6.7)
       effect:
         specifier: 4.0.0-beta.74
         version: 4.0.0-beta.74
@@ -1041,8 +1041,8 @@ importers:
   packages/effect-drizzle-sqlite:
     dependencies:
       drizzle-orm:
-        specifier: 1.0.0-rc.2
-        version: 1.0.0-rc.2(@opentelemetry/api@1.9.1)(bun-types@1.3.13)(effect@4.0.0-beta.74)(valibot@1.4.2(@typescript/native-preview@7.0.0-dev.20251207.1))(zod@4.6.7)
+        specifier: 1.0.0-rc.5
+        version: 1.0.0-rc.5(@effect/sql-sqlite-bun@4.0.0-beta.74(effect@4.0.0-beta.74))(@opentelemetry/api@1.9.1)(bun-types@1.3.13)(effect@4.0.0-beta.74)(valibot@1.4.2(@typescript/native-preview@7.0.0-dev.20251207.1))(zod@4.6.7)
       effect:
         specifier: 4.0.0-beta.74
         version: 4.0.0-beta.74
@@ -1194,8 +1194,8 @@ importers:
         specifier: workspace:*
         version: link:../core
       drizzle-orm:
-        specifier: 1.0.0-rc.2
-        version: 1.0.0-rc.2(@opentelemetry/api@1.9.1)(bun-types@1.3.13)(effect@4.0.0-beta.74)(valibot@1.4.2(@typescript/native-preview@7.0.0-dev.20251207.1))(zod@4.6.7)
+        specifier: 1.0.0-rc.5
+        version: 1.0.0-rc.5(@effect/sql-sqlite-bun@4.0.0-beta.74(effect@4.0.0-beta.74))(@opentelemetry/api@1.9.1)(bun-types@1.3.13)(effect@4.0.0-beta.74)(valibot@1.4.2(@typescript/native-preview@7.0.0-dev.20251207.1))(zod@4.6.7)
       effect:
         specifier: 4.0.0-beta.74
         version: 4.0.0-beta.74
@@ -2956,6 +2956,7 @@ packages:
   '@opentelemetry/sdk-trace-web@2.9.0':
     resolution: {integrity: sha512-LS4XlzOK3e6YYdt84m15AmRR04121rKipmifi4XFZToH1h75f7F2bzHLbB1NMgIEYJ0jSKYm4VsK5mws/5kfTQ==}
     engines: {node: ^18.19.0 || >=20.6.0}
+    deprecated: Use @opentelemetry/sdk-trace package
     peerDependencies:
       '@opentelemetry/api': 1.9.1
 
@@ -3746,10 +3747,16 @@ packages:
   '@smithy/core@3.29.1':
     resolution: {integrity: sha512-qoiY4nrk5OCu1+eIR1VB8l5DmON/oKiqrd5zZFAhXJXjJlLWQusKEW/SkBDAtGDcPaz86m9kfcE1lngU0GlM6A==}
     engines: {node: '>=18.0.0'}
+    deprecated: |-
+      Deprecated due to a bug in custom logger data redaction. Upgrade to the latest version. If you used a custom logger with this
+        version, review your logs and rotate any credentials or other secrets. See https://github.com/aws/aws-sdk-js-v3/issues/8393.
 
   '@smithy/core@3.37.0':
     resolution: {integrity: sha512-97imTcCyiPd8k0e9+ts/Sp0W65Dn9Ti357J7M09Ov4tI8Q1JDJVFSoAJtjEVKqfHEr3Pdo2jfolqKCaaiszH0g==}
     engines: {node: '>=18.0.0'}
+    deprecated: |-
+      Deprecated due to a bug in custom logger data redaction. Upgrade to the latest version. If you used a custom logger with this
+        version, review your logs and rotate any credentials or other secrets. See https://github.com/aws/aws-sdk-js-v3/issues/8393.
 
   '@smithy/credential-provider-imds@4.4.6':
     resolution: {integrity: sha512-B2WQ/PV/H6Jeg3lrIq6bKUfa6Hy01mtK7CGs6lhjzHA6k4aagldH6T6eEjnzKl4HI0cJnAsxfJ19pgb5PV+CVQ==}
@@ -5059,25 +5066,38 @@ packages:
     resolution: {integrity: sha512-TRxUmj1wDA2QCt3GvuhfamvIa66wJ7+MzSxBMKkpRtYScjHTumT9BE+x6daSzuEacSrPEuUH5/cW1uo5RkoPIg==}
     hasBin: true
 
-  drizzle-orm@1.0.0-rc.2:
-    resolution: {integrity: sha512-UXYDkbplF5wX0hwxll+80QhEwUvAJLBu+tAK/d4fna18kLE6VuliAzufF/ieDEIJeSnLRYgtmsXD6x1Xuy1kIg==}
+  drizzle-orm@1.0.0-rc.5:
+    resolution: {integrity: sha512-7BMYTsAZbQ9DcQCtLG4G202Hq6nc/e8o1EBKN6nBweRI8EGPFe/VdyvWQCsU9fuZSiRjNpELolUSi//JFBq+lw==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
+      '@aws/aurora-dsql-node-postgres-connector': '>=0.1.9'
+      '@aws/aurora-dsql-postgresjs-connector': '>=0.3.0'
       '@cloudflare/workers-types': '>=4'
-      '@effect/sql-pg': '>=4.0.0-beta.58 || >=4.0.0'
+      '@drizzle-team/minipg': '>=0.4.2'
+      '@effect/sql-d1': '>=4.0.0'
+      '@effect/sql-libsql': '>=4.0.0'
+      '@effect/sql-mysql2': '>=4.0.0'
+      '@effect/sql-pg': '>=4.0.0'
+      '@effect/sql-pglite': '>=4.0.0'
+      '@effect/sql-sqlite-bun': 4.0.0-beta.74
+      '@effect/sql-sqlite-do': '>=4.0.0'
+      '@effect/sql-sqlite-node': '>=4.0.0'
+      '@effect/sql-sqlite-wasm': '>=4.0.0'
       '@electric-sql/pglite': '>=0.2.0'
       '@libsql/client': '>=0.10.0'
       '@libsql/client-wasm': '>=0.10.0'
       '@neondatabase/serverless': '>=0.10.0'
-      '@op-engineering/op-sqlite': '>=2'
+      '@op-engineering/op-sqlite': '>=17'
       '@opentelemetry/api': 1.9.1
       '@planetscale/database': '>=1.13'
       '@sinclair/typebox': '>=0.34.8'
       '@sqlitecloud/drivers': '>=1.0.653'
       '@tidbcloud/serverless': '*'
-      '@tursodatabase/database': '>=0.2.1'
-      '@tursodatabase/database-common': '>=0.2.1'
-      '@tursodatabase/database-wasm': '>=0.2.1'
+      '@tursodatabase/database': '>=0.7.1'
+      '@tursodatabase/database-common': '>=0.7.1'
+      '@tursodatabase/database-wasm': '>=0.7.1'
+      '@tursodatabase/serverless': '>=1.4.0'
+      '@tursodatabase/sync': '>=0.7.1'
       '@types/better-sqlite3': '*'
       '@types/mssql': ^9.1.4
       '@types/pg': '*'
@@ -5096,15 +5116,37 @@ packages:
       postgres: '>=3'
       sql.js: '>=1'
       sqlite3: '>=5'
-      typebox: '>=1.0.0'
+      typebox: '>=1.2.0'
       valibot: '>=1.0.0-beta.7'
       zod: 4.6.7
     peerDependenciesMeta:
       '@aws-sdk/client-rds-data':
         optional: true
+      '@aws/aurora-dsql-node-postgres-connector':
+        optional: true
+      '@aws/aurora-dsql-postgresjs-connector':
+        optional: true
       '@cloudflare/workers-types':
         optional: true
+      '@drizzle-team/minipg':
+        optional: true
+      '@effect/sql-d1':
+        optional: true
+      '@effect/sql-libsql':
+        optional: true
+      '@effect/sql-mysql2':
+        optional: true
       '@effect/sql-pg':
+        optional: true
+      '@effect/sql-pglite':
+        optional: true
+      '@effect/sql-sqlite-bun':
+        optional: true
+      '@effect/sql-sqlite-do':
+        optional: true
+      '@effect/sql-sqlite-node':
+        optional: true
+      '@effect/sql-sqlite-wasm':
         optional: true
       '@electric-sql/pglite':
         optional: true
@@ -5131,6 +5173,10 @@ packages:
       '@tursodatabase/database-common':
         optional: true
       '@tursodatabase/database-wasm':
+        optional: true
+      '@tursodatabase/serverless':
+        optional: true
+      '@tursodatabase/sync':
         optional: true
       '@types/better-sqlite3':
         optional: true
@@ -11854,8 +11900,9 @@ snapshots:
       get-tsconfig: 4.14.0
       jiti: 2.7.0
 
-  drizzle-orm@1.0.0-rc.2(@opentelemetry/api@1.9.1)(bun-types@1.3.13)(effect@4.0.0-beta.74)(valibot@1.4.2(@typescript/native-preview@7.0.0-dev.20251207.1))(zod@4.6.7):
+  drizzle-orm@1.0.0-rc.5(@effect/sql-sqlite-bun@4.0.0-beta.74(effect@4.0.0-beta.74))(@opentelemetry/api@1.9.1)(bun-types@1.3.13)(effect@4.0.0-beta.74)(valibot@1.4.2(@typescript/native-preview@7.0.0-dev.20251207.1))(zod@4.6.7):
     optionalDependencies:
+      '@effect/sql-sqlite-bun': 4.0.0-beta.74(effect@4.0.0-beta.74)
       '@opentelemetry/api': 1.9.1
       bun-types: 1.3.13
       effect: 4.0.0-beta.74

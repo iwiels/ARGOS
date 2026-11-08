@@ -104,7 +104,7 @@
     "ai-gateway-provider": "3.1.2",
     "bun-pty": "0.4.8",
     "cross-spawn": "catalog:",
-    "drizzle-orm": "1.0.0-rc.2",
+    "drizzle-orm": "1.0.0-rc.5",
     "effect": "4.0.0-beta.74",
     "fuzzysort": "3.1.0",
     "gitlab-ai-provider": "6.8.0",
