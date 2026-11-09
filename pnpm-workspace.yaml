@@ -31,7 +31,7 @@ catalog:
   "@playwright/test": "1.59.1"
   "@sentry/solid": "10.36.0"
   "@sentry/vite-plugin": "4.6.0"
-  "@solid-primitives/storage": "4.3.3"
+  "@solid-primitives/storage": "4.4.0"
   "@solidjs/meta": "0.29.4"
   "@solidjs/router": "0.15.4"
   "@tailwindcss/vite": "4.1.11"
