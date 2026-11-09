@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@actions/artifact": "4.0.0",
-    "@lydell/node-pty": "1.2.0-beta.12",
+    "@lydell/node-pty": "1.2.0-beta.18",
     "@argos/app": "workspace:*",
     "@argos/ui": "workspace:*",
     "@sentry/solid": "10.36.0",

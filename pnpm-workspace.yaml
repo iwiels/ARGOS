@@ -23,7 +23,7 @@ catalog:
   "@effect/experimental": "4.0.0-beta.74"
   "@effect/workflow": "4.0.0-beta.74"
   "@kobalte/core": "0.13.11"
-  "@lydell/node-pty": "1.2.0-beta.12"
+  "@lydell/node-pty": "1.2.0-beta.18"
   "@octokit/rest": "22.0.1"
   "@openauthjs/openauth": "0.4.3"
   "@opentelemetry/api": "1.9.1"
