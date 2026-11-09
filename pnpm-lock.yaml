@@ -28,8 +28,8 @@ catalogs:
       specifier: 4.6.0
       version: 4.6.0
     '@solid-primitives/storage':
-      specifier: 4.3.3
-      version: 4.3.3
+      specifier: 4.4.0
+      version: 4.4.0
     '@solidjs/meta':
       specifier: 0.29.4
       version: 0.29.4
@@ -248,7 +248,7 @@ importers:
         version: 2.1.3(solid-js@1.9.10)
       '@solid-primitives/storage':
         specifier: 'catalog:'
-        version: 4.3.3(solid-js@1.9.10)
+        version: 4.4.0(solid-js@1.9.10)
       '@solid-primitives/timer':
         specifier: 1.4.4
         version: 1.4.4(solid-js@1.9.10)
@@ -944,8 +944,8 @@ importers:
         specifier: 2.2.1
         version: 2.2.1(solid-js@1.9.10)
       '@solid-primitives/storage':
-        specifier: 4.3.3
-        version: 4.3.3(solid-js@1.9.10)
+        specifier: 4.4.0
+        version: 4.4.0(solid-js@1.9.10)
       '@solidjs/meta':
         specifier: 0.29.4
         version: 0.29.4(solid-js@1.9.10)
@@ -2956,6 +2956,7 @@ packages:
   '@opentelemetry/sdk-trace-web@2.9.0':
     resolution: {integrity: sha512-LS4XlzOK3e6YYdt84m15AmRR04121rKipmifi4XFZToH1h75f7F2bzHLbB1NMgIEYJ0jSKYm4VsK5mws/5kfTQ==}
     engines: {node: ^18.19.0 || >=20.6.0}
+    deprecated: Use @opentelemetry/sdk-trace package
     peerDependencies:
       '@opentelemetry/api': 1.9.1
 
@@ -3746,10 +3747,16 @@ packages:
   '@smithy/core@3.29.1':
     resolution: {integrity: sha512-qoiY4nrk5OCu1+eIR1VB8l5DmON/oKiqrd5zZFAhXJXjJlLWQusKEW/SkBDAtGDcPaz86m9kfcE1lngU0GlM6A==}
     engines: {node: '>=18.0.0'}
+    deprecated: |-
+      Deprecated due to a bug in custom logger data redaction. Upgrade to the latest version. If you used a custom logger with this
+        version, review your logs and rotate any credentials or other secrets. See https://github.com/aws/aws-sdk-js-v3/issues/8393.
 
   '@smithy/core@3.37.0':
     resolution: {integrity: sha512-97imTcCyiPd8k0e9+ts/Sp0W65Dn9Ti357J7M09Ov4tI8Q1JDJVFSoAJtjEVKqfHEr3Pdo2jfolqKCaaiszH0g==}
     engines: {node: '>=18.0.0'}
+    deprecated: |-
+      Deprecated due to a bug in custom logger data redaction. Upgrade to the latest version. If you used a custom logger with this
+        version, review your logs and rotate any credentials or other secrets. See https://github.com/aws/aws-sdk-js-v3/issues/8393.
 
   '@smithy/credential-provider-imds@4.4.6':
     resolution: {integrity: sha512-B2WQ/PV/H6Jeg3lrIq6bKUfa6Hy01mtK7CGs6lhjzHA6k4aagldH6T6eEjnzKl4HI0cJnAsxfJ19pgb5PV+CVQ==}
@@ -3907,8 +3914,8 @@ packages:
     peerDependencies:
       solid-js: ^1.6.12
 
-  '@solid-primitives/storage@4.3.3':
-    resolution: {integrity: sha512-ACbNwMZ1s8VAvld6EUXkDkX/US3IhtlPLxg6+B2s9MwNUugwdd51I98LPEaHrdLpqPmyzqgoJe0TxEFlf3Dqrw==}
+  '@solid-primitives/storage@4.4.0':
+    resolution: {integrity: sha512-+u0dpTqrUG7h+IMfmGLCx7vx2Q0Eon6paBgzcWhEP/dauElpGU3ElpZZOZgw8YKR1+J4X4ENiAL0na3VH8RWMg==}
     peerDependencies:
       '@tauri-apps/plugin-store': '*'
       solid-js: ^1.6.12
@@ -10620,7 +10627,7 @@ snapshots:
       '@solid-primitives/utils': 6.4.1(solid-js@1.9.10)
       solid-js: 1.9.10
 
-  '@solid-primitives/storage@4.3.3(solid-js@1.9.10)':
+  '@solid-primitives/storage@4.4.0(solid-js@1.9.10)':
     dependencies:
       '@solid-primitives/utils': 6.4.1(solid-js@1.9.10)
       solid-js: 1.9.10
