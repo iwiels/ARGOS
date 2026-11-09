@@ -10,8 +10,8 @@ catalogs:
       specifier: 0.13.11
       version: 0.13.11
     '@lydell/node-pty':
-      specifier: 1.2.0-beta.12
-      version: 1.2.0-beta.12
+      specifier: 1.2.0-beta.18
+      version: 1.2.0-beta.18
     '@octokit/rest':
       specifier: 22.0.1
       version: 22.0.1
@@ -730,7 +730,7 @@ importers:
         version: 0.9.3
       '@lydell/node-pty':
         specifier: 'catalog:'
-        version: 1.2.0-beta.12
+        version: 1.2.0-beta.18
       '@npmcli/arborist':
         specifier: 9.4.0
         version: 9.4.0
@@ -932,8 +932,8 @@ importers:
         specifier: workspace:*
         version: link:../ui
       '@lydell/node-pty':
-        specifier: 1.2.0-beta.12
-        version: 1.2.0-beta.12
+        specifier: 1.2.0-beta.18
+        version: 1.2.0-beta.18
       '@sentry/solid':
         specifier: 10.36.0
         version: 10.36.0(@solidjs/router@0.15.4(solid-js@1.9.10))(solid-js@1.9.10)
@@ -2545,8 +2545,18 @@ packages:
     cpu: [arm64]
     os: [darwin]
 
+  '@lydell/node-pty-darwin-arm64@1.2.0-beta.18':
+    resolution: {integrity: sha512-gJizeNHkkKCoggtj5Q0yf4btK6dPfr7E063SrOh1jHXp3IyjiErU4KwT7Cn29qb/OY5pBo/Utctenl03MyBtAg==}
+    cpu: [arm64]
+    os: [darwin]
+
   '@lydell/node-pty-darwin-x64@1.2.0-beta.12':
     resolution: {integrity: sha512-4LrS5pCJwqHKDVf1zS2gyNV0m4hKAXch+XZNhbZ6LY8uwVL8BhchzQBO40Os5anuRxRCWzHpw4Sp64Ie8q7E4Q==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@lydell/node-pty-darwin-x64@1.2.0-beta.18':
+    resolution: {integrity: sha512-xnJQz+i5v7pkR1xo14ffTwvMm2DoK3KqPACQaJqxtMVkM7ojv14/KmkaV2jte7Q0BIzfU+VbKVUL9Zmf23G8VQ==}
     cpu: [x64]
     os: [darwin]
 
@@ -2555,8 +2565,18 @@ packages:
     cpu: [arm64]
     os: [linux]
 
+  '@lydell/node-pty-linux-arm64@1.2.0-beta.18':
+    resolution: {integrity: sha512-fM8jRcZDZwG7ihEOx/R7N1aGHdT4Fd6IQj1d6Jp7Qb9FeDWlIwLuVlxUkJOsW4V1ZmJe1xZl2+WR0RjqMvb2+Q==}
+    cpu: [arm64]
+    os: [linux]
+
   '@lydell/node-pty-linux-x64@1.2.0-beta.12':
     resolution: {integrity: sha512-bJzs94njofYhGg/UDqW1nj0dtvvu+2OvxMY+RlLS1T17VgcktKoIR6PuenTwE5HJ/D6StCPADmXcT0nNsCKmIQ==}
+    cpu: [x64]
+    os: [linux]
+
+  '@lydell/node-pty-linux-x64@1.2.0-beta.18':
+    resolution: {integrity: sha512-LGikvfcvoPrxXO7o1gCsd5ErrRWnQFYLxjJfX0uwBpi0oGPiTERUBLzKspzZs7wjXZqF30mnNB/C09uotu5vRA==}
     cpu: [x64]
     os: [linux]
 
@@ -2565,13 +2585,23 @@ packages:
     cpu: [arm64]
     os: [win32]
 
+  '@lydell/node-pty-win32-arm64@1.2.0-beta.18':
+    resolution: {integrity: sha512-S6h4G3zYGe+pPQxhlNxg+MvJNUIwXFxhnUufx1QT45TgratKMxQfoGPidvnwoLwuXQ3hqQ7SsI93rH8RUoL09g==}
+    cpu: [arm64]
+    os: [win32]
+
   '@lydell/node-pty-win32-x64@1.2.0-beta.12':
     resolution: {integrity: sha512-IDFa00g7qUDGUYgByrUBJtC+mOjYVt/8KYyWivCg5JjGOHbBUACUQZLl0jTWmnr+tld/UyTpX90a2PY6oTVtRw==}
     cpu: [x64]
     os: [win32]
 
-  '@lydell/node-pty@1.2.0-beta.12':
-    resolution: {integrity: sha512-qIK890UwPupoj07osVvgOIa++1mxeHbcGry4PKRHhNVNs81V2SCG34eJr46GybiOmBtc8Sj5PB1/GGM5PL549g==}
+  '@lydell/node-pty-win32-x64@1.2.0-beta.18':
+    resolution: {integrity: sha512-wBSMeAwEL04t694ln+QbLnc98YeF3mAwWm/NP8acYDAobPw/WK7KKpk8z07iyxv0gRH2Z2/L/f6vgtnBgxE0Bg==}
+    cpu: [x64]
+    os: [win32]
+
+  '@lydell/node-pty@1.2.0-beta.18':
+    resolution: {integrity: sha512-ryy4liRcw6QBBKWDIbJgTW7Pw8NI2xjri/5s/LZg/jJ8ZVg8MgA1xI/vjpT5qTvDvPjUpU5NybJBrKRgK/QvlA==}
 
   '@malept/cross-spawn-promise@2.0.0':
     resolution: {integrity: sha512-1DpKU0Z5ThltBwjNySMC14g0CkbyhCaz9FkhxqNsZI6uAPJXFS8cMXlBKo26FJ8ZuW6S9GCMcR9IO5k2X5/9Fg==}
@@ -2956,6 +2986,7 @@ packages:
   '@opentelemetry/sdk-trace-web@2.9.0':
     resolution: {integrity: sha512-LS4XlzOK3e6YYdt84m15AmRR04121rKipmifi4XFZToH1h75f7F2bzHLbB1NMgIEYJ0jSKYm4VsK5mws/5kfTQ==}
     engines: {node: ^18.19.0 || >=20.6.0}
+    deprecated: Use @opentelemetry/sdk-trace package
     peerDependencies:
       '@opentelemetry/api': 1.9.1
 
@@ -3746,10 +3777,16 @@ packages:
   '@smithy/core@3.29.1':
     resolution: {integrity: sha512-qoiY4nrk5OCu1+eIR1VB8l5DmON/oKiqrd5zZFAhXJXjJlLWQusKEW/SkBDAtGDcPaz86m9kfcE1lngU0GlM6A==}
     engines: {node: '>=18.0.0'}
+    deprecated: |-
+      Deprecated due to a bug in custom logger data redaction. Upgrade to the latest version. If you used a custom logger with this
+        version, review your logs and rotate any credentials or other secrets. See https://github.com/aws/aws-sdk-js-v3/issues/8393.
 
   '@smithy/core@3.37.0':
     resolution: {integrity: sha512-97imTcCyiPd8k0e9+ts/Sp0W65Dn9Ti357J7M09Ov4tI8Q1JDJVFSoAJtjEVKqfHEr3Pdo2jfolqKCaaiszH0g==}
     engines: {node: '>=18.0.0'}
+    deprecated: |-
+      Deprecated due to a bug in custom logger data redaction. Upgrade to the latest version. If you used a custom logger with this
+        version, review your logs and rotate any credentials or other secrets. See https://github.com/aws/aws-sdk-js-v3/issues/8393.
 
   '@smithy/credential-provider-imds@4.4.6':
     resolution: {integrity: sha512-B2WQ/PV/H6Jeg3lrIq6bKUfa6Hy01mtK7CGs6lhjzHA6k4aagldH6T6eEjnzKl4HI0cJnAsxfJ19pgb5PV+CVQ==}
@@ -9342,29 +9379,47 @@ snapshots:
   '@lydell/node-pty-darwin-arm64@1.2.0-beta.12':
     optional: true
 
+  '@lydell/node-pty-darwin-arm64@1.2.0-beta.18':
+    optional: true
+
   '@lydell/node-pty-darwin-x64@1.2.0-beta.12':
+    optional: true
+
+  '@lydell/node-pty-darwin-x64@1.2.0-beta.18':
     optional: true
 
   '@lydell/node-pty-linux-arm64@1.2.0-beta.12':
     optional: true
 
+  '@lydell/node-pty-linux-arm64@1.2.0-beta.18':
+    optional: true
+
   '@lydell/node-pty-linux-x64@1.2.0-beta.12':
+    optional: true
+
+  '@lydell/node-pty-linux-x64@1.2.0-beta.18':
     optional: true
 
   '@lydell/node-pty-win32-arm64@1.2.0-beta.12':
     optional: true
 
+  '@lydell/node-pty-win32-arm64@1.2.0-beta.18':
+    optional: true
+
   '@lydell/node-pty-win32-x64@1.2.0-beta.12':
     optional: true
 
-  '@lydell/node-pty@1.2.0-beta.12':
+  '@lydell/node-pty-win32-x64@1.2.0-beta.18':
+    optional: true
+
+  '@lydell/node-pty@1.2.0-beta.18':
     optionalDependencies:
-      '@lydell/node-pty-darwin-arm64': 1.2.0-beta.12
-      '@lydell/node-pty-darwin-x64': 1.2.0-beta.12
-      '@lydell/node-pty-linux-arm64': 1.2.0-beta.12
-      '@lydell/node-pty-linux-x64': 1.2.0-beta.12
-      '@lydell/node-pty-win32-arm64': 1.2.0-beta.12
-      '@lydell/node-pty-win32-x64': 1.2.0-beta.12
+      '@lydell/node-pty-darwin-arm64': 1.2.0-beta.18
+      '@lydell/node-pty-darwin-x64': 1.2.0-beta.18
+      '@lydell/node-pty-linux-arm64': 1.2.0-beta.18
+      '@lydell/node-pty-linux-x64': 1.2.0-beta.18
+      '@lydell/node-pty-win32-arm64': 1.2.0-beta.18
+      '@lydell/node-pty-win32-x64': 1.2.0-beta.18
 
   '@malept/cross-spawn-promise@2.0.0':
     dependencies:
