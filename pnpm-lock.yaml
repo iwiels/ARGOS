@@ -85,8 +85,8 @@ catalogs:
       specifier: 1.2.1
       version: 1.2.1
     remeda:
-      specifier: 2.26.0
-      version: 2.26.0
+      specifier: 2.58.0
+      version: 2.58.0
     remend:
       specifier: 1.3.0
       version: 1.3.0
@@ -290,7 +290,7 @@ importers:
         version: 1.2.1(marked@17.0.1)(shiki@3.20.0)
       remeda:
         specifier: 'catalog:'
-        version: 2.26.0
+        version: 2.58.0
       shiki:
         specifier: 'catalog:'
         version: 3.20.0
@@ -552,7 +552,7 @@ importers:
         version: 0.0.1(@opencode-ai/plugin@1.19.3)
       remeda:
         specifier: 'catalog:'
-        version: 2.26.0
+        version: 2.58.0
       semver:
         specifier: ^7.8.5
         version: 7.8.5
@@ -1274,7 +1274,7 @@ importers:
         version: 12.29.2
       remeda:
         specifier: 'catalog:'
-        version: 2.26.0
+        version: 2.58.0
       remend:
         specifier: 'catalog:'
         version: 1.3.0
@@ -2956,6 +2956,7 @@ packages:
   '@opentelemetry/sdk-trace-web@2.9.0':
     resolution: {integrity: sha512-LS4XlzOK3e6YYdt84m15AmRR04121rKipmifi4XFZToH1h75f7F2bzHLbB1NMgIEYJ0jSKYm4VsK5mws/5kfTQ==}
     engines: {node: ^18.19.0 || >=20.6.0}
+    deprecated: Use @opentelemetry/sdk-trace package
     peerDependencies:
       '@opentelemetry/api': 1.9.1
 
@@ -3746,10 +3747,16 @@ packages:
   '@smithy/core@3.29.1':
     resolution: {integrity: sha512-qoiY4nrk5OCu1+eIR1VB8l5DmON/oKiqrd5zZFAhXJXjJlLWQusKEW/SkBDAtGDcPaz86m9kfcE1lngU0GlM6A==}
     engines: {node: '>=18.0.0'}
+    deprecated: |-
+      Deprecated due to a bug in custom logger data redaction. Upgrade to the latest version. If you used a custom logger with this
+        version, review your logs and rotate any credentials or other secrets. See https://github.com/aws/aws-sdk-js-v3/issues/8393.
 
   '@smithy/core@3.37.0':
     resolution: {integrity: sha512-97imTcCyiPd8k0e9+ts/Sp0W65Dn9Ti357J7M09Ov4tI8Q1JDJVFSoAJtjEVKqfHEr3Pdo2jfolqKCaaiszH0g==}
     engines: {node: '>=18.0.0'}
+    deprecated: |-
+      Deprecated due to a bug in custom logger data redaction. Upgrade to the latest version. If you used a custom logger with this
+        version, review your logs and rotate any credentials or other secrets. See https://github.com/aws/aws-sdk-js-v3/issues/8393.
 
   '@smithy/credential-provider-imds@4.4.6':
     resolution: {integrity: sha512-B2WQ/PV/H6Jeg3lrIq6bKUfa6Hy01mtK7CGs6lhjzHA6k4aagldH6T6eEjnzKl4HI0cJnAsxfJ19pgb5PV+CVQ==}
@@ -6898,8 +6905,9 @@ packages:
   regex@6.1.0:
     resolution: {integrity: sha512-6VwtthbV4o/7+OaAF9I5L5V3llLEsoPyq9P1JVXkedTP33c7MfCG0/5NOPcSJn0TzXcG9YUrR0gQSWioew3LDg==}
 
-  remeda@2.26.0:
-    resolution: {integrity: sha512-lmNNwtaC6Co4m0WTTNoZ/JlpjEqAjPZO0+czC9YVRQUpkbS4x8Hmh+Mn9HPfJfiXqUQ5IXXgSXSOB2pBKAytdA==}
+  remeda@2.58.0:
+    resolution: {integrity: sha512-uCy/WL+c+IF/oAb+sjgZ4Y7XPsW58wP8EWiYpIcqWQZBnNEcb8RnLh9PHsERA97ONpkebGw4S6qNcOtFQ+HG7A==}
+    engines: {node: '>=18.0.0'}
 
   remend@1.3.0:
     resolution: {integrity: sha512-iIhggPkhW3hFImKtB10w0dz4EZbs28mV/dmbcYVonWEJ6UGHHpP+bFZnTh6GNWJONg5m+U56JrL+8IxZRdgWjw==}
@@ -13828,9 +13836,7 @@ snapshots:
     dependencies:
       regex-utilities: 2.3.0
 
-  remeda@2.26.0:
-    dependencies:
-      type-fest: 4.41.0
+  remeda@2.58.0: {}
 
   remend@1.3.0: {}
 
